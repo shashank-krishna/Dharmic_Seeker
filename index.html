@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DharmaSeekerx — Wisdom of Civilizations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9933A;
+    --gold-light: #E8B96A;
+    --gold-pale: #F5E6C8;
+    --saffron: #D4621A;
+    --cream: #F9F3E8;
+    --ivory: #EDE5D4;
+    --deep: #0A0704;
+    --dark: #120E08;
+    --panel: #1A1408;
+    --text-main: #EDE5D4;
+    --text-muted: #9A8C78;
+    --text-dim: #5C5244;
+    --border: rgba(201,147,58,0.18);
+    --border-strong: rgba(201,147,58,0.4);
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--deep);
+    color: var(--text-main);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(10,7,4,0.95) 0%, transparent 100%);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s, background 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,7,4,0.97);
+    border-bottom-color: var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .logo-glyph {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .logo-text span { color: var(--text-muted); font-weight: 400; }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--deep);
+    background: var(--gold);
+    border: none;
+    padding: 0.6rem 1.6rem;
+    cursor: pointer;
+    transition: background 0.3s, opacity 0.3s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 6rem 2rem 4rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,147,58,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(212,98,26,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 70%, rgba(201,147,58,0.04) 0%, transparent 55%),
+      var(--deep);
+  }
+
+  /* Mandala SVG BG */
+  .mandala-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    opacity: 0.04;
+    animation: mandala-spin 120s linear infinite;
+  }
+  @keyframes mandala-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .mandala-inner {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 500px;
+    opacity: 0.05;
+    animation: mandala-spin 80s linear infinite reverse;
+  }
+
+  /* Silhouette temple */
+  .temple-silhouette {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 260px;
+    background: linear-gradient(to top, rgba(10,7,4,1) 0%, transparent 100%);
+    overflow: hidden;
+  }
+  .temple-silhouette svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+  }
+
+  /* Floating symbols */
+  .float-symbol {
+    position: absolute;
+    font-size: 1.4rem;
+    color: var(--gold);
+    opacity: 0;
+    animation: float-in 8s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+  }
+  .float-symbol:nth-child(1) { top: 20%; left: 8%; animation-delay: 0s; }
+  .float-symbol:nth-child(2) { top: 35%; right: 9%; animation-delay: 2s; }
+  .float-symbol:nth-child(3) { top: 65%; left: 6%; animation-delay: 4s; }
+  .float-symbol:nth-child(4) { top: 55%; right: 7%; animation-delay: 1.5s; }
+  .float-symbol:nth-child(5) { top: 15%; right: 20%; animation-delay: 3s; font-size: 1rem; }
+  .float-symbol:nth-child(6) { top: 75%; left: 22%; animation-delay: 5s; font-size: 1rem; }
+  @keyframes float-in {
+    0%, 100% { opacity: 0; transform: translateY(12px); }
+    30%, 70% { opacity: 0.55; transform: translateY(0px); }
+  }
+
+  /* Particle dots */
+  .particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 1px; height: 1px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    animation: particle-drift linear infinite;
+    opacity: 0;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    animation: fade-up 1s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '—';
+    margin: 0 1rem;
+    opacity: 0.5;
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    animation: fade-up 1s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+    animation: fade-up 1s ease forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    animation: fade-up 1s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+
+  .btn-primary {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--deep);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+  .btn-secondary {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fade-up 1s ease forwards;
+    animation-delay: 2s;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+  @keyframes scroll-line {
+    0%, 100% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+  }
+  .scroll-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 auto 5rem;
+    max-width: 200px;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-glyph {
+    font-size: 1rem;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    position: relative;
+    padding: 7rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  section.full-width { max-width: none; }
+
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 600px;
+  }
+
+  /* ─── ABOUT DHARMA ─── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    padding-top: 8rem;
+  }
+
+  .about-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chakra-container {
+    position: relative;
+    width: 320px; height: 320px;
+  }
+  .chakra-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
+  .chakra-ring:nth-child(1) { inset: 0; animation: ring-spin 30s linear infinite; }
+  .chakra-ring:nth-child(2) { inset: 15%; animation: ring-spin 20s linear infinite reverse; border-color: var(--border-strong); }
+  .chakra-ring:nth-child(3) { inset: 30%; animation: ring-spin 12s linear infinite; border-color: rgba(201,147,58,0.35); }
+  .chakra-center {
+    position: absolute;
+    inset: 40%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,147,58,0.2), transparent);
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+  }
+  @keyframes ring-spin { to { transform: rotate(360deg); } }
+
+  .about-content { }
+
+  .dharma-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 3rem;
+    border: 1px solid var(--border);
+  }
+  .pillar {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    background: rgba(201,147,58,0.02);
+    transition: background 0.3s;
+  }
+  .pillar:hover { background: rgba(201,147,58,0.05); }
+  .pillar-symbol { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+  .pillar-name {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .pillar-desc { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
+
+  /* ─── RELIGIONS ─── */
+  #religions {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .religion-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .religion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .religion-card {
+    background: var(--dark);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  .religion-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent-color, var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .religion-card:hover::before { transform: scaleX(1); }
+  .religion-card:hover { background: rgba(26,20,8,0.9); transform: translateY(-4px); }
+
+  .religion-card:nth-child(1) { --accent-color: #FF8C42; }
+  .religion-card:nth-child(2) { --accent-color: #4FA8D4; }
+  .religion-card:nth-child(3) { --accent-color: #8B6FD4; }
+  .religion-card:nth-child(4) { --accent-color: #5BA06A; }
+
+  .card-symbol {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0.9;
+  }
+  .card-tradition {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .card-tagline {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+  .meta-label { color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; }
+  .meta-val { color: var(--text-muted); }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .tag {
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .card-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--accent-color, var(--gold));
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+  .card-cta:hover { gap: 0.9rem; }
+  .card-cta::after { content: '→'; }
+
+  /* ─── TIMELINE ─── */
+  #timeline {
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .timeline-header { text-align: center; margin-bottom: 5rem; }
+
+  .timeline-track {
+    position: relative;
+    padding: 2rem 0;
+  }
+  .timeline-axis {
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-strong) 10%, var(--border-strong) 90%, transparent);
+  }
+  .timeline-events {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4rem 2rem;
+    position: relative;
+  }
+  .timeline-events::-webkit-scrollbar { display: none; }
+
+  .t-event {
+    flex: 0 0 220px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .t-event:nth-child(even) .t-card { margin-top: 5rem; }
+  .t-event:nth-child(even) .t-dot { order: -1; }
+  .t-event:nth-child(odd) .t-card { margin-bottom: 5rem; order: -1; }
+
+  .t-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--deep);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(201,147,58,0.4);
+  }
+  .t-line {
+    width: 1px; height: 3rem;
+    background: var(--border-strong);
+  }
+  .t-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.5rem;
+    width: 180px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  .t-card:hover { border-color: var(--gold); }
+  .t-year {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .t-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+  .t-desc { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.3rem; }
+
+  /* ─── WISDOM QUOTES ─── */
+  #wisdom {
+    padding: 8rem 4rem;
+    background: linear-gradient(to bottom, var(--deep), var(--panel), var(--deep));
+    max-width: none;
+    text-align: center;
+  }
+  .wisdom-header { margin-bottom: 4rem; }
+
+  .quotes-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 200px;
+  }
+  .quote-slide {
+    display: none;
+    animation: quote-fade 0.5s ease;
+  }
+  .quote-slide.active { display: block; }
+  @keyframes quote-fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .quote-source {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .quote-tradition {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+  }
+
+  .quote-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+  .q-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border-strong);
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+  }
+  .q-dot.active { background: var(--gold); }
+
+  /* ─── SYMBOLS ─── */
+  #symbols {
+    padding: 8rem 4rem;
+  }
+  .symbols-header { margin-bottom: 4rem; }
+  .symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .symbol-cell {
+    background: var(--dark);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 1rem;
+  }
+  .symbol-cell:hover { background: rgba(201,147,58,0.06); }
+  .sym-glyph { font-size: 2rem; line-height: 1; }
+  .sym-name {
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* ─── KNOWLEDGE UNIVERSE ─── */
+  #knowledge {
+    padding: 8rem 4rem;
+  }
+  .knowledge-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .feature {
+    background: var(--dark);
+    padding: 2rem 1.8rem;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .feature:hover { background: rgba(26,20,8,0.95); }
+  .feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.8;
+  }
+  .feature-title {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .feature-desc { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
+  .feature-badge {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: 'Cinzel', serif;
+    font-size: 7px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    text-transform: uppercase;
+  }
+
+  /* ─── COMMUNITY ─── */
+  #community {
+    padding: 8rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #community::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,147,58,0.05) 0%, transparent 70%);
+  }
+  .community-content { position: relative; z-index: 1; }
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* ─── NEWSLETTER ─── */
+  #newsletter {
+    padding: 6rem 4rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .subscribe-form {
+    display: flex;
+    gap: 0;
+    margin-top: 2rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subscribe-input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-right: none;
+    color: var(--cream);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .subscribe-input:focus { border-color: var(--gold); }
+  .subscribe-input::placeholder { color: var(--text-dim); }
+  .subscribe-btn {
+    padding: 0.9rem 1.8rem;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--deep);
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  .subscribe-btn:hover { background: var(--gold-light); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .footer-brand .logo-text { font-size: 15px; margin-bottom: 1rem; display: block; }
+  .footer-brand p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; max-width: 260px; }
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col li a {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .footer-bottom p { font-size: 0.78rem; color: var(--text-dim); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1100px) {
+    .religion-grid { grid-template-columns: repeat(2, 1fr); }
+    .symbols-grid { grid-template-columns: repeat(4, 1fr); }
+    #about { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .knowledge-header { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #about, #timeline, #knowledge, #symbols, #community, footer { padding: 5rem 1.5rem; }
+    .religion-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .symbols-grid { grid-template-columns: repeat(3, 1fr); }
+    .stats-row { gap: 2rem; flex-wrap: wrap; }
+    footer { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-input { border-right: 1px solid var(--border); border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-glyph">ॐ</div>
+    <span class="logo-text">DHARMA<span>SEEKER</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Dharma</a></li>
+    <li><a href="#religions">Traditions</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#knowledge">Knowledge</a></li>
+    <li><a href="#wisdom">Wisdom</a></li>
+  </ul>
+  <a href="#newsletter" class="nav-cta">Begin Your Journey</a>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Mandala BGs -->
+  <svg class="mandala-bg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#C9933A" stroke-width="0.5">
+      <circle cx="250" cy="250" r="240"/><circle cx="250" cy="250" r="200"/><circle cx="250" cy="250" r="160"/>
+      <circle cx="250" cy="250" r="120"/><circle cx="250" cy="250" r="80"/><circle cx="250" cy="250" r="40"/>
+      <line x1="10" y1="250" x2="490" y2="250"/><line x1="250" y1="10" x2="250" y2="490"/>
+      <line x1="74" y1="74" x2="426" y2="426"/><line x1="426" y1="74" x2="74" y2="426"/>
+      <line x1="10" y1="143" x2="490" y2="357"/><line x1="10" y1="357" x2="490" y2="143"/>
+      <line x1="143" y1="10" x2="357" y2="490"/><line x1="357" y1="10" x2="143" y2="490"/>
+      <polygon points="250,30 470,390 30,390" fill="none"/>
+      <polygon points="250,470 30,110 470,110" fill="none"/>
+    </g>
+  </svg>
+
+  <svg class="mandala-inner" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#C9933A" stroke-width="0.8">
+      <circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="100"/><circle cx="200" cy="200" r="60"/>
+      <line x1="20" y1="200" x2="380" y2="200"/><line x1="200" y1="20" x2="200" y2="380"/>
+      <line x1="73" y1="73" x2="327" y2="327"/><line x1="327" y1="73" x2="73" y2="327"/>
+    </g>
+  </svg>
+
+  <!-- Floating Symbols -->
+  <span class="float-symbol">ॐ</span>
+  <span class="float-symbol">☸</span>
+  <span class="float-symbol">🪷</span>
+  <span class="float-symbol">✡</span>
+  <span class="float-symbol">☯</span>
+  <span class="float-symbol">🕉</span>
+
+  <!-- Temple Silhouette -->
+  <div class="temple-silhouette">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(201,147,58,0.5)"
+        d="
+        M0 260 L0 200
+        L60 200 L60 180 L80 160 L80 140 L90 120 L90 100 L100 80 L100 100 L110 100 L110 60 L120 40 L125 20 L130 40 L135 60 L140 60 L140 100 L150 80 L150 100 L160 120 L160 140 L170 160 L170 180 L190 200
+        L220 200 L220 220
+        L260 220 L260 200
+        L300 200 L300 180 L310 160 L315 140 L320 120 L320 100 L325 80 L325 60 L330 40 L332 20 L334 40 L335 60 L335 80 L340 100 L340 120 L345 140 L350 160 L360 180 L360 200
+        L420 200 L420 220
+        L460 220 L460 200
+        L520 200 L520 160 L540 120 L550 80 L555 40 L560 10 L565 40 L570 80 L580 120 L600 160 L600 200
+        L640 200 L640 220
+        L700 220 L700 200
+        L760 200 L760 180 L770 160 L775 130 L780 100 L785 70 L790 40 L793 15 L796 40 L800 70 L805 100 L810 130 L815 160 L825 180 L825 200
+        L900 200 L900 220
+        L940 220 L940 200
+        L1000 200 L1000 160 L1010 120 L1020 80 L1025 40 L1030 10 L1035 40 L1040 80 L1050 120 L1060 160 L1060 200
+        L1120 200
+        L1160 200 L1160 180 L1170 160 L1175 140 L1180 120 L1180 100 L1185 80 L1185 60 L1190 40 L1192 20 L1194 40 L1195 60 L1195 80 L1200 100 L1200 120 L1205 140 L1210 160 L1220 180 L1220 200
+        L1280 200 L1280 220
+        L1320 220 L1320 200
+        L1380 200 L1380 180 L1390 160 L1395 140 L1400 120 L1400 100 L1405 80 L1410 60 L1415 40 L1417 20 L1419 40 L1420 60 L1425 80 L1425 100 L1430 120 L1430 140 L1435 160 L1440 180 L1440 260
+        Z"/>
+    </svg>
+  </div>
+
+  <span class="hero-eyebrow">Est. 2025 &nbsp;·&nbsp; Bharat Digital Heritage</span>
+
+  <h1 class="hero-headline">
+    Seek the <em>Eternal</em><br>Dharma
+  </h1>
+
+  <p class="hero-sub">
+    A living library of Sanatan Dharma, Buddhism, Jainism & Sikhism. Ancient wisdom, rendered for the age of exploration.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#religions" class="btn-primary">Explore Traditions</a>
+    <a href="#about" class="btn-secondary">What is Dharma?</a>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+</div>
+
+<!-- ABOUT DHARMA -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="chakra-container">
+      <div class="chakra-ring"></div>
+      <div class="chakra-ring"></div>
+      <div class="chakra-ring"></div>
+      <div class="chakra-center">☸</div>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <span class="section-eyebrow">The Foundation</span>
+    <h2 class="section-title">What is <em>Dharma</em>?</h2>
+    <p class="section-lead">
+      Dharma is not merely a religion — it is the eternal order underlying all of existence. Rooted in the Sanskrit root <em>dhṛ</em> (to hold, to sustain), it represents the cosmic law that keeps the universe in balance.
+    </p>
+    <p class="section-lead" style="margin-top:1rem; font-style:italic; border-left: 2px solid var(--gold); padding-left:1.2rem;">
+      "Dharma is that which supports, upholds, and nourishes the cosmos, society, and the individual simultaneously."
+    </p>
+    <div class="dharma-pillars">
+      <div class="pillar">
+        <span class="pillar-symbol">⚖️</span>
+        <div class="pillar-name">Ṛta</div>
+        <div class="pillar-desc">Cosmic order and natural law governing all existence</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-symbol">🔥</span>
+        <div class="pillar-name">Satya</div>
+        <div class="pillar-desc">Truth as the ultimate foundation of righteous action</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-symbol">🌸</span>
+        <div class="pillar-name">Ahiṃsā</div>
+        <div class="pillar-desc">Non-violence as the highest moral and spiritual principle</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-symbol">♾️</span>
+        <div class="pillar-name">Moksha</div>
+        <div class="pillar-desc">Liberation from the cycle of birth and rebirth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELIGIONS -->
+<section id="religions" class="full-width" style="max-width:none; padding:8rem 4rem;">
+  <div class="religion-header reveal">
+    <span class="section-eyebrow">Four Traditions</span>
+    <h2 class="section-title">The Dharmic Cosmos</h2>
+    <p class="section-lead" style="margin:0 auto; text-align:center;">
+      Four distinct yet profoundly interconnected rivers of wisdom — each flowing from the spiritual heartland of Bharat.
+    </p>
+  </div>
+  <div class="religion-grid reveal" style="max-width:1400px; margin:0 auto;">
+    
+    <div class="religion-card" onclick="window.location='/hinduism/'">
+      <span class="card-symbol">🕉</span>
+      <div class="card-tradition">Sanatan Dharma</div>
+      <div class="card-name">Hinduism</div>
+      <div class="card-tagline">The world's oldest living spiritual tradition — a vast, plural, ever-evolving cosmic philosophy.</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-label">Origin</span><span class="meta-val">c. 3000 BCE+</span></div>
+        <div class="meta-row"><span class="meta-label">Scripture</span><span class="meta-val">Vedas, Upanishads, Gita</span></div>
+        <div class="meta-row"><span class="meta-label">Symbol</span><span class="meta-val">Om · Lotus · Swastika</span></div>
+        <div class="meta-row"><span class="meta-label">Sacred Sites</span><span class="meta-val">Varanasi, Tirupati, Dwarka</span></div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Vedanta</span>
+        <span class="tag">Yoga</span>
+        <span class="tag">Advaita</span>
+        <span class="tag">Bhakti</span>
+      </div>
+      <a href="#" class="card-cta">Explore Tradition</a>
+    </div>
+
+    <div class="religion-card"  onclick="window.location='/buddhism/'">
+      <span class="card-symbol">☸</span>
+      <div class="card-tradition">The Enlightened Path</div>
+      <div class="card-name">Buddhism</div>
+      <div class="card-tagline">Born from the Bodhi tree — a philosophy of liberation through compassion, wisdom, and mindful awareness.</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-label">Founder</span><span class="meta-val">Siddhartha Gautama</span></div>
+        <div class="meta-row"><span class="meta-label">Origin</span><span class="meta-val">c. 563 BCE, Lumbini</span></div>
+        <div class="meta-row"><span class="meta-label">Scripture</span><span class="meta-val">Tripitaka, Dhammapada</span></div>
+        <div class="meta-row"><span class="meta-label">Sacred Sites</span><span class="meta-val">Bodh Gaya, Sarnath</span></div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Nirvana</span>
+        <span class="tag">Theravada</span>
+        <span class="tag">Zen</span>
+        <span class="tag">Mahayana</span>
+      </div>
+      <a href="#" class="card-cta">Explore Tradition</a>
+    </div>
+
+    <div class="religion-card" onclick="window.location='/jainism/'">
+      <span class="card-symbol">🔱</span>
+      <div class="card-tradition">The Path of Liberation</div>
+      <div class="card-name">Jainism</div>
+      <div class="card-tagline">One of humanity's most ancient philosophies — non-violence, non-possession, and truth as cosmic law.</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-label">Reformer</span><span class="meta-val">Mahavira (599 BCE)</span></div>
+        <div class="meta-row"><span class="meta-label">Tirthankaras</span><span class="meta-val">24 Spiritual Fords</span></div>
+        <div class="meta-row"><span class="meta-label">Scripture</span><span class="meta-val">Agamas, Tattvartha Sutra</span></div>
+        <div class="meta-row"><span class="meta-label">Sacred Sites</span><span class="meta-val">Palitana, Shravanabelagola</span></div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Ahimsa</span>
+        <span class="tag">Anekantavada</span>
+        <span class="tag">Aparigraha</span>
+      </div>
+      <a href="#" class="card-cta">Explore Tradition</a>
+    </div>
+
+    <div class="religion-card" onclick="window.location='/sikhism/'">
+      <span class="card-symbol">⚔</span>
+      <div class="card-tradition">The Sikh Path</div>
+      <div class="card-name">Sikhism</div>
+      <div class="card-tagline">Ik Onkar — One Universal Creator. A living tradition of courage, equality, and devotion to the Divine Name.</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-label">Founder</span><span class="meta-val">Guru Nanak Dev Ji</span></div>
+        <div class="meta-row"><span class="meta-label">Origin</span><span class="meta-val">c. 1469 CE, Punjab</span></div>
+        <div class="meta-row"><span class="meta-label">Scripture</span><span class="meta-val">Guru Granth Sahib</span></div>
+        <div class="meta-row"><span class="meta-label">Sacred Sites</span><span class="meta-val">Harmandir Sahib, Anandpur</span></div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Waheguru</span>
+        <span class="tag">Seva</span>
+        <span class="tag">Langar</span>
+        <span class="tag">Khalsa</span>
+      </div>
+      <a href="#" class="card-cta">Explore Tradition</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="full-width" style="max-width:none; padding:8rem 4rem; background: var(--panel);">
+  <div class="timeline-header reveal">
+    <span class="section-eyebrow">Through the Ages</span>
+    <h2 class="section-title" style="text-align:center;">The Civilizational <em>Continuum</em></h2>
+    <p class="section-lead" style="margin:0 auto; text-align:center;">
+      5,000 years of unbroken spiritual evolution — from the Vedic Rishis to the Sikh Gurus.
+    </p>
+  </div>
+  <div class="timeline-track reveal">
+    <div class="timeline-axis"></div>
+    <div class="timeline-events">
+      <div class="t-event">
+        <div class="t-card"><div class="t-year">c. 3000 BCE</div><div class="t-name">Vedic Civilization</div><div class="t-desc">Rig Veda composed; Saraswati valley culture</div></div>
+        <div class="t-line"></div>
+        <div class="t-dot"></div>
+      </div>
+      <div class="t-event">
+        <div class="t-dot"></div>
+        <div class="t-line"></div>
+        <div class="t-card"><div class="t-year">c. 1500 BCE</div><div class="t-name">Upanishadic Age</div><div class="t-desc">Brahman, Atman, Moksha — the Aranyakas emerge</div></div>
+      </div>
+      <div class="t-event">
+        <div class="t-card"><div class="t-year">c. 599 BCE</div><div class="t-name">Mahavira</div><div class="t-desc">24th Tirthankara teaches the path of liberation</div></div>
+        <div class="t-line"></div>
+        <div class="t-dot"></div>
+      </div>
+      <div class="t-event">
+        <div class="t-dot"></div>
+        <div class="t-line"></div>
+        <div class="t-card"><div class="t-year">c. 563 BCE</div><div class="t-name">Siddhartha Gautama</div><div class="t-desc">Birth of the Buddha; the Middle Path revealed</div></div>
+      </div>
+      <div class="t-event">
+        <div class="t-card"><div class="t-year">c. 400 BCE</div><div class="t-name">Mahabharata Era</div><div class="t-desc">Bhagavad Gita spoken on the field of Kurukshetra</div></div>
+        <div class="t-line"></div>
+        <div class="t-dot"></div>
+      </div>
+      <div class="t-event">
+        <div class="t-dot"></div>
+        <div class="t-line"></div>
+        <div class="t-card"><div class="t-year">c. 268 BCE</div><div class="t-name">Ashoka's Dharma</div><div class="t-desc">Mauryan emperor spreads Dhamma across Asia</div></div>
+      </div>
+      <div class="t-event">
+        <div class="t-card"><div class="t-year">788 CE</div><div class="t-name">Adi Shankaracharya</div><div class="t-desc">Advaita Vedanta renaissance; four cardinal mathas</div></div>
+        <div class="t-line"></div>
+        <div class="t-dot"></div>
+      </div>
+      <div class="t-event">
+        <div class="t-dot"></div>
+        <div class="t-line"></div>
+        <div class="t-card"><div class="t-year">1469 CE</div><div class="t-name">Guru Nanak Dev Ji</div><div class="t-desc">Sikhism founded; Ik Onkar proclaimed in Punjab</div></div>
+      </div>
+      <div class="t-event">
+        <div class="t-card"><div class="t-year">1708 CE</div><div class="t-name">Guru Granth Sahib</div><div class="t-desc">The eternal living Guru installed as scripture</div></div>
+        <div class="t-line"></div>
+        <div class="t-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISDOM QUOTES -->
+<section id="wisdom" class="full-width">
+  <div class="wisdom-header reveal">
+    <span class="section-eyebrow">Featured Wisdom</span>
+    <h2 class="section-title" style="text-align:center;">Voices of the <em>Eternal</em></h2>
+  </div>
+  <div class="quotes-carousel reveal">
+    <div class="quote-slide active">
+      <p class="quote-text">"You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions."</p>
+      <div class="quote-source">Bhagavad Gita · 2.47</div>
+      <div class="quote-tradition">Sanatan Dharma — Lord Krishna to Arjuna</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Peace comes from within. Do not seek it without. The mind is everything. What you think, you become."</p>
+      <div class="quote-source">Dhammapada</div>
+      <div class="quote-tradition">Buddhism — Siddhartha Gautama</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Ahimsa is the highest form of Dharma. Ahimsa is the best form of self-restraint."</p>
+      <div class="quote-source">Tattvartha Sutra</div>
+      <div class="quote-tradition">Jainism — Umasvati</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Even kings and emperors with heaps of wealth and vast dominion cannot compare with an ant filled with the love of God."</p>
+      <div class="quote-source">Guru Granth Sahib · 1167</div>
+      <div class="quote-tradition">Sikhism — Guru Nanak Dev Ji</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Aham Brahmasmi — I am the ultimate reality. The individual self and the universal consciousness are one."</p>
+      <div class="quote-source">Brihadaranyaka Upanishad · 1.4.10</div>
+      <div class="quote-tradition">Vedanta — Ancient Rishis</div>
+    </div>
+  </div>
+  <div class="quote-nav reveal">
+    <button class="q-dot active" onclick="setQuote(0)"></button>
+    <button class="q-dot" onclick="setQuote(1)"></button>
+    <button class="q-dot" onclick="setQuote(2)"></button>
+    <button class="q-dot" onclick="setQuote(3)"></button>
+    <button class="q-dot" onclick="setQuote(4)"></button>
+  </div>
+</section>
+
+<!-- SYMBOLS -->
+<section id="symbols">
+  <div class="symbols-header reveal">
+    <span class="section-eyebrow">Sacred Geometry</span>
+    <h2 class="section-title">Symbols of the <em>Dharmic</em> Universe</h2>
+  </div>
+  <div class="symbols-grid reveal">
+    <div class="symbol-cell"><span class="sym-glyph">ॐ</span><span class="sym-name">Om</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">☸</span><span class="sym-name">Dharma Chakra</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">🔱</span><span class="sym-name">Trishul</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">🪷</span><span class="sym-name">Lotus</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">卍</span><span class="sym-name">Swastika</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">✡</span><span class="sym-name">Star of David</span></div>
+    <div class="symbol-cell"><span class="sym-glyph">⚔</span><span class="sym-name">Khanda</span></div>
+  </div>
+</section>
+
+<!-- KNOWLEDGE UNIVERSE -->
+<section id="knowledge">
+  <div class="knowledge-header">
+    <div class="reveal">
+      <span class="section-eyebrow">Platform Features</span>
+      <h2 class="section-title">The Knowledge <em>Universe</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="section-lead">
+        DharmaSeekerx is building the most comprehensive digital ecosystem for Dharmic knowledge — from AI-powered scripture exploration to interactive civilizational maps.
+      </p>
+      <a href="#newsletter" class="btn-secondary" style="display:inline-block; margin-top:1.5rem;">Join the Waitlist</a>
+    </div>
+  </div>
+  <div class="features-grid reveal">
+    <div class="feature">
+      <span class="feature-icon">🤖</span>
+      <div class="feature-title">AI Dharma Assistant</div>
+      <div class="feature-desc">Ask any question about Sanatan Dharma, Buddhist philosophy, or Sikh history. Get nuanced, scholarly answers.</div>
+      <span class="feature-badge">Coming Soon</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🗺</span>
+      <div class="feature-title">Temple Atlas</div>
+      <div class="feature-desc">An interactive map of 10,000+ sacred temples, monasteries, gurudwaras, and tirthas across Bharat and the world.</div>
+      <span class="feature-badge">In Development</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📜</span>
+      <div class="feature-title">Scripture Explorer</div>
+      <div class="feature-desc">Navigate the Vedas, Upanishads, Tripitaka, Agamas, and Guru Granth Sahib with context-aware commentary.</div>
+      <span class="feature-badge">Beta</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🌳</span>
+      <div class="feature-title">Guru Parampara</div>
+      <div class="feature-desc">Visualize lineage trees of every major sampradaya, from Adi Shankaracharya to the living Sikh Gurus.</div>
+      <span class="feature-badge">Coming Soon</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">⏳</span>
+      <div class="feature-title">Ancient Bharat Timeline</div>
+      <div class="feature-desc">An interactive chronicle spanning 5,000 years of dynasties, spiritual movements, and cultural evolution.</div>
+      <span class="feature-badge">In Development</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🏛</span>
+      <div class="feature-title">Civilization Encyclopedia</div>
+      <div class="feature-desc">Deep dives into the Mauryan, Gupta, Vijayanagara, and Maratha empires and their Dharmic contributions.</div>
+      <span class="feature-badge">Planned</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community" class="full-width" style="max-width:none;">
+  <div class="community-content reveal">
+    <span class="section-eyebrow">Our Mission</span>
+    <h2 class="section-title" style="text-align:center; max-width:700px; margin:0 auto 1.5rem;">
+      Preserving the <em>Living Heritage</em> of Bharat
+    </h2>
+    <p class="section-lead" style="margin:0 auto; text-align:center;">
+      DharmaSeekerx is a civilizational project — born from the conviction that the world's oldest living wisdom tradition deserves a platform worthy of its depth, beauty, and global relevance.
+    </p>
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-num">5,000+</span>
+        <span class="stat-label">Years of History</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Dharmic Traditions</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10,000+</span>
+        <span class="stat-label">Sacred Sites Mapped</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Wisdom to Explore</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="reveal" style="text-align:center;">
+    <span class="section-eyebrow">Early Access</span>
+    <h2 class="section-title" style="text-align:center;">Begin Your <em>Journey</em></h2>
+    <p class="section-lead" style="margin:0 auto 0; text-align:center;">
+      Join thousands of seekers awaiting the launch. Receive early access, daily wisdom, and the full platform release.
+    </p>
+    <div class="subscribe-form">
+      <input type="email" class="subscribe-input" placeholder="your@email.com">
+      <button class="subscribe-btn">Seek Wisdom</button>
+    </div>
+    <p style="font-size:0.78rem; color:var(--text-dim); margin-top:1rem;">No spam. Only eternal wisdom. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo" style="margin-bottom:1.2rem; display:flex;">
+      <div class="logo-glyph">ॐ</div>
+      <span class="logo-text" style="margin-left:0.75rem;">DHARMA<span>SEEKER</span></span>
+    </a>
+    <p>A digital sanctuary for the wisdom traditions of Bharat — built with reverence for the ancient and vision for the future.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Traditions</h4>
+    <ul>
+      <li><a href="#">Sanatan Dharma</a></li>
+      <li><a href="#">Buddhism</a></li>
+      <li><a href="#">Jainism</a></li>
+      <li><a href="#">Sikhism</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Explore</h4>
+    <ul>
+      <li><a href="#">Scripture Library</a></li>
+      <li><a href="#">Temple Atlas</a></li>
+      <li><a href="#">Civilizational Map</a></li>
+      <li><a href="#">Lineage Trees</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Platform</h4>
+    <ul>
+      <li><a href="#">About the Mission</a></li>
+      <li><a href="#">Contributors</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2025 DharmaSeekerx. Dedicated to Sanatana Dharma and the heritage of Bharat.</p>
+  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.1em; color:var(--gold); opacity:0.6;">सत्यमेव जयते</p>
+</div>
+
+<script>
+  // NAV SCROLL
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // QUOTES
+  let currentQuote = 0;
+  const slides = document.querySelectorAll('.quote-slide');
+  const dots = document.querySelectorAll('.q-dot');
+
+  function setQuote(n) {
+    slides[currentQuote].classList.remove('active');
+    dots[currentQuote].classList.remove('active');
+    currentQuote = n;
+    slides[currentQuote].classList.add('active');
+    dots[currentQuote].classList.add('active');
+  }
+
+  setInterval(() => {
+    setQuote((currentQuote + 1) % slides.length);
+  }, 5000);
+
+  // PARTICLES
+  const particlesEl = document.createElement('div');
+  particlesEl.className = 'particles';
+  document.getElementById('hero').appendChild(particlesEl);
+
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const x = Math.random() * 100;
+    const duration = 8 + Math.random() * 12;
+    const delay = Math.random() * 10;
+    const size = Math.random() > 0.7 ? 2 : 1;
+    p.style.cssText = `
+      left: ${x}%;
+      top: ${100 + Math.random() * 20}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-duration: ${duration}s;
+      animation-delay: -${delay}s;
+      opacity: ${0.2 + Math.random() * 0.5};
+    `;
+    p.style.animation = `particle-drift ${duration}s linear ${-delay}s infinite`;
+    particlesEl.appendChild(p);
+  }
+
+  // Add keyframe via style
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes particle-drift {
+      from { transform: translateY(0); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.3; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+</body>
+</html>

@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agnivanshi — The Fire-Born Dynasties of Hindu Civilization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+  :root {
+    --fire-core: #FFD700;
+    --fire-mid: #FF8C00;
+    --fire-deep: #CC3300;
+    --ember: #8B1A00;
+    --saffron: #FF6B35;
+    --gold-bright: #FFD700;
+    --gold-muted: #B8860B;
+    --gold-pale: #F5E6A3;
+    --ash: #1A1208;
+    --smoke: #2A1F10;
+    --coal: #0F0A04;
+    --stone: #3D2B1A;
+    --parchment: #F2E6CB;
+    --ivory: #FFF8EC;
+    --text-body: #E8D9B8;
+    --text-dim: #A89070;
+    --text-bright: #FFEEC0;
+    --glass: rgba(255,200,80,0.06);
+    --glass-border: rgba(255,200,80,0.18);
+    --glass-hover: rgba(255,200,80,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--coal);
+    color: var(--text-body);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+    opacity: 0.35;
+  }
+
+  /* ── FIRE PARTICLE BG ── */
+  .fire-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(180,40,0,0.28) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 60% at 20% 110%, rgba(120,20,0,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 110%, rgba(160,60,0,0.15) 0%, transparent 60%),
+      linear-gradient(180deg, #000000 0%, #080401 40%, #100602 100%);
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3 { font-family: 'Cinzel Decorative', serif; letter-spacing: 0.04em; }
+  h4, h5, h6 { font-family: 'Cinzel', serif; letter-spacing: 0.06em; }
+  .devanagari { font-family: 'Noto Serif Devanagari', serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(8,4,1,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold-bright);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-bright); }
+
+  /* ── MAIN WRAPPER ── */
+  main { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 80%, rgba(200,60,0,0.32) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(255,130,0,0.22) 0%, transparent 55%);
+    animation: heroGlow 6s ease-in-out infinite alternate;
+  }
+  @keyframes heroGlow {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); }
+  }
+  .hero-mandala {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Ccircle cx='400' cy='400' r='380' fill='none' stroke='%23B8860B' stroke-width='0.5' stroke-dasharray='4 8' opacity='0.15'/%3E%3Ccircle cx='400' cy='400' r='300' fill='none' stroke='%23B8860B' stroke-width='0.5' stroke-dasharray='2 6' opacity='0.12'/%3E%3Ccircle cx='400' cy='400' r='220' fill='none' stroke='%23FF8C00' stroke-width='0.5' stroke-dasharray='1 5' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 900px 900px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    animation: rotateMandala 120s linear infinite;
+  }
+  @keyframes rotateMandala { to { transform: rotate(360deg); } }
+
+  .hero-kicker {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    color: var(--saffron);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero-kicker::before, .hero-kicker::after {
+    content: '✦';
+    margin: 0 1rem;
+    color: var(--gold-muted);
+    font-size: 0.6rem;
+  }
+  .hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 35%, #FFD700 60%, #B8860B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1.0;
+    margin-bottom: 0.5rem;
+    position: relative;
+    text-shadow: none;
+    filter: drop-shadow(0 0 40px rgba(255,140,0,0.4));
+  }
+  .hero-subtitle-deva {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    color: var(--gold-pale);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.85rem, 2vw, 1.3rem);
+    color: var(--text-dim);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc {
+    max-width: 680px;
+    font-size: 1.15rem;
+    color: var(--text-body);
+    line-height: 1.9;
+    position: relative;
+  }
+  .hero-divider {
+    width: 160px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-muted), var(--fire-mid), var(--gold-muted), transparent);
+    margin: 2rem auto;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center;
+    margin-top: 3rem;
+    position: relative;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    color: var(--gold-bright);
+    display: block;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-full { max-width: 100%; padding-left: 0; padding-right: 0; }
+
+  .section-kicker {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-kicker::before {
+    content: ''; display: block;
+    width: 40px; height: 1px;
+    background: var(--saffron);
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--gold-bright);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold-muted);
+    font-size: 1.4rem;
+    letter-spacing: 1rem;
+    opacity: 0.5;
+    margin: 2rem 0;
+  }
+
+  /* ── GLASS CARD ── */
+  .card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--fire-mid), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover {
+    background: var(--glass-hover);
+    border-color: rgba(255,200,80,0.35);
+    transform: translateY(-2px);
+  }
+  .card:hover::before { opacity: 1; }
+
+  /* ── ORIGIN SECTION ── */
+  .origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .origin-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+  }
+  .origin-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(255,140,0,0.5));
+  }
+  .origin-card h3 {
+    font-size: 1.1rem;
+    color: var(--gold-bright);
+    margin-bottom: 1rem;
+    letter-spacing: 0.06em;
+  }
+  .origin-card p {
+    color: var(--text-body);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+  }
+  .tag-myth { background: rgba(180,60,0,0.3); color: #FF9966; border: 1px solid rgba(180,60,0,0.4); }
+  .tag-history { background: rgba(0,100,60,0.3); color: #66FFAA; border: 1px solid rgba(0,100,60,0.4); }
+  .tag-bardic { background: rgba(100,60,0,0.3); color: #FFCC66; border: 1px solid rgba(100,60,0,0.4); }
+  .tag-scripture { background: rgba(60,0,120,0.3); color: #CC99FF; border: 1px solid rgba(60,0,120,0.4); }
+  .tag-debate { background: rgba(0,60,120,0.3); color: #66CCFF; border: 1px solid rgba(0,60,120,0.4); }
+
+  /* ── DYNASTY GRID ── */
+  .dynasty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .dynasty-card {
+    background: linear-gradient(145deg, rgba(30,15,4,0.9), rgba(15,8,2,0.95));
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  .dynasty-card:hover { border-color: var(--gold-muted); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(200,80,0,0.2); }
+  .dynasty-header {
+    background: linear-gradient(135deg, rgba(180,60,0,0.3), rgba(100,30,0,0.2));
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .dynasty-name { font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: var(--gold-bright); }
+  .dynasty-sanskrit { font-family: 'Noto Serif Devanagari', serif; font-size: 1rem; color: var(--text-dim); }
+  .dynasty-period {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    letter-spacing: 0.15em; color: var(--saffron);
+    background: rgba(255,100,50,0.1);
+    border: 1px solid rgba(255,100,50,0.2);
+    padding: 0.2rem 0.6rem; border-radius: 2px;
+  }
+  .dynasty-body { padding: 2rem; }
+  .dynasty-body p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1rem; }
+  .dynasty-meta {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.75rem; margin-top: 1.5rem;
+  }
+  .dynasty-meta-item { }
+  .dynasty-meta-label {
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-dim); display: block; margin-bottom: 0.2rem;
+  }
+  .dynasty-meta-value { font-size: 0.9rem; color: var(--text-bright); }
+
+  .dynasty-detail {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.6s ease;
+    border-top: 0px solid var(--glass-border);
+  }
+  .dynasty-detail.open {
+    max-height: 2000px;
+    border-top: 1px solid var(--glass-border);
+  }
+  .dynasty-detail-inner { padding: 2rem; }
+  .dynasty-detail-inner h4 {
+    font-size: 0.85rem; color: var(--gold-muted);
+    margin: 1.25rem 0 0.5rem; letter-spacing: 0.1em;
+  }
+  .dynasty-detail-inner p, .dynasty-detail-inner li {
+    font-size: 0.9rem; color: var(--text-body); line-height: 1.7;
+  }
+  .dynasty-detail-inner ul { padding-left: 1.25rem; }
+  .dynasty-detail-inner li { margin-bottom: 0.4rem; }
+  .expand-btn {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--saffron); padding: 0.75rem 2rem;
+    width: 100%; text-align: center;
+    border-top: 1px solid var(--glass-border);
+    transition: background 0.3s;
+  }
+  .expand-btn:hover { background: var(--glass); }
+
+  /* ── KINGS SECTION ── */
+  .kings-timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin-top: 3rem;
+  }
+  .kings-timeline::before {
+    content: '';
+    position: absolute; left: 1rem; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--fire-mid), var(--gold-muted), var(--fire-mid), transparent);
+  }
+  .king-entry {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  .king-entry:hover { border-color: var(--gold-muted); }
+  .king-entry::before {
+    content: '◆';
+    position: absolute; left: -2.25rem;
+    top: 2rem;
+    color: var(--fire-mid);
+    font-size: 0.8rem;
+    filter: drop-shadow(0 0 6px var(--fire-mid));
+  }
+  .king-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem; color: var(--gold-bright);
+    margin-bottom: 0.25rem;
+  }
+  .king-meta {
+    display: flex; gap: 1rem; align-items: center;
+    flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .king-dynasty { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--saffron); }
+  .king-period { font-size: 0.8rem; color: var(--text-dim); }
+  .king-desc { font-size: 0.95rem; color: var(--text-body); line-height: 1.75; }
+  .king-achievements {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .achievement-pill {
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 2px;
+    color: var(--gold-pale);
+    background: rgba(180,120,0,0.1);
+  }
+
+  /* ── TEMPLES ── */
+  .temples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .temple-card {
+    background: linear-gradient(160deg, rgba(30,15,4,0.9), rgba(8,4,1,0.95));
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .temple-card:hover { border-color: var(--gold-muted); transform: translateY(-3px); }
+  .temple-icon-area {
+    height: 120px;
+    background: linear-gradient(135deg, rgba(120,40,0,0.4), rgba(60,20,0,0.6));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+    border-bottom: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+  }
+  .temple-icon-area::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent 50%, rgba(255,180,0,0.05) 100%);
+  }
+  .temple-info { padding: 1.5rem; }
+  .temple-name { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold-bright); margin-bottom: 0.5rem; }
+  .temple-location { font-size: 0.8rem; color: var(--saffron); margin-bottom: 0.75rem; font-family: 'Cinzel', serif; letter-spacing: 0.1em; }
+  .temple-desc { font-size: 0.85rem; color: var(--text-body); line-height: 1.6; }
+  .temple-patron { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.75rem; font-style: italic; }
+
+  /* ── TIMELINE ── */
+  .timeline-container {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 3rem;
+    margin-top: 3rem;
+    overflow-x: auto;
+  }
+  .timeline-bar {
+    position: relative;
+    min-width: 900px;
+    height: 80px;
+    margin: 2rem 0 4rem;
+  }
+  .timeline-axis {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+  }
+  .timeline-era {
+    position: absolute; bottom: 10px;
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.1em; color: var(--text-dim);
+    transform: translateX(-50%);
+  }
+  .timeline-entry {
+    position: absolute; bottom: 20px;
+    background: linear-gradient(135deg, var(--fire-deep), var(--ember));
+    border-radius: 3px;
+    height: 32px;
+    display: flex; align-items: center; padding: 0 0.75rem;
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.08em; color: var(--gold-pale);
+    cursor: default;
+    transition: height 0.2s, z-index 0s;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid rgba(255,140,0,0.3);
+  }
+  .timeline-entry:hover { height: 44px; z-index: 10; }
+
+  /* ── CONTRIBUTIONS TABLE ── */
+  .contrib-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  .contrib-table th {
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-bright);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    text-align: left;
+    background: rgba(180,60,0,0.1);
+  }
+  .contrib-table td {
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid rgba(255,200,80,0.06);
+    color: var(--text-body); vertical-align: top;
+  }
+  .contrib-table tr:hover td { background: var(--glass); }
+  .contrib-table td:first-child { color: var(--gold-pale); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.05em; }
+
+  /* ── FAQ ACCORDION ── */
+  .faq-list { margin-top: 2rem; }
+  .faq-item {
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 1.25rem 1.5rem;
+    background: var(--glass);
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Cinzel', serif; font-size: 0.9rem;
+    color: var(--gold-pale); letter-spacing: 0.05em;
+    transition: background 0.3s;
+    border: none; width: 100%; text-align: left;
+  }
+  .faq-q:hover { background: var(--glass-hover); }
+  .faq-icon { color: var(--saffron); font-size: 1.2rem; transition: transform 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    padding: 0 1.5rem;
+  }
+  .faq-item.open .faq-a {
+    max-height: 600px;
+    padding: 1.25rem 1.5rem;
+  }
+  .faq-a p { font-size: 0.9rem; color: var(--text-body); line-height: 1.75; }
+
+  /* ── RARE FACTS ── */
+  .rare-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .rare-fact {
+    background: linear-gradient(145deg, rgba(20,10,2,0.95), rgba(15,8,1,0.98));
+    border: 1px solid rgba(255,200,80,0.12);
+    border-left: 3px solid var(--fire-mid);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .rare-fact:hover { border-left-color: var(--gold-bright); }
+  .rare-fact-num {
+    font-family: 'Cinzel Decorative', serif; font-size: 2rem;
+    color: rgba(255,140,0,0.2); line-height: 1; margin-bottom: 0.75rem;
+  }
+  .rare-fact-title { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold-pale); margin-bottom: 0.5rem; letter-spacing: 0.08em; }
+  .rare-fact-text { font-size: 0.85rem; color: var(--text-body); line-height: 1.65; }
+
+  /* ── LINEAGE TREE ── */
+  .lineage-tree {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 2rem;
+    overflow-x: auto;
+    margin-top: 2rem;
+  }
+  .tree-pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--gold-pale);
+    line-height: 1.6;
+    white-space: pre;
+  }
+  .tree-highlight { color: var(--saffron); }
+  .tree-dim { color: var(--text-dim); }
+
+  /* ── ARCHITECTURE SECTION ── */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .arch-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .arch-card:hover { border-color: var(--gold-muted); }
+  .arch-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+  .arch-title { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold-bright); margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+  .arch-text { font-size: 0.82rem; color: var(--text-body); line-height: 1.6; }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    border-left: 3px solid var(--fire-mid);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    background: rgba(180,60,0,0.06);
+    border-radius: 0 4px 4px 0;
+  }
+  .quote-block p { font-size: 1.05rem; color: var(--text-bright); font-style: italic; line-height: 1.8; }
+  .quote-source { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.75rem; }
+
+  /* ── FINAL SUMMARY ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .summary-card {
+    background: linear-gradient(145deg, rgba(30,15,0,0.9), rgba(15,8,0,0.95));
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .summary-card .num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem; color: var(--gold-bright);
+    display: block; line-height: 1;
+    filter: drop-shadow(0 0 12px rgba(255,200,0,0.4));
+  }
+  .summary-card .label {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-dim); margin-top: 0.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  .footer-om {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 3rem;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    display: block; margin-bottom: 1rem;
+  }
+  footer p { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--text-dim); }
+
+  /* ── SCROLL FADE-IN ── */
+  .fade-in {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .origin-grid, .arch-grid { grid-template-columns: 1fr; }
+    .dynasty-meta { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    .hero-stat-num { font-size: 1.8rem; }
+    .kings-timeline { padding-left: 2rem; }
+    .timeline-bar { min-width: 700px; }
+  }
+
+  /* ── SECTION SEPARATOR ── */
+  .sep {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── HIGHLIGHT TEXT ── */
+  .hl { color: var(--gold-bright); }
+  .hl-fire { color: var(--saffron); }
+  strong { color: var(--text-bright); }
+
+  /* ── SOURCES BADGE ── */
+  .sources-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .source-badge {
+    font-family: 'Cinzel', serif; font-size: 0.55rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(255,200,80,0.15);
+    border-radius: 2px; color: var(--text-dim);
+  }
+</style>
+</head>
+<body>
+<div class="fire-bg"></div>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav>
+  <a href="#hero" class="nav-logo">अग्निवंश</a>
+  <ul class="nav-links">
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#dynasties">Dynasties</a></li>
+    <li><a href="#kings">Kings</a></li>
+    <li><a href="#temples">Temples</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#rare">Rare Facts</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div id="hero" class="hero">
+  <div class="hero-mandala"></div>
+  <span class="hero-kicker">The Sacred Fire-Born Lineage</span>
+  <h1 class="hero-title">Agnivanshi</h1>
+  <p class="hero-subtitle-deva devanagari">अग्निकुल — अग्निवंश</p>
+  <p class="hero-subtitle">Dynasties of Sacred Fire · Guardians of Dharma</p>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">
+    Born from the sacred flame of Mount Abu's <em>Agnikunda</em>, the Agnivanshi clans shaped the destiny of the Indian subcontinent for over a millennium. Warriors, builders, patrons of art and learning — their legacy is inscribed in stone, copper-plate, and living tradition.
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">4</span>
+      <span class="hero-stat-label">Primary Clans</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">800+</span>
+      <span class="hero-stat-label">Years of Rule</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">300+</span>
+      <span class="hero-stat-label">Temples Built</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">12+</span>
+      <span class="hero-stat-label">Major Kingdoms</span>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ INTRODUCTION ══════════════════ -->
+<section id="intro" class="fade-in">
+  <span class="section-kicker">Foundations of Knowledge</span>
+  <h2 class="section-title">What is the Agnivanshi Lineage?</h2>
+  <p class="section-intro">The Agnivansha (अग्निवंश, "Fire Lineage") is one of the three principal divisions of the Kshatriya varna in Hindu tradition, the others being the Suryavansha (Solar Line) and Chandravansha (Lunar Line).</p>
+
+  <div class="quote-block">
+    <p>"Agni-kula, the clan of fire — born from the sacred homa pit at Arbuda (Mount Abu), consecrated to defend Dharma when the ancient Kshatriya bloodlines had been extirpated."</p>
+    <div class="quote-source">— Chand Bardai, Prithviraj Raso (12th–13th century CE)</div>
+  </div>
+
+  <p>The word <strong>Agnivansha</strong> combines <span class="hl">Agni</span> (अग्नि, "fire") and <span class="hl">Vansha</span> (वंश, "lineage" or "dynasty"). The term <strong>Agnikula</strong> (अग्निकुल) similarly means "fire family" or "fire clan." In Hindu cosmology, Agni is not merely a physical element but the divine mediator between humanity and the gods — the sacred witness of oaths, the purifier, and the carrier of sacrificial offerings to the heavens. To be born of Agni was to carry a divine mandate of warrior-priesthood.</p>
+
+  <p style="margin-top:1.5rem">The four principal Agnivanshi clans recognized in medieval bardic and literary tradition are:</p>
+  <div class="sources-row" style="margin-top:1rem">
+    <span class="achievement-pill">Parmar (Paramara)</span>
+    <span class="achievement-pill">Chauhan (Chahamana)</span>
+    <span class="achievement-pill">Solanki (Chaulukya of Gujarat)</span>
+    <span class="achievement-pill">Pratihara (Gurjara-Pratihara)</span>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ ORIGIN SECTION ══════════════════ -->
+<section id="origin" class="fade-in">
+  <span class="section-kicker">Genesis Narratives</span>
+  <h2 class="section-title">The Agnikunda Origin Story</h2>
+  <p class="section-intro">The origin of the Agnivanshi clans weaves together mythological narrative, bardic composition, theological symbolism, and genuine historiographical questions. Understanding all layers simultaneously is essential to scholarly engagement.</p>
+
+  <div class="origin-grid">
+    <div class="origin-card">
+      <span class="tag tag-myth">Mythology</span>
+      <span class="origin-icon">🔥</span>
+      <h3>The Mount Abu Fire Sacrifice</h3>
+      <p>The foundational myth, preserved in the <em>Prithviraj Raso</em> of Chand Bardai and the <em>Muhnot Nainsi ri Khyat</em>, narrates that the sage Vasishtha performed a great <strong>homa</strong> (fire sacrifice) on the summit of Mount Abu (ancient <em>Arbuda Parvata</em>) in present-day Rajasthan. The Earth was left without true Kshatriyas — the warrior class had been annihilated or degraded. Vasishtha beseeched the gods to send forth new champions of Dharma.</p>
+      <p style="margin-top:0.75rem">From the blazing <em>agnikunda</em> (fire pit) arose four warrior-heroes — the founders of the Parmar, Chauhan, Solanki, and Pratihara clans — fully armed and consecrated to defend Dharma. Brahma himself descended to witness their birth. The name "Agnikula" memorialized this miraculous genesis.</p>
+    </div>
+
+    <div class="origin-card">
+      <span class="tag tag-history">Historical Analysis</span>
+      <span class="origin-icon">📜</span>
+      <h3>The Historian's Interpretation</h3>
+      <p>Modern scholarship, building on the work of historians like V. A. Smith, D. R. Bhandarkar, and later C. V. Vaidya, has proposed several explanations for the Agnikula myth:</p>
+      <ul style="padding-left:1.2rem; margin-top:0.75rem; color: var(--text-body); font-size:0.9rem; line-height:1.8;">
+        <li><strong>Purification ritual theory:</strong> These clans may have been of non-Kshatriya or mixed origin (possibly including Central Asian, Gujjar, or indigenous tribal lineages) who were ritually "purified" through fire ceremonies and elevated into Kshatriya status — a practice with Puranic precedent called <em>vratyastoma</em>.</li>
+        <li><strong>Brahmanical legitimization:</strong> The fire myth provided sacred sanction from Vasishtha and Brahma, the supreme brahminical authorities, lending religious authority to newly emerging polities.</li>
+        <li><strong>Symbolic function:</strong> Fire as the origin of Kshatriyas symbolized their role as the burning, purifying force against adharma — epistemically independent of questions of literal historicity.</li>
+      </ul>
+    </div>
+
+    <div class="origin-card">
+      <span class="tag tag-bardic">Bardic Tradition</span>
+      <span class="origin-icon">🪗</span>
+      <h3>The Charan & Bard Tradition</h3>
+      <p>The <em>Charans</em> and <em>Bhats</em> — hereditary court poets and genealogists — maintained oral and written records of Rajput lineages across centuries. Their works (<em>khyats</em>, <em>vamsavalis</em>, <em>rasos</em>) constitute the primary literary evidence for Agnivanshi identity.</p>
+      <p style="margin-top:0.75rem">Key bardic sources include: <strong>Prithviraj Raso</strong> (Chand Bardai, 12th–13th c.), <strong>Hammira Mahakavya</strong> (Nayachandra Suri, 14th c.), <strong>Muhnot Nainsi ri Khyat</strong> (17th c.), <strong>Surjana Charita</strong>, and numerous <em>vansha vriksha</em> (lineage tree) manuscripts preserved in Rajasthan's archives.</p>
+      <div class="sources-row">
+        <span class="source-badge">Prithviraj Raso</span>
+        <span class="source-badge">Muhnot Nainsi</span>
+        <span class="source-badge">Hammira Mahakavya</span>
+      </div>
+    </div>
+
+    <div class="origin-card">
+      <span class="tag tag-scripture">Scriptural References</span>
+      <span class="origin-icon">🕉️</span>
+      <h3>Puranic & Epigraphic Evidence</h3>
+      <p>While the Agnikula myth itself does not appear in the classical Sanskrit <em>Puranas</em>, various dynasties left inscription evidence claiming Agnivanshi identity:</p>
+      <ul style="padding-left:1.2rem; margin-top:0.75rem; color: var(--text-body); font-size:0.9rem; line-height:1.8;">
+        <li>The <strong>Rajputana Inscriptions</strong> (edited by D.R. Bhandarkar) contain multiple Parmar and Solanki copper-plate records.</li>
+        <li><strong>Chahamana (Chauhan) inscriptions</strong> at Ajmer, Nadol, and Ranastambha record genealogies tracing to the fire-born hero Chahamana.</li>
+        <li>The <strong>Kannauj Plates</strong> and <strong>Gwalior Inscription</strong> reference Gurjara-Pratihara ancestry.</li>
+        <li>The <strong>Udaipur Prashasti</strong> (972 CE) describes Parmar genealogy in Sanskrit verses.</li>
+      </ul>
+      <div class="sources-row">
+        <span class="source-badge">Copper Plate Inscriptions</span>
+        <span class="source-badge">Udaipur Prashasti</span>
+        <span class="source-badge">Gwalior Inscription</span>
+      </div>
+    </div>
+
+    <div class="origin-card" style="grid-column: span 2;">
+      <span class="tag tag-debate">Scholarly Debate</span>
+      <span class="origin-icon">⚖️</span>
+      <h3>Separating Layers of Evidence: What We Know vs. What We Infer</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:1rem;">
+        <div>
+          <h4 style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold-muted); margin-bottom:0.5rem;">✓ Historically Verified</h4>
+          <ul style="padding-left:1rem; font-size:0.85rem; color:var(--text-body); line-height:1.7;">
+            <li>Parmar, Chauhan, Solanki, and Pratihara were real, powerful dynasties with inscriptional evidence from 7th–13th centuries CE</li>
+            <li>They identified themselves as Kshatriyas in their records</li>
+            <li>Gurjara-Pratihara origin from the Gurjara tribal confederation is well-documented</li>
+            <li>The Solanki/Chaulukya claim overlaps with the Deccan Chalukya lineage, suggesting complex ancestry</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold-muted); margin-bottom:0.5rem;">~ Inferred / Plausible</h4>
+          <ul style="padding-left:1rem; font-size:0.85rem; color:var(--text-body); line-height:1.7;">
+            <li>The fire-origin myth as a collective construction legitimizing newly ascending powers (~8th–10th c.)</li>
+            <li>Vasishtha's role as a brahmanical authority endorsing these clans as Kshatriyas</li>
+            <li>Mount Abu as a sacred site where brahmanical legitimization ceremonies were actually performed</li>
+            <li>Possible Central Asian (Huna/Gurjara) ethnographic substratum later absorbed into Rajput identity</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold-muted); margin-bottom:0.5rem;">✗ Disputed / Uncertain</h4>
+          <ul style="padding-left:1rem; font-size:0.85rem; color:var(--text-body); line-height:1.7;">
+            <li>Literal biological descent from Vedic Kshatriya lineages — no genetic or continuous documentary evidence</li>
+            <li>The precise dating of the Agnikunda ceremony, if historical</li>
+            <li>Whether all four clans arose simultaneously or if the four-clan framework was retrospectively systematized</li>
+            <li>Colonial-era theories positing entirely foreign (Scythian/Kushana) origins — now largely rejected by mainstream scholarship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ DYNASTIES ══════════════════ -->
+<section id="dynasties" class="fade-in">
+  <span class="section-kicker">The Four Sacred Clans</span>
+  <h2 class="section-title">Major Agnivanshi Dynasties</h2>
+  <p class="section-intro">Each of the four primary Agnivanshi clans built distinct kingdoms, cultivated unique cultural identities, and left enduring architectural and literary legacies. Click any card to expand detailed history.</p>
+
+  <div class="dynasty-grid">
+
+    <!-- PARMAR -->
+    <div class="dynasty-card" onclick="toggleDynasty(this)">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Parmar Dynasty</div>
+          <div class="dynasty-sanskrit devanagari">परमार — पँवार</div>
+        </div>
+        <span class="dynasty-period">c. 800 – 1305 CE</span>
+      </div>
+      <div class="dynasty-body">
+        <p>The <strong>Paramara</strong> (also spelled Parmar) dynasty ruled the Malwa plateau from their magnificent capital <strong>Dhara (Dhar)</strong>, and are best remembered for the polymath king <em>Raja Bhoja</em>, one of the greatest patron-scholars in Indian history.</p>
+        <div class="dynasty-meta">
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Capital</span>
+            <span class="dynasty-meta-value">Dhara (Dhar), Ujjain</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Region</span>
+            <span class="dynasty-meta-value">Malwa, MP, parts of Gujarat & Rajasthan</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Founder</span>
+            <span class="dynasty-meta-value">Krishnaraja (Upendra)</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Peak King</span>
+            <span class="dynasty-meta-value">Raja Bhoja (r. 1010–1055 CE)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dynasty-detail">
+        <div class="dynasty-detail-inner">
+          <h4>🏰 Founding & Early History</h4>
+          <p>The Paramara dynasty emerged in the 9th century CE as feudatories (<em>samantas</em>) of the <strong>Rashtrakuta</strong> empire of the Deccan, ruling Malwa. The early king <strong>Siyaka II</strong> (c. 948–972 CE) decisively broke Rashtrakuta suzerainty, sacked their capital Manyakheta in 972 CE, and established full independence. This coup elevated Paramara to a first-rank power of medieval India.</p>
+          
+          <h4>👑 Major Kings</h4>
+          <ul>
+            <li><strong>Siyaka II (Harsha)</strong> — Defeated Rashtrakutas; the Udaipur Prashasti describes him as "lord of lords"</li>
+            <li><strong>Vakpati Munja</strong> (c. 974–995 CE) — Brilliant military commander who fought 8 campaigns against the Chalukyas of Kalyani; a great Sanskrit poet; ultimately captured and executed by Tailapa II of the Chalukyas</li>
+            <li><strong>Sindhuraja</strong> (c. 995–1010 CE) — Consolidated the kingdom; author of the Sanskrit literary work <em>Navahasanka Charita</em></li>
+            <li><strong>Raja Bhoja</strong> (c. 1010–1055 CE) — The greatest Paramara ruler and one of the most celebrated scholar-kings in all of Indian history (see detailed profile below)</li>
+            <li><strong>Udayaditya</strong> (c. 1059–1087 CE) — Builder of the magnificent Udayeshvara temple at Udayapur (Vidisha district)</li>
+            <li><strong>Arjunavarman</strong> (13th c.) — Last significant ruler; composed the <em>Amarusataka</em> commentary</li>
+          </ul>
+
+          <h4>📜 Cultural Contributions</h4>
+          <ul>
+            <li>Dhara became one of the great centers of Sanskrit learning in medieval India — a "university town" of its era</li>
+            <li>Raja Bhoja's library and the <em>Bhoja Shala</em> (today a contested mosque-temple site) was a hub of polymath scholarship</li>
+            <li>Parmar patronage drove the Pratīhāra-Paramara school of temple sculpture</li>
+            <li>King Bhoja himself authored 84 works spanning grammar, architecture (<em>Samarāṅgaṇasūtradhāra</em>), yoga, poetics, medicine, and astronomy</li>
+          </ul>
+
+          <h4>⚔️ Military History</h4>
+          <ul>
+            <li>Constant warfare with Chalukyas of Kalyani in the south and Chandelas in the east</li>
+            <li>Munja fought 8 campaigns against Chalukyas — remarkable military persistence</li>
+            <li>Raja Bhoja temporarily conquered significant portions of Gujarat, Rajasthan, and the Konkan</li>
+            <li>Eventually overwhelmed by the combined alliance of Chalukyas of Gujarat (Chaulukya) and the Kalacuri dynasty (~1055 CE)</li>
+          </ul>
+
+          <h4>🏛️ Architecture</h4>
+          <ul>
+            <li><strong>Bhojeshwara Temple</strong>, Bhojpur (near Bhopal) — Massive unfinished Shiva temple with a 7.5-ft Shivalinga, a marvel of structural ambition</li>
+            <li><strong>Bhoja Shala</strong>, Dhar — Originally a Sanskrit learning institution with a Saraswati shrine</li>
+            <li><strong>Udayeshvara Temple</strong>, Udayapur — Built by Udayaditya, considered one of the finest examples of late Paramara architecture</li>
+            <li><strong>Bhopal Lake (Bada Talab)</strong> — Commissioned by Raja Bhoja; at its creation reportedly the largest artificial lake in the world</li>
+          </ul>
+
+          <h4>📉 Decline</h4>
+          <p>The Paramara dynasty progressively weakened under pressure from the Chalukyas of Gujarat (Solanki), the Chandellas, and internal succession disputes. The final blow came with the Khalji invasions of 1305 CE under Alauddin Khalji's general Ain-ul-Mulk Multani, who sacked Dhar and ended Paramara political power permanently.</p>
+        </div>
+      </div>
+      <button class="expand-btn">Expand Full History ▾</button>
+    </div>
+
+    <!-- CHAUHAN -->
+    <div class="dynasty-card" onclick="toggleDynasty(this)">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Chauhan Dynasty</div>
+          <div class="dynasty-sanskrit devanagari">चाहमान — चौहान</div>
+        </div>
+        <span class="dynasty-period">c. 7th – 1192 CE</span>
+      </div>
+      <div class="dynasty-body">
+        <p>The <strong>Chahamana</strong> (Chauhan) dynasty of Shakambhari (Sambhar) and later <strong>Ajmer</strong> became the paramount Rajput power of northern India, culminating in the legendary reign of <em>Prithviraj Chauhan III</em>, whose story defined Rajput chivalry for centuries.</p>
+        <div class="dynasty-meta">
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Capital</span>
+            <span class="dynasty-meta-value">Shakambhari, Ajmer, Delhi</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Region</span>
+            <span class="dynasty-meta-value">Rajasthan, Haryana, Punjab, Delhi</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Founder</span>
+            <span class="dynasty-meta-value">Vasudeva (c. 7th c. CE)</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Peak King</span>
+            <span class="dynasty-meta-value">Prithviraj III (r. 1178–1192)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dynasty-detail">
+        <div class="dynasty-detail-inner">
+          <h4>🏰 Founding & Rise</h4>
+          <p>The Chahamana dynasty began as local chiefs around <strong>Shakambhari</strong> (Sambhar Lake region in Rajasthan), which was famous for its salt production — an enormously valuable economic resource. Early Chauhan kings gradually expanded their territory by breaking free of Gurjara-Pratihara suzerainty in the 10th century, and under <strong>Vigraharaja II</strong> defeated the Paramaras, beginning their rise to regional supremacy.</p>
+
+          <h4>👑 Major Kings</h4>
+          <ul>
+            <li><strong>Ajayaraja II</strong> (c. 1110–1135 CE) — Founded Ajayameru (Ajmer) as the new capital; a major administrative achievement</li>
+            <li><strong>Vigraharaja IV (Visaladeva)</strong> (c. 1150–1163 CE) — One of the greatest Chauhan kings; defeated the Tomaras, Paramaras, and repulsed a Ghaznavid attack; composed the Sanskrit play <em>Harikeli-Nataka</em>; his inscriptions were later built into Ajmer's Adhai Din Ka Jhonpra mosque</li>
+            <li><strong>Prithviraj Chauhan III</strong> (r. 1178–1192 CE) — The last great Chauhan emperor; see detailed profile below</li>
+          </ul>
+
+          <h4>⚔️ Military History & Battles</h4>
+          <ul>
+            <li><strong>Battle of Kasahrada</strong> (1178) — Prithviraj defeated Muhammad of Ghor's first invasion attempt</li>
+            <li><strong>First Battle of Tarain</strong> (1191) — Prithviraj decisively defeated Muhammad of Ghor; Muhammad fled wounded</li>
+            <li><strong>Second Battle of Tarain</strong> (1192) — Muhammad returned with a larger cavalry force; Prithviraj was captured and killed; this battle marks the end of the Chauhan dynasty and the beginning of the Delhi Sultanate</li>
+            <li>Prithviraj's campaign against Chandella ruler Paramardideva (c. 1183) and conquest of Mahoba</li>
+          </ul>
+
+          <h4>📜 Literary & Cultural Contributions</h4>
+          <ul>
+            <li>Vigraharaja IV patronized Sanskrit literature and personally composed works</li>
+            <li><em>Prithviraj Raso</em> by Chand Bardai — one of the earliest known works in Old Hindi/Rajasthani, eulogizing the Chauhan dynasty</li>
+            <li>Ajmer under Chauhan rule became a commercial and cultural crossroads</li>
+            <li>Patronage of Shaiva and Vaishnava temples throughout Rajasthan and Delhi</li>
+          </ul>
+
+          <h4>🏛️ Architecture</h4>
+          <ul>
+            <li><strong>Adhai Din Ka Jhonpra</strong> (originally a Sanskrit college/temple complex, converted to mosque after 1192)</li>
+            <li>Ajmer fort complex and Taragarh Fort</li>
+            <li>Prithviraj commissioned numerous temples across his domains</li>
+            <li>Qutub Minar complex stands on sites of Chauhan-era temples</li>
+          </ul>
+
+          <h4>📉 Fall & Legacy</h4>
+          <p>The defeat at Tarain in 1192 was arguably the most consequential battle in medieval Indian history. Though many Chauhan sub-branches survived as local rulers in Rajasthan (Ranthambore, Nadol, Jalor), the main dynasty was extinguished. Culturally, Prithviraj Chauhan became India's greatest romantic-warrior hero, immortalized in bardic tradition, folk memory, and later Bollywood cinema.</p>
+        </div>
+      </div>
+      <button class="expand-btn">Expand Full History ▾</button>
+    </div>
+
+    <!-- SOLANKI -->
+    <div class="dynasty-card" onclick="toggleDynasty(this)">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Solanki (Chaulukya)</div>
+          <div class="dynasty-sanskrit devanagari">चौलुक्य — सोलंकी</div>
+        </div>
+        <span class="dynasty-period">c. 942 – 1244 CE</span>
+      </div>
+      <div class="dynasty-body">
+        <p>The <strong>Chaulukya dynasty of Gujarat</strong> (distinct from the Deccan Chalukyas) made Gujarat's <strong>Patan (Anahilapataka)</strong> a glittering cosmopolitan city and produced the greatest Indo-Nagara temple complexes in history, including Modhera Sun Temple and the Somnath reconstructions.</p>
+        <div class="dynasty-meta">
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Capital</span>
+            <span class="dynasty-meta-value">Anahilapataka (Patan, Gujarat)</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Region</span>
+            <span class="dynasty-meta-value">Gujarat, Kathiawar, Sindh, parts of Rajasthan</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Founder</span>
+            <span class="dynasty-meta-value">Mularaja I (c. 942 CE)</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Peak Kings</span>
+            <span class="dynasty-meta-value">Jayasimha Siddharaja, Kumarapala</span>
+          </div>
+        </div>
+      </div>
+      <div class="dynasty-detail">
+        <div class="dynasty-detail-inner">
+          <h4>🏰 Rise to Power</h4>
+          <p><strong>Mularaja I</strong> founded the Solanki dynasty around 942 CE, establishing his capital at Anahilapataka (modern Patan). He defeated the Chavda ruler Samantasimha to seize power. The Solankis transformed Gujarat into a prosperous maritime trading hub, leveraging the region's ports for commerce with Arabia, East Africa, and Southeast Asia.</p>
+
+          <h4>👑 Major Kings</h4>
+          <ul>
+            <li><strong>Mularaja I</strong> (942–995 CE) — Founder; commissioned Mulavasatika (Jain shrine); built Rudramahalaya temple at Siddhapur</li>
+            <li><strong>Bhimadeva I</strong> (1022–1064 CE) — Repelled Mahmud of Ghazni's famous raid on Gujarat (1025); later defeated; commissioned Modhera Sun Temple (c. 1026–27 CE)</li>
+            <li><strong>Karna</strong> (1064–1094 CE) — Expanded southern territory; built Karnavati (forerunner of Ahmedabad)</li>
+            <li><strong>Jayasimha Siddharaja</strong> (1094–1143 CE) — Greatest Solanki king; see detailed profile</li>
+            <li><strong>Kumarapala</strong> (1143–1172 CE) — Became a devout Jain under influence of Hemachandra; banned animal slaughter; prolific temple builder</li>
+            <li><strong>Bhimadeva II (Bhola Bhima)</strong> (1178–1241 CE) — Repulsed Muhammad of Ghor in 1178 at the Battle of Kasahrada; later weakened by internal conflict</li>
+          </ul>
+
+          <h4>🏛️ Architecture — The Golden Age</h4>
+          <ul>
+            <li><strong>Modhera Sun Temple</strong> (c. 1026 CE) — Commissioned by Bhimadeva I; a masterpiece of Solanki (Maru-Gurjara) architecture with its 52-step stepped tank (<em>Surya Kund</em>), assembly hall (<em>Sabha Mandapa</em>), and sanctum; the sun's rays illuminate the idol perfectly at dawn on equinoxes</li>
+            <li><strong>Rani ki Vav</strong> (Queen's Stepwell, Patan, 11th c.) — Built by Queen Udayamati in memory of Bhimadeva I; a UNESCO World Heritage Site with over 500 principal sculptures across 7 levels; considered the finest stepwell ever constructed</li>
+            <li><strong>Sahastralinga Talav</strong> (Patan) — Massive stepped reservoir with 1000 Shivalinga shrines along its banks, commissioned by Jayasimha Siddharaja</li>
+            <li><strong>Somnath Temple reconstruction</strong> — Multiple Solanki kings contributed to rebuilding Somnath after Ghaznavid raids</li>
+            <li><strong>Rudra Mahalaya</strong>, Siddhapur — Begun by Mularaja I, completed by Jayasimha Siddharaja; a 11-shrine complex, partially destroyed by Alauddin Khalji</li>
+          </ul>
+
+          <h4>📜 Literature & Learning</h4>
+          <ul>
+            <li>Jayasimha Siddharaja patronized the great Jain polymath <strong>Hemachandra</strong>, who composed the <em>Yoga Shastra</em>, <em>Desinamamala</em>, and the monumental <em>Trishashti-shalaka-purusha-charita</em></li>
+            <li>Solanki Gujarat became a cosmopolitan center of Sanskrit, Apabhramsha, and Jain Prakrit literature</li>
+            <li>Major advances in Jain manuscript tradition under Kumarapala's patronage</li>
+          </ul>
+        </div>
+      </div>
+      <button class="expand-btn">Expand Full History ▾</button>
+    </div>
+
+    <!-- PRATIHARA -->
+    <div class="dynasty-card" onclick="toggleDynasty(this)">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Gurjara-Pratihara</div>
+          <div class="dynasty-sanskrit devanagari">गुर्जर-प्रतिहार</div>
+        </div>
+        <span class="dynasty-period">c. 6th – 1036 CE</span>
+      </div>
+      <div class="dynasty-body">
+        <p>The <strong>Gurjara-Pratihara</strong> empire was the mightiest Indian empire of the 9th century, ruling from <strong>Kannauj</strong> over northern India and serving as the critical bulwark against Arab expansion from Sindh into the Gangetic heartland.</p>
+        <div class="dynasty-meta">
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Capital</span>
+            <span class="dynasty-meta-value">Ujjain, then Kannauj</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Region</span>
+            <span class="dynasty-meta-value">North India (Rajputana to Bengal border)</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Founder</span>
+            <span class="dynasty-meta-value">Harichandra / Nagabhata I</span>
+          </div>
+          <div class="dynasty-meta-item">
+            <span class="dynasty-meta-label">Peak King</span>
+            <span class="dynasty-meta-value">Mihira Bhoja I (r. 836–885 CE)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dynasty-detail">
+        <div class="dynasty-detail-inner">
+          <h4>🛡️ The Shield of India — Stopping Arab Expansion</h4>
+          <p>The single most historically significant contribution of the Gurjara-Pratiharas was military: they decisively checked the Arab expansion from Sindh (conquered 712 CE by Muhammad bin Qasim) for over 300 years. Arab chroniclers of the 9th century, including <strong>Sulaiman al-Tajir</strong> and <strong>Abu Zaid al-Sirafi</strong>, wrote with awe about the Pratihara empire's military power and the vast armies of their kings.</p>
+          <p style="margin-top:0.5rem">Arab geographer Al-Masudi (c. 944 CE) wrote that the Pratihara king maintained an army of several hundred thousand cavalry — almost certainly an exaggeration, but reflecting genuine terror of Pratihara military power.</p>
+
+          <h4>👑 Major Kings</h4>
+          <ul>
+            <li><strong>Nagabhata I</strong> (c. 730–760 CE) — First major Pratihara king; defeated the Arab forces at Jalore (c. 738 CE), one of the most decisive but underappreciated battles in Indian history</li>
+            <li><strong>Vatsaraja</strong> (c. 775–800 CE) — Expanded the empire dramatically; defeated the Palas and Rashtrakutas temporarily</li>
+            <li><strong>Nagabhata II</strong> (c. 805–833 CE) — Captured Kannauj from the Palas and made it the imperial capital; commissioned major temples at Somnath and other sacred sites</li>
+            <li><strong>Mihira Bhoja I (Bhoja I)</strong> (c. 836–885 CE) — Greatest Pratihara king; see detailed profile below; empire reached its maximum extent</li>
+            <li><strong>Mahendrapala I</strong> (c. 885–908 CE) — Son of Mihira Bhoja; maintained the empire; patronized the great Sanskrit grammarian-poet <strong>Rajashekhara</strong></li>
+            <li><strong>Mahipala I</strong> (c. 912–943 CE) — Last major Pratihara king to hold all territories; began the decline after Rashtrakuta king Indra III sacked Kannauj (916 CE)</li>
+          </ul>
+
+          <h4>🏛️ Temple Architecture</h4>
+          <ul>
+            <li>Pratihara kings were devoted Vaishnava Hindus; Mihira Bhoja carried the epithet <em>Adivaraha</em> (Primordial Boar — an avatar of Vishnu)</li>
+            <li>The Pratihara Nagara temple style influenced the development of architecture throughout Rajasthan and Madhya Pradesh</li>
+            <li>Temples at <strong>Osian</strong> (Rajasthan) — among the finest Pratihara-era temples extant</li>
+            <li><strong>Ghateshvara Temple</strong> at Baroli, Rajasthan (c. 10th century) — superb Pratihara-influenced Shaiva complex</li>
+            <li>Major patronage of the <strong>Somnath</strong> and <strong>Dwaraka</strong> temple complexes</li>
+          </ul>
+
+          <h4>📉 Fall</h4>
+          <p>A combination of factors ended Pratihara supremacy: Rashtrakuta king Indra III's devastating sack of Kannauj (916 CE), the rising power of the Chandella and Paramara feudatories, and ultimately fragmentation into regional principalities. The last Pratihara king Yasapala surrendered to Mahmud of Ghazni in 1036 CE.</p>
+        </div>
+      </div>
+      <button class="expand-btn">Expand Full History ▾</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ KINGS ══════════════════ -->
+<section id="kings" class="fade-in">
+  <span class="section-kicker">The Luminaries</span>
+  <h2 class="section-title">Prominent Agnivanshi Rulers</h2>
+  <p class="section-intro">These rulers defined not just the political map of medieval India, but its cultural, intellectual, and spiritual landscape. Their reigns shaped temples, texts, and traditions that endure to this day.</p>
+
+  <div class="kings-timeline">
+
+    <div class="king-entry">
+      <div class="king-name">Raja Bhoja</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Paramara</span>
+        <span class="king-period">r. c. 1010 – 1055 CE | Reign: ~45 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Raja Bhoja of Dhara</strong> stands as one of the most extraordinary figures in all of Indian history — simultaneously a conquering king, a philosopher, an architect, a Sanskrit grammarian, an astronomer, a yogi, and a poet. He is credited with authoring or supervising <strong>84 works</strong> across at least 20 fields of knowledge. His court at Dhara was described by contemporaries as a second Ujjain — the city of Vikramaditya.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        His most celebrated text, <strong><em>Samarāṅgaṇasūtradhāra</em></strong> (68 chapters), is the most comprehensive surviving Sanskrit treatise on architecture, town planning, and mechanical arts (<em>yantradhyaya</em>). He also wrote <em>Rajamartanda</em> (a yoga commentary), <em>Sringaraprakasha</em> (the largest work on poetics in Sanskrit), <em>Shiva Prakasha</em>, <em>Tattva Prakasha</em> (Shaiva philosophy), <em>Kurma Shataka</em>, and works on medicine, lexicography, and elephant science. He established the legendary <strong>Bhoja Shala</strong> academy and the <strong>Saraswati Sadan</strong> — libraries and institutions of higher learning.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        Militarily, he expanded the Paramara empire to its greatest extent, temporarily controlling parts of Gujarat, Rajputana, Konkan, and Vidarbha. He built the <strong>Bhojeshwara Shiva temple</strong> at Bhojpur — whose 7.5-foot Shivalinga remains the largest in situ-carved monolithic Shivalinga in the world — and the <strong>Bhopal lake (Bada Talab)</strong>, reportedly the world's largest man-made lake at its creation.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">84 Sanskrit Works</span>
+        <span class="achievement-pill">Samarāṅgaṇasūtradhāra</span>
+        <span class="achievement-pill">Bhojeshwara Temple</span>
+        <span class="achievement-pill">Bhopal Lake</span>
+        <span class="achievement-pill">Bhoja Shala Academy</span>
+        <span class="achievement-pill">Poet-King</span>
+      </div>
+    </div>
+
+    <div class="king-entry">
+      <div class="king-name">Mihira Bhoja I (Bhoja I)</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Gurjara-Pratihara</span>
+        <span class="king-period">r. c. 836 – 885 CE | Reign: ~49 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Mihira Bhoja</strong> was the greatest emperor of the Gurjara-Pratihara dynasty and the paramount sovereign of northern India in the 9th century. He bore the religious epithet <em>Ādivarāha</em> (the Primordial Boar, an avatar of Vishnu), symbolizing his role as the divine protector of Dharma. Arab geographer <strong>Sulaiman al-Tajir</strong>, writing around 851 CE, described the Pratihara king as the greatest enemy of Islam and praised his military organization.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        At its peak under Bhoja, the Pratihara empire stretched from the Sutlej river in the northwest to Bihar in the east, and from the Himalayas to the Narmada. He fought major campaigns against the Palas of Bengal, the Rashtrakutas of the Deccan, and maintained a continuous military presence on the Arab frontier. His famous <strong>Gwalior inscription</strong> from the 9th century records his genealogy and conquests in classical Sanskrit verses.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">Bulwark Against Arab Expansion</span>
+        <span class="achievement-pill">Adivaraha Devotee</span>
+        <span class="achievement-pill">Empire: Sutlej to Bihar</span>
+        <span class="achievement-pill">Gwalior Inscription</span>
+      </div>
+    </div>
+
+    <div class="king-entry">
+      <div class="king-name">Prithviraj Chauhan III</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Chahamana</span>
+        <span class="king-period">r. c. 1178 – 1192 CE | Reign: ~14 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Prithviraj III</strong>, known in bardic tradition as <em>Rai Pithora</em>, was the last Hindu emperor to rule Delhi and the most celebrated Rajput warrior-king. He ascended the throne as a child and soon showed extraordinary martial prowess, personally leading campaigns that subdued the Chandelas, Chandellas, and repulsed Muhammad of Ghor's first invasion in the <strong>First Battle of Tarain (1191 CE)</strong>, reportedly wounding Muhammad himself.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        His story has been told and retold through the epic <em>Prithviraj Raso</em> by his court poet <strong>Chand Bardai</strong>. His romance with Sanyogita (princess of Kannauj), his heroism at Tarain, and his tragic end at the Second Battle of Tarain (1192) are among the defining narratives of Rajput culture. Persian chronicles including <em>Tabakat-i-Nasiri</em> by Minhaj-i-Siraj Juzjani confirm his military prowess and the historical significance of Tarain.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">Last Hindu Emperor of Delhi</span>
+        <span class="achievement-pill">First Battle of Tarain (Victory)</span>
+        <span class="achievement-pill">Second Battle of Tarain</span>
+        <span class="achievement-pill">Prithviraj Raso Heroism</span>
+        <span class="achievement-pill">Patron of Arts</span>
+      </div>
+    </div>
+
+    <div class="king-entry">
+      <div class="king-name">Jayasimha Siddharaja</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Chaulukya (Solanki) of Gujarat</span>
+        <span class="king-period">r. 1094 – 1143 CE | Reign: 49 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Siddharaja Jayasimha</strong> (also Siddhraj) was the most powerful Solanki ruler, often compared to Vikramaditya for his patronage of learning. During his long reign, Gujarat became the wealthiest and most culturally vibrant kingdom in India. He is famous for his patronage of the Jain polymath <strong>Hemachandra</strong>, who composed monumental literary, grammatical, and yogic texts under Jayasimha's encouragement.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        He completed and expanded the great <strong>Rudra Mahalaya</strong> temple complex at Siddhapur, built the <strong>Sahastralinga Talav</strong> (1000-linga lake), and his victory over the Malwa Paramaras and the annexation of Lata (south Gujarat) brought enormous wealth. Medieval accounts describe Patan under his reign as a city of unrivaled splendor, with 84 gardens, 16 major markets, and countless temples.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">Patron of Hemachandra</span>
+        <span class="achievement-pill">Sahastralinga Talav</span>
+        <span class="achievement-pill">Rudra Mahalaya</span>
+        <span class="achievement-pill">Conquered Malwa</span>
+        <span class="achievement-pill">49-Year Golden Reign</span>
+      </div>
+    </div>
+
+    <div class="king-entry">
+      <div class="king-name">Kumarapala Solanki</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Chaulukya (Solanki) of Gujarat</span>
+        <span class="king-period">r. 1143 – 1172 CE | Reign: 29 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Kumarapala</strong> became a devout Jain under the spiritual influence of Hemachandra and implemented one of the most ambitious ethical governance experiments in medieval India: he banned animal slaughter throughout his empire for an extended period (exact duration debated). He rebuilt the <strong>Somnath temple</strong> after Mahmud of Ghazni's destruction and commissioned dozens of temples and Jain institutions across Gujarat.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        His reign represented a remarkable synthesis of Hindu-Jain pluralism under a single Rajput crown. Hemachandra's <em>Yoga Shastra</em> was composed at his request. Archaeological and literary evidence confirms over 1,440 Jain shrines were built or renovated under his patronage — making him one of the greatest temple-builders in South Asian history.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">Banned Animal Slaughter</span>
+        <span class="achievement-pill">Somnath Rebuilding</span>
+        <span class="achievement-pill">1440+ Temples</span>
+        <span class="achievement-pill">Hemachandra's Patron</span>
+        <span class="achievement-pill">Hindu-Jain Pluralism</span>
+      </div>
+    </div>
+
+    <div class="king-entry">
+      <div class="king-name">Vakpati Munja</div>
+      <div class="king-meta">
+        <span class="king-dynasty">Paramara</span>
+        <span class="king-period">r. c. 974 – 995 CE | Reign: ~21 years</span>
+      </div>
+      <p class="king-desc">
+        <strong>Vakpati Munja</strong> was perhaps the most personally tragic of the Agnivanshi kings — a brilliant military commander and Sanskrit poet who fought <strong>eight campaigns</strong> against the Chalukyas of Kalyani (an extraordinary persistence rarely paralleled), was ultimately captured by King Tailapa II of the Chalukyas, and was executed after refusing to humiliate himself. Munja composed witty and defiant verses even in captivity, which have survived in Sanskrit anthologies.
+      </p>
+      <p class="king-desc" style="margin-top:0.75rem">
+        His verse from captivity, addressed to Tailapa's queen Mrinalavati (with whom legend says Munja shared a complex romantic-adversarial relationship) — "Though fate has cast me low, my spirit rises unbound" (paraphrase of recorded verses) — made him a symbol of Rajput pride-in-defeat. The <em>Shringara Manjari</em> anthology preserves some of his compositions.
+      </p>
+      <div class="king-achievements">
+        <span class="achievement-pill">8 Chalukya Campaigns</span>
+        <span class="achievement-pill">Sanskrit Poet</span>
+        <span class="achievement-pill">Captive-King Verses</span>
+        <span class="achievement-pill">Symbol of Rajput Defiance</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ TEMPLES ══════════════════ -->
+<section id="temples" class="fade-in">
+  <span class="section-kicker">Sacred Stone</span>
+  <h2 class="section-title">Temples, Forts & Monuments</h2>
+  <p class="section-intro">The Agnivanshi dynasties were among the greatest temple-builders in Indian history. Their architectural legacy spans from the deserts of Rajasthan to the coasts of Gujarat and the plateaus of Malwa.</p>
+
+  <div class="temples-grid">
+    <div class="temple-card">
+      <div class="temple-icon-area">🌅</div>
+      <div class="temple-info">
+        <div class="temple-name">Modhera Sun Temple</div>
+        <div class="temple-location">Modhera, Gujarat</div>
+        <p class="temple-desc">Commissioned c. 1026–27 CE by Solanki king Bhimadeva I. A masterwork of the Maru-Gurjara style featuring the Surya Kund (stepwell with 108 miniature shrines), the Sabhamandapa (assembly hall), and the Garbhagriha (sanctum). The solar alignment ensures sunrise illuminates the main idol at dawn on equinoxes. Over 500 sculptures adorn its surfaces — a textbook of Hindu iconography.</p>
+        <p class="temple-patron">Patron: Bhimadeva I, Chaulukya (Solanki)</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🏛️</div>
+      <div class="temple-info">
+        <div class="temple-name">Bhojeshwara Temple</div>
+        <div class="temple-location">Bhojpur, Madhya Pradesh</div>
+        <p class="temple-desc">The unfinished Shiva temple commissioned by Raja Bhoja of the Paramara dynasty (c. 1010–1055 CE). Hosts what is believed to be the world's largest in situ-carved Shivalinga — 7.5 feet tall, 17.8 feet in circumference. The engineering of the massive stone blocks (before modern technology) remains astonishing. The unfinished state suggests enormous ambition; architectural markings (shilapalika) on the foundation stones provide rare evidence of actual medieval construction planning.</p>
+        <p class="temple-patron">Patron: Raja Bhoja, Paramara</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">💧</div>
+      <div class="temple-info">
+        <div class="temple-name">Rani ki Vav (Queen's Stepwell)</div>
+        <div class="temple-location">Patan, Gujarat — UNESCO World Heritage</div>
+        <p class="temple-desc">Built by Queen Udayamati (c. 1063 CE) in memory of Solanki king Bhimadeva I. A seven-story inverted temple of water — India's finest stepwell — with over 500 principal sculptures on four distinct levels, plus 1,000+ minor carvings. The iconographic program centers on the Dashavatara (ten avatars of Vishnu) and various forms of Shiva, Parvati, and yakshinis. Rediscovered in the 20th century after centuries of silt burial.</p>
+        <p class="temple-patron">Patron: Queen Udayamati, Chaulukya</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🕌</div>
+      <div class="temple-info">
+        <div class="temple-name">Osian Temple Complex</div>
+        <div class="temple-location">Osian (Upkeshapura), Rajasthan</div>
+        <p class="temple-desc">One of the finest surviving groups of Pratihara-era Hindu and Jain temples (8th–11th century CE). Includes the Surya Temple, Harihara temples, Sachiya Mata Temple (still active), and Jain Mahavira Temple. The sculptural programs represent an early phase of North Indian Nagara temple architecture. Osian was clearly a major pilgrimage and commercial node on ancient trade routes between Rajputana and Sindh.</p>
+        <p class="temple-patron">Patron: Gurjara-Pratihara kings</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🏔️</div>
+      <div class="temple-info">
+        <div class="temple-name">Udayeshvara Temple</div>
+        <div class="temple-location">Udayapur (Vidisha), Madhya Pradesh</div>
+        <p class="temple-desc">Built by Paramara king Udayaditya (c. 1080 CE), this is considered one of the most refined late Paramara temples extant. The fully developed Nagara shikhara (spire), the intricately carved mandovara (wall zone), and the quality of sculptural detail make it a touchstone for the final flourishing of Paramara architecture before the dynasty's decline. Still intact and actively worshipped.</p>
+        <p class="temple-patron">Patron: Udayaditya, Paramara</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🔱</div>
+      <div class="temple-info">
+        <div class="temple-name">Rudra Mahalaya / Sidhpur Complex</div>
+        <div class="temple-location">Siddhapur, Gujarat</div>
+        <p class="temple-desc">An extraordinary 11-shrined temple complex begun by Mularaja I (c. 942 CE) and completed magnificently by Jayasimha Siddharaja (c. 1140 CE). The original complex had 11 subsidiary shrines, a great central mandapa, and was described in medieval texts as rivaling Somnath. Largely destroyed by Alauddin Khalji (1296 CE) and Aurangzeb, surviving pillars and columns are of breathtaking sculptural quality.</p>
+        <p class="temple-patron">Patron: Mularaja I & Jayasimha Siddharaja, Solanki</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🌊</div>
+      <div class="temple-info">
+        <div class="temple-name">Sahastralinga Talav</div>
+        <div class="temple-location">Patan, Gujarat</div>
+        <p class="temple-desc">A massive stepped reservoir commissioned by Jayasimha Siddharaja, featuring 1000 Shivalinga shrines arranged around its banks — one for each day of a year of worship. At its zenith it was one of the greatest water-engineering and religious infrastructure projects of medieval India. Persian traveler accounts mention it with awe. Today largely silted, but archaeological surveys confirm its extraordinary scale.</p>
+        <p class="temple-patron">Patron: Jayasimha Siddharaja, Solanki</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">🪨</div>
+      <div class="temple-info">
+        <div class="temple-name">Baroli Temple Complex</div>
+        <div class="temple-location">Baroli, Rawatbhata, Rajasthan</div>
+        <p class="temple-desc">A cluster of eight Shaiva temples (c. 10th century CE) in the Pratihara style, situated on the banks of the Chambal river. The Ghateshvara Mahadeva temple is particularly celebrated for its intricate sculpture and well-preserved Nagara shikhara. The sculptural program here is among the finest Pratihara-era work in Rajasthan, featuring superb dvarapalas (door guardians), mithunas, and apsaras.</p>
+        <p class="temple-patron">Patron: Gurjara-Pratihara kings</p>
+      </div>
+    </div>
+
+    <div class="temple-card">
+      <div class="temple-icon-area">⚔️</div>
+      <div class="temple-info">
+        <div class="temple-name">Taragarh Fort (Star Fort)</div>
+        <div class="temple-location">Ajmer, Rajasthan</div>
+        <p class="temple-desc">The oldest hill fort in India (traditionally attributed to the Chauhan dynasty, c. 7th century CE, significantly expanded later). Built on a steep rocky hill, Taragarh controlled the route between northern and western India. Its water cisterns, garrison structures, and multiple enclosure walls represent Chauhan military engineering. The fort was later expanded by the Delhi Sultans but its original conception was unquestionably Chauhan-era.</p>
+        <p class="temple-patron">Patron: Chahamana (Chauhan) dynasty</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ ARCHITECTURE ══════════════════ -->
+<section id="architecture" class="fade-in">
+  <span class="section-kicker">Built Legacy</span>
+  <h2 class="section-title">Architectural Traditions & Innovations</h2>
+  <p class="section-intro">The Agnivanshi dynasties were primary drivers of the development of North Indian Nagara temple architecture and associated water systems, forts, and urban planning traditions.</p>
+
+  <div class="arch-grid">
+    <div class="arch-card">
+      <span class="arch-icon">🏰</span>
+      <div class="arch-title">Nagara Temple Style</div>
+      <p class="arch-text">The curvilinear <em>shikhara</em> (spire) of the North Indian Nagara order reached its fullest development under Paramara, Solanki, and Pratihara patronage. The Solanki variant — Maru-Gurjara style — is characterized by exuberant exterior sculpture, deeply recessed wall niches (<em>rathikas</em>), and multiplication of decorative molding bands. The <em>Samarāṅgaṇasūtradhāra</em> of Raja Bhoja codified this tradition in Sanskrit theory.</p>
+    </div>
+    <div class="arch-card">
+      <span class="arch-icon">💧</span>
+      <div class="arch-title">Vav (Stepwell) Architecture</div>
+      <p class="arch-text">The Solanki dynasty pioneered the <em>vav</em> (stepped well) as an architectural art form. These were not merely utilitarian — they were multi-story inverted temples with elaborate sculptural programs. Rani ki Vav (Patan) represents the apex: a seven-story descent with over 500 principal sculptures, functioning simultaneously as water reservoir, ritual space, and philosophical text in stone.</p>
+    </div>
+    <div class="arch-card">
+      <span class="arch-icon">🏯</span>
+      <div class="arch-title">Hill Fort Engineering</div>
+      <p class="arch-text">Chauhan military architects developed sophisticated hill-fort systems using natural topography. Taragarh (Ajmer) and Ranthambore demonstrate the Chauhan understanding of concentric enclosure walls, strategically placed sally ports, and water cisterns for siege endurance. The mandala-based city planning concept from <em>Arthashastra</em> tradition influenced their urban fortification design.</p>
+    </div>
+    <div class="arch-card">
+      <span class="arch-icon">🌊</span>
+      <div class="arch-title">Water Conservation Systems</div>
+      <p class="arch-text">Agnivanshi kings were exceptional hydraulic engineers. Raja Bhoja's construction of the Bhopal Tal (Upper Lake) — estimated at 250–400 square kilometers in its medieval extent — involved sophisticated dam technology. Jayasimha Siddharaja's Sahastralinga Talav and Solanki Surya Kund stepwells combined religious and practical water management at an unprecedented civic scale.</p>
+    </div>
+    <div class="arch-card">
+      <span class="arch-icon">🔬</span>
+      <div class="arch-title">Sculptural Schools</div>
+      <p class="arch-text">The Pratihara-Paramara school of Central Indian sculpture and the Maru-Gurjara school of Gujarat evolved distinct yet related iconographic languages. The Pratihara Mathura style featured smooth, elegant figures; Solanki Gujarat developed more ornate, jewelry-laden forms with complex compositional schemas. Both schools influenced temple sculpture across a far wider geographic area than their political domains.</p>
+    </div>
+    <div class="arch-card">
+      <span class="arch-icon">📐</span>
+      <div class="arch-title">Mandala Urban Planning</div>
+      <p class="arch-text">Drawing on the <em>Vastu Shastra</em> and <em>Manasara</em> traditions, Agnivanshi capital cities were designed on cosmological mandala principles. Patan (Anahilapataka) under the Solankis had a planned street grid, market zones, and temple districts. Raja Bhoja's architectural texts (<em>Samarāṅgaṇasūtradhāra</em>) describe ideal city design in elaborate detail — representing both practical planning and cosmological theory.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ CONTRIBUTIONS ══════════════════ -->
+<section id="contributions" class="fade-in">
+  <span class="section-kicker">Civilizational Legacy</span>
+  <h2 class="section-title">Contributions to Hindu Civilization</h2>
+  <p class="section-intro">Beyond conquest and construction, the Agnivanshi dynasties shaped the intellectual, spiritual, literary, and economic fabric of medieval India.</p>
+
+  <table class="contrib-table">
+    <thead>
+      <tr>
+        <th>Domain</th>
+        <th>Dynasty</th>
+        <th>Contribution</th>
+        <th>Key Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sanskrit Literature</td>
+        <td>Paramara, Pratihara</td>
+        <td>Raja Bhoja's 84 works; Rajashekhara's plays and poetics under Pratihara patronage; Vakpati Munja's verses; Sindhuraja's Navahasanka Charita</td>
+        <td>Manuscripts, anthologies, colophons</td>
+      </tr>
+      <tr>
+        <td>Temple Architecture</td>
+        <td>All four clans</td>
+        <td>Development of Nagara and Maru-Gurjara temple styles; 300+ temples across Rajasthan, Gujarat, Malwa; codification of architectural science in Samarāṅgaṇasūtradhāra</td>
+        <td>Extant temples, inscriptions</td>
+      </tr>
+      <tr>
+        <td>Jain-Hindu Synthesis</td>
+        <td>Solanki (Chaulukya)</td>
+        <td>Patronage of Hemachandra's enormous Jain literary output; Kumarapala's non-violence edicts; Gujarat as a pluralistic cultural space</td>
+        <td>Hemachandra texts, Jain manuscripts</td>
+      </tr>
+      <tr>
+        <td>Military Defense</td>
+        <td>Pratihara, Chauhan</td>
+        <td>Stopping Arab expansion at Battle of Jalore (c.738 CE); First Battle of Tarain (1191); 300+ years of frontier defense; protecting Gangetic heartland and its temples</td>
+        <td>Arabic chronicles, Persian sources, inscriptions</td>
+      </tr>
+      <tr>
+        <td>Water Engineering</td>
+        <td>Solanki, Paramara</td>
+        <td>Bhopal Tal (largest medieval reservoir); Rani ki Vav; Sahastralinga Talav; Modhera Surya Kund; dozens of civic stepwells</td>
+        <td>Archaeological surveys, UNESCO designation</td>
+      </tr>
+      <tr>
+        <td>Philosophy & Yoga</td>
+        <td>Paramara</td>
+        <td>Raja Bhoja's Rajamartanda (commentary on Patanjali's Yoga Sutras); Tattva Prakasha (Shaiva philosophy); contributions to Kashmiri Shaivism-influenced scholarship</td>
+        <td>Extant Sanskrit manuscripts</td>
+      </tr>
+      <tr>
+        <td>Astronomy & Science</td>
+        <td>Paramara, Solanki</td>
+        <td>Temple solar alignments (Modhera Sun Temple equinox sunrise); Raja Bhoja's astronomical works; patronage of mathematicians</td>
+        <td>Architectural evidence, texts</td>
+      </tr>
+      <tr>
+        <td>Trade Networks</td>
+        <td>Solanki</td>
+        <td>Gujarat ports under Solanki rule connected India to Arabia, East Africa, and Southeast Asia; Patan as commercial hub; spice, textile, and horse trade</td>
+        <td>Arab merchant accounts, archaeological evidence</td>
+      </tr>
+      <tr>
+        <td>Bhakti Traditions</td>
+        <td>Pratihara, Solanki</td>
+        <td>Mihira Bhoja's Vaishnavism; patronage of Shaiva Agama traditions; rebuilding of Somnath; early patronage of pilgrim infrastructure</td>
+        <td>Inscriptions, temple records</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ TIMELINE ══════════════════ -->
+<section id="timeline" class="fade-in">
+  <span class="section-kicker">Chronology</span>
+  <h2 class="section-title">Historical Timeline</h2>
+  <p class="section-intro">A chronological overview of the Agnivanshi dynasties across six centuries, from their emergence to their dissolution.</p>
+
+  <div class="timeline-container">
+    <h3 style="font-family:'Cinzel',serif; font-size:0.9rem; color:var(--gold-muted); letter-spacing:0.15em; margin-bottom:1.5rem;">MAJOR EVENTS — 700 CE to 1300 CE</h3>
+    <div class="timeline-bar">
+      <div class="timeline-axis"></div>
+      <!-- Eras -->
+      <div class="timeline-era" style="left:0%">700 CE</div>
+      <div class="timeline-era" style="left:16.7%">800 CE</div>
+      <div class="timeline-era" style="left:33.3%">900 CE</div>
+      <div class="timeline-era" style="left:50%">1000 CE</div>
+      <div class="timeline-era" style="left:66.7%">1100 CE</div>
+      <div class="timeline-era" style="left:83.3%">1200 CE</div>
+      <div class="timeline-era" style="left:100%">1300 CE</div>
+
+      <!-- Timeline bars for dynasties -->
+      <!-- Pratihara: 730–1036 = 306 years, start 4.9% from 700, span ~51% -->
+      <div class="timeline-entry" style="left:4.9%;width:51%;background:linear-gradient(90deg,#5c2d00,#8b4500);top:5px">Gurjara-Pratihara (c.730–1036)</div>
+      <!-- Parmar: 948–1305 = start 40.8%, span ~59.5% -->
+      <div class="timeline-entry" style="left:40.8%;width:59.5%;background:linear-gradient(90deg,#6b2c00,#a04500);top:42px">Paramara (c.948–1305)</div>
+    </div>
+    <div class="timeline-bar" style="margin-top:1rem">
+      <div class="timeline-axis"></div>
+      <div class="timeline-era" style="left:0%">700 CE</div>
+      <div class="timeline-era" style="left:16.7%">800 CE</div>
+      <div class="timeline-era" style="left:33.3%">900 CE</div>
+      <div class="timeline-era" style="left:50%">1000 CE</div>
+      <div class="timeline-era" style="left:66.7%">1100 CE</div>
+      <div class="timeline-era" style="left:83.3%">1200 CE</div>
+      <div class="timeline-era" style="left:100%">1300 CE</div>
+      <!-- Chauhan: ~700–1192 = start 0%, span ~82% -->
+      <div class="timeline-entry" style="left:0%;width:82%;background:linear-gradient(90deg,#3d1900,#7a3200);top:5px">Chahamana/Chauhan (c.700–1192)</div>
+      <!-- Solanki: 942–1244 = start 40%, span ~50.3% -->
+      <div class="timeline-entry" style="left:40%;width:50.3%;background:linear-gradient(90deg,#5a2800,#903d00);top:42px">Solanki/Chaulukya (c.942–1244)</div>
+    </div>
+
+    <div style="margin-top:2rem; display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+      <div>
+        <h4 style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold-muted); letter-spacing:0.1em; margin-bottom:1rem;">KEY EVENTS</h4>
+        <ul style="list-style:none; padding:0;">
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">c. 738 CE</span>
+            Nagabhata I defeats Arab forces at Jalore — stops Arab advance into India
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">c. 836–885</span>
+            Mihira Bhoja rules Pratihara empire at peak; dominates all of North India
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">c. 972 CE</span>
+            Paramara king Siyaka II sacks Rashtrakuta capital — Paramara independence
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">c. 1010–55</span>
+            Raja Bhoja rules Malwa — golden age of Paramara; Bhojpur, Bhopal lake built
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">c. 1026 CE</span>
+            Mahmud of Ghazni raids Somnath; Solanki Bhimadeva I commissions Modhera Sun Temple
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1094–1143</span>
+            Jayasimha Siddharaja rules Gujarat; Hemachandra patronized; golden age of Solanki
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold-muted); letter-spacing:0.1em; margin-bottom:1rem;">KEY EVENTS (cont.)</h4>
+        <ul style="list-style:none; padding:0;">
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1178 CE</span>
+            Battle of Kasahrada — Solanki Bhimadeva II defeats Muhammad of Ghor's first invasion
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1191 CE</span>
+            First Battle of Tarain — Prithviraj Chauhan III defeats Muhammad of Ghor
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1192 CE</span>
+            Second Battle of Tarain — Muhammad of Ghor defeats Prithviraj; Delhi Sultanate begins
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1244 CE</span>
+            Solanki dynasty ends; Gujarat passes to Vaghela dynasty, later to Delhi Sultanate
+          </li>
+          <li style="display:flex; gap:1rem; margin-bottom:0.7rem; font-size:0.85rem; color:var(--text-body);">
+            <span style="color:var(--saffron); font-family:'Cinzel',serif; font-size:0.75rem; white-space:nowrap;">1305 CE</span>
+            Paramara dynasty ends; Khalji forces sack Dhar; end of main Agnivanshi political power
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ LINEAGE TREE ══════════════════ -->
+<section id="lineage" class="fade-in">
+  <span class="section-kicker">Genealogy</span>
+  <h2 class="section-title">Lineage Trees</h2>
+
+  <p style="margin-bottom:1.5rem; color:var(--text-body);">Simplified lineage diagrams of the major Agnivanshi dynasties, based on inscriptional and literary evidence. Dotted lines indicate uncertain or debated connections.</p>
+
+  <div class="lineage-tree">
+    <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--gold-muted); letter-spacing:0.15em; margin-bottom:1rem;">PARAMARA DYNASTY (SELECTIVE)</p>
+    <pre class="tree-pre">
+<span class="tree-highlight">UPENDRA (Krishnaraja)</span> — Legendary Founder, born from Agnikunda
+    │
+    ├── Vairisimha I
+    │     │
+    │     └── Siyaka I
+    │           │
+    │           └── <span class="tree-highlight">VAKPATI I</span> (Munja's grandfather)
+    │                 │
+    │                 ├── Siyaka II (Harsha) <span class="tree-dim">— defeated Rashtrakutas; Udaipur Prashasti (972 CE)</span>
+    │                 │
+    │                 └── Vairisimha II
+    │                       │
+    │                       ├── <span class="tree-highlight">VAKPATI MUNJA</span> (~974-995 CE) <span class="tree-dim">— poet-king; 8 Chalukya campaigns; executed</span>
+    │                       │
+    │                       └── Sindhuraja <span class="tree-dim">— author of Navahasanka Charita</span>
+    │                             │
+    │                             └── <span class="tree-highlight">RAJA BHOJA</span> (~1010-1055 CE) <span class="tree-dim">— GREATEST PARAMARA KING; 84 works</span>
+    │                                   │
+    │                                   └── Jayasimha I
+    │                                         │
+    │                                         └── Udayaditya <span class="tree-dim">— Udayeshvara Temple (c.1080)</span>
+    │                                               │
+    │                                               └── Naravarman → Yashovarman → ... → Arjunavarman
+    │                                                                                          (end of dynasty, 1305)
+    </pre>
+  </div>
+
+  <div class="lineage-tree" style="margin-top:1.5rem">
+    <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--gold-muted); letter-spacing:0.15em; margin-bottom:1rem;">CHAHAMANA (CHAUHAN) DYNASTY (SELECTIVE)</p>
+    <pre class="tree-pre">
+<span class="tree-highlight">CHAHAMANA</span> — Fire-born hero (legendary ancestor)
+    │
+    ├── Early chiefs of Shakambhari (~7th century CE)
+    │     │
+    │     └── Vasudeva (founder; first copper-plate record)
+    │           │
+    │           └── [several generations]
+    │                 │
+    │                 ├── Vigraharaja I → Chandraraja → Gopendraraja
+    │                 │
+    │                 └── Durlabharaja III
+    │                       │
+    │                       └── Guvaka II
+    │                             │
+    │                             └── <span class="tree-highlight">AJAYARAJA II</span> <span class="tree-dim">— founded Ajmer (c.1110); broke Pratihara suzerainty</span>
+    │                                   │
+    │                                   └── Arnoraja <span class="tree-dim">— fought Ghaznavids; married Solanki princess</span>
+    │                                         │
+    │                                         └── <span class="tree-highlight">VIGRAHARAJA IV</span> <span class="tree-dim">— greatest Chauhan after Prithviraj; Sanskrit playwright (c.1150-63)</span>
+    │                                               │
+    │                                               └── Someshvara → Prithviraj II
+    │                                                       │
+    │                                                       └── <span class="tree-highlight">PRITHVIRAJ CHAUHAN III</span> <span class="tree-dim">— Last great Chauhan; r.1178-1192</span>
+    │                                                             │
+    │                                                             └── [captured and killed at Second Tarain, 1192]
+    </pre>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ RARE FACTS ══════════════════ -->
+<section id="rare" class="fade-in">
+  <span class="section-kicker">Hidden Knowledge</span>
+  <h2 class="section-title">Rare Facts Most People Don't Know</h2>
+  <p class="section-intro">Beyond the famous battles and celebrated temples lie layers of history that even dedicated readers often miss.</p>
+
+  <div class="rare-facts-grid">
+    <div class="rare-fact">
+      <div class="rare-fact-num">01</div>
+      <div class="rare-fact-title">Raja Bhoja's Lost Canal System</div>
+      <p class="rare-fact-text">The Bhopal lake (Upper Lake) was not merely a reservoir — medieval texts describe an elaborate canal and irrigation system fed by it, making the surrounding Malwa plateau agriculturally productive in ways that have not been archaeologically fully mapped. The dam embankment was reportedly 100 feet high and 5 miles long — unprecedented in medieval India.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">02</div>
+      <div class="rare-fact-title">Pratihara's Arab Admirers</div>
+      <p class="rare-fact-text">Arab merchant Sulaiman al-Tajir (c. 851 CE) described the Pratihara king as the greatest ruler on earth and wrote that no army in the world could match his cavalry. This praise from an adversarial Arab source — written at the peak of Arab imperial ambition — is one of the most remarkable testimonies to any Indian king in foreign historical literature.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">03</div>
+      <div class="rare-fact-title">The Vigraharaja Inscription Under a Mosque</div>
+      <p class="rare-fact-text">When Qutb ud-Din Aibak converted the Sanskrit school complex in Ajmer into the Adhai Din Ka Jhonpra mosque (1192 CE), inscriptions of Chauhan king Vigraharaja IV — containing his Sanskrit verses and Harikeli-Nataka drama passages — were reused as building material. These inscriptions, rediscovered in the 19th century, are primary evidence of Chauhan cultural sophistication.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">04</div>
+      <div class="rare-fact-title">Kumarapala's Unprecedented Edicts</div>
+      <p class="rare-fact-text">Solanki king Kumarapala (1143–1172 CE) issued royal edicts banning animal slaughter throughout Gujarat — a policy predating any other such royal animal-rights legislation in world history by several centuries. Hemachandra's biography (Prabhavakacharita) records that even hunters and butchers were given alternative employment under this policy.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">05</div>
+      <div class="rare-fact-title">The 52-Step Stepwell as Astronomical Calendar</div>
+      <p class="rare-fact-text">The Modhera Sun Temple's Surya Kund has 108 miniature shrines around its perimeter and steps so precisely oriented that the reflection of the rising sun on equinox days travels exactly down the central axis of the stepwell to touch the deepest level. The number 52 of the original step count corresponds to weeks in a solar year — making the structure simultaneously an astronomical calendar.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">06</div>
+      <div class="rare-fact-title">Paramara's Mechanical Treatise</div>
+      <p class="rare-fact-text">Chapter 31 of Raja Bhoja's <em>Samarāṅgaṇasūtradhāra</em> (titled <em>Yantra Adhyaya</em>) describes mechanical automata — flying machines, mechanical elephants, hydraulic figures, and devices that anticipate later European mechanical clocks. Whether these were theoretical or built prototypes remains debated, but the sophistication of the descriptions suggests actual technological experimentation in 11th-century Malwa.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">07</div>
+      <div class="rare-fact-title">Rani ki Vav's Buried Centuries</div>
+      <p class="rare-fact-text">The Rani ki Vav (Queen's Stepwell, Patan) — now a UNESCO World Heritage Site — was buried under silt from a Saraswati river flood for nearly 700 years. When archaeologists excavated it in the 1960s–80s, the sculptures were found in almost perfect condition because the silt had protected them. Many scholars consider this the greatest accidental preservation in Indian archaeological history.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">08</div>
+      <div class="rare-fact-title">Vakpati Munja's Captive Verses</div>
+      <p class="rare-fact-text">Captured by Chalukya king Tailapa II after his eighth and final military campaign, Paramara king Vakpati Munja composed sardonic verses about his captivity that survive in Sanskrit anthologies. One verse, addressed to the river Narmada asking why she did not drown him before his humiliation, is considered one of the most poignant pieces of Sanskrit poetry from the period — a king's philosophical meditation on defeat.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">09</div>
+      <div class="rare-fact-title">The Chauhan's Salt Lake Economy</div>
+      <p class="rare-fact-text">The Chauhan dynasty's early wealth base was Sambhar Salt Lake — India's largest inland saltwater lake. Control of salt production and trade gave early Chauhan chiefs extraordinary economic leverage. Salt was one of ancient India's most strategic commodities, and Sambhar's revenues likely funded the military expansion that eventually made the Chauhans masters of Delhi and northern Rajasthan.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">10</div>
+      <div class="rare-fact-title">Forgotten Agnivanshi Branches</div>
+      <p class="rare-fact-text">Beyond the canonical four, medieval bardic sources mention additional Agnivanshi sub-branches including the <strong>Dodia</strong>, <strong>Tank</strong>, <strong>Mori</strong> (some sources), and various regional Chauhan cadet branches (Nadol, Jalor, Ranthambore Chauhans). The Ranthambore Chauhans, under Hammiradeva, held out against the Delhi Sultanate until 1301 CE — over a century after Tarain — one of the most remarkable stories of Rajput resistance in history.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">11</div>
+      <div class="rare-fact-title">Nagabhata I's Battle of 738 CE</div>
+      <p class="rare-fact-text">The Battle of Jalore (or Rajasthan) in c. 738 CE, where Pratihara king Nagabhata I decisively defeated the Arab forces of the Umayyad Caliphate, is one of the most consequential yet under-celebrated battles in Asian history. Coming just 6 years after Charles Martel stopped Arab advance at Tours in Western Europe (732 CE), Nagabhata I simultaneously blocked Arab expansion into the Indian subcontinent — saving the Gangetic civilization from conquest.</p>
+    </div>
+    <div class="rare-fact">
+      <div class="rare-fact-num">12</div>
+      <div class="rare-fact-title">Hemachandra's Grammar of 3.5 Lakh Verses</div>
+      <p class="rare-fact-text">Under Solanki Jayasimha Siddharaja's patronage, Jain scholar Hemachandra (1088–1172 CE) composed the <em>Trishashti-shalaka-purusha-charita</em> — lives of 63 great Jain saints — in over 20,000 Sanskrit verses, along with the comprehensive <em>Siddha Hemachandra Shabdanushasana</em> grammar. Jayasimha reportedly rode an elephant to the book's formal presentation, dismounted, and walked reverentially — a king honoring a scholar.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ FAQ ══════════════════ -->
+<section id="faq" class="fade-in">
+  <span class="section-kicker">Scholarly Questions</span>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        Were the Agnivanshi clans truly born from fire, or is this purely mythological?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>The fire-birth narrative is clearly a mythological and ideological construct rather than a literal biological claim. The scholarly consensus is that the Agnikula origin story emerged as a mechanism of <em>Kshatriya-ization</em> — a brahmanically-sanctioned process by which new ruling groups were incorporated into the Kshatriya varna. The ritual fire sacrifice on Mount Abu likely had historical basis as a real ceremony of legitimization, possibly performed during the 7th–9th centuries CE. The symbolic power of fire as a purifying, trans-forming agent made it the perfect medium for such elevation. What is not disputed is that the dynasties themselves were historically real and enormously powerful.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        Were Pratihara rulers really of "Gurjara" (foreign) origin?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>This is one of the most debated questions in early medieval Indian historiography. Colonial-era historians like V.A. Smith proposed Gurjara-Pratihara origins from Central Asian Gurjara tribes (possibly related to Khazars or Gujjars). Later scholarship, building on inscriptions and the work of historians like B.N. Mukherjee and André Wink, suggests a more nuanced view: the Gurjara ethnic designation referred to a region (Gurjaratra = modern Gujarat-Rajasthan area) rather than necessarily a distinct ethnic group. The Pratiharas' own inscriptions from the 9th century present them as descendants of Lakshmana (Rama's brother) — a Suryavanshi claim, not a Gurjara one — while the Agnikula claim is a later bardic addition. The question of "foreign origins" in the colonialist sense is largely considered a 19th-century overreach by modern academics.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        Why did the Agnivanshi kingdoms fall so rapidly to the Ghurid and Khalji invasions?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Several interlocking factors explain the collapse: (1) <strong>Internecine warfare</strong> — Paramara, Chauhan, Solanki, and Chandella dynasties spent enormous military energy fighting each other, weakening all parties. (2) <strong>Cavalry asymmetry</strong> — The Ghurid and Khalji armies relied heavily on fast, highly mobile Turkic horse-archers who used tactics of feigned retreat and encirclement that Indian armies trained for pitched set-piece battles were poorly equipped to counter. (3) <strong>Lack of unified command</strong> — No pan-Rajput confederation existed; each dynasty fought alone. Prithviraj's refusal (or inability) to build a broader alliance before Tarain was fatal. (4) <strong>Economic exhaustion</strong> — Decades of continuous warfare had drained royal treasuries. (5) <strong>Technological gap</strong> — Central Asian armies had perfected cavalry-based mobile warfare over centuries of steppe conflict; Indian armies had not.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        What is the historical evidence for Raja Bhoja authoring 84 works?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>The attribution of 84 works to Raja Bhoja (the symbolic number 84 appears in multiple Indian religious contexts) is partially literary tradition and partially verifiable. Scholarly consensus, based on colophon evidence and manuscript attribution studies, confirms that Bhoja personally authored at least a dozen major Sanskrit works — including the <em>Samarāṅgaṇasūtradhāra</em>, <em>Sringaraprakasha</em>, <em>Rajamartanda</em> (yoga commentary), <em>Tattva Prakasha</em> (Shaiva philosophy), <em>Shabdanushasana</em> (grammar), and <em>Shiva-Prakasha</em>. Several other works are attributed with reasonable confidence. The number "84" should be understood as a hagiographic amplification; even if the actual number is 15–20 major works, Bhoja remains the most prolific royal author in Sanskrit literary history.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        Are there Agnivanshi dynasties that survived past the Delhi Sultanate period?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Yes — several cadet branches of Agnivanshi clans survived in reduced form as regional chieftains, zamindars, or smaller kingdoms. <strong>Ranthambore Chauhans</strong> lasted until 1301 CE. <strong>Jalor Chauhans</strong> held out until 1311 CE. Various <strong>Parmar sub-branches</strong> survived in Central India and Rajputana as local chiefs into the Mughal period and beyond. In Gujarat, Solanki bloodlines merged into Rajput clans that continued as nobility into the British period. The broad <strong>Chauhan Rajput community</strong> today numbers in the millions across Rajasthan, Haryana, Uttar Pradesh, and Madhya Pradesh — many claiming descent from Prithviraj Chauhan's wider kin network.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this.parentElement)">
+        How reliable is the Prithviraj Raso as a historical source?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>The <em>Prithviraj Raso</em> is the subject of considerable scholarly controversy. Its attribution to Chand Bardai, described as Prithviraj's court poet, is accepted by most scholars. However, the text has clearly been heavily interpolated and expanded over centuries — the earliest surviving manuscripts are much later than the original composition, and contain anachronisms, legendary embellishments, and chronological inconsistencies. Historian Dasharatha Sharma and others have argued that the core of the text may date to the 13th century, with later accretions. It should be treated as a primary source for Rajput cultural values, bardic traditions, and broad historical outlines — but not as a reliable chronicle for specific dates, battle details, or genealogies. Persian sources like Tabakat-i-Nasiri, copper-plate inscriptions, and archaeological evidence must be used to cross-check its claims.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════════════ FINAL SUMMARY ══════════════════ -->
+<section id="summary" class="fade-in">
+  <span class="section-kicker">Master Encyclopedia</span>
+  <h2 class="section-title">Dynasty Summary Reference</h2>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span class="num">4</span>
+      <span class="label">Primary Agnivanshi Clans</span>
+    </div>
+    <div class="summary-card">
+      <span class="num">~600</span>
+      <span class="label">Years of Combined Rule</span>
+    </div>
+    <div class="summary-card">
+      <span class="num">300+</span>
+      <span class="label">Temples & Monuments Built</span>
+    </div>
+    <div class="summary-card">
+      <span class="num">84+</span>
+      <span class="label">Sanskrit Works (Raja Bhoja)</span>
+    </div>
+    <div class="summary-card">
+      <span class="num">3</span>
+      <span class="label">Arab Invasions Repelled</span>
+    </div>
+    <div class="summary-card">
+      <span class="num">1</span>
+      <span class="label">UNESCO World Heritage Site</span>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem; overflow-x:auto;">
+    <table class="contrib-table">
+      <thead>
+        <tr>
+          <th>Dynasty</th>
+          <th>Period</th>
+          <th>Capital</th>
+          <th>Greatest King</th>
+          <th>Greatest Achievement</th>
+          <th>Fall</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paramara</td>
+          <td>c. 800–1305 CE</td>
+          <td>Dhara (Dhar)</td>
+          <td>Raja Bhoja</td>
+          <td>Sanskrit scholarship; Bhojeshwara; Bhopal Lake</td>
+          <td>Khalji invasion, 1305</td>
+        </tr>
+        <tr>
+          <td>Chahamana (Chauhan)</td>
+          <td>c. 7th c.–1192 CE</td>
+          <td>Ajmer, Delhi</td>
+          <td>Prithviraj III</td>
+          <td>Last Hindu empire of Delhi; Tarain I victory</td>
+          <td>Tarain II, 1192 (Ghurid)</td>
+        </tr>
+        <tr>
+          <td>Chaulukya (Solanki)</td>
+          <td>c. 942–1244 CE</td>
+          <td>Patan (Anahilapataka)</td>
+          <td>Jayasimha Siddharaja</td>
+          <td>Modhera Sun Temple; Rani ki Vav; Hemachandra</td>
+          <td>Vaghela usurpation; later Khalji conquest</td>
+        </tr>
+        <tr>
+          <td>Gurjara-Pratihara</td>
+          <td>c. 6th c.–1036 CE</td>
+          <td>Kannauj (later)</td>
+          <td>Mihira Bhoja I</td>
+          <td>Stopped Arab expansion; largest N. Indian empire 9th c.</td>
+          <td>Rashtrakuta raids; internal fragmentation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quote-block" style="margin-top:3rem">
+    <p>"In the long history of the world, only a few generations have been granted the role of defending civilization in its hour of maximum danger. The Agnivanshi clans — whatever their complex origins — performed that role, building from flame not just dynasties, but cathedrals of learning, lakes that fed millions, and a cultural inheritance that outlasted their kingdoms by a thousand years."</p>
+    <div class="quote-source">— Synthesis of the Historical Record</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <span class="footer-om">ॐ</span>
+  <p>अग्निवंश — THE FIRE-BORN DYNASTIES OF INDIA</p>
+  <p style="margin-top:0.5rem; font-size:0.6rem; opacity:0.5">A deeply researched historical knowledge portal. Sources: Inscriptional evidence, Sanskrit texts, Persian chronicles, colonial records, and modern academic scholarship. Mythology and history clearly distinguished throughout.</p>
+</footer>
+
+<script>
+  // ── Expand/collapse dynasty details ──
+  function toggleDynasty(card) {
+    const detail = card.querySelector('.dynasty-detail');
+    const btn = card.querySelector('.expand-btn');
+    const isOpen = detail.classList.contains('open');
+    detail.classList.toggle('open');
+    btn.textContent = isOpen ? 'Expand Full History ▾' : 'Collapse ▴';
+  }
+
+  // ── FAQ accordion ──
+  function toggleFaq(item) {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── Scroll fade-in ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Animated counters for hero stats ──
+  function animateCounter(el, target, suffix='') {
+    let start = 0;
+    const duration = 2000;
+    const step = (timestamp) => {
+      if (!el._startTime) el._startTime = timestamp;
+      const progress = Math.min((timestamp - el._startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = document.querySelectorAll('.hero-stat-num');
+        const targets = [4, 800, 300, 12];
+        const suffixes = ['', '+', '+', '+'];
+        nums.forEach((el, i) => animateCounter(el, targets[i], suffixes[i]));
+        heroObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) heroObserver.observe(heroStats);
+</script>
+</body>
+</html>

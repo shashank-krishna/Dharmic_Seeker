@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saptarishi — Complete Encyclopedia of the Seven Great Sages</title>
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --gold: #c9923a;
+    --gold-light: #e8c47a;
+    --gold-pale: #f5e8c8;
+    --saffron: #d4621a;
+    --deep-red: #8b1a1a;
+    --cream: #fdf6e8;
+    --parchment: #f2e6cc;
+    --dark: #1a1208;
+    --mid: #3d2b0e;
+    --brown: #5c3d11;
+    --text: #2c1a06;
+    --muted: #7a5c2e;
+    --border: #c9923a44;
+    --blue-deep: #1a2850;
+    --indigo: #2d3a7a;
+    --cyan: #4a9eb5;
+    --green: #2d7a4f;
+    --purple: #5a2d7a;
+    --teal: #1a6b5a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, #0a0604 0%, #1a0e04 40%, #2c1a08 70%, #1a0e04 100%);
+    color: var(--gold-pale);
+    text-align: center;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '𑀫𑀁𑀢𑀿𑀸𑀮𑀬';
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    font-size: 12px; color: var(--gold); opacity: 0.3; letter-spacing: 6px;
+  }
+  .hero-om {
+    font-size: 72px; color: var(--gold); line-height: 1;
+    margin-bottom: 20px; text-shadow: 0 0 40px #c9923a88;
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-shadow: 0 2px 20px #c9923a66;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    font-size: 18px; color: #d4b87a; font-style: italic;
+    margin-bottom: 30px; letter-spacing: 1px;
+  }
+  .hero-desc {
+    max-width: 700px; margin: 0 auto;
+    font-size: 15px; color: #b8956a; line-height: 1.8;
+  }
+  .star-row {
+    color: var(--gold); font-size: 20px; letter-spacing: 8px;
+    margin: 24px 0; opacity: 0.6;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  
+  /* ===== TOC ===== */
+  .toc {
+    background: var(--dark);
+    color: var(--gold-pale);
+    padding: 50px 40px;
+  }
+  .toc h2 {
+    font-family: 'Cinzel', serif; font-size: 22px;
+    color: var(--gold); text-align: center; margin-bottom: 30px;
+    letter-spacing: 3px;
+  }
+  .toc-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px; max-width: 900px; margin: 0 auto;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px;
+    border-left: 2px solid var(--gold);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .toc-item:hover { background: #c9923a22; }
+  .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--gold); min-width: 28px;
+  }
+  .toc-text { font-size: 14px; color: #d4b87a; }
+
+  /* ===== SECTION HEADERS ===== */
+  .sec-header {
+    background: linear-gradient(135deg, var(--mid) 0%, var(--brown) 100%);
+    color: var(--gold-pale);
+    padding: 50px 40px 40px;
+    margin-top: 0;
+  }
+  .sec-header .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--gold); letter-spacing: 4px;
+    margin-bottom: 10px; text-transform: uppercase;
+  }
+  .sec-header h2 {
+    font-family: 'Cinzel', serif; font-size: 36px;
+    color: var(--gold-light); font-weight: 700;
+    line-height: 1.2;
+  }
+  .sec-header p {
+    margin-top: 14px; color: #c8a870; font-size: 16px;
+    max-width: 700px; font-style: italic;
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .section { padding: 50px 40px; }
+  .section-alt { background: var(--parchment); }
+  .section-dark { background: #1a0e04; color: var(--gold-pale); }
+  
+  h3 {
+    font-family: 'Cinzel', serif; font-size: 22px;
+    color: var(--saffron); margin: 36px 0 16px;
+    border-bottom: 1px solid var(--border); padding-bottom: 8px;
+  }
+  h4 {
+    font-family: 'Cinzel', serif; font-size: 17px;
+    color: var(--brown); margin: 28px 0 12px;
+  }
+  .section-dark h3 { color: var(--gold); border-color: #c9923a33; }
+  .section-dark h4 { color: var(--gold-light); }
+
+  p { margin-bottom: 14px; }
+  
+  /* ===== CALLOUT BOXES ===== */
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: #c9923a14;
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .callout.saffron { border-color: var(--saffron); background: #d4621a12; }
+  .callout.blue { border-color: var(--cyan); background: #4a9eb512; }
+  .callout.green { border-color: var(--green); background: #2d7a4f12; }
+  .callout.purple { border-color: var(--purple); background: #5a2d7a12; }
+  .callout.red { border-color: var(--deep-red); background: #8b1a1a10; }
+  .callout-title {
+    font-family: 'Cinzel', serif; font-size: 13px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .callout.saffron .callout-title { color: var(--saffron); }
+  .callout.blue .callout-title { color: var(--cyan); }
+  .callout.green .callout-title { color: var(--green); }
+  .callout.purple .callout-title { color: var(--purple); }
+
+  /* ===== TABLES ===== */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  th {
+    background: var(--mid); color: var(--gold-light);
+    font-family: 'Cinzel', serif; font-size: 12px;
+    font-weight: 600; letter-spacing: 1px;
+    padding: 12px 14px; text-align: left;
+    border: 1px solid #c9923a33;
+  }
+  td {
+    padding: 10px 14px;
+    border: 1px solid #c9923a22;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tr:nth-child(even) td { background: #c9923a08; }
+  tr:hover td { background: #c9923a14; }
+  .section-dark th { background: #0a0604; border-color: #c9923a44; }
+  .section-dark td { border-color: #c9923a22; color: var(--gold-pale); }
+  .section-dark tr:nth-child(even) td { background: #c9923a10; }
+
+  /* ===== MANVANTARA CARDS ===== */
+  .manvantara-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; margin: 30px 0;
+  }
+  .mv-card {
+    background: var(--dark);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #0006;
+  }
+  .mv-card.current {
+    border-color: var(--saffron);
+    box-shadow: 0 0 30px #d4621a44;
+  }
+  .mv-header {
+    background: linear-gradient(135deg, #1a0e04, #2c1a08);
+    padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid #c9923a33;
+  }
+  .mv-num {
+    font-family: 'Cinzel', serif; font-size: 28px;
+    color: var(--gold); font-weight: 900; min-width: 44px;
+    text-align: center;
+  }
+  .mv-card.current .mv-num { color: var(--saffron); }
+  .mv-title { font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold-light); }
+  .mv-subtitle { font-size: 12px; color: var(--muted); font-style: italic; }
+  .mv-body { padding: 16px 20px; }
+  .mv-row { display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start; }
+  .mv-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--gold); text-transform: uppercase; letter-spacing: 1px;
+    min-width: 70px; padding-top: 2px;
+  }
+  .mv-val { font-size: 13.5px; color: #d4b87a; flex: 1; }
+  .mv-saptarishis {
+    font-size: 12px; color: #b89060;
+    border-top: 1px solid #c9923a22;
+    margin-top: 10px; padding-top: 10px;
+    font-style: italic;
+  }
+  .current-badge {
+    background: var(--saffron); color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    letter-spacing: 1px; margin-left: 8px;
+  }
+
+  /* ===== LINEAGE TREES ===== */
+  .lineage-box {
+    background: #0a0604;
+    border: 1px solid #c9923a33;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .lineage-box pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #d4b87a;
+    line-height: 1.7;
+    white-space: pre;
+  }
+  .lineage-box .tree-title {
+    font-family: 'Cinzel', serif; font-size: 15px;
+    color: var(--gold); margin-bottom: 16px;
+    padding-bottom: 10px; border-bottom: 1px solid #c9923a33;
+  }
+
+  /* ===== SAGE PROFILE CARDS ===== */
+  .sage-card {
+    background: linear-gradient(135deg, #fdf6e8, #f5e8c8);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    margin: 28px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #0002;
+  }
+  .sage-header {
+    background: linear-gradient(135deg, var(--mid), var(--brown));
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .sage-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--gold); display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .sage-name { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold-light); }
+  .sage-alt { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 3px; }
+  .sage-body { padding: 20px 24px; }
+  .sage-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-bottom: 20px;
+  }
+  .sage-field { }
+  .sage-field-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .sage-field-val { font-size: 15px; color: var(--text); font-weight: 500; }
+
+  /* ===== TAGS ===== */
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 20px;
+    font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    margin: 2px; letter-spacing: 0.5px;
+  }
+  .tag-gold { background: #c9923a22; color: var(--gold); border: 1px solid var(--gold); }
+  .tag-blue { background: #4a9eb522; color: var(--cyan); border: 1px solid var(--cyan); }
+  .tag-green { background: #2d7a4f22; color: var(--green); border: 1px solid var(--green); }
+  .tag-purple { background: #5a2d7a22; color: var(--purple); border: 1px solid var(--purple); }
+  .tag-red { background: #8b1a1a22; color: var(--deep-red); border: 1px solid var(--deep-red); }
+  .tag-saffron { background: #d4621a22; color: var(--saffron); border: 1px solid var(--saffron); }
+
+  /* ===== SCRIPTURE COMPARE ===== */
+  .scripture-compare {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 20px 0;
+  }
+  .scripture-card {
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px;
+    background: white;
+  }
+  .scripture-name {
+    font-family: 'Cinzel', serif; font-size: 13px;
+    color: var(--saffron); margin-bottom: 10px;
+    border-bottom: 1px solid var(--border); padding-bottom: 6px;
+  }
+  .scripture-content { font-size: 14px; color: var(--text); line-height: 1.7; }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative; padding-left: 30px; margin: 24px 0;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-dot {
+    position: absolute; left: -26px; top: 4px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--cream);
+  }
+  .timeline-title {
+    font-family: 'Cinzel', serif; font-size: 15px;
+    color: var(--saffron); margin-bottom: 6px;
+  }
+  .timeline-content { font-size: 14.5px; color: var(--text); }
+
+  /* ===== DIVIDERS ===== */
+  .divider {
+    text-align: center; padding: 20px 0; color: var(--gold);
+    font-size: 18px; letter-spacing: 12px; opacity: 0.5;
+  }
+  .divider-line {
+    border: none; border-top: 1px solid var(--border);
+    margin: 30px 0;
+  }
+
+  /* ===== FOOTNOTES / SOURCES ===== */
+  .source-list {
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--border); padding-top: 16px;
+    margin-top: 30px;
+  }
+  .source-list li { margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 700px) {
+    .section, .sec-header { padding: 30px 20px; }
+    .hero { padding: 50px 20px; }
+    .toc { padding: 30px 20px; }
+    h3 { font-size: 18px; }
+    .manvantara-grid { grid-template-columns: 1fr; }
+    .scripture-compare { grid-template-columns: 1fr; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .hero { background: #1a0e04 !important; -webkit-print-color-adjust: exact; }
+  }
+
+  /* ===== HIGHLIGHT ===== */
+  mark {
+    background: #c9923a33; color: var(--text);
+    padding: 1px 4px; border-radius: 3px;
+  }
+
+  /* ===== SPECIAL ELEMENTS ===== */
+  .sanskrit {
+    font-style: italic; color: var(--saffron); font-weight: 500;
+  }
+  .important {
+    background: linear-gradient(135deg, #c9923a08, #d4621a08);
+    border: 1px solid #c9923a33; border-radius: 8px;
+    padding: 16px 20px; margin: 20px 0;
+  }
+  .important::before {
+    content: '⚡ '; color: var(--gold);
+  }
+  
+  ul.styled { padding-left: 20px; }
+  ul.styled li { margin-bottom: 6px; }
+  ul.styled li::marker { color: var(--gold); }
+  
+  ol.styled { padding-left: 20px; }
+  ol.styled li { margin-bottom: 8px; }
+  ol.styled li::marker { color: var(--saffron); font-family: 'Cinzel', serif; }
+
+  /* Nav bar */
+  .nav-bar {
+    background: var(--dark); padding: 12px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #c9923a33; position: sticky; top: 0; z-index: 100;
+  }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold); }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* Big quote */
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px; margin: 24px 0;
+    font-style: italic; color: var(--brown);
+    background: #c9923a08;
+  }
+  blockquote cite {
+    display: block; margin-top: 8px;
+    font-size: 13px; font-style: normal;
+    color: var(--muted); font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <span class="nav-title">ॐ Saptarishi Atlas</span>
+  <div class="nav-links">
+    <a href="#intro">Introduction</a>
+    <a href="#manvantaras">Manvantaras</a>
+    <a href="#sages">Sages</a>
+    <a href="#lineages">Lineages</a>
+    <a href="#current">Current Era</a>
+    <a href="#summary">Summary</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-om">ॐ</div>
+  <h1>Saptarishi Atlas</h1>
+  <p class="hero-sub">Complete Encyclopedia of the Seven Great Sages Across All 14 Manvantaras</p>
+  <div class="star-row">★ ★ ★ ★ ★ ★ ★</div>
+  <p class="hero-desc">A comprehensive visual atlas integrating Vedic, Puranic, and Epic traditions — covering cosmological cycles, sacred lineages, guru-shishya paramparas, gotra origins, and the astronomical mandala of the Great Bear constellation.</p>
+  <div class="star-row" style="margin-bottom:0">· · ·</div>
+  <p style="color:#7a5a30;font-size:13px;margin-top:12px">Sources: Vishnu Purāṇa · Bhāgavata Purāṇa · Matsya Purāṇa · Vāyu Purāṇa · Mahābhārata · Rāmāyaṇa · Ṛgveda · Upaniṣads</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc" id="toc">
+  <h2>◈ TABLE OF CONTENTS ◈</h2>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-num">§ 01</span><span class="toc-text">What is a Manvantara?</span></div>
+    <div class="toc-item"><span class="toc-num">§ 02</span><span class="toc-text">The Concept of Saptarishis</span></div>
+    <div class="toc-item"><span class="toc-num">§ 03</span><span class="toc-text">Cosmological Time — The Kalpa Framework</span></div>
+    <div class="toc-item"><span class="toc-num">§ 04</span><span class="toc-text">All 14 Manvantaras — Overview Cards</span></div>
+    <div class="toc-item"><span class="toc-num">§ 05</span><span class="toc-text">Manvantara 1 — Svāyambhuva</span></div>
+    <div class="toc-item"><span class="toc-num">§ 06</span><span class="toc-text">Manvantara 2 — Svārociṣa</span></div>
+    <div class="toc-item"><span class="toc-num">§ 07</span><span class="toc-text">Manvantara 3 — Uttama</span></div>
+    <div class="toc-item"><span class="toc-num">§ 08</span><span class="toc-text">Manvantara 4 — Tāmasa</span></div>
+    <div class="toc-item"><span class="toc-num">§ 09</span><span class="toc-text">Manvantara 5 — Raivata</span></div>
+    <div class="toc-item"><span class="toc-num">§ 10</span><span class="toc-text">Manvantara 6 — Cākṣuṣa</span></div>
+    <div class="toc-item"><span class="toc-num">§ 11</span><span class="toc-text">Manvantara 7 — Vaivasvata (CURRENT)</span></div>
+    <div class="toc-item"><span class="toc-num">§ 12</span><span class="toc-text">Manvantaras 8–14 (Future)</span></div>
+    <div class="toc-item"><span class="toc-num">§ 13</span><span class="toc-text">Complete Sage Profiles</span></div>
+    <div class="toc-item"><span class="toc-num">§ 14</span><span class="toc-text">Brahma's Mind-Born Sons (Manasaputras)</span></div>
+    <div class="toc-item"><span class="toc-num">§ 15</span><span class="toc-text">Gotra Origins & Modern Brahmin Lines</span></div>
+    <div class="toc-item"><span class="toc-num">§ 16</span><span class="toc-text">Lineage Trees — Visual Diagrams</span></div>
+    <div class="toc-item"><span class="toc-num">§ 17</span><span class="toc-text">Famous Descendants & Dynasties</span></div>
+    <div class="toc-item"><span class="toc-num">§ 18</span><span class="toc-text">Guru-Shishya Parampara Charts</span></div>
+    <div class="toc-item"><span class="toc-num">§ 19</span><span class="toc-text">Saptarishi Mandala — Astronomical Connection</span></div>
+    <div class="toc-item"><span class="toc-num">§ 20</span><span class="toc-text">Scriptural Comparisons & Contradictions</span></div>
+    <div class="toc-item"><span class="toc-num">§ 21</span><span class="toc-text">Master Comparison Table</span></div>
+    <div class="toc-item"><span class="toc-num">§ 22</span><span class="toc-text">Revision Summary & Key Connections</span></div>
+  </div>
+</div>
+
+<!-- ====================================================
+     SECTION 1: INTRODUCTION TO MANVANTARAS
+     ==================================================== -->
+<div id="intro">
+<div class="sec-header">
+  <div class="label">§ Section 01 — Foundation</div>
+  <h2>What is a Manvantara?</h2>
+  <p>The cosmological framework that governs cosmic cycles, divine governance, and the rotation of sacred sages</p>
+</div>
+
+<div class="section">
+<div class="container">
+
+<h3>The Architecture of Hindu Cosmic Time</h3>
+
+<p>Hindu cosmology operates on an extraordinarily vast timescale that makes modern astronomical estimates seem small by comparison. Time is not linear but <em>cyclical</em> — worlds are born, maintained, dissolved, and re-born in endless rhythmic repetition. The <span class="sanskrit">Manvantara</span> is the fundamental unit of <em>inhabited cosmic time</em>.</p>
+
+<div class="callout">
+  <div class="callout-title">Definition — Manvantara</div>
+  <p><strong>Manvantara</strong> (मन्वन्तर) = <em>Manu + antara</em> = "the period of a Manu." It is the span of cosmic time during which one <strong>Manu</strong> (progenitor of humanity) governs creation, assisted by a specific set of <strong>Saptarishis</strong> (seven great sages), an <strong>Indra</strong> (lord of heavens), and a specific assembly of <strong>Devas</strong> (divine beings).</p>
+</div>
+
+<h3>The Cosmic Calendar — From Kalpa to Yuga</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Unit</th>
+      <th>Sanskrit Name</th>
+      <th>Duration</th>
+      <th>Human Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Basic Unit</strong></td><td>Kṛta/Satya Yuga</td><td>4,000 divine years</td><td>1,728,000 human years</td></tr>
+    <tr><td></td><td>Tretā Yuga</td><td>3,000 divine years</td><td>1,296,000 human years</td></tr>
+    <tr><td></td><td>Dvāpara Yuga</td><td>2,000 divine years</td><td>864,000 human years</td></tr>
+    <tr><td></td><td>Kali Yuga</td><td>1,000 divine years</td><td>432,000 human years</td></tr>
+    <tr><td><strong>Mahāyuga</strong></td><td>Caturyuga</td><td>10,000 divine years + sandhyās</td><td>4,320,000 human years</td></tr>
+    <tr><td><strong>Manvantara</strong></td><td>Manvantara</td><td>71 Mahāyugas</td><td>≈ 306,720,000 human years</td></tr>
+    <tr><td><strong>Kalpa</strong></td><td>Brahma's Day</td><td>14 Manvantaras + sandhyās</td><td>4,320,000,000 human years</td></tr>
+    <tr><td><strong>Full Day-Night</strong></td><td>Brahma's Day+Night</td><td>2 Kalpas</td><td>8,640,000,000 human years</td></tr>
+    <tr><td><strong>Brahma's Year</strong></td><td>Brahma Varsha</td><td>360 of his days</td><td>≈ 3.11 trillion human years</td></tr>
+    <tr><td><strong>Brahma's Life</strong></td><td>Mahākalpa</td><td>100 Brahma years</td><td>≈ 311 trillion human years</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout saffron">
+  <div class="callout-title">Key Numbers</div>
+  <p>One <strong>Kalpa</strong> = <strong>14 Manvantaras</strong>. Each Manvantara contains exactly <strong>71 Mahāyugas</strong>. Between each Manvantara is a transitional period (<span class="sanskrit">sandhyā</span>) equal to the duration of a Kṛta Yuga (1,728,000 years). We are currently in the <strong>7th Manvantara</strong> (Vaivasvata), in the <strong>28th Mahāyuga</strong> of that cycle, in the <strong>Kali Yuga</strong> phase.</p>
+</div>
+
+<h3>The Five Officers of Each Manvantara</h3>
+
+<p>Each Manvantara is administered by five types of divine officers. This cosmic governance structure repeats, with new appointees, in every cycle:</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Officer</th><th>Role</th><th>Number per Manvantara</th><th>Sanskrit Term</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Manu</strong></td><td>Progenitor and lawgiver of humanity; earthly sovereign of cosmic order</td><td>1</td><td>मनु</td></tr>
+    <tr><td><strong>Indra</strong></td><td>King of the Devas, ruler of Svarga (heaven), commander of divine forces</td><td>1</td><td>इन्द्र</td></tr>
+    <tr><td><strong>Saptarishis</strong></td><td>Seven Great Sages who preserve Vedic knowledge and guide spiritual evolution</td><td>7</td><td>सप्तऋषि</td></tr>
+    <tr><td><strong>Deva-gaṇas</strong></td><td>Classes of gods (usually 5 groups of 12–14 each)</td><td>5 groups</td><td>देवगण</td></tr>
+    <tr><td><strong>Avatāra</strong></td><td>Manifestation of Viṣṇu for that Manvantara's specific cosmic function</td><td>1 primary</td><td>अवतार</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Why Do the Saptarishis Change in Each Manvantara?</h3>
+
+<p>This is one of the most fascinating aspects of Puranic cosmology. The answer operates at multiple levels:</p>
+
+<ol class="styled">
+  <li><strong>Spiritual merit and fitness:</strong> Different sages accumulate the spiritual merit (<span class="sanskrit">tapas</span>) required to bear the responsibility of cosmic guardianship in different eons. Just as a new government comes to power when the old one's term ends, the Saptarishi assembly reflects the "spiritually qualified" sages of that era.</li>
+  <li><strong>Cosmic rotation principle:</strong> The Bhāgavata Purāṇa teaches that the universe operates through alternating manifestation — even the greatest sages take turns in cosmic responsibility. No single spiritual lineage permanently monopolizes divine function.</li>
+  <li><strong>Lineage continuity:</strong> Often the <em>sons or descendants</em> of one Manvantara's Saptarishis become the Saptarishis of the next. The lineage survives; the individuals rotate.</li>
+  <li><strong>Symbolism:</strong> The changing of Saptarishis symbolizes that <em>knowledge itself evolves</em> — each Manvantara's sages bring a new emphasis to spiritual and cosmological understanding while preserving the essential Vedic core.</li>
+</ol>
+
+<div class="callout blue">
+  <div class="callout-title">Astronomical Connection</div>
+  <p>The <strong>Saptarishi Mandala</strong> — known in the West as <em>Ursa Major</em> (the Great Bear) or the <em>Big Dipper</em> — is identified with the seven sages. In Vedic astronomy (<span class="sanskrit">Jyotiṣa</span>), these stars are said to be the actual abodes of the Saptarishis. The constellation rotates, metaphorically enacting the cosmic rotation of sage-identities across Manvantaras.</p>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 2: CONCEPT OF SAPTARISHIS
+     ==================================================== -->
+<div id="saptarishi-concept">
+<div class="sec-header" style="background: linear-gradient(135deg, #0a0604, #1a1a3a);">
+  <div class="label">§ Section 02 — The Seven Sages</div>
+  <h2>The Concept of the Saptarishis</h2>
+  <p>Who they are, what they preserve, and why they are the most important lineage-founders in all of Hindu tradition</p>
+</div>
+
+<div class="section section-dark">
+<div class="container">
+
+<h3>The Seven Pillars of Cosmic Knowledge</h3>
+
+<p>The <span class="sanskrit">Saptarishis</span> (सप्तऋषि — <em>sapta</em> = seven, <em>ṛṣi</em> = seer/sage) are not merely learned scholars. They are <strong>cosmic offices</strong> — positions in the divine administration of the universe. Each holder of a Saptarishi position:</p>
+
+<ul class="styled">
+  <li>Is a <strong>mantra-draṣṭā</strong> (सूत्रद्रष्टा) — a "seer" of sacred Vedic hymns, not their composer. The Vedas are eternal; Rishis <em>perceive</em> them through supreme meditation.</li>
+  <li>Maintains the <strong>continuity of Vedic knowledge</strong> across cosmic cycles. They are the living memory of the universe.</li>
+  <li>Acts as <strong>progenitor of human lineages</strong> — almost all Brahmin gotras trace back to one of the Saptarishis.</li>
+  <li>Serves as <strong>intermediary between Brahma and humanity</strong> — they receive cosmic instructions and transmit them as dharmic law.</li>
+  <li>Resides in <strong>celestial abodes</strong> simultaneously inhabiting both the physical stars of Ursa Major and higher spiritual planes.</li>
+</ul>
+
+<h3>The Ṛṣi Classification System</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Level</th><th>Title</th><th>Description</th><th>Examples</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Highest</strong></td><td>Brahmarṣi (ब्रह्मर्षि)</td>
+      <td>Sages who have realized Brahman itself; born-sages or those who attained the status through supreme tapas</td>
+      <td>Vasiṣṭha, Viśvāmitra (after achieving the title), Atri</td>
+    </tr>
+    <tr>
+      <td></td><td>Devarṣi (देवर्षि)</td>
+      <td>Sages who dwell among the gods and carry divine authority</td>
+      <td>Nārada, Asita</td>
+    </tr>
+    <tr>
+      <td></td><td>Maharṣi (महर्षि)</td>
+      <td>Great sages of immense knowledge and power</td>
+      <td>Kaśyapa, Bhāradvāja, Jamadagni</td>
+    </tr>
+    <tr>
+      <td></td><td>Rājarṣi (राजर्षि)</td>
+      <td>Sage-kings who combined royal power with sagehood</td>
+      <td>Janaka, Viśvāmitra (before promotion)</td>
+    </tr>
+    <tr>
+      <td><strong>Foundational</strong></td><td>Pitamaharṣi</td>
+      <td>Primordial sages, direct creations of Brahma</td>
+      <td>Marīci, Atri, Aṅgiras</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Brahma's Mind-Born Sons (Manasaputras)</h3>
+
+<p>The foundational Saptarishis of the first Manvantara are particularly important because they are <span class="sanskrit">manasaputras</span> (मानसपुत्र) — "mind-born sons" of Brahma. Brahma did not create them through physical procreation but through the power of his thought alone:</p>
+
+<div class="callout" style="border-color:#c9923a; background: #c9923a14;">
+  <div class="callout-title">The Ten/Eleven Prajāpatis — Brahma's Mind-Born Sons</div>
+  <p>Different texts give different numbers and names. The core list from Bhāgavata Purāṇa (3.12.22-25):</p>
+  <p><strong>Marīci</strong> · <strong>Atri</strong> · <strong>Aṅgiras</strong> · <strong>Pulastya</strong> · <strong>Pulaha</strong> · <strong>Kratu</strong> · <strong>Bhṛgu</strong> · <strong>Vasiṣṭha</strong> · <strong>Dakṣa</strong> · <strong>Nārada</strong></p>
+  <p>Some texts add: <strong>Sanaka, Sanandana, Sanātana, Sanatkumāra</strong> (the four eternal celibate sages who refused to procreate).</p>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 3: ALL 14 MANVANTARAS — OVERVIEW
+     ==================================================== -->
+<div id="manvantaras">
+<div class="sec-header">
+  <div class="label">§ Sections 03–04 — The Fourteen Cycles</div>
+  <h2>All 14 Manvantaras</h2>
+  <p>Complete overview of each cosmic cycle — its Manu, Indra, Saptarishis, gods, and major events</p>
+</div>
+
+<div class="section">
+<div class="container">
+
+<h3>The Fourteen Manvantaras of the Current Kalpa (Śveta-Vārāha Kalpa)</h3>
+
+<p>The current Kalpa is called <span class="sanskrit">Śveta-Vārāha Kalpa</span> (the Kalpa of the White Boar), named after Viṣṇu's boar (<span class="sanskrit">Varāha</span>) avatāra that restored the earth at the beginning of this cycle. We are in the <mark>seventh Manvantara</mark> of this Kalpa, meaning six complete Manvantaras have already passed, and seven more are yet to come.</p>
+
+<div class="manvantara-grid">
+
+  <!-- MV 1 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">1</div>
+      <div>
+        <div class="mv-title">Svāyambhuva Manvantara</div>
+        <div class="mv-subtitle">The Primordial Cycle — Age of Brahma's Son</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Svāyambhuva (Son of Brahma; first Manu)</span></div>
+      <div class="mv-row"><span class="mv-label">Manu's Wife</span><span class="mv-val">Śatarūpā (also mind-born from Brahma)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Yajña (son of Ruci and Ākūti; an avatāra of Viṣṇu)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Yāmas, Tuṣitas, Vibhus, Satyas, Haribhus (12 in each group)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Yajña (also as Indra); Varāha (Boar) rescued Earth</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Marīci · Atri · Aṅgiras · Pulaha · Kratu · Pulastya · Vasiṣṭha</div>
+    </div>
+  </div>
+
+  <!-- MV 2 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">2</div>
+      <div>
+        <div class="mv-title">Svārociṣa Manvantara</div>
+        <div class="mv-subtitle">Second Cycle — Age of the Brilliant One</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Svārociṣa (son of Svarociṣ Agni and Manoharā)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Vipaścit (or Rochana in some texts)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Tuṣitas, Pāras, Āpyas, Prabhūtas, and Vaiśvadevas</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Vibhu (son of Vedaśirā and Tusitā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis (VP):</strong> Ūrja · Stambha · Prāṇa · Dattoli · Ṛṣabha · Niścara · Arvarivat<br><strong>Saptarishis (BP):</strong> Aurva · Stambha · Kāśyapa · Prāṇa · Bṛhaspati · Cyavana · Dattāreya (variants exist)</div>
+    </div>
+  </div>
+
+  <!-- MV 3 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">3</div>
+      <div>
+        <div class="mv-title">Uttama Manvantara</div>
+        <div class="mv-subtitle">Third Cycle — Age of the Exalted One</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Uttama (son of Priyavrata and brother of Svārociṣa in some accounts)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Suśānti (also Satya in some texts)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Sudhāmans, Satyas, Śivas, Pratardanas, Vaśavartins</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Satyasena (son of Dharma and Sunṛtā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Pramada · Vasistha · Datta · Cyavana · Kavi · Agni · Bali (VP lists vary; BP gives different names)</div>
+    </div>
+  </div>
+
+  <!-- MV 4 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">4</div>
+      <div>
+        <div class="mv-title">Tāmasa Manvantara</div>
+        <div class="mv-subtitle">Fourth Cycle — Age of Darkness</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Tāmasa (son of Priyavrata; one of the ten sons)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Triśikha (triple-peaked; or Śibi in some texts)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Satyakas, Haris, Vīras, Devapālas, Sūpas</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Hari (rescued Gajendra — the elephant, in a famous story)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Jyotirdhāma · Pṛthu · Kāvya · Caitra · Agni · Vānaka · Pivara (Vishnu Purana version)<br>BP version: Nara · Khyāti · Sānti · Jñāna · Taijasa · Vipas · others</div>
+    </div>
+  </div>
+
+  <!-- MV 5 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">5</div>
+      <div>
+        <div class="mv-title">Raivata Manvantara</div>
+        <div class="mv-subtitle">Fifth Cycle — Age of Raivata</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Raivata (also Raibhya; son of Priyavrata or independently mentioned)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Vibhu (the all-pervading)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Amitābhas, Bhūtarayas, Vaikuṇṭhas, and others</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Vaikuṇṭha (son of Śubhra and Vikuṇṭhā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Hiraṇyaromā · Vedasrī · Ūrdhvabāhu · Vedabāhu · Sudhāman · Parjanya · Mahāmuni</div>
+    </div>
+  </div>
+
+  <!-- MV 6 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">6</div>
+      <div>
+        <div class="mv-title">Cākṣuṣa Manvantara</div>
+        <div class="mv-subtitle">Sixth Cycle — Age of Cākṣuṣa</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Cākṣuṣa (born from Cakṣus, the eye; son of king Aṅga)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Manojava (swift as thought) or Purarandara</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Ādyas, Prasūtas, Bhavyas, Pṛthagbhūtas, Lekhas</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Ajita (son of Vairāja and Sambhūti); or Ajita as the Kurma avatāra</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Sumedhas · Virajas · Haviṣmān · Uttama · Madhu · Abhivart (Abhinat) · Sahiṣṇu<br>Note: Vasiṣṭha family prominent here too</div>
+    </div>
+  </div>
+
+  <!-- MV 7 — CURRENT -->
+  <div class="mv-card current">
+    <div class="mv-header">
+      <div class="mv-num">7</div>
+      <div>
+        <div class="mv-title">Vaivasvata Manvantara <span class="current-badge">CURRENT</span></div>
+        <div class="mv-subtitle">Seventh Cycle — Age of the Sun's Son</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Vaivasvata Manu (Śrāddhadeva; son of Vivasvat/Sūrya)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Purandhara (the current Indra)</span></div>
+      <div class="mv-row"><span class="mv-label">Deva-gaṇas</span><span class="mv-val">Ādityas (12), Vasus (8), Rudras (11), Viśvedevas, Maruts (49)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Vāmana, Paraśurāma, Rāma, Kṛṣṇa, Buddha, Kalki (forthcoming)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Atri · Vasiṣṭha · Kaśyapa · Gautama · Bhāradvāja · Viśvāmitra · Jamadagni<br><em>(Bhāgavata adds Kauśika for Viśvāmitra variant)</em></div>
+    </div>
+  </div>
+
+  <!-- MV 8 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">8</div>
+      <div>
+        <div class="mv-title">Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Eighth Cycle — Future Age of Savarni</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Sāvarṇi (son of Sūrya by his wife Chāyā — "Shadow")</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Bali Vairocana (yes — the great demon king, liberated by Vāmana)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Sārvabhauma (son of Devaguhya and Sarasvatī)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis (predicted):</strong> Gālava · Dīptimān · Paraśurāma · Aśvatthāmā · Kṛpa · Ṛṣyaśṛṅga · Vyāsa (Dvaipāyana)/Droṇa<br><em>Note: Several heroes of Mahābhārata are predicted to become Saptarishis!</em></div>
+    </div>
+  </div>
+
+  <!-- MV 9 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">9</div>
+      <div>
+        <div class="mv-title">Dakṣa-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Ninth Cycle — Future Age</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Dakṣasāvarṇi (son of Varuṇa)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Adbhuta (the wondrous)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Ṛṣabha (son of Āyuṣmān and Ambudhārā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Savana · Dyutimat · Bhavya · Vasu · Medhatithi · Jyotiṣmān · Satya</div>
+    </div>
+  </div>
+
+  <!-- MV 10 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">10</div>
+      <div>
+        <div class="mv-title">Brahma-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Tenth Cycle — Future Age</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Brahmasāvarṇi (son of Upashloka)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Śānti (the peaceful)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Viṣvaksena (son of Viśvasṛṣṭi and Viśūcī)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Haviṣmān · Sukṛti · Satya · Apāmmūrti · Nābhāga · Āpratīma · Tattvadṛk</div>
+    </div>
+  </div>
+
+  <!-- MV 11 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">11</div>
+      <div>
+        <div class="mv-title">Dharma-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Eleventh Cycle</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Dharmasāvarṇi</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Vaidhrta (or Gabhīra)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Dharmasetu (son of Āryaka and Vaidhriti)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Niścara · Agnitejas · Vapuṣmān · Viṣṇu · Āruni · Haviṣmān · Anagha</div>
+    </div>
+  </div>
+
+  <!-- MV 12 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">12</div>
+      <div>
+        <div class="mv-title">Rudra-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Twelfth Cycle</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Rudrasāvarṇi</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Ṛtadhāman</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Sudhāman (son of Satyasahā and Sunṛtā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Tapasvī · Sutapā · Tapomūrti · Taporati · Tapodhriti · Tapodyuti · Tapodhanā</div>
+    </div>
+  </div>
+
+  <!-- MV 13 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">13</div>
+      <div>
+        <div class="mv-title">Deva-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Thirteenth Cycle</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Devasāvarṇi</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Divaspati (or Divyaspati)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Yogeśvara (son of Devahotra and Bṛhatī)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Nirmoha · Tattvadarśī · Niṣprakampa · Nirutsuka · Dhṛtimān · Avyaya · Sutapas</div>
+    </div>
+  </div>
+
+  <!-- MV 14 -->
+  <div class="mv-card">
+    <div class="mv-header">
+      <div class="mv-num">14</div>
+      <div>
+        <div class="mv-title">Indra-Sāvarṇi Manvantara</div>
+        <div class="mv-subtitle">Fourteenth and Final Cycle of this Kalpa</div>
+      </div>
+    </div>
+    <div class="mv-body">
+      <div class="mv-row"><span class="mv-label">Manu</span><span class="mv-val">Indrasāvarṇi (or Bhauma)</span></div>
+      <div class="mv-row"><span class="mv-label">Indra</span><span class="mv-val">Śuci (the pure)</span></div>
+      <div class="mv-row"><span class="mv-label">Viṣṇu Avatāra</span><span class="mv-val">Bṛhadbhānu (son of Satrāyaṇa and Vitatyā)</span></div>
+      <div class="mv-saptarishis"><strong>Saptarishis:</strong> Agni · Bāhu · Śuci · Śuddha · Māgadha · Agnīdhra · Yukta<br><em>After this Manvantara, the Kalpa ends and cosmic dissolution (Pralaya) occurs.</em></div>
+    </div>
+  </div>
+
+</div><!-- end grid -->
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 5–11: DETAILED MANVANTARA ANALYSES
+     ==================================================== -->
+
+<div id="mv-detailed">
+<div class="sec-header" style="background: linear-gradient(135deg, #0e1a08, #1a2d10);">
+  <div class="label">§ Sections 05–11 — Deep Analysis</div>
+  <h2>Detailed Manvantara Studies</h2>
+  <p>In-depth examination of key Manvantaras with full Saptarishi profiles, lineages, and events</p>
+</div>
+
+<div class="section">
+<div class="container">
+
+<!-- MANVANTARA 1 DETAILED -->
+<h3 id="mv1">Manvantara 1 — Svāyambhuva: The Primordial Age</h3>
+
+<div class="callout green">
+  <div class="callout-title">Cosmic Context</div>
+  <p>This is the <em>foundational</em> Manvantara — the one from which all subsequent lineages descend. Brahma himself created this Manu directly. The Saptarishis of this era are Brahma's own mind-born sons and are the ultimate progenitors of nearly every important lineage in Hindu tradition.</p>
+</div>
+
+<p><strong>Svāyambhuva Manu</strong> (literally "born of Svayambhu/Brahma the self-born") and his wife <strong>Śatarūpā</strong> (she of hundred forms) had five children whose descendants populated all the worlds:</p>
+
+<ul class="styled">
+  <li><strong>Priyavrata</strong> and <strong>Uttānapāda</strong> (sons) — ancestors of many royal dynasties</li>
+  <li><strong>Ākūti</strong>, <strong>Devahūti</strong>, <strong>Prasūti</strong> (daughters) — married Ruci, Kardama, and Dakṣa respectively</li>
+</ul>
+
+<p>Through Devahūti and sage Kardama was born the great sage <strong>Kapila</strong> — founder of the Sāṅkhya philosophy and considered an avatāra of Viṣṇu.</p>
+
+<div class="lineage-box">
+  <div class="tree-title">🌳 Svāyambhuva Manvantara — Foundational Lineage Tree</div>
+<pre>
+BRAHMA (Self-Born)
+    │
+    ├──────────────────────────────────────────────────────
+    │                          │
+ [MANU LINE]              [SAPTARISHI LINE — 7 Mind-Born Sons]
+    │                          │
+Svāyambhuva Manu              ├── MARĪCI
++ Śatarūpā                    │      └── KAŚYAPA (son)
+    │                         │              ├── Devas (by Aditi)
+    ├── Priyavrata             │              ├── Asuras (by Diti)
+    │    └── 10 sons           │              ├── Nāgas (by Kadrū)
+    │       (become Manus 3-7) │              ├── Birds/Garuḍa (by Vinatā)
+    │                         │              └── All living beings
+    ├── Uttānapāda             │
+    │    └── Dhruva ───────────│──► [Becomes Pole Star by devotion]
+    │                         │
+    ├── Ākūti × Ruci          ├── ATRI
+    │    └── YAJÑA (= Indra)  │      ├── Soma/Chandra (Moon)
+    │                         │      ├── Dattātreya (avatāra of Trimurti)
+    ├── Devahūti × KARDAMA    │      └── Durvāsas
+    │    └── KAPILA (avatāra) │
+    │                         ├── AṄGIRAS
+    └── Prasūti × DAKṢA       │      ├── Bṛhaspati (guru of Devas)
+         └── 60 daughters      │      ├── Utathya
+              (married sages)  │      └── Later: Bhāradvāja lineage
+                               │
+                               ├── PULAHA
+                               │      └── Various sages and Apsaras
+                               │
+                               ├── KRATU
+                               │      └── Vālakhilyas (60,000 thumb-sized sages!)
+                               │
+                               ├── PULASTYA
+                               │      ├── Viśravas
+                               │      │     ├── KUBERA (lord of wealth)
+                               │      │     └── RĀVAṆA (with Kaikasī)
+                               │      └── Agastya (in some accounts)
+                               │
+                               └── VASIṢṬHA
+                                      ├── 100 sons (all killed by Viśvāmitra)
+                                      └── Paraśara
+                                              └── VYĀSA (Vedavyāsa)
+</pre>
+</div>
+
+<!-- MANVANTARA 7 DETAILED - CURRENT -->
+<h3 id="mv7">Manvantara 7 — Vaivasvata: The Current Age</h3>
+
+<div class="callout saffron">
+  <div class="callout-title">We Are Here</div>
+  <p>We currently live in the <strong>Vaivasvata Manvantara</strong>, in its <strong>28th Mahāyuga</strong>, in the <strong>Kali Yuga</strong> phase. This makes the Saptarishis of this Manvantara the most directly relevant to present human civilization, Brahmin gotra systems, and ongoing spiritual traditions.</p>
+</div>
+
+<p><strong>Vaivasvata Manu</strong> is the son of <strong>Vivasvat</strong> (the Sun god, also called Sūrya), making him a Solar dynasty ancestor. His story parallels Noah's ark — he was warned by a fish (Matsya avatāra of Viṣṇu) about a great flood, built a boat, and survived the deluge that ended the previous Manvantara.</p>
+
+<p>The seven sages of this current era are perhaps the most familiar in all of Hindu tradition — their names appear throughout the Rāmāyaṇa, Mahābhārata, Upaniṣads, and Purāṇas:</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Sage</th>
+      <th>Star in Ursa Major</th>
+      <th>Gotra Founded</th>
+      <th>Key Role</th>
+      <th>Nature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td><td><strong>Atri</strong></td><td>Megrez (δ UMa)</td>
+      <td>Atri Gotra</td>
+      <td>Father of Soma (Moon), Dattātreya, Durvāsas</td>
+      <td>Mind-born son of Brahma</td>
+    </tr>
+    <tr>
+      <td>2</td><td><strong>Vasiṣṭha</strong></td><td>Alkaid/Benetnasch (η UMa)</td>
+      <td>Vasiṣṭha Gotra</td>
+      <td>Rāja-guru of Sūrya dynasty; teacher of Rāma</td>
+      <td>Mind-born son of Brahma</td>
+    </tr>
+    <tr>
+      <td>3</td><td><strong>Kaśyapa</strong></td><td>Dubhe (α UMa)</td>
+      <td>Kaśyapa Gotra</td>
+      <td>Father of all creation — Devas, Asuras, animals, reptiles</td>
+      <td>Son of Marīci (grandson of Brahma)</td>
+    </tr>
+    <tr>
+      <td>4</td><td><strong>Gautama</strong></td><td>Merak (β UMa)</td>
+      <td>Gautama Gotra</td>
+      <td>Teacher of Indra; husband of Ahalyā; Śakya gotras trace here</td>
+      <td>Son of Utathya (Aṅgiras lineage)</td>
+    </tr>
+    <tr>
+      <td>5</td><td><strong>Bhāradvāja</strong></td><td>Phecda (γ UMa)</td>
+      <td>Bhāradvāja Gotra</td>
+      <td>Teacher of Droṇa; Āyurveda authority; father of Droṇa</td>
+      <td>Son of Bṛhaspati (raised by Bharata)</td>
+    </tr>
+    <tr>
+      <td>6</td><td><strong>Viśvāmitra</strong></td><td>Alioth (ε UMa)</td>
+      <td>Viśvāmitra/Kauśika Gotra</td>
+      <td>Created Gāyatrī mantra; guru of Rāma; achieved Brahmarṣi status</td>
+      <td>Born a Kṣatriya king; became a Brahmarṣi</td>
+    </tr>
+    <tr>
+      <td>7</td><td><strong>Jamadagni</strong></td><td>Mizar (ζ UMa)</td>
+      <td>Jamadagni/Bhārgava Gotra</td>
+      <td>Father of Paraśurāma; descendant of Bhṛgu</td>
+      <td>Son of Ṛcīka; Bhṛgu lineage</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Vaivasvata Manu's Lineage</h4>
+<div class="lineage-box">
+  <div class="tree-title">🌳 Solar Dynasty Origin from Vaivasvata Manu</div>
+<pre>
+VIVASVAT (Sūrya/Sun God) + SAṂJÑĀ
+    │
+    ├── VAIVASVATA MANU (= Śrāddhadeva) ── [Saved by Matsya Avatāra from the Flood]
+    │       │
+    │       ├── IKṢVĀKU ──────────► SOLAR DYNASTY (Sūryavaṃśa)
+    │       │        └── Kakutstha → Māndhātā → Sagara → Dilīpa
+    │       │              → Bhagīratha (brought Gaṅgā)
+    │       │                → Raghu → Daśaratha → RĀMA !!
+    │       │
+    │       ├── NĀBHĀGA
+    │       ├── DHṚṢṬA
+    │       ├── ŚARYĀTI ──────────► Story of Cyavana Ṛṣi / Sāvitrī connected
+    │       ├── NARIṢYANTA
+    │       ├── PRĀṂŚU
+    │       ├── NĀBHĀNEDIṢṬHA
+    │       ├── KĀRŪṢA
+    │       └── PṚṢADHRA
+    │
+    └── ILĀ (daughter) ──── [Also SUDYUMNA as male — gender-changed by Śiva]
+              │
+              └── PURŪRAVAS + URVAŚĪ (Apsarā)
+                      │
+                      └── ĀYUS → NAHUṢA → YAYĀTI
+                                                │
+                                    ┌───────────┼───────────┐
+                                   YADU       PŪRU      DRUHYU etc.
+                                    │           │
+                               YĀDAVA LINE   PAURAVA LINE
+                               → KṚṢṆA !!   → BHARATA → DHṚTARĀṢṬRA
+                                                        → PĀṆḌAVAS !!
+</pre>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 13: COMPLETE SAGE PROFILES
+     ==================================================== -->
+<div id="sages">
+<div class="sec-header" style="background: linear-gradient(135deg, #1a0808, #2d1010);">
+  <div class="label">§ Section 13 — Individual Profiles</div>
+  <h2>Complete Sage Profiles</h2>
+  <p>Detailed encyclopedic entries for each major Saptarishi — parentage, lineage, stories, disciples, and legacy</p>
+</div>
+
+<div class="section section-alt">
+<div class="container">
+
+<!-- MARICI -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">🌟</div>
+    <div>
+      <div class="sage-name">Marīci</div>
+      <div class="sage-alt">मरीचि · "A Ray of Light" · Also: Maricipa</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">A particle of light; ray; also a mirage</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Brahma (mind-born)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Kālā (daughter of Kardama and Devahūti); also Dharmavratā (or Sambhūti in some texts)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Manvantara</div><div class="sage-field-val">Svāyambhuva (1st); also honored in current era</div></div>
+      <div class="sage-field"><div class="sage-field-label">Status</div><div class="sage-field-val">Brahmarṣi; one of the original 10 Prajāpatis</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Mārīca Gotra (subsumed into Kaśyapa)</div></div>
+    </div>
+    <h4>Key Descendants</h4>
+    <p>Marīci's most important son is <strong>Kaśyapa</strong>, who is literally the father of all creation. Through Kaśyapa's marriages to Dakṣa's daughters, the entire living world was born:</p>
+    <ul class="styled">
+      <li><strong>Aditi</strong> (wife of Kaśyapa) → 12 Ādityas including Viṣṇu, Indra, Varuṇa, Mitra</li>
+      <li><strong>Diti</strong> (wife of Kaśyapa) → Daityas/Asuras including Hiraṇyakaśipu, Hiraṇyākṣa</li>
+      <li><strong>Kadrū</strong> (wife of Kaśyapa) → Nāgas (serpents)</li>
+      <li><strong>Vinatā</strong> (wife of Kaśyapa) → Garuḍa (eagle; mount of Viṣṇu) and Aruṇa (charioteer of Sun)</li>
+      <li><strong>Danu</strong> (wife of Kaśyapa) → Dānavas</li>
+    </ul>
+    <div class="callout purple">
+      <div class="callout-title">Story — Marīci's Curse</div>
+      <p>A well-known story from the Purāṇas tells of how Brahma once lusted after his own daughter and how Marīci (along with other sages) condemned this act. In another tale, Marīci's wife Dharmavratā was cursed to become a stone (śilā) when she inadvertently served her husband's feet while Brahma was sleeping — an act of disrespect. This stone became the famous <em>Brahma-tīrtha</em>.</p>
+    </div>
+    <h4>Scriptural Sources</h4>
+    <ul class="styled"><li>Bhāgavata Purāṇa 3.12.22 — listed as mind-born son of Brahma</li><li>Vishnu Purāṇa I.7 — Marīci as first of Saptarishis</li><li>Mahābhārata Ādi Parva — genealogical accounts</li></ul>
+  </div>
+</div>
+
+<!-- ATRI -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">🌙</div>
+    <div>
+      <div class="sage-name">Atri</div>
+      <div class="sage-alt">अत्रि · "One who devours" or "the non-three" (atri = a + tri = not three)</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">He who is beyond the three guṇas (a-trī); or the devourer of sins</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Brahma (mind-born son)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Anasūyā (मातृ — the ideal wife; "without jealousy")</div></div>
+      <div class="sage-field"><div class="sage-field-label">Sons</div><div class="sage-field-val">Soma/Chandra (Moon), Dattātreya, Durvāsas</div></div>
+      <div class="sage-field"><div class="sage-field-label">Manvantaras</div><div class="sage-field-val">Svāyambhuva (1st) AND Vaivasvata (7th, current)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Atri Gotra (one of the major gotras)</div></div>
+    </div>
+    <h4>The Three Divine Sons</h4>
+    <p>Atri and Anasūyā's three sons represent the <em>Trimūrti in human form</em> — a remarkable convergence of cosmic forces:</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Son</th><th>Represents</th><th>Role</th><th>Famous For</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Soma/Chandra</strong></td><td>Brahma</td><td>Moon god; presides over minds and plants</td><td>Married 27 Nakṣatra daughters of Dakṣa; cursed for favoring Rohiṇī</td></tr>
+        <tr><td><strong>Dattātreya</strong></td><td>Viṣṇu</td><td>Avatāra of all three; the universal guru</td><td>Taught 24 gurus from Nature; patron of Nātha and Vaiṣṇava traditions; author of Avadhūta Gītā</td></tr>
+        <tr><td><strong>Durvāsas</strong></td><td>Śiva</td><td>Master of tapas; famous for his terrible curses</td><td>Cursed Indra (causing loss of Lakṣmī), cursed Śakuntalā, cursed Ambarīṣa</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout green">
+      <div class="callout-title">Anasūyā's Test — One of the Greatest Stories</div>
+      <p>When Brahmā, Viṣṇu, and Śiva tested Anasūyā by asking her to serve them food while naked, her supreme chastity (<span class="sanskrit">pātivratya</span>) transformed them into infants. This story demonstrates that Atri's household embodied the highest dharma. The Trimūrti themselves declared they would be born as her sons as a boon.</p>
+    </div>
+    <h4>Atri in the Rāmāyaṇa</h4>
+    <p>During Rāma's forest exile, he visits the āśrama of Atri and Anasūyā in the Citrakūṭa region. Anasūyā gifts Sītā divine ornaments and teaches her about wifely virtue (<span class="sanskrit">pāti-dharma</span>). This is one of the most moving episodes in the Āraṇya Kāṇḍa.</p>
+    <div class="callout">
+      <div class="callout-title">Atri in the Rigveda</div>
+      <p>Atri is one of the chief seers of the Ṛgveda — the entire fifth Maṇḍala (Book 5) is attributed to the Atri family (<span class="sanskrit">Ātreya</span> hymns). These 87 hymns are among the oldest religious compositions in human history, praising Agni, Indra, Mitra, Varuṇa, and the Aśvins.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ANGIRAS -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">🔥</div>
+    <div>
+      <div class="sage-name">Aṅgiras</div>
+      <div class="sage-alt">अङ्गिरस् · "One of fiery limbs" · Father of the Vedic fire tradition</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">From "aṅgāra" (ember/coal) — the brilliant/fiery one</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Brahma (mind-born); also sometimes said to have emerged from Brahma's mouth</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Śraddhā (faith); also Smṛti, Svadha, Satī (various texts)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Sons</div><div class="sage-field-val">Bṛhaspati (chief), Utathya, Saṃvartana, also considered father of Bhāradvāja</div></div>
+      <div class="sage-field"><div class="sage-field-label">Daughter</div><div class="sage-field-val">Citrāmaṣṭī; also considered progenitor of many women sages</div></div>
+      <div class="sage-field"><div class="sage-field-label">Veda Connection</div><div class="sage-field-val">The <em>Atharvaveda</em> is sometimes called the Atharva-Aṅgiras Veda</div></div>
+    </div>
+    <h4>The Aṅgiras Lineage — A Dynasty of Teachers</h4>
+    <p>The Aṅgiras family is perhaps the most academically influential in all Vedic tradition. Their descendants include some of the greatest teachers ever known:</p>
+    <div class="lineage-box">
+      <div class="tree-title">🌳 Aṅgiras Lineage Tree</div>
+<pre>
+AṄGIRAS (mind-born of Brahma)
+    │
+    ├── BṚHASPATI (Bṛhaspati = "Lord of Sacred Speech")
+    │       │
+    │       ├── Guru of the 12 Ādityas and all Devas
+    │       ├── Author of Bṛhaspatyasūtra (polity)
+    │       └── BHĀRADVĀJA [Born from Bṛhaspati but raised by King Bharata]
+    │                   │
+    │                   ├── Author of Āyurvedic texts
+    │                   ├── Member of Vaivasvata Saptarishis
+    │                   └── DROṆA (great warrior-teacher of Mahābhārata)
+    │                               │
+    │                               └── AŚVATTHĀMĀ [future Saptarishi in 8th Manvantara!]
+    │
+    ├── UTATHYA
+    │       └── GAUTAMA (= Dirghatamas's son; alternate tradition)
+    │                   │
+    │                   ├── Wife: AHALYĀ (cursed by Indra story)
+    │                   ├── Son: ŚATĀNANDA (priest of Janaka)
+    │                   └── NODHAS (Vedic seer)
+    │
+    └── SAṂVARTANA
+            └── Rival of Bṛhaspati; taught Marutta's sacrifice
+</pre>
+    </div>
+    <div class="callout blue">
+      <div class="callout-title">Aṅgiras in the Atharvaveda</div>
+      <p>The Atharvaveda is specifically called the <em>Atharvaṅgiras</em> — combining the traditions of Atharvan (fire-priest) and Aṅgiras. It contains hymns for healing, protection, love, and cosmic insight. Aṅgiras is credited as one of its primary seers. In Rigveda, Maṇḍalas 1, 6, 8, and 9 contain Āṅgirasa hymns.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VASISHTHA -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">⚡</div>
+    <div>
+      <div class="sage-name">Vasiṣṭha</div>
+      <div class="sage-alt">वसिष्ठ · "The most wealthy/excellent" · Royal sage of the Solar dynasty</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">Most exalted; the best; from "vasu" (wealth/excellence) + "iṣṭha" (superlative)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Origin</div><div class="sage-field-val">Mind-born of Brahma; <em>also</em> reborn from the vital seed of Mitra and Varuṇa (complex story)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Arundhatī (the star Alcor; model of wifely virtue; worshipped in Hindu weddings)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Sons</div><div class="sage-field-val">100 sons (all killed by Viśvāmitra); later Śakti (who fathered Parāśara → Vyāsa)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Sacred cow</div><div class="sage-field-val">Kāmadhenu / Nandini (the wish-fulfilling cow — source of conflict with Viśvāmitra)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Position</div><div class="sage-field-val">Royal priest (Rāja-guru) of the Solar dynasty for ALL generations</div></div>
+    </div>
+    <h4>Vasiṣṭha-Viśvāmitra Rivalry — The Greatest Sage Conflict</h4>
+    <p>One of the most dramatic and philosophically rich conflicts in Hindu mythology is the centuries-long rivalry between Vasiṣṭha (a born Brahmarṣi) and Viśvāmitra (a Kṣatriya king who sought Brahmarṣi status through extreme tapas). Their conflict spans multiple texts and carries deep symbolic meaning:</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Event</th><th>Vasiṣṭha's Side</th><th>Viśvāmitra's Side</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>Initial Conflict</td><td>Refused to give Kāmadhenu (Nandini)</td><td>Tried to take her by force with his army</td><td>Vasiṣṭha's cow produced an army; Viśvāmitra defeated</td></tr>
+        <tr><td>Viśvāmitra's response</td><td>Remained unaffected</td><td>Began extreme tapas to become a Brahmarṣi</td><td>Viśvāmitra achieved Rājarṣi, Maharṣi titles</td></tr>
+        <tr><td>Killing of 100 sons</td><td>100 sons killed by Viśvāmitra</td><td>Used supernatural powers</td><td>Vasiṣṭha attempted suicide — rivers refused to drown him</td></tr>
+        <tr><td>Trisha​nku story</td><td>Refused to perform Triśaṅku's sacrifice</td><td>Performed it; created a rival heaven</td><td>Triśaṅku hung upside down; Viśvāmitra created new stars</td></tr>
+        <tr><td>Final recognition</td><td>Acknowledged Viśvāmitra as Brahmarṣi</td><td>Achieved ultimate goal</td><td>Reconciliation; both revered as great sages</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout red">
+      <div class="callout-title">Philosophical Meaning of the Rivalry</div>
+      <p>The Vasiṣṭha-Viśvāmitra conflict symbolizes the tension between <em>birth-based spiritual authority</em> (Vasiṣṭha = born Brahmin) and <em>merit-based spiritual achievement</em> (Viśvāmitra = self-made sage). The resolution — Vasiṣṭha acknowledging Viśvāmitra — affirms that <strong>tapas (spiritual discipline) can transcend birth</strong>, a deeply democratic message within the otherwise hierarchical caste framework.</p>
+    </div>
+    <h4>Vasiṣṭha in Key Texts</h4>
+    <ul class="styled">
+      <li><strong>Yogavāsiṣṭha (Mahārāmāyaṇa)</strong> — One of the greatest texts of Advaita philosophy, presented as Vasiṣṭha's teaching to the young Prince Rāma. Contains 32,000 verses.</li>
+      <li><strong>Ṛgveda Maṇḍala 7</strong> — Entirely attributed to Vasiṣṭha family; 104 hymns.</li>
+      <li><strong>Vasiṣṭha Dharmasūtra</strong> — A foundational dharmaśāstra text.</li>
+      <li><strong>Rāmāyaṇa, Bāla Kāṇḍa</strong> — As Daśaratha's royal priest and Rāma's teacher.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- KASHYAPA -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">🌍</div>
+    <div>
+      <div class="sage-name">Kaśyapa</div>
+      <div class="sage-alt">कश्यप · "Tortoise-like" or "Throne-dweller" · Father of All Living Beings</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">"Tortoise" (kaśyapa = tortoise in Sanskrit) — the Earth-sustaining sage</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Marīci (son of Brahma); thus grandson of Brahma</div></div>
+      <div class="sage-field"><div class="sage-field-label">Mother</div><div class="sage-field-val">Kālā (daughter of Kardama Prajāpati)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wives</div><div class="sage-field-val">13 daughters of Dakṣa: Aditi, Diti, Danu, Kālikā, Tāmrā, Krodhavaśā, Manu, Anala, Kadrū, Vinatā, Idā, Kapiśā, and Surasā</div></div>
+      <div class="sage-field"><div class="sage-field-label">Status</div><div class="sage-field-val">Prajāpati (progenitor); considered = Brahma himself in creative power</div></div>
+      <div class="sage-field"><div class="sage-field-label">Avatāra</div><div class="sage-field-val">Kaśyapa is considered a partial manifestation of Viṣṇu</div></div>
+    </div>
+    <h4>Kaśyapa — The Universal Father</h4>
+    <p>No sage in Hindu tradition is more cosmically important as a <em>progenitor</em> than Kaśyapa. Through his 13 (or in some texts, more) wives — all daughters of Dakṣa — the entire populated universe was created:</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Wife</th><th>Offspring</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Aditi</strong></td><td>12 Ādityas: Viṣṇu/Vāmana, Indra, Varuṇa, Mitra, Aryamā, Bhaga, Dhātā, Pūṣan, Tvaṣṭā, Vivasvat, Savitā, Aṃśa</td><td>The Devas; Viṣṇu's birth as Vāmana comes from here</td></tr>
+        <tr><td><strong>Diti</strong></td><td>Daityas: Hiraṇyakaśipu, Hiraṇyākṣa, Maruts (after Indra's intervention)</td><td>The Asuras who battle the Devas</td></tr>
+        <tr><td><strong>Danu</strong></td><td>Dānavas: Vṛtra, Śambara, Namūci, Vipracitti</td><td>Another class of Asuras; Dānava race</td></tr>
+        <tr><td><strong>Kadrū</strong></td><td>1,000 Nāga sons: Śeṣa/Ananta, Vāsuki, Takṣaka, Karkotaka, Kaliya</td><td>The serpent race; Ananta holds the universe</td></tr>
+        <tr><td><strong>Vinatā</strong></td><td>Aruṇa (charioteer of Sun), Garuḍa (eagle king; vehicle of Viṣṇu)</td><td>The bird race; Garuḍa is enemy of Nāgas</td></tr>
+        <tr><td><strong>Tāmrā</strong></td><td>6 daughters: Śuki, Śyeni, Bhāsī, Sugrīvī, Śucī, Gridhrikā</td><td>Progenitors of birds: parrots, eagles, vultures, etc.</td></tr>
+        <tr><td><strong>Krodhavaśā</strong></td><td>10 daughters: Mṛgī, Mṛgamaṃdā, Harī, Bhadramatā, etc.</td><td>Progenitors of wild animals: deer, bears, monkeys</td></tr>
+        <tr><td><strong>Surasā</strong></td><td>1,000 Nāgas</td><td>More serpents</td></tr>
+        <tr><td><strong>Vivasvat's grandmother (Manu)</strong></td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="important">Kaśyapa is literally the father of the Devas, Asuras, humans (through Vivasvat→Manu), animals, birds, serpents, and semi-divine beings. This is why he is called <span class="sanskrit">Prajāpati</span> — Lord of Created Beings.</div>
+  </div>
+</div>
+
+<!-- VISHVAMITRA -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">✨</div>
+    <div>
+      <div class="sage-name">Viśvāmitra</div>
+      <div class="sage-alt">विश्वामित्र · "Friend of All" · The Kṣatriya Who Became a Brahmarṣi</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">Friend (mitra) of all (viśva) — universal benefactor</div></div>
+      <div class="sage-field"><div class="sage-field-label">Birth name</div><div class="sage-field-val">Kauśika (son of Kuśika, of the Kuśa lineage)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Dynasty</div><div class="sage-field-val">Kṣatriya — Solar dynasty; king of Kānyakubja</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Gādhi (king); grandmother was a daughter of Purūravas</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Viśvāmitra Gotra / Kauśika Gotra</div></div>
+      <div class="sage-field"><div class="sage-field-label">Greatest Achievement</div><div class="sage-field-val">Composed the Gāyatrī Mantra; became Brahmarṣi despite Kṣatriya birth</div></div>
+    </div>
+    <h4>The Journey of Transformation</h4>
+    <p>Viśvāmitra's story is one of the most celebrated spiritual journeys in world literature — a warrior-king who through sheer willpower and tapas (austerity) transformed himself into the highest class of sage:</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">1. King Kauśika</div>
+        <div class="timeline-content">Rules as a powerful king; visits Vasiṣṭha's āśrama; sees the power of Kāmadhenu; tries to take her by force and fails humiliatingly.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">2. First Tapas — Becomes Rājarṣi</div>
+        <div class="timeline-content">Performs intense austerities; Brahmā grants him the title "Rājarṣi" (sage-king). Not satisfied — wants Brahmarṣi status.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">3. Conflict with Vasiṣṭha; Story of Triśaṅku</div>
+        <div class="timeline-content">Performs Triśaṅku's sacrifice against Vasiṣṭha's wishes; creates new stars and a new heaven (Triśaṅku svarga). Brahmā grants him "Maharṣi" status.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">4. Seduction by Menakā</div>
+        <div class="timeline-content">Apsarā Menakā is sent by Indra to break his tapas; Viśvāmitra falls; their daughter is <strong>Śakuntalā</strong> (heroine of Kālidāsa's play). Abandons her and resumes tapas.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">5. Northern tapas; Rambhā's seduction</div>
+        <div class="timeline-content">Another Apsarā (Rambhā) sent; Viśvāmitra curses her to be a stone for 1,000 years. Now resolves to control emotions completely.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">6. Story of Hariścandra (helping Kauśika)</div>
+        <div class="timeline-content">Viśvāmitra uses Hariścandra's story to test dharma. His complex interventions reveal both his power and his ego.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">7. Brahmarṣi Achieved</div>
+        <div class="timeline-content">Vasiṣṭha himself acknowledges Viśvāmitra as a Brahmarṣi. Brahmā confirms. Viśvāmitra's tapas — spanning thousands of years — is vindicated.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">8. Teacher of Rāma</div>
+        <div class="timeline-content">Takes young Rāma and Lakṣmaṇa to protect his sacrifice; gives them the divine weapons Bala and Atibala; takes them to Mithilā where Rāma breaks Śiva's bow and wins Sītā.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">The Gāyatrī Mantra — Viśvāmitra's Greatest Gift</div>
+      <p>The <span class="sanskrit">Gāyatrī Mantra</span> (Ṛgveda 3.62.10): <em>"Oṃ Bhūr Bhuvaḥ Svaḥ | Tat Savitur Vareṇyam | Bhargo Devasya Dhīmahi | Dhiyo yo naḥ pracodayāt"</em> — was "seen" (perceived) by Viśvāmitra in deep samādhi. This mantra, addressed to the solar deity Savitṛ, is perhaps the most universally recited Vedic hymn. Every Brahmin traditionally recites it three times daily during <span class="sanskrit">sandhyāvandanam</span>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JAMADAGNI -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">⚔️</div>
+    <div>
+      <div class="sage-name">Jamadagni</div>
+      <div class="sage-alt">जमदग्नि · "Devouring Fire" · Father of the Warrior-Sage Paraśurāma</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">"Consuming/devouring fire" — his tapas burned like fire; also from "jama" (death) + "agni" (fire)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Ṛcīka (son of Bhṛgu's line — specifically Cyavana → Ṛcīka)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Mother</div><div class="sage-field-val">Satyavatī (daughter of Gādhi; thus sister of Viśvāmitra!)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Reṇukā (daughter of King Prasenajit of the Solar dynasty)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Sons</div><div class="sage-field-val">Rumaṇvān, Suṣeṇa, Vasu, Viśvāvasu, PARAŚURĀMA (youngest)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Bhārgava Gotra (Bhṛgu lineage)</div></div>
+    </div>
+    <h4>The Tragedy of Reṇukā</h4>
+    <p>One of the most disturbing and philosophically complex stories in Hindu mythology involves Jamadagni's wife Reṇukā. One day, while fetching water, Reṇukā momentarily desired a Gandharva king she saw in the river. Jamadagni, with his yogic vision, perceived her mental wavering. Enraged, he ordered each of his sons to behead their mother. Only Paraśurāma — the youngest — obeyed without question.</p>
+    <p>Jamadagni was so pleased with Paraśurāma's absolute obedience that he granted him any boon. Paraśurāma asked for his mother to be restored to life with no memory of the event, and for his brothers who had hesitated to be brought back. All were granted. This story generates intense debate about dharma, filial obedience, and moral authority.</p>
+    <div class="callout saffron">
+      <div class="callout-title">Jamadagni's Death & Paraśurāma's Vow</div>
+      <p>King Kārtavīryārjuna (Sahasrārjuna) visited Jamadagni's āśrama and was honored lavishly (thanks to Kāmadhenu). Later, the king's sons returned, killed Jamadagni, and stole the cow. An enraged Paraśurāma vowed to exterminate the Kṣatriya class twenty-one times over — a vow he fulfilled, filling five lakes with their blood at Kurukṣetra (now called Samantapañcaka). This represents one of the most extreme acts of vengeance in Puranic literature.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GAUTAMA -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">🌸</div>
+    <div>
+      <div class="sage-name">Gautama</div>
+      <div class="sage-alt">गौतम · "Of the Gotama family" · Philosopher, Teacher, Husband of Ahalyā</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">From "go" (cow) — most excellent; or from family name Gotama</div></div>
+      <div class="sage-field"><div class="sage-field-label">Lineage</div><div class="sage-field-val">Aṅgiras lineage; son of Utathya (Aṅgiras's son); also connected to Dīrghatamas</div></div>
+      <div class="sage-field"><div class="sage-field-label">Wife</div><div class="sage-field-val">Ahalyā (first woman created by Brahma; considered ideal woman)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Son</div><div class="sage-field-val">Śatānanda (priest of King Janaka of Mithilā)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Gautama Gotra — one of the most widespread Brahmin gotras</div></div>
+      <div class="sage-field"><div class="sage-field-label">Philosophy</div><div class="sage-field-val">Founder of Nyāya darśana (Logic school of Indian philosophy)</div></div>
+    </div>
+    <div class="callout blue">
+      <div class="callout-title">The Ahalyā Story — Rāma's Grace</div>
+      <p>Indra, disguising himself as Gautama, seduced Ahalyā. When Gautama discovered the deception, he cursed Ahalyā to become a stone (or invisible/disembodied in some versions) and cursed Indra to lose his masculinity (later softened to a thousand marks on his body). Ahalyā was liberated when Rāma's foot touched the stone during his forest travels — one of the most beautiful stories of divine grace in the Rāmāyaṇa.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Nyāya Philosophy</div>
+      <p>Gautama is credited with the <em>Nyāya Sūtras</em> — foundational text of Indian logical philosophy. This system defines 16 categories of thought including <em>pramāṇa</em> (valid knowledge), <em>prameya</em> (objects of knowledge), <em>vāda</em> (debate), and <em>tarka</em> (reasoning). Nyāya had enormous influence on Indian epistemology and scholastic tradition.</p>
+    </div>
+    <p><strong>Note on Name:</strong> Gautama Buddha (Siddhārtha Gautama) belonged to the <em>Śākya</em> clan of Kṣatriyas who traced their lineage to Gautama Ṛṣi — making the Buddha a descendant of this sage, which adds a fascinating cross-religious dimension to this lineage.</p>
+  </div>
+</div>
+
+<!-- BHARADVAJA -->
+<div class="sage-card">
+  <div class="sage-header">
+    <div class="sage-icon">📚</div>
+    <div>
+      <div class="sage-name">Bhāradvāja</div>
+      <div class="sage-alt">भरद्वाज · "Carrying strength" · Teacher of Droṇa; Āyurveda Master</div>
+    </div>
+  </div>
+  <div class="sage-body">
+    <div class="sage-grid">
+      <div class="sage-field"><div class="sage-field-label">Meaning</div><div class="sage-field-val">"Carrying strength/nourishment" — one who brings vigor</div></div>
+      <div class="sage-field"><div class="sage-field-label">Father</div><div class="sage-field-val">Bṛhaspati (teacher of the Devas); born secretly; abandoned by his mother</div></div>
+      <div class="sage-field"><div class="sage-field-label">Raised by</div><div class="sage-field-val">King Bharata (the great emperor; India named after him = <em>Bhāratavarṣa</em>)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Son</div><div class="sage-field-val">Droṇa (the great military teacher of Mahābhārata)</div></div>
+      <div class="sage-field"><div class="sage-field-label">Gotra</div><div class="sage-field-val">Bhāradvāja Gotra — most common Brahmin gotra in India</div></div>
+      <div class="sage-field"><div class="sage-field-label">Key Works</div><div class="sage-field-val">Bhāradvāja Saṃhitā (Āyurveda); Ṛgveda Maṇḍala 6 (compositions)</div></div>
+    </div>
+    <h4>Bhāradvāja's Birth — An Extraordinary Story</h4>
+    <p>Bhāradvāja's birth story is unique. His father Bṛhaspati had a long-term dispute with his older brother Utathya's wife Mamatā. When Mamatā was pregnant with Utathya's child, Bṛhaspati forcibly planted his own seed in her womb as well. Mamatā's son (the baby Dīrghatamas, already in the womb) cursed the second child — who was subsequently abandoned by Mamatā. Brahma named him "Bhāradvāja" (one who carries strength) and placed him in the care of King Bharata.</p>
+    <div class="callout green">
+      <div class="callout-title">Bhāradvāja in the Rāmāyaṇa</div>
+      <p>Bhāradvāja's āśrama is one of the first stops on Rāma's forest exile. Located at the confluence of the Gaṅgā and Yamunā (Prayāga/Allahabad), it was one of the greatest centers of Vedic learning. Bhāradvāja himself directed Rāma to Citrakūṭa mountain as a suitable dwelling. During the Bharata-milāpa episode, Bhāradvāja hosts the entire Ayodhyā army with his divine hospitality.</p>
+    </div>
+  </div>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 15-16: GOTRA SYSTEM & LINEAGE TREES
+     ==================================================== -->
+<div id="lineages">
+<div class="sec-header" style="background: linear-gradient(135deg, #0a1a10, #102a1a);">
+  <div class="label">§ Sections 15–16 — Lineage Systems</div>
+  <h2>Gotra Origins & Complete Lineage Maps</h2>
+  <p>How the Saptarishi families became the ancestral roots of all Brahmin gotras and most Hindu dynasties</p>
+</div>
+
+<div class="section section-alt">
+<div class="container">
+
+<h3>What is a Gotra?</h3>
+
+<p>A <span class="sanskrit">gotra</span> (गोत्र) literally means "cow-pen" or "lineage of the cow" — the unbroken patrilineal lineage traced back to a progenitor Ṛṣi. The gotra system serves multiple functions:</p>
+
+<ul class="styled">
+  <li><strong>Ritual function:</strong> All Vedic rituals invoke the gotra; the sage is a co-celebrant in spirit.</li>
+  <li><strong>Social function:</strong> Prevents inbreeding — people of the same gotra cannot marry.</li>
+  <li><strong>Spiritual function:</strong> Creates a living link between the individual and their founding sage.</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-title">The Sapta-Gotra System</div>
+  <p>The seven primary gotra progenitors are the <strong>same as the Vaivasvata Manvantara's Saptarishis</strong>: Atri, Vasiṣṭha, Kaśyapa, Gautama, Bhāradvāja, Viśvāmitra, Jamadagni. Every Brahmin gotra ultimately traces to one of these seven (or occasionally to Agastya or Aṅgiras as secondary lines).</p>
+</div>
+
+<div class="lineage-box">
+  <div class="tree-title">🌳 Complete Gotra Descent Map — All Major Brahmin Gotras</div>
+<pre>
+BRAHMA
+  │
+  ├── MARĪCI ─────────► KAŚYAPA (son)
+  │                          │
+  │                    Kaśyapa Gotra
+  │                          │
+  │              ┌───────────┴──────────┐
+  │           VIVASVAT             OTHER SONS
+  │              │
+  │           VAIVASVATA MANU ──────► Humans / Kings
+  │
+  ├── ATRI ─────────────────────────────────────────────────────
+  │          │                                                  │
+  │       Atri Gotra                               Sub-gotras:
+  │          │                                  Mudgala · Sāṅkhyāyana
+  │    ┌─────┼─────────┐                        Gautama · Nidhi
+  │  SOMA  DATTĀTREYA  DURVĀSAS
+  │  (Moon)
+  │
+  ├── AṄGIRAS
+  │          │
+  │      Aṅgiras Gotra ──► Sub-gotras: Bṛhaspati, Bharadvāja,
+  │          │                          Bhārgava (by extension), Kauṭsa
+  │          │
+  │     BṚHASPATI
+  │          │
+  │     BHĀRADVĀJA ────────────────► Bhāradvāja Gotra
+  │          │                            │
+  │          │                    Sub-gotras: Garga · Kapila
+  │        DROṆA                         Śāṇḍilya · Maitrāyaṇī
+  │          │
+  │      AŚVATTHĀMĀ
+  │
+  ├── PULASTYA
+  │          │
+  │     Pulastya Gotra
+  │          │
+  │     VIŚRAVAS
+  │    ┌────┴────────┐
+  │  KUBERA        RĀVAṆA
+  │               (+ brothers: Kumbhakarṇa, Vibhīṣaṇa, Śūrpaṇakhā)
+  │
+  ├── PULAHA
+  │          │
+  │     Pulaha Gotra
+  │
+  ├── KRATU
+  │          │
+  │     Kratu Gotra
+  │     └── 60,000 Vālakhilyas (tiny sages)
+  │
+  └── VASIṢṬHA ────────────────────────────────────────────────
+             │
+       Vasiṣṭha Gotra ──► Sub-gotras: Maitrāvaruṇi · Kauṇḍinya
+             │                          Parāśara · Kundina
+             │
+       ┌─────┴────┐
+    100 SONS    ŚAKTI
+    (killed by    │
+     Viśvāmitra) PARĀŚARA
+                  │
+              VYĀSA (Vedavyāsa / Kṛṣṇa Dvaipāyana)
+                  │
+         ┌────────┴──────────────┐
+      DHṚTARĀṢṬRA         PĀṆḌU          VIDURA
+      (by Ambikā)         (by Ambālikā)   (by maid)
+         │                    │
+    Kauravas            Pāṇḍavas
+    (Duryodhana etc.)   (Yudhiṣṭhira, Arjuna, etc.)
+
+══════════════════════════════════════════════════════
+INDEPENDENT PROGENITORS (from Svāyambhuva era):
+
+BHṚGU (also mind-born of Brahma, not one of Svāyambhuva 7)
+    │
+    ├── CYAVANA ──► Ṛcīka ──► JAMADAGNI ──► PARAŚURĀMA
+    │                            │
+    │                      Jamadagni Gotra ──► Bhārgava Gotra
+    │
+    ├── MĀRKAṆḌEYA (famous for Devī Māhātmya)
+    │
+    └── ŚUKRA (Ācārya of the Asuras; Venus planet)
+
+GAUTAMA (from Aṅgiras line through Utathya)
+    │
+    ├── Gautama Gotra
+    ├── ŚATĀNANDA (Janaka's priest)
+    └── ──► Buddhist Śākya clan lineage
+
+VIŚVĀMITRA (Kauśika) ──► Viśvāmitra/Kauśika Gotra
+    │
+    └── ŚAKUNTALĀ ──► BHARATA ──► (emperor Bharata of Mahābhārata)
+</pre>
+</div>
+
+<h3>The Eight Primary Gotras (Aṣṭa-Gotra System)</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>#</th><th>Gotra</th><th>Progenitor Ṛṣi</th><th>Pravara Ṛṣis (recited in ritual)</th><th>Major Sub-gotras</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Atri</strong></td><td>Maharṣi Atri</td><td>Atri, Ārchanānasa, Śyāvāśva</td><td>Mudgala, Baudha, Apastamba</td></tr>
+    <tr><td>2</td><td><strong>Bhāradvāja</strong></td><td>Maharṣi Bhāradvāja</td><td>Āṅgirasa, Bārhaspatya, Bhāradvāja</td><td>Garga, Rathītara, Śāṇḍilya</td></tr>
+    <tr><td>3</td><td><strong>Gautama</strong></td><td>Maharṣi Gautama</td><td>Āṅgirasa, Āyāsya, Gautama</td><td>Vāmadeva, Maṇḍavya</td></tr>
+    <tr><td>4</td><td><strong>Jamadagni</strong></td><td>Maharṣi Jamadagni</td><td>Bhārgava, Cyāvana, Āpnuvat, Aurva, Jāmadagnya</td><td>Bhārgava (general)</td></tr>
+    <tr><td>5</td><td><strong>Kaśyapa</strong></td><td>Maharṣi Kaśyapa</td><td>Kaśyapa, Āvatsāra, Naidhruva</td><td>Laugākṣi, Śāṇḍilya (also here)</td></tr>
+    <tr><td>6</td><td><strong>Vasiṣṭha</strong></td><td>Maharṣi Vasiṣṭha</td><td>Vasiṣṭha, Maitrāvaruṇi, Kauṇḍinya</td><td>Parāśara, Kundina, Upamanyu</td></tr>
+    <tr><td>7</td><td><strong>Viśvāmitra</strong></td><td>Maharṣi Viśvāmitra</td><td>Viśvāmitra, Devarāta, Audala</td><td>Kauśika, Lohitya</td></tr>
+    <tr><td>8</td><td><strong>Agastya</strong></td><td>Maharṣi Agastya</td><td>Agastya, Maitrāvaruṇi, Dārḍhacyuta</td><td>Southern traditions especially</td></tr>
+  </tbody>
+</table>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 18: GURU-SHISHYA PARAMPARA
+     ==================================================== -->
+<div class="sec-header" style="background: linear-gradient(135deg, #1a0a2d, #2d1050);">
+  <div class="label">§ Section 18 — The Teaching Traditions</div>
+  <h2>Guru-Śiṣya Paramparā Charts</h2>
+  <p>How knowledge flowed from the primordial sages through the ages</p>
+</div>
+
+<div class="section section-dark">
+<div class="container">
+
+<div class="lineage-box">
+  <div class="tree-title">📜 Vedic Knowledge Transmission — Guru-Shishya Map</div>
+<pre>
+BRAHMA (source of all knowledge)
+    │
+    ├──► NĀRADA ──────────────────────────────────────────────────────
+    │    (Devarṣi; omniscient wanderer; taught Vyāsa Bhakti Yoga)
+    │    └──► VYĀSA (for Bhāgavata)
+    │
+    ├──► MARĪCI ──► KAŚYAPA ──► taught astronomy, biology (creation of worlds)
+    │
+    ├──► ATRI ──────────────────────────────────────────────────────
+    │    └──► DATTĀTREYA ──► 24 gurus from Nature
+    │                  └──► Taught: Avadhūta Gītā (Jñāna + Bhakti + Yoga)
+    │                  └──► Disciples: Paraśurāma, Yadu (ancestor of Kṛṣṇa!)
+    │                              Saṃkṛti, Āyu, Prāhlāda, Alarka
+    │
+    ├──► AṄGIRAS
+    │    └──► BṚHASPATI (teacher of Devas)
+    │              ├──► Indra (for statecraft and warfare)
+    │              ├──► 12 Ādityas (for cosmic law)
+    │              └──► BHĀRADVĀJA ──► DROṆA
+    │                                      └──► Kauravas + Pāṇḍavas (military arts)
+    │                                              └──► Arjuna (best disciple)
+    │
+    ├──► VASIṢṬHA ──────────────────────────────────────────────────
+    │    └──► Ikṣvāku dynasty teachers (generation after generation)
+    │              ├──► KING DILĪPA (taught cow-seva; story in Raghuvaṃśa)
+    │              ├──► KING RAGHU
+    │              ├──► KING DAŚARATHA
+    │              └──► RĀMA !! (taught Brahmavidyā via Yogavāsiṣṭha)
+    │
+    ├──► VIŚVĀMITRA ─────────────────────────────────────────────────
+    │    └──► RĀMA and LAKṢMAṆA (divine weapons; Gāyatrī mantra)
+    │    └──► Also: Hariścandra, Triśaṅku (complex relationships)
+    │
+    └──► BHṚGU (independent line)
+         └──► CYAVANA ──► ṚCĪKA ──► JAMADAGNI ──► PARAŚURĀMA
+                                                         │
+                                             ┌───────────┤
+                                         KĀRTAVĪRYA    disciples
+                                         (enemy-turned-  │
+                                          student for     └──► DROṆA (learned
+                                          some accounts)       archery from him)
+                                                         │
+                                                    BHĪṢMA
+                                               (also learned from Paraśurāma!)
+</pre>
+</div>
+
+<h3>The Vedavyāsa Parampara — Transmission of the Vedas</h3>
+<div class="lineage-box">
+  <div class="tree-title">📜 How the Vedas Were Divided and Transmitted</div>
+<pre>
+BRAHMA ──► PRAJĀPATI ──► ṚṢIS (direct revelation of Vedas)
+
+After the 28th Mahāyuga of the Vaivasvata Manvantara:
+
+VEDAVYĀSA (Kṛṣṇa Dvaipāyana)
+[Born from: Parāśara × Matsyagandha/Satyavatī]
+    │
+    [Divided one Veda into four for ease of learning]
+    │
+    ├── ṚGVEDA ──────────► Given to PAILA (disciple)
+    │                              └──► Śākala, Vāṣkala, Āśvalāyana lineages
+    │
+    ├── YAJURVEDA ─────────► Given to VAIŚAMPĀYANA
+    │                              └──► Subdivided into Black (Kṛṣṇa) and 
+    │                                    White (Śukla) Yajurveda
+    │                              └──► Śukla by: YĀJÑAVALKYA (from Sun god!)
+    │
+    ├── SĀMAVEDA ─────────► Given to JAIMINI
+    │                              └──► Kauthuma, Rāṇāyanīya, Jaiminīya branches
+    │
+    └── ATHARVAVEDA ──────► Given to SUMANTA (Sumantu)
+                                  └──► Also: Paippalāda, Śaunaka branches
+    
+    [Additional works by Vyāsa:]
+    MAHĀBHĀRATA ──────────► Dictated to Gaṇeśa; recited by Vaiśampāyana
+    18 MAHĀPURĀṆAS ────────► Composed/compiled; taught to Romaharṣaṇa/Sūta
+    BRAHMASŪTRAS ──────────► Synthesis of Upaniṣadic philosophy
+</pre>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 19: SAPTARISHI MANDALA — ASTRONOMICAL
+     ==================================================== -->
+<div id="current">
+<div class="sec-header">
+  <div class="label">§ Section 19 — The Sky Tells the Story</div>
+  <h2>Saptarishi Mandala — Astronomical Connection</h2>
+  <p>The seven sages in the sky: Ursa Major, Vedic astronomy, and the cosmic clock</p>
+</div>
+
+<div class="section">
+<div class="container">
+
+<h3>The Big Dipper as the Seven Sages</h3>
+
+<div class="callout blue">
+  <div class="callout-title">Vedic Astronomical Identification</div>
+  <p>The <span class="sanskrit">Saptarishi Mandala</span> (सप्तऋषि मण्डल) = the constellation <strong>Ursa Major</strong> (Great Bear). In the Vedic tradition, the seven bright stars of the "Big Dipper" asterism are the celestial abodes of the seven sages. The star <strong>Alcor</strong> (Arundhati in Sanskrit), barely visible next to Mizar (the sixth star), represents Vasiṣṭha's wife Arundhatī — explaining why Hindu wedding ceremonies involve the groom showing Alcor to the bride as a symbol of the ideal wife.</p>
+</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Star</th><th>Modern Name</th><th>Sanskrit Name</th><th>Sage Identified</th><th>Vedic Significance</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>α UMa</td><td>Dubhe</td><td>Kratu</td><td>Kratu</td><td>One of the pointer stars toward the North Pole</td></tr>
+    <tr><td>β UMa</td><td>Merak</td><td>Pulaha</td><td>Pulaha</td><td>Second pointer star</td></tr>
+    <tr><td>γ UMa</td><td>Phecda</td><td>Pulastya</td><td>Pulastya</td><td>Third star, bottom of the dipper bowl</td></tr>
+    <tr><td>δ UMa</td><td>Megrez</td><td>Atri</td><td>Atri</td><td>Junction of bowl and handle</td></tr>
+    <tr><td>ε UMa</td><td>Alioth</td><td>Aṅgiras</td><td>Aṅgiras/Viśvāmitra</td><td>Brightest star of the constellation</td></tr>
+    <tr><td>ζ UMa</td><td>Mizar</td><td>Vasiṣṭha</td><td>Vasiṣṭha</td><td>Double star with Alcor; symbolizes sage + wife</td></tr>
+    <tr><td>η UMa</td><td>Alkaid/Benetnasch</td><td>Marīci</td><td>Marīci/Jamadagni</td><td>End of the handle; tip of the Great Bear's tail</td></tr>
+    <tr><td>Alcor</td><td>Alcor (80 UMa)</td><td><strong>Arundhatī</strong></td><td>Vasiṣṭha's wife</td><td>Test of vision; symbol of wifely virtue</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout saffron">
+  <div class="callout-title">The Arundhatī Darśana Ritual</div>
+  <p>In traditional Hindu weddings, after the seven steps (<span class="sanskrit">saptapadī</span>), the groom points out the star Arundhatī (Alcor) to the bride while reciting: <em>"That star is Arundhatī, the ideal wife, devoted to Vasiṣṭha. May you be like her."</em> Alcor is exceptionally difficult to see with the naked eye — visible only in conditions of perfect sky clarity and good eyesight, making it a test of perception. In some traditions, seeing it before the wedding is considered an excellent omen.</p>
+</div>
+
+<h3>The Saptarishi Calendar System</h3>
+
+<p>Traditional Hindu calendar-keeping used the Saptarishi position relative to Nakṣatras (lunar mansions) to track long cycles of time. According to the <em>Bṛhat Saṃhitā</em> of Varāhamihira and other Jyotiṣa texts:</p>
+
+<ul class="styled">
+  <li>The Saptarishi constellation remains in each Nakṣatra for <strong>100 years</strong></li>
+  <li>Since there are 27 Nakṣatras × 100 years = <strong>2,700 years</strong> for one complete Saptarishi cycle</li>
+  <li>The <em>Saptarishi Era</em> (Saptarishi Saṃvat) began in 3076 BCE according to some traditions</li>
+  <li>This calendar was used extensively in Kashmir and was mentioned by Al-Biruni in the 11th century CE</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-title">Current Position</div>
+  <p>According to traditional reckoning, in our current Kali Yuga, the Saptarishis are said to be in Pūrvāṣāḍhā Nakṣatra, moving through at 100 years per nakṣatra. This system was one of the primary ways ancient Indians tracked historical time before the widespread use of regnal years.</p>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 20: SCRIPTURAL COMPARISONS
+     ==================================================== -->
+<div class="sec-header" style="background: linear-gradient(135deg, #1a1a08, #2d2d10);">
+  <div class="label">§ Section 20 — Scholarly Analysis</div>
+  <h2>Scriptural Comparisons & Contradictions</h2>
+  <p>Where the Purāṇas agree, where they differ, and what the divergences mean</p>
+</div>
+
+<div class="section section-dark">
+<div class="container">
+
+<h3>The Vaivasvata Manvantara Saptarishi — Textual Variants</h3>
+
+<p>The current (7th) Manvantara's Saptarishis have the most textual attestation, yet even here the Purāṇas show variation:</p>
+
+<div class="scripture-compare">
+  <div class="scripture-card">
+    <div class="scripture-name">Vishnu Purāṇa (III.1-2)</div>
+    <div class="scripture-content">Atri · Vasiṣṭha · Kaśyapa · Gautama · Bhāradvāja · Viśvāmitra · Jamadagni<br><br><em>Most commonly cited list; considered the standard reference.</em></div>
+  </div>
+  <div class="scripture-card">
+    <div class="scripture-name">Bhāgavata Purāṇa (8.13.5)</div>
+    <div class="scripture-content">Kaśyapa · Atri · Vasiṣṭha · Viśvāmitra · Gautama · Jamadagni · Bhāradvāja<br><br><em>Same names, different order; Kaśyapa listed first.</em></div>
+  </div>
+  <div class="scripture-card">
+    <div class="scripture-name">Matsya Purāṇa</div>
+    <div class="scripture-content">Atri · Vasiṣṭha · Kaśyapa · Viśvāmitra · Jamadagni · Bhāradvāja · Gautama<br><br><em>Essentially same set; slight reordering.</em></div>
+  </div>
+  <div class="scripture-card">
+    <div class="scripture-name">Mahābhārata (Śānti Parva)</div>
+    <div class="scripture-content">Sometimes replaces one sage with Marīci or Aṅgiras; reflects earlier tradition where 1st Manvantara's sages were considered universal Saptarishis.</div>
+  </div>
+  <div class="scripture-card">
+    <div class="scripture-name">Vāyu Purāṇa</div>
+    <div class="scripture-content">Generally aligns with Vishnu Purāṇa; additional detail on Bhṛgu lineage within the Bhāradvāja/Jamadagni entries.</div>
+  </div>
+  <div class="scripture-card">
+    <div class="scripture-name">Regional Variations</div>
+    <div class="scripture-content">South Indian texts sometimes include Agastya as 8th (Saptarishi + 1); North-Indian Kashmiri tradition emphasizes Marīci more strongly in the current list.</div>
+  </div>
+</div>
+
+<h3>Key Contradictions and Their Resolutions</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Issue</th><th>Contradiction</th><th>Most Accepted Interpretation</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Vasiṣṭha's origin</strong></td>
+      <td>Mind-born son of Brahma (Bhāgavata) vs. born from Mitra-Varuṇa's vital fluid (Ṛgveda, Vālmīki Rāmāyaṇa)</td>
+      <td>Both are accepted: the "Vasiṣṭha" office has multiple holders; the first was Brahma's son, a later Vasiṣṭha was born from Mitra-Varuṇa. Rāma's guru is this second Vasiṣṭha.</td>
+    </tr>
+    <tr>
+      <td><strong>Bhāradvāja's father</strong></td>
+      <td>Son of Bṛhaspati (most texts) vs. born independently from Bharata's sacrifice (Mahābhārata)</td>
+      <td>Bṛhaspati is the biological father; the sage was abandoned and raised by King Bharata, giving him the name "Bhāradvāja" = one carried (dvāja) by Bharata (Bhārata).</td>
+    </tr>
+    <tr>
+      <td><strong>Pulastya and Agastya</strong></td>
+      <td>Agastya is sometimes listed as Pulastya's son; other texts make him independently born of Mitra-Varuṇa</td>
+      <td>Agastya is likely an independent figure whose lineage became associated with Pulastya over time; his southern origin (civilizer of South India) is consistent across all traditions.</td>
+    </tr>
+    <tr>
+      <td><strong>Viśvāmitra's 1st Manvantara role</strong></td>
+      <td>Some texts include Viśvāmitra in Svāyambhuva Saptarishis; others do not</td>
+      <td>Viśvāmitra is specifically of the 7th Manvantara. Earlier references may reflect telescoping of traditions across time periods in the texts.</td>
+    </tr>
+    <tr>
+      <td><strong>Number of Dakṣa's daughters</strong></td>
+      <td>10 (Bhāgavata) vs. 13 (Vishnu Purāṇa) vs. 17 (Mahābhārata) vs. 60 (Brahma Purāṇa)</td>
+      <td>The tradition expanded as more cosmic entities required progenitor-marriages. The 13-wife set of Kaśyapa is the most scripturally functional for explaining all created beings.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<blockquote>
+"The apparent contradictions in Puranic genealogies should not be read as historical inaccuracies but as symbolic assertions — each text asserting the supreme importance of its favored lineage or deity. The multiplicity of accounts itself reflects the richness of an oral tradition that encompassed many regional voices."
+<cite>— Traditional Puranic hermeneutics (paurāṇika methodology)</cite>
+</blockquote>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 21: MASTER SUMMARY TABLES
+     ==================================================== -->
+<div id="summary">
+<div class="sec-header">
+  <div class="label">§ Section 21 — Master Reference</div>
+  <h2>Complete Summary Tables</h2>
+  <p>The ultimate reference sheets for all 14 Manvantaras</p>
+</div>
+
+<div class="section">
+<div class="container">
+
+<h3>Master Chart — All 14 Manvantaras</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Manvantara Name</th>
+      <th>Manu</th>
+      <th>Indra</th>
+      <th>Viṣṇu Avatāra</th>
+      <th>Saptarishis (abbreviated)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td><td>Svāyambhuva</td><td>Svāyambhuva</td><td>Yajña</td><td>Yajña/Varāha</td>
+      <td>Marīci · Atri · Aṅgiras · Pulaha · Kratu · Pulastya · Vasiṣṭha</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td><td>Svārociṣa</td><td>Svārociṣa</td><td>Vipaścit</td><td>Vibhu</td>
+      <td>Ūrja · Stambha · Prāṇa · Dattoli · Ṛṣabha · Niścara · Arvarivat</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td><td>Uttama</td><td>Uttama</td><td>Suśānti</td><td>Satyasena</td>
+      <td>Vasiṣṭha · Pramada · Datta · Cyavana · Kavi · Agni · Bali (VP)</td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td><td>Tāmasa</td><td>Tāmasa</td><td>Triśikha</td><td>Hari (saved Gajendra)</td>
+      <td>Jyotirdhāma · Pṛthu · Kāvya · Caitra · Agni · Vānaka · Pivara</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td><td>Raivata</td><td>Raivata</td><td>Vibhu</td><td>Vaikuṇṭha</td>
+      <td>Hiraṇyaromā · Vedasrī · Ūrdhvabāhu · Vedabāhu · Sudhāman · Parjanya · Mahāmuni</td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td><td>Cākṣuṣa</td><td>Cākṣuṣa</td><td>Manojava</td><td>Ajita</td>
+      <td>Sumedhas · Virajas · Haviṣmān · Uttama · Madhu · Abhivart · Sahiṣṇu</td>
+    </tr>
+    <tr style="background: #d4621a22;">
+      <td><strong>7 ◄</strong></td><td><strong>Vaivasvata</strong></td><td><strong>Vaivasvata</strong></td><td><strong>Purandhara</strong></td><td><strong>Vāmana · Rāma · Kṛṣṇa · Kalki</strong></td>
+      <td><strong>Atri · Vasiṣṭha · Kaśyapa · Gautama · Bhāradvāja · Viśvāmitra · Jamadagni</strong></td>
+    </tr>
+    <tr>
+      <td><strong>8</strong></td><td>Sāvarṇi</td><td>Sāvarṇi</td><td>Bali</td><td>Sārvabhauma</td>
+      <td>Gālava · Dīptimān · Paraśurāma · Aśvatthāmā · Kṛpa · Ṛṣyaśṛṅga · Vyāsa/Droṇa</td>
+    </tr>
+    <tr>
+      <td><strong>9</strong></td><td>Dakṣa-Sāvarṇi</td><td>Dakṣasāvarṇi</td><td>Adbhuta</td><td>Ṛṣabha</td>
+      <td>Savana · Dyutimat · Bhavya · Vasu · Medhatithi · Jyotiṣmān · Satya</td>
+    </tr>
+    <tr>
+      <td><strong>10</strong></td><td>Brahma-Sāvarṇi</td><td>Brahmasāvarṇi</td><td>Śānti</td><td>Viṣvaksena</td>
+      <td>Haviṣmān · Sukṛti · Satya · Apāmmūrti · Nābhāga · Āpratīma · Tattvadṛk</td>
+    </tr>
+    <tr>
+      <td><strong>11</strong></td><td>Dharma-Sāvarṇi</td><td>Dharmasāvarṇi</td><td>Vaidhrta</td><td>Dharmasetu</td>
+      <td>Niścara · Agnitejas · Vapuṣmān · Viṣṇu · Āruni · Haviṣmān · Anagha</td>
+    </tr>
+    <tr>
+      <td><strong>12</strong></td><td>Rudra-Sāvarṇi</td><td>Rudrasāvarṇi</td><td>Ṛtadhāman</td><td>Sudhāman</td>
+      <td>Tapasvī · Sutapā · Tapomūrti · Taporati · Tapodhriti · Tapodyuti · Tapodhanā</td>
+    </tr>
+    <tr>
+      <td><strong>13</strong></td><td>Deva-Sāvarṇi</td><td>Devasāvarṇi</td><td>Divaspati</td><td>Yogeśvara</td>
+      <td>Nirmoha · Tattvadarśī · Niṣprakampa · Nirutsuka · Dhṛtimān · Avyaya · Sutapas</td>
+    </tr>
+    <tr>
+      <td><strong>14</strong></td><td>Indra-Sāvarṇi</td><td>Indrasāvarṇi</td><td>Śuci</td><td>Bṛhadbhānu</td>
+      <td>Agni · Bāhu · Śuci · Śuddha · Māgadha · Agnīdhra · Yukta</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Key Connections Across Manvantaras — Lineage Survival</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Sage/Family</th><th>Present in Manvantaras</th><th>Mechanism of Continuity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Vasiṣṭha lineage</strong></td><td>1, 3, 6, 7 (and possibly others)</td><td>The "Vasiṣṭha" title is held by different beings across Manvantaras — a cosmic office, not a single individual</td></tr>
+    <tr><td><strong>Atri lineage</strong></td><td>1, 7 (Atri himself in both)</td><td>Atri is specifically named in both the first and current Manvantara — rare cross-Manvantara personal continuity</td></tr>
+    <tr><td><strong>Kaśyapa lineage</strong></td><td>Descendants in every Manvantara</td><td>Through his marriage to Aditi → the Ādityas/Devas persist in every Manvantara as a class</td></tr>
+    <tr><td><strong>Bhṛgu family</strong></td><td>3, 7, 8 (Cyavana in 3; Jamadagni in 7; Paraśurāma in 8)</td><td>The Bhṛgu lineage spans multiple Manvantaras through direct descent</td></tr>
+    <tr><td><strong>Aṅgiras family</strong></td><td>1, 7 (through Bhāradvāja)</td><td>Bhāradvāja is Aṅgiras's great-grandson; represents the family in the 7th Manvantara</td></tr>
+    <tr><td><strong>The Viśvāmitra mystery</strong></td><td>7th Manvantara, 28th Mahāyuga specifically</td><td>Viśvāmitra's achievement of Brahmarṣi status in the era of Rāma specifically qualifies him for the 7th Manvantara role</td></tr>
+  </tbody>
+</table>
+</div>
+
+</div></div></div>
+
+<!-- ====================================================
+     SECTION 22: REVISION NOTES
+     ==================================================== -->
+<div class="sec-header" style="background: linear-gradient(135deg, #08100a, #102018);">
+  <div class="label">§ Section 22 — Final Reference</div>
+  <h2>Revision Notes & Most Important Connections</h2>
+  <p>The essential facts every student of Hindu cosmology must know</p>
+</div>
+
+<div class="section section-alt">
+<div class="container">
+
+<h3>⭐ The 10 Most Important Connections to Remember</h3>
+
+<ol class="styled">
+  <li><strong>Kaśyapa = Father of the Universe:</strong> Married 13 daughters of Dakṣa → fathered Devas (from Aditi), Asuras (from Diti), Nāgas (from Kadrū), Garuḍa (from Vinatā), and virtually all living species. He is the most cosmically generative figure in all mythology.</li>
+
+  <li><strong>Vasiṣṭha's star has a companion:</strong> The star Mizar (Vasiṣṭha) has a faint companion Alcor (Arundhatī) — the same relationship as the sage and his ideal wife. This astronomical observation is embedded in Hindu wedding ritual.</li>
+
+  <li><strong>The 7th Manvantara is OUR time:</strong> We live in the Vaivasvata Manvantara, 28th Mahāyuga, Kali Yuga. This is why the current Saptarishis (Atri, Vasiṣṭha, Kaśyapa, Gautama, Bhāradvāja, Viśvāmitra, Jamadagni) are the ones whose gotras we use today.</li>
+
+  <li><strong>All major Brahmin gotras trace to the Vaivasvata Saptarishis:</strong> Your gotra name connects you to one of these seven sages — typically through dozens of generations. The gotra is not merely social; it is a cosmic genealogical record.</li>
+
+  <li><strong>Atri appears in BOTH 1st and 7th Manvantaras:</strong> Most unusual — the same Atri (or his essence) participates in the foundational cycle and the current cycle. His three sons — Soma, Dattātreya, Durvāsas — represent the Trimūrti in descent.</li>
+
+  <li><strong>Viśvāmitra is the only Saptarishi who was born a Kṣatriya:</strong> All others were born Brāhmaṇas (or beyond such classification). Viśvāmitra's journey from king to Brahmarṣi is the paradigm of spiritual transformation transcending birth.</li>
+
+  <li><strong>Gāyatrī Mantra = Viśvāmitra's greatest gift:</strong> The most widely recited Vedic mantra was composed/perceived by the one sage who started his life as a warrior-king. This is deeply symbolic of spiritual democratization.</li>
+
+  <li><strong>In the 8th Manvantara, Bali becomes Indra:</strong> The great demon-king who was sent to Pātāla by Vāmana will become the ruler of heaven in the next Manvantara. This is Viṣṇu's fulfillment of a divine promise — the ultimate cosmic justice.</li>
+
+  <li><strong>Mahābhārata heroes become future Saptarishis:</strong> Paraśurāma, Aśvatthāmā, Kṛpa, Droṇa, Vyāsa are predicted Saptarishis of the 8th Manvantara — the immortal beings from the Epic era will serve as cosmic sages in the next age.</li>
+
+  <li><strong>The Manvantara system shows that power rotates:</strong> No single lineage permanently holds cosmic authority. Indras change, Manus change, Saptarishis change — only the ultimate cosmic principle (Brahman/Viṣṇu/Śiva) remains constant. This is the Puranic theology of cosmic democracy.</li>
+</ol>
+
+<h3>Quick Reference — Vaivasvata Saptarishis Mnemonic</h3>
+
+<div class="callout">
+  <div class="callout-title">Memory Aid</div>
+  <p>Remember the current Saptarishis with: <strong>"A Very Keen Gentleman, Both Virtuous & Just"</strong><br>
+  <strong>A</strong>tri · <strong>V</strong>asiṣṭha · <strong>K</strong>aśyapa · <strong>G</strong>autama · <strong>B</strong>hāradvāja · <strong>V</strong>iśvāmitra · <strong>J</strong>amadagni</p>
+</div>
+
+<h3>The Three Cosmic Families That Defined History</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Family</th><th>Progenitor</th><th>Key Descendants</th><th>Significance</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Solar Dynasty (Sūryavaṃśa)</strong></td>
+      <td>Vivasvat → Manu → Ikṣvāku</td>
+      <td>Dilīpa, Bhagīratha, Raghu, Daśaratha, <strong>RĀMA</strong></td>
+      <td>The dynasty of truth and righteousness; culminates in Rāma Avatāra</td>
+    </tr>
+    <tr>
+      <td><strong>Lunar Dynasty (Candravaiṃśa)</strong></td>
+      <td>Atri → Soma → Purūravas → Yayāti</td>
+      <td>Pāṇḍavas, Kauravas, Kṛṣṇa (Yādava branch)</td>
+      <td>Majority of Mahābhārata characters; Kṛṣṇa Avatāra</td>
+    </tr>
+    <tr>
+      <td><strong>Bhṛgu Dynasty</strong></td>
+      <td>Bhṛgu (Brahma's son)</td>
+      <td>Cyavana, Ṛcīka, Jamadagni, <strong>PARAŚURĀMA</strong>, Śukra</td>
+      <td>Warriors and sages; Paraśurāma Avatāra; Ayurvedic tradition</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Contradictions Summary — What the Texts Don't Agree On</h3>
+
+<ul class="styled">
+  <li><strong>Manvantara 2 sages:</strong> Almost every Purāṇa gives different names — the 2nd through 6th Manvantara Saptarishi lists have the least textual consensus.</li>
+  <li><strong>Vasiṣṭha's origin:</strong> Three different explanations (Brahma's son, born from Mitra-Varuṇa, born from a pot) all represent distinct textual traditions, possibly referring to different sages who held the same "Vasiṣṭha" title.</li>
+  <li><strong>Whether Agastya is a Saptarishi:</strong> Agastya is sometimes called the 8th Saptarishi; traditionally he is an independent figure who went south to civilize the Deccan while the other seven remained in the north.</li>
+  <li><strong>8th Manvantara Saptarishi list:</strong> The names Gālava, Dīptimān, Paraśurāma, Aśvatthāmā, Kṛpa, Ṛṣyaśṛṅga, Vyāsa/Droṇa show some variation across texts — reflecting the Purāṇas' way of honoring their favorite sages by assigning them future cosmic roles.</li>
+</ul>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<div class="callout purple">
+  <div class="callout-title">Final Reflection — The Deeper Meaning of Saptarishi Cosmology</div>
+  <p>The Saptarishi system encodes a profound philosophical truth: <em>knowledge, power, and spiritual authority are not permanent possessions but cosmic responsibilities that rotate through time</em>. Every sage, every king, every god holds their position for a cosmic season — then hands it on. The stars continue to turn above, and in each Manvantara, seven new sages rise to guide, teach, and bear the weight of cosmic memory for the benefit of all living beings.</p>
+  <p>This is why the Saptarishis matter not merely as mythological figures but as a living philosophical framework: they remind us that <strong>wisdom is trans-personal, knowledge is timeless, and the work of dharma never ends</strong> — it merely finds new hands in each new age.</p>
+</div>
+
+<div class="source-list">
+  <p><strong>Primary Sources Consulted:</strong></p>
+  <ul>
+    <li>Vishnu Purāṇa (Viṣṇu Purāṇa) — Chapters on Manvantaras: Book III, Ch. 1-3</li>
+    <li>Bhāgavata Purāṇa (Śrīmad Bhāgavatam) — Skanda 8, Ch. 1-13; Skanda 3, Ch. 12</li>
+    <li>Matsya Purāṇa — Ch. 9, 144, 196</li>
+    <li>Vāyu Purāṇa — Ch. 57-62 (Manvantara sections)</li>
+    <li>Mahābhārata — Ādi Parva (genealogies); Śānti Parva (cosmic time)</li>
+    <li>Vālmīki Rāmāyaṇa — Bāla Kāṇḍa (sage references); Āraṇya Kāṇḍa (Atri's āśrama)</li>
+    <li>Ṛgveda — Maṇḍalas 1–10 (family books: Maṇḍalas 2-7 are family collections)</li>
+    <li>Bṛhat Saṃhitā of Varāhamihira — Ch. 13 (Saptarishi calendar)</li>
+    <li>Yogavāsiṣṭha / Mahārāmāyaṇa — Vasiṣṭha's teachings</li>
+    <li>Āpastamba, Baudhāyana, Āśvalāyana Gṛhyasūtras — gotra and pravara details</li>
+  </ul>
+</div>
+
+</div></div></div>
+
+<!-- Footer -->
+<div style="background: var(--dark); padding: 40px; text-align: center; color: var(--muted); border-top: 1px solid #c9923a33;">
+  <p style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 18px; margin-bottom: 12px;">ॐ तत् सत्</p>
+  <p style="font-size: 13px;">Saptarishi Atlas · Complete Encyclopedia of the Seven Great Sages · All 14 Manvantaras</p>
+  <p style="font-size: 12px; margin-top: 8px; color: #5a4020;">Compiled from Vishnu Purāṇa · Bhāgavata Purāṇa · Matsya Purāṇa · Vāyu Purāṇa · Mahābhārata · Rāmāyaṇa · Ṛgveda · Upaniṣads</p>
+  <div class="star-row" style="margin-top: 20px; font-size: 14px;">★ ★ ★ ★ ★ ★ ★</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suryavansha — The Complete Solar Dynasty Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+:root {
+  --sun-gold: #c9832a;
+  --sun-bright: #e8a020;
+  --sun-pale: #f5dfa0;
+  --ink: #1a0805;
+  --parchment: #fdf6e3;
+  --parchment-dark: #f0e6c8;
+  --crimson: #8b1a1a;
+  --sun-deep: #2a1a05;
+  --sun-orange: #d4600a;
+  --sun-silver: #d8c8a8;
+  --sage: #2a3a1a;
+  --cream: #faf4e8;
+  --shadow: rgba(26,8,5,0.18);
+  --teal: #1a3a3a;
+  --lotus: #7a2a2a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: linear-gradient(160deg, #180800 0%, #280e00 35%, #1a1000 65%, #0a0800 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(201,131,42,0.10) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sun-glow {
+  width: 190px; height: 190px;
+  background: radial-gradient(circle at 45% 35%, #fff8d0 0%, #f5c842 35%, #c9832a 65%, rgba(180,80,10,0.3) 100%);
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  box-shadow: 0 0 70px 35px rgba(201,131,42,0.35), 0 0 140px 70px rgba(201,131,42,0.12);
+  animation: sunPulse 4s ease-in-out infinite;
+  position: relative;
+}
+
+.sun-glow::after {
+  content: '☀';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: rgba(26,8,5,0.28);
+  line-height: 1;
+}
+
+@keyframes sunPulse {
+  0%, 100% { box-shadow: 0 0 70px 35px rgba(201,131,42,0.35), 0 0 140px 70px rgba(201,131,42,0.12); }
+  50% { box-shadow: 0 0 100px 50px rgba(201,131,42,0.5), 0 0 180px 90px rgba(201,131,42,0.18); }
+}
+
+/* Sun rays animation */
+.sun-rays {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; height: 300px;
+  animation: rotateSlow 30s linear infinite;
+  pointer-events: none;
+}
+.sun-rays::before, .sun-rays::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(from 0deg, rgba(201,131,42,0.07) 0deg 10deg, transparent 10deg 20deg);
+  border-radius: 50%;
+}
+@keyframes rotateSlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.star-field { position: absolute; inset: 0; pointer-events: none; }
+.star {
+  position: absolute;
+  background: #ffd870;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+
+.hero-devanagari {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 2.2rem;
+  color: var(--sun-bright);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #f5c842;
+  text-shadow: 0 0 50px rgba(245,200,66,0.6), 0 2px 4px rgba(0,0,0,0.9);
+  letter-spacing: 6px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--sun-silver);
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.hero-desc {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: rgba(232,160,32,0.72);
+  max-width: 720px;
+  line-height: 1.9;
+  font-style: italic;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.hero-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  color: var(--sun-gold);
+  border: 1px solid rgba(201,131,42,0.4);
+  padding: 6px 16px;
+  background: rgba(201,131,42,0.07);
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: rgba(201,131,42,0.5);
+  margin-top: 48px;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* ============ NAV ============ */
+.toc-nav {
+  background: linear-gradient(135deg, #0e0800 0%, #120a00 100%);
+  border-top: 2px solid var(--sun-gold);
+  border-bottom: 2px solid var(--sun-gold);
+  padding: 30px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.toc-nav h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--sun-gold);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.toc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.toc-link {
+  color: var(--sun-silver);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.toc-link:hover { color: var(--sun-bright); }
+
+/* ============ CONTENT WRAP ============ */
+.content-wrap {
+  background: linear-gradient(180deg, #160800 0%, #200c00 6%, var(--parchment) 6%);
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 48px;
+  border-bottom: 1px solid var(--parchment-dark);
+  background: var(--parchment);
+}
+
+.section-number {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 4px;
+  color: var(--sun-orange);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--crimson);
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.section-devanagari {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.1rem;
+  color: var(--sun-gold);
+  margin-bottom: 36px;
+  opacity: 0.85;
+}
+
+.section h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--crimson);
+  margin: 36px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--parchment-dark);
+}
+
+.section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--sun-deep);
+  margin: 28px 0 12px;
+}
+
+.section p {
+  color: #2a1a10;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.section em { color: var(--crimson); font-style: italic; }
+.section strong { color: var(--ink); font-weight: 600; }
+
+/* Drop cap */
+.drop-cap::first-letter {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 4.2rem;
+  font-weight: 900;
+  color: var(--sun-orange);
+  float: left;
+  line-height: 0.8;
+  margin: 4px 10px 0 0;
+  text-shadow: 2px 2px 0 rgba(201,131,42,0.15);
+}
+
+/* Sanskrit inline */
+.sanskrit {
+  font-style: italic;
+  color: var(--crimson);
+  font-size: 0.97em;
+}
+
+/* Highlight */
+.highlight {
+  color: var(--sun-orange);
+  font-weight: 600;
+}
+
+/* ============ ORNAMENT DIVIDER ============ */
+.ornament-divider {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--sun-gold);
+  margin: 44px 0;
+  letter-spacing: 12px;
+  opacity: 0.7;
+}
+
+/* ============ CALLOUT BOXES ============ */
+.callout {
+  background: linear-gradient(135deg, #fff8e8 0%, #fdf2d4 100%);
+  border-left: 4px solid var(--sun-gold);
+  border-radius: 0 6px 6px 0;
+  padding: 22px 26px;
+  margin: 28px 0;
+  box-shadow: 2px 2px 12px rgba(201,131,42,0.1);
+}
+
+.callout.red {
+  background: linear-gradient(135deg, #fff0f0 0%, #fde8e8 100%);
+  border-left-color: var(--crimson);
+}
+
+.callout.teal {
+  background: linear-gradient(135deg, #f0f8f8 0%, #e8f4f4 100%);
+  border-left-color: #2a7a7a;
+}
+
+.callout.purple {
+  background: linear-gradient(135deg, #f8f0f8 0%, #f4e8f4 100%);
+  border-left-color: #6a2a7a;
+}
+
+.callout-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sun-orange);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.callout.red .callout-title { color: var(--crimson); }
+.callout.teal .callout-title { color: #1a6a6a; }
+.callout.purple .callout-title { color: #5a1a6a; }
+
+.callout p { margin-bottom: 0; font-size: 0.97em; }
+
+/* ============ SCRIPTURE BLOCK ============ */
+.scripture {
+  background: linear-gradient(135deg, #fdf0e0 0%, #f8e8d0 100%);
+  border: 1px solid rgba(201,131,42,0.25);
+  border-top: 3px solid var(--sun-gold);
+  padding: 22px 26px;
+  margin: 24px 0;
+  text-align: center;
+  font-style: italic;
+  color: #3a1a08;
+  font-size: 1.05em;
+}
+.scripture-ref {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--sun-orange);
+  margin-top: 10px;
+  font-style: normal;
+}
+
+/* ============ TABLES ============ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.92rem;
+}
+.data-table th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--sun-gold);
+  padding: 12px 14px;
+  text-align: left;
+}
+.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--parchment-dark);
+  color: #2a1a10;
+  vertical-align: top;
+}
+.data-table tr:nth-child(even) td { background: rgba(245,223,160,0.18); }
+.data-table tr:hover td { background: rgba(201,131,42,0.08); }
+
+.table-wrap { overflow-x: auto; margin: 24px 0; }
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.91rem;
+}
+.table-wrap th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--sun-gold);
+  padding: 11px 13px;
+  text-align: left;
+}
+.table-wrap td {
+  padding: 9px 13px;
+  border-bottom: 1px solid var(--parchment-dark);
+  color: #2a1a10;
+  vertical-align: top;
+}
+.table-wrap tr:nth-child(even) td { background: rgba(245,223,160,0.18); }
+
+.td-name { font-weight: 600; color: var(--ink); }
+.gen-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--sun-orange);
+  font-weight: 700;
+}
+
+/* ============ KING CARDS ============ */
+.king-card {
+  border: 1px solid rgba(201,131,42,0.3);
+  border-top: 4px solid var(--sun-gold);
+  border-radius: 0 0 6px 6px;
+  margin: 32px 0;
+  background: #fffef8;
+  box-shadow: 0 4px 24px rgba(201,131,42,0.08);
+  overflow: hidden;
+}
+
+.king-header {
+  background: linear-gradient(135deg, #1a0800 0%, #2a1000 100%);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.king-emblem {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 0 8px rgba(245,200,66,0.4));
+  flex-shrink: 0;
+}
+
+.king-name-block .name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f5c842;
+  text-shadow: 0 0 20px rgba(245,200,66,0.4);
+}
+
+.king-name-block .epithet {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  color: var(--sun-silver);
+  margin-top: 4px;
+}
+
+.king-body { padding: 26px 26px; }
+
+.king-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+  background: var(--parchment);
+  padding: 18px;
+  border-radius: 4px;
+}
+
+.stat-item { }
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sun-orange);
+  margin-bottom: 2px;
+}
+.stat-value { font-size: 0.88rem; color: #2a1a10; }
+
+/* ============ INFO GRID ============ */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #fffef6 0%, #fdf6e3 100%);
+  border: 1px solid rgba(201,131,42,0.2);
+  border-top: 3px solid var(--sun-gold);
+  padding: 20px 22px;
+  box-shadow: 0 2px 12px rgba(201,131,42,0.07);
+}
+
+.info-card h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.info-card p { font-size: 0.92em; margin: 0; }
+
+/* ============ DEEP BOXES ============ */
+.deep-box {
+  background: linear-gradient(135deg, #fff8e8 0%, #fdf2d4 100%);
+  border: 1px solid rgba(201,131,42,0.2);
+  border-left: 4px solid var(--sun-bright);
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.deep-box h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: var(--sun-deep);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.deep-box p { margin: 0; font-size: 0.95em; }
+
+/* ============ LINEAGE TREE ============ */
+.tree-container {
+  background: linear-gradient(135deg, #1a0800 0%, #260e00 100%);
+  padding: 36px 30px;
+  margin: 30px 0;
+  border: 1px solid rgba(201,131,42,0.2);
+}
+
+.tree-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--sun-bright);
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.lineage-chain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.lineage-node {
+  background: rgba(201,131,42,0.12);
+  border: 1px solid rgba(201,131,42,0.3);
+  border-left: 4px solid var(--sun-gold);
+  padding: 14px 22px;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+
+.lineage-node.divine {
+  border-left-color: #f5c842;
+  background: rgba(245,200,66,0.08);
+}
+
+.lineage-node.major {
+  border-left-color: var(--sun-orange);
+  background: rgba(212,96,10,0.08);
+}
+
+.node-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f5c842;
+  letter-spacing: 2px;
+}
+
+.node-sub {
+  font-size: 0.82rem;
+  color: rgba(232,184,75,0.65);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.lineage-arrow {
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--sun-gold), rgba(201,131,42,0.3));
+  position: relative;
+}
+.lineage-arrow::after {
+  content: '▼';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--sun-gold);
+  font-size: 10px;
+}
+
+/* ============ ASCII TREE ============ */
+.ascii-tree {
+  background: #0e0600;
+  border: 1px solid rgba(201,131,42,0.25);
+  padding: 28px 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  color: rgba(232,184,75,0.85);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: 24px 0;
+}
+
+/* ============ LISTS ============ */
+.section ol, .section ul {
+  margin: 18px 0 18px 28px;
+  color: #2a1a10;
+}
+.section li { margin-bottom: 10px; }
+
+/* ============ SECTION HEADER ============ */
+.section-header-block {
+  border-bottom: 2px solid var(--parchment-dark);
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  background: linear-gradient(135deg, #0e0600 0%, #180a00 100%);
+  border-top: 2px solid var(--sun-gold);
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--sun-silver);
+  font-family: 'Cinzel', serif;
+}
+
+.site-footer h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  color: var(--sun-bright);
+  margin-bottom: 12px;
+}
+
+.site-footer p {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(216,200,168,0.7);
+  margin-bottom: 8px;
+}
+
+.gold { color: var(--sun-bright); }
+
+/* ============ COMPARISON TABLE ============ */
+.comparison-header {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--sun-gold);
+}
+
+@media (max-width: 700px) {
+  .section { padding: 44px 22px; }
+  .hero { padding: 40px 20px; }
+  .toc-nav { padding: 20px 22px; }
+  .sun-glow { width: 130px; height: 130px; }
+  .king-stats { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     HERO SECTION
+     ==================================================== -->
+<div class="hero">
+  <div class="star-field" id="stars"></div>
+
+  <div style="position:relative; margin-bottom: 40px;">
+    <div class="sun-rays"></div>
+    <div class="sun-glow"></div>
+  </div>
+
+  <div class="hero-devanagari">॥ श्री सूर्यवंश महापुराण ॥</div>
+
+  <h1 class="hero-title">SURYAVANSHA</h1>
+
+  <div class="hero-subtitle">THE SOLAR DYNASTY — सूर्यवंश</div>
+
+  <p class="hero-desc">
+    A Complete Scholarly Encyclopedia of the Divine Solar Lineage<br>
+    From Brahma to the Last Descendants in Kali Yuga<br>
+    Based on Ramayana · Mahabharata · Vishnu Purana · Bhagavata Purana<br>
+    Harivamsha · Vayu Purana · Matsya Purana · Raghuvamsha of Kalidasa
+  </p>
+
+  <div class="hero-badges">
+    <span class="hero-badge">14 Major Sections</span>
+    <span class="hero-badge">Complete Lineage Trees</span>
+    <span class="hero-badge">150+ Kings Documented</span>
+    <span class="hero-badge">All Major Scriptures Referenced</span>
+    <span class="hero-badge">Visual Dynasty Atlas</span>
+    <span class="hero-badge">Deep Scholarly Analysis</span>
+  </div>
+
+  <div class="scroll-hint">▼ SCROLL TO BEGIN THE JOURNEY ▼</div>
+</div>
+
+<!-- ====================================================
+     STICKY NAV
+     ==================================================== -->
+<nav class="toc-nav">
+  <h3>☀ Table of Contents — सूर्यवंश</h3>
+  <div class="toc-grid">
+    <a href="#s1" class="toc-link">I · Introduction</a>
+    <a href="#s2" class="toc-link">II · Divine Origins</a>
+    <a href="#s3" class="toc-link">III · Complete Lineage</a>
+    <a href="#s4" class="toc-link">IV · Ikshvaku & Early Kings</a>
+    <a href="#s5" class="toc-link">V · Sagara & The Ocean</a>
+    <a href="#s6" class="toc-link">VI · Bhagiratha & Ganga</a>
+    <a href="#s7" class="toc-link">VII · The Raghuvansha</a>
+    <a href="#s8" class="toc-link">VIII · Shri Rama</a>
+    <a href="#s9" class="toc-link">IX · Lava, Kusha & Succession</a>
+    <a href="#s10" class="toc-link">X · Mahabharata Era</a>
+    <a href="#s11" class="toc-link">XI · Lesser-Known Branches</a>
+    <a href="#s12" class="toc-link">XII · Hidden Knowledge</a>
+    <a href="#s13" class="toc-link">XIII · Scriptural Comparisons</a>
+    <a href="#s14" class="toc-link">XIV · Final Genealogy</a>
+  </div>
+</nav>
+
+<!-- ====================================================
+     CONTENT WRAP
+     ==================================================== -->
+<div class="content-wrap">
+
+<!-- ====================================================
+     SECTION I — INTRODUCTION
+     ==================================================== -->
+<section class="section" id="s1">
+  <span class="section-number">SECTION I</span>
+  <h1 class="section-title">Introduction to Suryavansha</h1>
+  <div class="section-devanagari">सूर्यवंश — The Solar Dynasty in Hindu Cosmology and Sacred History</div>
+
+  <p class="drop-cap">The <span class="highlight">Suryavansha</span> — <span class="sanskrit">Sūryavaṃśa</span> in Sanskrit — is one of the two supreme royal lineages of ancient Hindu civilization, the other being the Chandravansha or Lunar Dynasty. Among all the dynasties described across the vast ocean of Hindu scripture, the Suryavansha occupies a position of unmatched spiritual, cosmic, and temporal authority. It is not merely a genealogical record of human kings; it is a sacred continuum — a cosmic thread that connects the eternal light of the Sun to the governance of Dharma on earth.</p>
+
+  <p>The dynasty is alternatively called <span class="highlight">Ikshvaku Vamsha</span>, after its first terrestrial king, and <span class="highlight">Raghuvansha</span>, after the celebrated emperor Raghu. Most notably, it is the dynasty into which Bhagavan <strong>Shri Rama</strong> — the seventh avatar of Lord Vishnu — was born, which alone secures this lineage's supreme importance for all time.</p>
+
+  <div class="callout">
+    <div class="callout-title">The Meaning of Suryavansha in Hindu Cosmology</div>
+    <p>In the Hindu cosmological framework, the Sun (<span class="sanskrit">Surya</span> or <span class="sanskrit">Vivasvan</span>) is not merely an astronomical body but the cosmic principle of consciousness, illumination, and the cycle of time. The <span class="sanskrit">Gāyatrī Mantra</span> — "Oṃ Bhūr Bhuvaḥ Svaḥ, Tat Savitur Vareṇyaṃ..." — is a prayer to the solar divine principle. Kings who claimed Solar descent were claiming to rule under the cosmic authority of this universal principle, administering the world as guardians of cosmic order.</p>
+  </div>
+
+  <h2>Suryavansha vs Chandravansha — A Fundamental Comparison</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Suryavansha (Solar Dynasty)</th>
+          <th>Chandravansha (Lunar Dynasty)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-name">Divine Origin</td><td>Vivasvan (Surya Dev) → Vaivasvata Manu → Ikshvaku</td><td>Brahma → Atri → Chandra → Budha → Pururavas → Puru</td></tr>
+        <tr><td class="td-name">Cosmic Symbol</td><td>Sun — constant, self-luminous, giver of life, unerring</td><td>Moon — phases, emotion, mind (manas), tides of fortune</td></tr>
+        <tr><td class="td-name">Primary Quality</td><td>Dharma, steadfastness, satya (truth), tapas, renunciation</td><td>Valor, intelligence, political cunning, bhoga (enjoyment)</td></tr>
+        <tr><td class="td-name">Most Famous King</td><td>Shri Rama (avatar of Vishnu)</td><td>Shri Krishna (avatar of Vishnu) — Yadava branch</td></tr>
+        <tr><td class="td-name">Most Famous War</td><td>Lanka War (Ramayana)</td><td>Kurukshetra War (Mahabharata)</td></tr>
+        <tr><td class="td-name">Capital</td><td>Ayodhya ("the unconquerable")</td><td>Hastinapura, Mathura, Dwaraka</td></tr>
+        <tr><td class="td-name">Primary Puranic Source</td><td>Vishnu Purana Book 4; Bhagavata Purana Book 9; Ramayana</td><td>Mahabharata; Vishnu Purana Book 4; Bhagavata Purana Book 9</td></tr>
+        <tr><td class="td-name">Ruling Philosophy</td><td>Sacrifice, renunciation, penance — leading to cosmic achievement</td><td>Strategy, knowledge of statecraft, political alliances</td></tr>
+        <tr><td class="td-name">Termination in Kali Yuga</td><td>Ends after Sumitra of Ayodhya (Bhagavata Purana)</td><td>Ends after Kshemaka (Bhagavata Purana)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scripture">
+    <em>"Imaṃ vivasvate yogaṃ proktavān aham avyayam | vivasvān manave prāha manur ikṣvākave 'bravīt ||"</em>
+    <div class="scripture-ref">— Bhagavad Gita 4.1 | Lord Krishna speaking to Arjuna</div>
+    <p style="margin-top:12px; margin-bottom:0; font-style:normal; font-size:0.95em;">"I taught this imperishable yoga to Vivasvan (Surya); Vivasvan taught it to Manu; Manu taught it to Ikshvaku." — Establishing the Solar lineage as the first earthly custodian of divine wisdom.</p>
+  </div>
+
+  <h2>Why So Many Kings Claimed Suryavansha Descent</h2>
+  <p>Throughout the history of the Indian subcontinent, numerous royal dynasties have claimed descent from the Suryavansha — including the <strong>Mauryas</strong>, <strong>Guptas</strong>, <strong>Sisodias of Mewar</strong>, <strong>Kachwas of Jaipur</strong>, and <strong>Rathores of Jodhpur</strong>. Claiming Solar descent provided a king with divine legitimacy rooted in the cosmic authority of the Sun, aligned the ruler with the tradition of Shri Rama, and placed the claimant within the oldest and most prestigious royal tradition in the subcontinent.</p>
+</section>
+
+<!-- ====================================================
+     SECTION II — DIVINE ORIGINS
+     ==================================================== -->
+<section class="section" id="s2">
+  <span class="section-number">SECTION II</span>
+  <h1 class="section-title">Divine Origins</h1>
+  <div class="section-devanagari">दिव्य उत्पत्ति — From the Primordial Creator to the First Earthly King</div>
+
+  <p class="drop-cap">The origin story of the Suryavansha is not merely a genealogy — it is a cosmological narrative describing how divine consciousness descends into material form, how the cosmos organizes itself into living dynasties of consciousness. Every link in this divine chain carries profound symbolic meaning that illuminates the Hindu understanding of the universe's structure.</p>
+
+  <div class="tree-container">
+    <div class="tree-title">☀ The Divine Descent — From Brahma to Ikshvaku ☀</div>
+    <div class="lineage-chain">
+      <div class="lineage-node divine">
+        <div class="node-name">BRAHMA</div>
+        <div class="node-sub">Svayambhu — The Self-Born Creator | Primordial Intelligence</div>
+      </div>
+      <div class="lineage-arrow"></div>
+      <div class="lineage-node divine">
+        <div class="node-name">MARICHI</div>
+        <div class="node-sub">Prajapati | One of the Seven Saptarshis | Mind-born Son of Brahma</div>
+      </div>
+      <div class="lineage-arrow"></div>
+      <div class="lineage-node divine">
+        <div class="node-name">KASHYAPA</div>
+        <div class="node-sub">The Great Seer | Father of Gods, Demons, Humans, and All Life</div>
+      </div>
+      <div class="lineage-arrow"></div>
+      <div class="lineage-node divine">
+        <div class="node-name">VIVASVAN (SURYA)</div>
+        <div class="node-sub">Sun God | Son of Kashyapa and Aditi | One of the 12 Ādityas</div>
+      </div>
+      <div class="lineage-arrow"></div>
+      <div class="lineage-node divine">
+        <div class="node-name">VAIVASVATA MANU</div>
+        <div class="node-sub">The 7th Manu | Progenitor of Present Humanity | Flood Survivor</div>
+      </div>
+      <div class="lineage-arrow"></div>
+      <div class="lineage-node major">
+        <div class="node-name">IKSHVAKU</div>
+        <div class="node-sub">First Earthly King of Solar Dynasty | Founder of Ayodhya's Solar Line</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Brahma — The Primordial Origin</h2>
+  <p>At the apex of the Suryavansha's divine genealogy stands <span class="highlight">Brahma</span>, the self-born creator (<span class="sanskrit">Svayambhu</span>). Brahma was not born but spontaneously manifested from the primordial lotus that emerged from Vishnu's navel at the beginning of creation. His mind-born sons — the <span class="sanskrit">Mānasaputras</span> — include the great sage Marichi, who is the direct link to the Solar Dynasty.</p>
+
+  <h2>Surya and His Dual Wives — A Hidden Mystery</h2>
+  <p>Surya's wife <span class="highlight">Saṃjñā</span> (divine consciousness) could not bear his blazing radiance and secretly created a shadow-form called <span class="sanskrit">Chhāyā</span> to substitute as his wife, while she herself retreated to the forest in disguise. Surya eventually discovered the deception, and Saṃjñā's father Vishvakarma (the divine craftsman) trimmed Surya's light by one-eighth. This trimmed portion became the Sudarshana Chakra and other divine weapons. Saṃjñā then returned as true wife. From Saṃjñā was born <span class="highlight">Vaivasvata Manu</span> — the ancestor of the Solar line. From Chhāyā was born <span class="highlight">Shani</span> (Saturn), the judge of karma.</p>
+
+  <div class="callout teal">
+    <div class="callout-title">The Flood and Manu's Survival</div>
+    <p>The Shatapatha Brahmana and Matsya Purana describe how Vaivasvata Manu was warned by a fish (who was Vishnu in disguise) of the coming cosmic flood. Manu built a great boat, survived the deluge, and became the progenitor of the present human race. This story — strikingly parallel to the Noah narrative — establishes Manu as both a survivor of cosmic catastrophe and a divinely selected founder of the new age. Ikshvaku, Manu's eldest son, then became the first Solar king.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION III — COMPLETE LINEAGE TREE
+     ==================================================== -->
+<section class="section" id="s3">
+  <span class="section-number">SECTION III</span>
+  <h1 class="section-title">The Complete Lineage Tree</h1>
+  <div class="section-devanagari">सम्पूर्ण वंशावली — From Brahma to Kali Yuga</div>
+
+  <div class="ascii-tree">SURYAVANSHA QUICK REFERENCE — FROM BRAHMA TO KALI YUGA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAHMA → MARICHI → KASHYAPA + ADITI → VIVASVAN (SURYA)
+    ↓
+SURYA + SAMJNA → VAIVASVATA MANU (7th Manu; flood survivor)
+    ↓
+MANU'S SONS: Ikshvaku (main), Nriga, Sharyati, Nimi (Videha branch),
+             Prishadhra, Nabhanedishtha, Karusha, Dhrishta, Narishyanta
+    ↓
+IKSHVAKU (1st Solar King; founded Ayodhya; 101 sons)
+    ↓
+VIKUKSHI (Shasada) → BAHULA → PURANJAYA (Kakutstha) → ANENASA
+    ↓
+~15 generations → KUVALASHVA (Dhundhumara; slew demon Dhundhu)
+    ↓
+~10 more kings → YUVANASHVA II (became pregnant miraculously!)
+    ↓
+MANDHATA (Greatest Chakravartin; conquered three worlds)
+    ├── PURUKUTSA (married river-goddess Narmada; went to Patala)
+    ├── AMBARISHA (devotee of Vishnu; Sudarshana Chakra protection)
+    └── MUCUKUNDA (slept for cosmic ages; Bhagavata Purana hero)
+    ↓ (through Purukutsa)
+TRASADASYU → ANARANYA (cursed Ravana on his deathbed!)
+    ↓
+~5 kings → TRAYYARUNA → TRISHANKU (suspended between heaven & earth)
+    ↓
+HARISHCHANDRA (SUPREME SATYAVADIN — symbol of absolute truth)
+    ↓
+ROHITA → HARITA → CHUNCHU → ... → BAHU/BAHUKA (lost kingdom)
+    ↓
+SAGARA (Creator of the Ocean; 60,001 sons; born with poison)
+    ↓
+ASAMANJA (wicked/exiled) → ANSHUMAN (began quest for Ganga)
+    ↓
+DILIPA I (continued Ganga quest)
+    ↓
+BHAGIRATHA (Brought Ganga to Earth! Greatest tapasvin)
+    ↓
+SHRUTA → NABHAGA → AMBARISHA → SINDHUDVIPA → AYUTAYUS
+    ↓
+RITUPARNA (helped Nala; master of dice) → SARVAKAMA → SUDAS
+    ↓
+KALMASHAPADA (Soudasa) — cursed to be demon 12 years
+    ↓ (via niyoga — Vasishtha fathered son on queen Madayanti)
+ASMAKA → MULAKA → ... → ILAVILA → VISHVASAHA → KHATTANGA
+    ↓
+DIRGHABAHU → RAGHU (GREATEST SOLAR EMPEROR; Digvijaya)
+    ↓
+AJA (tragic romantic king; died of grief after Indumati's death)
+    ↓
+DASHARATHA (3 wives; 4 sons by divine grace)
+    ↓
+SHRI RAMA (AVATAR OF VISHNU; Maryada Purushottama; Rama Rajya 11,000 yrs)
+    ├── KUSHA (ruled South Kosala; Kushavati city)
+    └── LAVA (northern territory; possibly Lahore region)
+    ↓ (through Kusha)
+32+ GENERATIONS → HIRANYABHA (disciple of Yajnavalkya)
+    ↓
+→ AGNIVARNA (cautionary tale; libertine king)
+    ↓
+→ MARU (living in Himalayas via yoga; will restore dynasty at Kali Yuga's end!)
+    ↓
+→ BRIHADBALA (last warrior-king; killed by Abhimanyu at Kurukshetra)
+    ↓
+POST-BRIHADBALA → 28+ more kings → SHUDDHODANA (father of the Buddha)
+→ SUMITRA (last Solar king of Ayodhya per Bhagavata Purana)
+
+═══════════════════════════════════════════════════════════════════
+VIDEHA (JANAKA) BRANCH — Parallel Solar Line from Nimi
+IKSHVAKU's son NIMI → cursed, body churned → JANAKA I (first Janaka)
+→ JANAKA II (Siradhvaja) — found Sita in the earth; philosophical king;
+  discussed Brahmavidya with Yajnavalkya in Brihadaranyaka Upanishad
+═══════════════════════════════════════════════════════════════════</div>
+
+  <div class="callout">
+    <div class="callout-title">Scale of the Solar Dynasty</div>
+    <p>The Suryavansha spans across all four Yugas — from the very beginning of the current Manvantara through Satya Yuga, Treta Yuga, Dvapara Yuga, and into the present Kali Yuga. With 95+ documented generations in the main line alone (and additional parallel branches), it constitutes the longest continuously documented royal genealogy in the world. Its greatest kings represent the highest archetypes of human potential: Ikshvaku (Foundation), Mandhata (Universal Power), Harishchandra (Absolute Truth), Bhagiratha (Impossible Perseverance), Raghu (Sovereign Generosity), and Rama (The Complete Divine Human).</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION IV — IKSHVAKU AND EARLY SOLAR KINGS
+     ==================================================== -->
+<section class="section" id="s4">
+  <span class="section-number">SECTION IV</span>
+  <h1 class="section-title">Ikshvaku and Early Solar Kings</h1>
+  <div class="section-devanagari">इक्ष्वाकु वंश — The Foundation of the Solar Throne</div>
+
+  <!-- KING CARD: PURANJAYA / KAKUTSTHA -->
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🐂</div>
+      <div class="king-name-block">
+        <div class="name">Puranjaya / Kakutstha</div>
+        <div class="epithet">He Who Rode Indra's Back | Conqueror of the Demon Armies</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Vikukshi (grandson of Ikshvaku)</div></div>
+        <div class="stat-item"><div class="stat-label">Three Names</div><div class="stat-value">Puranjaya (stormer of cities), Indravaha (carried by Indra), Kakutstha (on the hump)</div></div>
+        <div class="stat-item"><div class="stat-label">Significance</div><div class="stat-value">His epithet "Kakutstha" became the dynasty name — Rama himself is called Kākutstha</div></div>
+      </div>
+      <p>When the Devas were oppressed by the Daityas (demons), Indra, king of the gods, sought the help of this Suryavanshi king. Indra took the form of a mighty bull, and Puranjaya mounted him — sitting on the hump (<span class="sanskrit">kakud</span>). This gave the king his famous name <span class="sanskrit">Kakutstha</span>. Armed with divine weapons, Kakutstha devastated the entire demonic army. The name Kakutstha became so prestigious that it was adopted as a dynastic name — thus Rama is referred to as <span class="sanskrit">Kākutstha</span> in the Ramayana, linking him to this ancient heroic ancestor.</p>
+    </div>
+  </div>
+
+  <!-- KING CARD: MANDHATA -->
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">👑</div>
+      <div class="king-name-block">
+        <div class="name">Mandhata</div>
+        <div class="epithet">Conqueror of Three Worlds | Greatest Chakravartin of the Solar Dynasty</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Yuvanashva II (born from his womb miraculously)</div></div>
+        <div class="stat-item"><div class="stat-label">Foster Nourisher</div><div class="stat-value">Lord Indra (who fed him divine ambrosia: "mām dhāsyati" — he shall suckle me)</div></div>
+        <div class="stat-item"><div class="stat-label">Wife</div><div class="stat-value">Bindumati (daughter of Shashabindu, Chandravanshi king)</div></div>
+        <div class="stat-item"><div class="stat-label">Sons</div><div class="stat-value">Three sons: Purukutsa, Ambarisha, Mucukunda</div></div>
+        <div class="stat-item"><div class="stat-label">Daughters</div><div class="stat-value">50 daughters married to sage Saubhari</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Vishnu Purana 4.3; Bhagavata Purana 9.6–7; Ramayana; Mahabharata Shanti Parva</div></div>
+      </div>
+      <p>Mandhata's birth is one of the marvels of Puranic narrative. His father Yuvanashva II accidentally drank the sacred water prepared to bless his wives with fertility, and consequently became pregnant himself. A radiant son was delivered by the rishis. The infant cried for milk, and Indra declared "<span class="sanskrit">Māṃ dhāsyati</span>" (he will drink from me) — nourishing him with ambrosia. Thus the name Mandhata was born.</p>
+      <p>Mandhata grew into the supreme <span class="sanskrit">Cakravartī</span> of his age. The Vishnu Purana states that he subjugated the entire earth from sunrise to sunset and even conquered the realms of the gods. He performed one hundred Ashvamedha and one hundred Rajasuya sacrifices. His fifty daughters were simultaneously married to the sage Saubhari, illustrating the maya-entrapment of even ascetics.</p>
+    </div>
+  </div>
+
+  <!-- KING CARD: KUVALASHVA -->
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🔥</div>
+      <div class="king-name-block">
+        <div class="name">Kuvalashva / Dhundhumara</div>
+        <div class="epithet">Slayer of Dhundhu the Demon | Protector of Vedic Knowledge</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Brihadashva</div></div>
+        <div class="stat-item"><div class="stat-label">Sons</div><div class="stat-value">21,000 sons; most died fighting Dhundhu</div></div>
+        <div class="stat-item"><div class="stat-label">Achievement</div><div class="stat-value">Destroyed the demon Dhundhu who threatened the Vedas and sage Uttanka's ashram</div></div>
+        <div class="stat-item"><div class="stat-label">Boon</div><div class="stat-value">Vishnu blessed him with the power to destroy the demon</div></div>
+      </div>
+      <p>Kuvalashva's story is a powerful allegory of Solar kingship as the protector of sacred knowledge. The demon <span class="sanskrit">Dhundhu</span>, buried under sands near sage Uttanka's ashram, would every year set the earth ablaze for seven days. Kuvalashva marched with his 21,000 sons. The demon's fiery breath killed nearly all of them — only three survived. But Kuvalashva, empowered by a boon from Vishnu, destroyed Dhundhu with streams of sacred water. For this feat, he received the epithet <span class="sanskrit">Dhundhumāra</span> (slayer of Dhundhu).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION V — SAGARA AND THE OCEAN
+     ==================================================== -->
+<section class="section" id="s5">
+  <span class="section-number">SECTION V</span>
+  <h1 class="section-title">King Sagara and the Creation of the Ocean</h1>
+  <div class="section-devanagari">सागर महाराज — The Greatest Dynasty-Builder Before Rama</div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🌊</div>
+      <div class="king-name-block">
+        <div class="name">Sagara</div>
+        <div class="epithet">Creator of the Ocean | King of 60,000 Sons</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Bahu/Bahuka (exiled king who died in the forest)</div></div>
+        <div class="stat-item"><div class="stat-label">Wife 1</div><div class="stat-value">Keshini (princess of Vidarbha) — mother of Asamanja</div></div>
+        <div class="stat-item"><div class="stat-label">Wife 2</div><div class="stat-value">Sumati (daughter of Garuda) — mother of 60,000 sons</div></div>
+        <div class="stat-item"><div class="stat-label">Sons Total</div><div class="stat-value">60,001 total (60,000 by Sumati + Asamanja by Keshini)</div></div>
+        <div class="stat-item"><div class="stat-label">Legacy</div><div class="stat-value">The ocean is named "Sagara" after him — the sea is literally his creation</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Ramayana Bala Kanda 1.38–42; Vishnu Purana 4.4; Bhagavata Purana 9.8</div></div>
+      </div>
+      <p>Sagara's birth story begins with tragedy. His father Bahu lost his kingdom to the Haihaya and Talajangha tribes and died in forest exile. His pregnant wife was about to be poisoned by a jealous co-wife, but the poison merely delayed the birth — this is why the child was named <span class="sanskrit">Sagara</span> (born with poison, <span class="sanskrit">sa-gara</span>). Sagara grew up under sage Aurva and recovered his ancestral kingdom. For the Ashvamedha, his 60,000 sons dug the entire earth searching for the sacrificial horse — accidentally disturbing the meditating sage Kapila, who incinerated all 60,000 with a single glance. The pit they dug became the ocean — <span class="sanskrit">Sāgara</span>.</p>
+      <div class="callout red">
+        <div class="callout-title">The Tragedy of Asamanja</div>
+        <p>Sagara's son by his first wife Keshini, <strong>Asamanja</strong>, drowned children in the Sarayu river and is described in the Ramayana as a wicked prince. Sagara, upholding Dharma above paternal love, exiled him. Yet in the Mahabharata version, Asamanja is portrayed as an ascetic who had abandoned worldly behavior as a form of divine madness. His son <strong>Anshuman</strong> was virtuous and devoted, and it fell to him to begin the quest to redeem the 60,000 sons by bringing the Ganga to earth — a task that would take three generations to complete.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Anshuman and Dilipa — The Long Quest for Ganga</h2>
+  <p>After Sagara's 60,000 sons were incinerated by sage Kapila, their souls could not find liberation without the sacred Ganga water touching their ashes. <strong>Anshuman</strong> did prolonged tapas to please Brahma and bring Ganga down, but did not succeed in his lifetime. His son <strong>Dilipa (I)</strong> also performed tremendous austerities but similarly could not complete the task. He bequeathed the sacred duty to his son <strong>Bhagiratha</strong> — whose name would become synonymous with heroic, apparently impossible perseverance.</p>
+
+  <div class="callout purple">
+    <div class="callout-title">Symbolic Meaning of the Three-Generation Quest</div>
+    <p>The three-generation quest to bring Ganga teaches that the greatest spiritual achievements often require accumulated merit (<span class="sanskrit">saṃcita karma</span>) built over lifetimes. Anshuman's tapas was the foundation on which Dilipa built, and Dilipa's effort was the platform on which Bhagiratha finally succeeded. This is the Puranic doctrine of <span class="sanskrit">vamsha-dharma</span> — dynastic duty that spans generations.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VI — BHAGIRATHA AND GANGA
+     ==================================================== -->
+<section class="section" id="s6">
+  <span class="section-number">SECTION VI</span>
+  <h1 class="section-title">Bhagiratha and the Descent of Ganga</h1>
+  <div class="section-devanagari">भगीरथ तपस्या — How One King Changed the Cosmic Geography</div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🙏</div>
+      <div class="king-name-block">
+        <div class="name">Bhagiratha</div>
+        <div class="epithet">The Supreme Tapasvin | He Who Brought Ganga to Earth</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Dilipa I</div></div>
+        <div class="stat-item"><div class="stat-label">Son</div><div class="stat-value">Shruta</div></div>
+        <div class="stat-item"><div class="stat-label">Great Achievement</div><div class="stat-value">Brought Goddess Ganga from Brahma's realm to Earth to liberate 60,000 ancestors</div></div>
+        <div class="stat-item"><div class="stat-label">Duration of Tapas</div><div class="stat-value">Thousands of years — standing on one leg, arms raised, subsisting on air alone</div></div>
+        <div class="stat-item"><div class="stat-label">Deities Pleased</div><div class="stat-value">Brahma (for Ganga's release), Shiva (for receiving Ganga in his matted locks)</div></div>
+        <div class="stat-item"><div class="stat-label">Cultural Legacy</div><div class="stat-value">"Bhagirath Prayatna" — still used in Indian languages for any Herculean effort</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Ramayana Bala Kanda 1.43–44; Vishnu Purana 4.4; Bhagavata Purana 9.9; Raghuvamsha 13</div></div>
+      </div>
+      <p>Bhagiratha's tapas is described as the most extreme and sustained act of royal asceticism in the entire Solar line — standing on one leg for thousands of years with arms raised, living only on air. He eventually moved the three primary cosmic beings: Brahma agreed to release Ganga from the heavens; Shiva agreed to receive her in his matted locks to break her fall; and Ganga herself agreed to descend.</p>
+      <p>The descent of Ganga through Shiva's locks, then along Bhagiratha's path, then into the netherworld where the ashes of Sagara's sons awaited — this is the most elaborately described geographical and spiritual journey in the Ramayana. When the sacred water finally touched the ashes of the 60,000, all were instantly liberated and ascended to heaven. The path Bhagiratha led Ganga along became the course of the sacred river on earth. The term <span class="highlight">Bhāgīrathī</span> — one of the most sacred names of the Ganga — immortalizes his name in the very landscape of India.</p>
+    </div>
+  </div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">⚖️</div>
+      <div class="king-name-block">
+        <div class="name">Harishchandra</div>
+        <div class="epithet">Satya-Harishchandra | The Eternal Symbol of Truth and Sacrifice</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Trishanku (Satyavrata)</div></div>
+        <div class="stat-item"><div class="stat-label">Wife</div><div class="stat-value">Shaivya (also called Chandramati)</div></div>
+        <div class="stat-item"><div class="stat-label">Son</div><div class="stat-value">Rohita (Rohitashva)</div></div>
+        <div class="stat-item"><div class="stat-label">Adversary</div><div class="stat-value">Sage Vishvamitra (as divine tester of truth)</div></div>
+        <div class="stat-item"><div class="stat-label">Extreme Tests</div><div class="stat-value">Lost kingdom, sold wife and son into slavery, worked as chandala (cremation ground worker)</div></div>
+        <div class="stat-item"><div class="stat-label">Reward</div><div class="stat-value">Restoration of everything; ascension to heaven while alive; his entire city transported</div></div>
+      </div>
+      <p>Harishchandra's test began with a boast — that he was the most truthful man alive. Vishvamitra took this as a challenge and relentlessly persecuted him: first demanding the entire kingdom, then all wealth, then selling Harishchandra's wife Shaivya and son Rohita to a brahmin, then selling Harishchandra himself to a chandala. Harishchandra maintained his commitment to truth through all this. The culmination came when his son Rohita died of a snakebite, and the grieving mother brought the body to the cremation ground where Harishchandra worked. As Harishchandra demanded the cremation fee even from this bereaved widow — because his duty required it — the gods finally intervened. All suffering ceased; Rohita was restored to life; Harishchandra's city of Ayodhya was elevated bodily to heaven.</p>
+      <p>Harishchandra stands as the Supreme Solar King in the domain of <em>Satya</em> (Truth). While Mandhata represents the greatest Chakravartin and Bhagiratha represents the greatest tapasvin, Harishchandra represents the greatest <em>satyavadin</em> (upholder of truth). Together, these three archetypes define Solar kingship's highest aspirations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VII — THE RAGHUVANSHA
+     ==================================================== -->
+<section class="section" id="s7">
+  <span class="section-number">SECTION VII</span>
+  <h1 class="section-title">The Raghuvansha — Golden Age of Solar Kingship</h1>
+  <div class="section-devanagari">रघुवंश — The Apex of Solar Glory</div>
+
+  <p class="drop-cap">The term <span class="highlight">Raghuvansha</span> — literally "the lineage of Raghu" — refers specifically to the final luminous branch of the Suryavansha that culminated in Shri Rama. This branch is the subject of Kalidasa's immortal epic <span class="sanskrit">Raghuvaṃśa</span>, widely considered the greatest Sanskrit literary achievement. The Raghuvansha represents the apex of Solar civilization — kings who were simultaneously Dharmic rulers, powerful warriors, and spiritual exemplars.</p>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">⚡</div>
+      <div class="king-name-block">
+        <div class="name">Khattanga (Dilipa II)</div>
+        <div class="epithet">The King Who Chose Moksha Over Celestial Pleasure</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Position in Line</div><div class="stat-value">Son of Vishvasaha; father of Dirghabahu; grandfather of Raghu</div></div>
+        <div class="stat-item"><div class="stat-label">Greatest Achievement</div><div class="stat-value">Fought for the gods for cosmic ages; asked only "how long to live" when offered boons</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Bhagavata Purana 9.9.39–49; Vishnu Purana 4.4</div></div>
+      </div>
+      <p>Khattanga fought for the gods in their war against demons for a very long time. When the gods offered him celestial boons, he asked only one question: "How long do I have left to live?" When told "only a moment remains," Khattanga immediately abandoned all celestial pleasures, returned to earth, and fixed his mind entirely on Vishnu. In that single moment of absolute devotion, he achieved liberation. The Bhagavata uses this story to teach that even a moment of sincere devotion to Vishnu can grant Moksha.</p>
+    </div>
+  </div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🐄</div>
+      <div class="king-name-block">
+        <div class="name">Dilipa (of Raghuvamsha)</div>
+        <div class="epithet">The Devoted King — Servant of Nandini the Divine Cow</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Dirghabahu (son of Khattanga)</div></div>
+        <div class="stat-item"><div class="stat-label">Wife</div><div class="stat-value">Sudakshina</div></div>
+        <div class="stat-item"><div class="stat-label">Son</div><div class="stat-value">Raghu (born through the grace of Nandini)</div></div>
+        <div class="stat-item"><div class="stat-label">Test Undergone</div><div class="stat-value">Served Nandini (divine cow) for 21 days; offered himself as lion's food to protect her</div></div>
+        <div class="stat-item"><div class="stat-label">Source</div><div class="stat-value">Raghuvamsha 1–2 (Kalidasa); Vishnu Purana 4.4</div></div>
+      </div>
+      <p>Kalidasa's Raghuvamsha opens with Dilipa. He had unknowingly failed to salute Nandini — the divine wish-fulfilling cow — on a journey, and had no heir as a result. The remedy: serve Nandini in her forest grazing. For twenty-one days, Dilipa and Sudakshina followed Nandini. On the twenty-first day, a lion appeared and seized Nandini. Unable to move (frozen by divine power), Dilipa could only speak — he offered himself as food to the lion to spare Nandini. At the moment of his supreme sacrifice, the lion vanished, revealed as an illusion. Nandini granted the boon of a son. Raghu was born.</p>
+      <div class="scripture">
+        <em>"Vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||"</em>
+        <div class="scripture-ref">— Raghuvamsha 1.1 (Kalidasa's invocation to Shiva and Parvati)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🌏</div>
+      <div class="king-name-block">
+        <div class="name">Raghu</div>
+        <div class="epithet">Raghuvīra — Conqueror of All Four Directions | Greatest Solar Emperor</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Dilipa</div></div>
+        <div class="stat-item"><div class="stat-label">Son</div><div class="stat-value">Aja</div></div>
+        <div class="stat-item"><div class="stat-label">Conquests</div><div class="stat-value">Bengal/East, South India, Western India, Himalayan North, Bactrian kingdoms</div></div>
+        <div class="stat-item"><div class="stat-label">Greatest Act</div><div class="stat-value">Gave away ALL wealth — even beyond his treasury — to the student Kautsa</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Raghuvamsha 4–7 (Kalidasa); Vishnu Purana 4.4</div></div>
+      </div>
+      <p>Raghu is, in many respects, the supreme hero of the Solar line before Rama. Kalidasa devotes four entire cantos to his exploits. His <span class="sanskrit">Digvijaya</span> (conquest of all four directions) subjugated all kings. Most remarkably, after all these conquests, Raghu performed the <span class="sanskrit">Viśvajit</span> sacrifice and gave away every last possession — treasury, palace, horses, elephants — to priests and brahmins, left with nothing but a clay pot. When the student Kautsa arrived needing 140 million gold coins as guru-fee, Raghu marched against Kubera, the god of wealth. Kubera rained down golden coins overnight, and Raghu gave all 140 million to Kautsa.</p>
+      <p>This supreme act of liberality established <span class="highlight">Raghu's Pratijna</span> — the Solar vow that no supplicant shall ever leave a Solar king's court empty-handed. This dharmic code would be inherited by Dasharatha and ultimately by Rama himself, who went to the forest rather than break the promise made by his father.</p>
+    </div>
+  </div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">💔</div>
+      <div class="king-name-block">
+        <div class="name">Aja</div>
+        <div class="epithet">The Tragic Romantic King | Dasharatha's Father</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Raghu</div></div>
+        <div class="stat-item"><div class="stat-label">Wife</div><div class="stat-value">Indumati (princess of Vidarbha) — won at Svayamvara</div></div>
+        <div class="stat-item"><div class="stat-label">Son</div><div class="stat-value">Dasharatha</div></div>
+        <div class="stat-item"><div class="stat-label">Wife's Death</div><div class="stat-value">Indumati struck by a fallen garland from the sky while in the palace gardens; died suddenly</div></div>
+        <div class="stat-item"><div class="stat-label">Aja's Fate</div><div class="stat-value">Died of grief 8 years after Indumati's death; gave up his body in the Sarayu river</div></div>
+        <div class="stat-item"><div class="stat-label">Source</div><div class="stat-value">Raghuvamsha 5–8 (Kalidasa) — the finest love poetry in Sanskrit literature</div></div>
+      </div>
+      <p>Aja's story in the Raghuvamsha is perhaps the most tender narrative in all Sanskrit epic literature. At his father Raghu's command, Aja travels to the <span class="sanskrit">Svayaṃvara</span> of Princess Indumati of Vidarbha. On the journey, he defeats a wild elephant who was actually the curse-bound gandharva king Priyamvada — who in gratitude gives Aja the divine weapon <span class="sanskrit">Sammohana astra</span>. Aja wins the Svayamvara and their marriage is described with extraordinary beauty by Kalidasa. The sudden death of Indumati — struck by a celestial garland falling from the sky (revealed to be a divine woman returning to heaven after her curse ended) — is one of the most heartrending moments in Sanskrit poetry. Aja's lament over her body occupies an entire canto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VIII — SHRI RAMA
+     ==================================================== -->
+<section class="section" id="s8">
+  <span class="section-number">SECTION VIII</span>
+  <h1 class="section-title">Shri Rama — The Divine King</h1>
+  <div class="section-devanagari">श्री राम — मर्यादा पुरुषोत्तम — The Perfect Human Being</div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">🏹</div>
+      <div class="king-name-block">
+        <div class="name">Shri Rama</div>
+        <div class="epithet">Maryada Purushottama — Avatar of Vishnu — The Ideal King</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Father</div><div class="stat-value">Dasharatha (died of grief after Rama's exile)</div></div>
+        <div class="stat-item"><div class="stat-label">Mother</div><div class="stat-value">Kaushalya (eldest queen; model of Solar queenship)</div></div>
+        <div class="stat-item"><div class="stat-label">Brothers</div><div class="stat-value">Bharata (by Kaikeyi), Lakshmana & Shatrughna (twins by Sumitra)</div></div>
+        <div class="stat-item"><div class="stat-label">Wife</div><div class="stat-value">Sita (daughter of Janaka; born from the earth; incarnation of Lakshmi)</div></div>
+        <div class="stat-item"><div class="stat-label">Sons</div><div class="stat-value">Kusha and Lava (twins; born in Valmiki's ashram; raised on the Ramayana)</div></div>
+        <div class="stat-item"><div class="stat-label">Duration of Exile</div><div class="stat-value">14 years (ordered by Kaikeyi's boon; Rama upheld Raghu's Pratijna)</div></div>
+        <div class="stat-item"><div class="stat-label">Duration of Rama Rajya</div><div class="stat-value">11,000 years of perfect governance — the gold standard of Dharmic rule</div></div>
+        <div class="stat-item"><div class="stat-label">Theological Status</div><div class="stat-value">7th avatar of Vishnu; the most complete manifestation — no divine powers withheld</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Valmiki Ramayana (24,000 shlokas); Adhyatma Ramayana; Raghuvamsha 10–15 (Kalidasa)</div></div>
+      </div>
+      <p>Rama is the culmination toward which the entire Solar dynasty was moving from the beginning. Every Solar virtue — Harishchandra's truth, Mandhata's power, Bhagiratha's perseverance, Raghu's generosity, Dilipa's devotion — finds its perfect synthesis in Rama. He went to the forest not because he wanted to, but because his father had given a boon to Kaikeyi, and the Solar dharmic code (<span class="sanskrit">Raghu's Pratijna</span>) forbade breaking a king's promise. In renouncing his kingdom and accepting fourteen years of forest exile, Rama upheld three things simultaneously: paternal loyalty, the Solar code of honor, and cosmic Dharma.</p>
+      <p>The war against Ravana is the axis of the Ramayana and of the Treta Yuga itself. Rama's army of Vanaras (monkeys) built a bridge across the ocean, defeated the mightiest demon king of the age, and restored Sita to freedom. But the Ramayana does not end with triumph — Rama's return to Ayodhya, his coronation, the years of <span class="sanskrit">Rāma Rājya</span> (Rama's Rule), and ultimately the sacrifice of banishing the innocent Sita to uphold public perception of royal purity — these final acts reveal the tragic dimension of the maryada (code). Rama was always the king first, the husband second — and this hierarchy was the Solar code.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">What is Maryada Purushottama?</div>
+    <p><span class="sanskrit">Maryādā Puruṣottama</span> means "the Supreme Being who operates within all boundaries." Unlike Krishna (who often transcended or bent rules for a higher purpose), Rama always worked within the established dharmic framework — never breaking a promise, never transgressing a code, never taking shortcuts. This makes him the model for all Dharmic kingship: the leader who subordinates personal desire entirely to duty and social order. It is why <span class="sanskrit">Rāma Rājya</span> became synonymous in Indian political thought with the ideal just governance — a term still used in modern Indian politics.</p>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>🏹 The Warrior</h4>
+      <p>Trained by sage Vishvamitra; received all divine weapons (<span class="sanskrit">astras</span>); killed the demon Tataka, Maricha, Subahu, and the fourteen-armed Ravana himself — whose destruction had been prophesied since Solar king Anaranya's dying curse.</p>
+    </div>
+    <div class="info-card">
+      <h4>👑 The King</h4>
+      <p>11,000 years of Rama Rajya: no poverty, no disease, no untimely death, no sin. The Uttara Kanda describes a kingdom so perfect that even rainfall was perfectly distributed. The standard against which all subsequent rulers were judged.</p>
+    </div>
+    <div class="info-card">
+      <h4>🙏 The Devotee</h4>
+      <p>Though himself Vishnu, Rama performed devotion to Shiva at Rameshwaram before the Lanka war, establishing the principle that even the Supreme Being respects the divine hierarchy. This act inaugurated the sacred site of Rameshwaram.</p>
+    </div>
+    <div class="info-card">
+      <h4>📖 The Legacy</h4>
+      <p>The Ramayana has been composed in over 300 languages across Asia — from India to Thailand, Indonesia, Malaysia, Myanmar, and Cambodia. More humans have been shaped by the Ramayana's moral framework than by any other single narrative in history.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION IX — LAVA, KUSHA & POST-RAMAYANA
+     ==================================================== -->
+<section class="section" id="s9">
+  <span class="section-number">SECTION IX</span>
+  <h1 class="section-title">Lava, Kusha & Post-Ramayana Succession</h1>
+  <div class="section-devanagari">लव-कुश — The Solar Dynasty After Rama</div>
+
+  <p class="drop-cap">Rama's twin sons <span class="highlight">Lava</span> and <span class="highlight">Kusha</span> were born and raised in the ashram of sage Valmiki, where their exiled mother Sita had taken refuge. They were taught the entire Ramayana by Valmiki himself — and when they sang it in Ayodhya before an audience that included Rama himself, their father recognized them. When Sita performed her final act — asking the Earth to reclaim her, and the earth split open to receive her — Rama, bereft, completed his earthly mission and eventually ascended in the Sarayu river. The twins then inherited the kingdom.</p>
+
+  <h2>Division of the Kingdom</h2>
+  <p><strong>Kusha</strong> received the southern Kosala region, founding <span class="sanskrit">Kushāvatī</span> city at the foot of the Vindhya mountains. The Vishnu Purana (4.22) and Bhagavata Purana (9.11) give Kusha's complete genealogy through 32+ generations to the Mahabharata period. <strong>Lava</strong> received the northern territory — some traditions identify his capital with <span class="sanskrit">Lāvapurī</span> (modern Lahore), though the major Puranas are largely silent on his descendants.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Generation after Rama</th>
+          <th>Name (Kusha Line)</th>
+          <th>Notable Fact</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="gen-num">+1</td><td class="td-name">Kusha</td><td>Son of Rama; ruled south Kosala; founded Kushavati</td><td>VP 4.4, BP 9.11</td></tr>
+        <tr><td class="gen-num">+2</td><td class="td-name">Atithi</td><td>Continued rule in Kosala</td><td>VP 4.22</td></tr>
+        <tr><td class="gen-num">+3–14</td><td class="td-name">Nishadha through Brihadashva</td><td>Intermediate kings maintaining Kosala's Solar tradition</td><td>VP 4.22</td></tr>
+        <tr><td class="gen-num">+15</td><td class="td-name">Vajranabha</td><td>Associated with the Vajra-Nābha region; Surya worship tradition</td><td>VP 4.22</td></tr>
+        <tr><td class="gen-num">+19</td><td class="td-name">Hiranyabha</td><td>Disciple of Yajnavalkya; learned the Sama Veda from him; profound spiritual figure</td><td>VP 4.22; Shatapatha Brahmana</td></tr>
+        <tr><td class="gen-num">+23</td><td class="td-name">Agnivarna</td><td>Libertine king who died young — Kalidasa's cautionary tale in Raghuvamsha 19</td><td>Raghuvamsha 19; VP 4.22</td></tr>
+        <tr><td class="gen-num">+25</td><td class="td-name">Maru</td><td>Still alive through yoga in the Himalayas! Prophesied to restore Solar dynasty at Kali Yuga's end</td><td>Vishnu Purana 4.24</td></tr>
+        <tr><td class="gen-num">+32</td><td class="td-name">Brihadbala</td><td>Last warrior-king; fought at Kurukshetra (Kaurava side); killed by Abhimanyu</td><td>Mahabharata Drona Parva; VP 4.22</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION X — MAHABHARATA ERA DESCENDANTS
+     ==================================================== -->
+<section class="section" id="s10">
+  <span class="section-number">SECTION X</span>
+  <h1 class="section-title">Mahabharata-Era Descendants and Brihadbala</h1>
+  <div class="section-devanagari">महाभारत काल — The Solar Dynasty at the Cusp of Kali Yuga</div>
+
+  <div class="king-card">
+    <div class="king-header">
+      <div class="king-emblem">⚔️</div>
+      <div class="king-name-block">
+        <div class="name">Brihadbala</div>
+        <div class="epithet">The Last Great Solar King | Killed by Abhimanyu at Kurukshetra</div>
+      </div>
+    </div>
+    <div class="king-body">
+      <div class="king-stats">
+        <div class="stat-item"><div class="stat-label">Dynasty Position</div><div class="stat-value">32nd generation after Rama; descended through Kusha line</div></div>
+        <div class="stat-item"><div class="stat-label">Alliance</div><div class="stat-value">Fought on the Kaurava side in the Kurukshetra War</div></div>
+        <div class="stat-item"><div class="stat-label">Death</div><div class="stat-value">Killed by Abhimanyu (son of Arjuna) on Day 13 of the 18-day war</div></div>
+        <div class="stat-item"><div class="stat-label">Context</div><div class="stat-value">The Chakravyuha formation day — same day Abhimanyu was later surrounded and killed</div></div>
+        <div class="stat-item"><div class="stat-label">Sources</div><div class="stat-value">Mahabharata Drona Parva 40–42; Vishnu Purana 4.22</div></div>
+      </div>
+      <p>Brihadbala is the most important Solar Dynasty figure in the Mahabharata, yet rarely discussed. He was the king of Ayodhya and Kosala at the time of the Kurukshetra War — the direct heir of the line that flowed from Rama through Kusha. His death at the hands of Abhimanyu is narrated dramatically in the Drona Parva. The young Abhimanyu, fighting alone inside the Chakravyuha formation, encountered Brihadbala and slew him in direct combat. The irony is profound — a descendant of the Lunar line kills the last great Solar king, on the same day that the Lunar hero himself meets his tragic end.</p>
+      <div class="callout">
+        <div class="callout-title">Post-Brihadbala Solar Kings — Into Kali Yuga</div>
+        <p>The Vishnu Purana (4.22) continues the lineage past Brihadbala for 28+ generations: Brihadbala → Brihadrana → Urukriya → Vatsavriddha → ... → Shakya → <strong>Shuddhodana</strong>. Shuddhodana was the father of Siddhartha Gautama — the Buddha — suggesting that the Vishnu Purana considers the Buddha to be a descendant of the Solar Dynasty, which aligns with the Buddhist tradition's own claim of Shakya-muni's Kshatriya Solar lineage. The Buddha called himself <span class="sanskrit">Ādicca-bandhu</span> (kinsman of the Sun) — confirming his Solar descent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION XI — LESSER-KNOWN BRANCHES
+     ==================================================== -->
+<section class="section" id="s11">
+  <span class="section-number">SECTION XI</span>
+  <h1 class="section-title">Lesser-Known Branches and Parallel Solar Lines</h1>
+  <div class="section-devanagari">शाखा वंश — The Forgotten Tributaries of the Solar River</div>
+
+  <h2>The Videha Branch — Nimi's Line and the Janaka Kings</h2>
+  <p><span class="highlight">Nimi</span>, a son of Ikshvaku, founded the kingdom of Videha (Mithila). Nimi requested the sage Vasishtha to conduct a sacrifice, but Vasishtha was already committed to Indra. Impatient, Nimi engaged the sage Gautama instead. When Vasishtha returned, he cursed Nimi to lose his physical body. Nimi cursed Vasishtha back. Both lost their bodies. The sages then churned Nimi's body to produce a new king — thus the Videha (<span class="sanskrit">vi-deha</span> = without body) dynasty was established.</p>
+
+  <div class="callout teal">
+    <div class="callout-title">The Janaka Line — Philosophers on the Solar Throne</div>
+    <p>The most famous Janaka is the father of Sita — King Janaka II (Siradhvaja Janaka) of Mithila, renowned for his philosophical discussions with Yajnavalkya (recorded in the Brihadaranyaka Upanishad). The Janaka of Sita's time found a mysterious baby girl in a furrow while plowing the earth for a sacrifice — this was Sita, considered an incarnation of Lakshmi. The Solar lineage thus received the Divine Mother herself as a member through the Videha branch.</p>
+  </div>
+
+  <h2>Mucukunda and His Extraordinary Story</h2>
+  <p>Mucukunda (son of Mandhata) helped the gods fight demons, then asked only for perpetual sleep as his boon. He slept in a cave for entire cosmic ages. When the demon Kalayavana, fleeing from Krishna, kicked Mucukunda awake, the fiery glance from Mucukunda's awakening eyes incinerated Kalayavana instantly. Krishna then showed himself to Mucukunda, who received enlightenment. This story connects the ancient Solar lineage directly to Krishna's Dvapara Yuga narrative, showing continuity of the Solar dynasty's relationship with Vishnu across vast spans of time.</p>
+
+  <h2>Purukutsa's Line and the Naga Connection</h2>
+  <p>Mandhata's son Purukutsa married <span class="sanskrit">Narmadā</span> — the river goddess herself. Through her, Purukutsa was taken to the netherworld (<span class="sanskrit">Pātāla</span>) by the Nāgas, where he destroyed Gandharvas who were troubling them. In gratitude, the Nāgas gave Narmada the boon that anyone who remembers the Narmada and Purukutsa will be protected from snakebite.</p>
+
+  <h2>The Raghuvansha's Collateral Branches</h2>
+  <p>The Ramayana mentions several collateral branches from Dasharatha's other sons: <strong>Bharata's</strong> sons Taksha and Pushkara founded cities in the Gandhara region (Taxila and Peshawar). <strong>Lakshmana's</strong> sons Angada and Chandraketu ruled in Karupa and Chandrakanta. <strong>Shatrughna's</strong> sons Subahu and Shatrughati ruled Madhura (Mathura) and Vidisha — representing Solar dynasty expansion into northwestern India.</p>
+</section>
+
+<!-- ====================================================
+     SECTION XII — DEEP KNOWLEDGE
+     ==================================================== -->
+<section class="section" id="s12">
+  <span class="section-number">SECTION XII</span>
+  <h1 class="section-title">Deep Knowledge — Hidden Details and Rare Facts</h1>
+  <div class="section-devanagari">गूढ ज्ञान — What the Mainstream Discussions Almost Never Tell You</div>
+
+  <div class="deep-box">
+    <h4>1. Maru — The Living Solar King in the Himalayas</h4>
+    <p>One of the most extraordinary and least-known details in Puranic tradition concerns a Solar king named <span class="sanskrit">Maru</span> — 25th generation after Rama. The Vishnu Purana (4.24) and Bhagavata Purana (12.2.38) explicitly state that Maru, through the power of yoga, is <em>still alive</em> — residing in a village called Kalapa in the Himalayas. The Bhagavata prophecy says that at the end of Kali Yuga, Maru and another king Devapi (Chandravansha) will together revive the Solar and Lunar dynasties and re-establish Vedic civilization at the beginning of the next Satya Yuga.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>2. Agnivarna — Kalidasa's Cautionary Tale Embedded in the Lineage</h4>
+    <p>In the Raghuvamsha (19th canto), Kalidasa describes Solar king <span class="sanskrit">Agnivarna</span> who was so given to sensual pleasures that he never left his inner chambers, conducting all business through messages, eventually dying young of consumption. His pregnant queen was placed on the throne to maintain dynastic continuity. Scholars note that this passage may contain a veiled critique of some historical king of Kalidasa's era — remarkably, Kalidasa chose to include this negative example within the great Solar lineage to show that even the noblest dynasty is not immune to moral decline.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>3. The Identical Names in Different Eras — A Source of Confusion</h4>
+    <p>The Solar genealogy contains several repeated names that confuse readers: two <strong>Yuvanashvas</strong>, two <strong>Dilipas</strong>, two <strong>Ambarishes</strong>, two <strong>Prasenjits</strong>, and two <strong>Dasharathas</strong>. The Dilipa who appears in the Raghuvamsha (Kalidasa's hero) is NOT the same as the Dilipa who is Bhagiratha's father — they are separated by dozens of generations and completely different stories. The repetition reflects the Puranic tradition of naming sons after great ancestors as a mark of reverence.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>4. Sudas and Kalmashapada — The Most Troubled Generation</h4>
+    <p>The generations between Bhagiratha and Raghu include one of the most troubled periods in Solar dynasty history. King <span class="sanskrit">Sudas</span> fought the famous ten-king battle (<span class="sanskrit">Daśarājña Yuddha</span>) described in the Rig Veda (7.18). His son <span class="sanskrit">Soudasa</span> (Kalmāṣapāda) was cursed by sage Vasishtha to become a <span class="sanskrit">rākṣasa</span> for twelve years. Queen <span class="sanskrit">Madayantī</span> petitioned Vasishtha for dynastic continuation, and the sage himself fathered a son (Asmaka) on Madayanti through <span class="sanskrit">niyoga</span> — making Vasishtha not just the Solar dynasty's guru but literally an ancestor in the patrilineal line!</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>5. Hiranyabha — The Solar King Who Sat at Yajnavalkya's Feet</h4>
+    <p>Among the post-Rama Solar kings, <span class="sanskrit">Hiranyabha</span> stands out as a deeply spiritual figure. He is mentioned in the Vishnu Purana as having been a disciple of the sage Yajnavalkya — the greatest Upanishadic teacher and the central figure of the Brihadaranyaka Upanishad. The fact that a Solar king of this intermediate period was sitting at Yajnavalkya's feet to learn the Vedas suggests that the later Solar line maintained its spiritual traditions even as its political power declined.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>6. Trishanku's Parallel Heaven — Cosmological Implications</h4>
+    <p>The story of Trishanku hanging upside-down between heaven and earth in his own alternative heaven (<span class="sanskrit">Trishanku Svarga</span>) — created by Vishvamitra's will alone — has profound cosmological implications. It suggests that the power of a great rishi associated with the Solar dynasty could literally alter cosmic geography. The phrase "Trishanku Svarga" in Indian discourse means being caught between two worlds, belonging fully to neither.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>7. Why Rama's Lineage Became the Most Famous Branch</h4>
+    <p>Of all Manu's ten sons and all Ikshvaku's 101 sons, why did the branch leading to Rama become dominant in Indian religious memory? The theological answer: Rama is an avatar of Vishnu, and Vaishnavism naturally elevated his lineage. But there is also a civilizational dimension: the Kosala kingdom of Ayodhya on the Sarayu was in the heart of the Gangetic plain, the most agriculturally and politically significant region of the subcontinent. The Solar dynasty's control of this heartland, combined with its deep Vedic orthodoxy and philosophical legitimacy, made it the natural model for Aryan kingship.</p>
+  </div>
+
+  <div class="deep-box">
+    <h4>8. Lava's Line — The Forgotten Twin</h4>
+    <p>While Kusha's lineage is well-documented in the Puranas, Lava's descendants are almost entirely absent from scriptural genealogies. Some regional traditions connect Lava to: (a) the kingdom of Lavapuri (modern Lahore, named from Lava); (b) the founding of Shravasti; (c) certain Rajput clan traditions. The silence of the major Puranas on Lava's line may reflect actual historical discontinuity — perhaps his branch ended early — or a deliberate literary choice by Puranic compilers who followed the Kusha line as the "main branch."</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION XIII — SCRIPTURAL COMPARISONS
+     ==================================================== -->
+<section class="section" id="s13">
+  <span class="section-number">SECTION XIII</span>
+  <h1 class="section-title">Scriptural Comparisons and Contradictions</h1>
+  <div class="section-devanagari">शास्त्र तुलना — Where the Texts Agree, Differ, and What That Means</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="comparison-header">Issue</th>
+          <th class="comparison-header">Ramayana (Valmiki)</th>
+          <th class="comparison-header">Vishnu Purana</th>
+          <th class="comparison-header">Bhagavata Purana</th>
+          <th class="comparison-header">Harivamsha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-name">Manu's Sons</td>
+          <td>Ikshvaku named, others not detailed</td>
+          <td>10 sons listed including Ikshvaku, Nriga, Sharyati, Prishadhra</td>
+          <td>Similar to VP; adds Nabhanedishtha's story</td>
+          <td>General agreement with VP</td>
+        </tr>
+        <tr>
+          <td class="td-name">Sagara's 60,000 Sons</td>
+          <td>Born normally; dug earth for horse</td>
+          <td>Born from a gourd/pumpkin-like container</td>
+          <td>Similar miraculous birth</td>
+          <td>Variant account exists</td>
+        </tr>
+        <tr>
+          <td class="td-name">Asamanja's Character</td>
+          <td>Wicked prince who drowned children</td>
+          <td>Wicked prince; exiled</td>
+          <td>Ascetic in disguise performing divine madness</td>
+          <td>Mixed characterization</td>
+        </tr>
+        <tr>
+          <td class="td-name">Number of Ikshvaku's Sons</td>
+          <td>Not specified precisely</td>
+          <td>101 sons</td>
+          <td>General agreement</td>
+          <td>Slight variations</td>
+        </tr>
+        <tr>
+          <td class="td-name">Duration of Rama Rajya</td>
+          <td>Implies very long rule; not specified</td>
+          <td>11,000 years</td>
+          <td>Similar figure</td>
+          <td>Agrees generally</td>
+        </tr>
+        <tr>
+          <td class="td-name">Post-Rama Genealogy</td>
+          <td>Not elaborated</td>
+          <td>Most detailed; 30+ generations given</td>
+          <td>Complete; adds Agnivarna story</td>
+          <td>Partial coverage</td>
+        </tr>
+        <tr>
+          <td class="td-name">Mandhata's Birth</td>
+          <td>Brief mention</td>
+          <td>Full miraculous birth story</td>
+          <td>Elaborate; theological meaning added</td>
+          <td>Confirms miraculous birth</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Scholarly Note on Contradictions</div>
+    <p>The variations between Puranic texts are not errors — they reflect different oral and written traditions preserved in different regions and brahminical schools. The Bhagavata Purana (composed c. 9th–10th century CE, though drawing on much older oral tradition) tends to add theological depth and devotional coloring to the genealogical narratives found in the older Vishnu Purana. The Valmiki Ramayana, as a poetic epic, focuses on narrative flow rather than genealogical completeness. Scholars use the principle of "multiple attestation" — where three or more independent sources agree, the information is more likely to reflect authentic tradition. Where sources disagree significantly, the variant accounts are noted as scholarly problems rather than resolved by preference.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION XIV — FINAL GENEALOGY & KALI YUGA
+     ==================================================== -->
+<section class="section" id="s14">
+  <span class="section-number">SECTION XIV</span>
+  <h1 class="section-title">Final Genealogy, Kali Yuga End & Master Summary</h1>
+  <div class="section-devanagari">अंतिम वंशावली — Complete Solar Line From Brahma to Kali Yuga</div>
+
+  <h2>Master Genealogy Table — Complete Solar Line</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Generation</th>
+          <th>Name</th>
+          <th>Key Facts</th>
+          <th>Yuga/Era</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="gen-num">Divine 1</td><td class="td-name">Brahma</td><td>Self-born creator</td><td>Pre-cosmic</td></tr>
+        <tr><td class="gen-num">Divine 2</td><td class="td-name">Marichi</td><td>Mind-born prajapati</td><td>Pre-cosmic</td></tr>
+        <tr><td class="gen-num">Divine 3</td><td class="td-name">Kashyapa</td><td>Universal father; married Aditi and Diti</td><td>Pre-cosmic</td></tr>
+        <tr><td class="gen-num">Divine 4</td><td class="td-name">Vivasvan (Surya)</td><td>Sun God; son of Kashyapa-Aditi</td><td>Pre-cosmic</td></tr>
+        <tr><td class="gen-num">Divine 5</td><td class="td-name">Vaivasvata Manu</td><td>7th Manu; flood survivor; humanity's progenitor</td><td>Beginning of current Manvantara</td></tr>
+        <tr><td class="gen-num">1</td><td class="td-name">Ikshvaku</td><td>1st earthly Solar king; founded Ayodhya; 101 sons</td><td>Early Treta Yuga</td></tr>
+        <tr><td class="gen-num">2</td><td class="td-name">Vikukshi (Shasada)</td><td>Eldest son; ate ritual hare; temporarily exiled</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">4</td><td class="td-name">Puranjaya/Kakutstha</td><td>Rode Indra's back; conquered demons; gave dynasty name Kakutstha</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">12</td><td class="td-name">Kuvalashva (Dhundhumara)</td><td>Slew demon Dhundhu; lost 21,000 sons in battle</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">20</td><td class="td-name">Mandhata</td><td>GREATEST CHAKRAVARTIN; conquered three worlds; 50 daughters, 3 major sons</td><td>Treta Yuga Peak</td></tr>
+        <tr><td class="gen-num">23</td><td class="td-name">Anaranya</td><td>Cursed Ravana that a Solar descendant would destroy him — cosmic warrant for Rama's mission!</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">28</td><td class="td-name">Trishanku (Satyavrata)</td><td>Wanted heaven in physical body; suspended in sky by Vishvamitra</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">29</td><td class="td-name">Harishchandra</td><td>SUPREME SATYAVADIN; tested beyond all endurance; symbol of absolute truth</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">37</td><td class="td-name">Sagara</td><td>CREATOR OF THE OCEAN; 60,001 sons; born with poison; greatest empire-builder before Rama</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">41</td><td class="td-name">Bhagiratha</td><td>BROUGHT GANGA TO EARTH; greatest tapas; "Bhagirath Prayatna" immortalized</td><td>Treta Yuga</td></tr>
+        <tr><td class="gen-num">49</td><td class="td-name">Sudas</td><td>Ten-king battle (Dasharajnya Yuddha) of the Rig Veda</td><td>Dvapara Yuga</td></tr>
+        <tr><td class="gen-num">50</td><td class="td-name">Kalmashapada/Soudasa</td><td>Cursed to be demon for 12 years; Vasishtha fathered son on his wife to continue dynasty</td><td>Dvapara Yuga</td></tr>
+        <tr><td class="gen-num">58</td><td class="td-name">Raghu</td><td>GREATEST EMPEROR OF MORTAL AGE; Digvijaya; supreme dāna; gave dynasty its most glorious name</td><td>Dvapara/Treta border</td></tr>
+        <tr><td class="gen-num">59</td><td class="td-name">Aja</td><td>Romantic-tragic king; won Indumati at Svayamvara; died of grief — Kalidasa's finest portrait</td><td>Late Treta Yuga</td></tr>
+        <tr><td class="gen-num">60</td><td class="td-name">Dasharatha II</td><td>Rama's father; 3 wives; 4 divine sons; died of putrashoka (grief for his son)</td><td>Treta Yuga end</td></tr>
+        <tr><td class="gen-num">61</td><td class="td-name">SHRI RAMA</td><td>AVATAR OF VISHNU; maryada purushottama; 14 years exile; Lanka war; 11,000 years Rama Rajya</td><td>Treta Yuga culmination</td></tr>
+        <tr><td class="gen-num">62</td><td class="td-name">Kusha / Lava (twins)</td><td>Born in Valmiki's ashram; raised on Ramayana; divided kingdom between them</td><td>End of Treta Yuga</td></tr>
+        <tr><td class="gen-num">+19</td><td class="td-name">Hiranyabha</td><td>Disciple of Yajnavalkya; learned Sama Veda; profound spiritual figure</td><td>Dvapara Yuga</td></tr>
+        <tr><td class="gen-num">+23</td><td class="td-name">Agnivarna</td><td>Libertine king; cautionary tale in Kalidasa's Raghuvamsha 19</td><td>Dvapara Yuga</td></tr>
+        <tr><td class="gen-num">+25</td><td class="td-name">Maru</td><td>LIVING in Himalayas through yoga; prophesied restorer of Solar dynasty at Kali Yuga's end</td><td>Kali Yuga (preserved!)</td></tr>
+        <tr><td class="gen-num">+32</td><td class="td-name">Brihadbala</td><td>Last warrior-king; fought at Kurukshetra (Kaurava side); killed by Abhimanyu</td><td>Dvapara/Kali junction</td></tr>
+        <tr><td class="gen-num">+60</td><td class="td-name">Shuddhodana</td><td>Father of Siddhartha Gautama (the Buddha) — confirming Solar-Shakya lineage connection</td><td>Kali Yuga</td></tr>
+        <tr><td class="gen-num">Final</td><td class="td-name">Sumitra</td><td>Last Solar king of Ayodhya per Bhagavata Purana (12.1.26)</td><td>Kali Yuga</td></tr>
+        <tr><td class="gen-num">Future</td><td class="td-name">Maru (prophesied restorer)</td><td>Preserved in Himalayan yoga; will restore dynasty at Kali Yuga's end alongside Devapi</td><td>End of Kali Yuga / New Satya Yuga</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The End of the Solar Dynasty in Kali Yuga</h2>
+  <p>The Bhagavata Purana (12.1–2) describes how the Solar kings become progressively shorter-lived, less wise, and less powerful in Kali Yuga. Eventually, the solar line of Ayodhya will be extinguished — the text specifically names <span class="sanskrit">Sumitra</span> as the last of the Ayodhyan Solar kings. But crucially, this is not permanent extinction — it is described as a dormancy. The Vishnu Purana's extraordinary prophecy about Maru (living in yogic suspension in the Himalayas, ready to revive the dynasty at Kali Yuga's end) provides the theological resolution: the Solar dynasty is not destroyed but preserved, like a seed through winter, ready to bloom again.</p>
+
+  <div class="callout purple">
+    <div class="callout-title">The Cyclical Solar Vision — Why the Dynasty Must End and Return</div>
+    <p>The Hindu philosophical framework understands dynastic decline through the Yuga cycle. The Suryavansha flourished in the Satya and Treta Yugas — the ages of maximum Dharma. As Dvapara and Kali Yuga progress, Dharma diminishes by one quarter each age. A dynasty built on Dharma cannot thrive in an age that progressively abandons it. The Solar dynasty's decline mirrors the cosmic decline of Dharma itself. And just as each Yuga cycle completes and a new Satya Yuga begins, the dynasty will be restored when Dharma returns to its full glory. <em>The Sun's daily rising after every night is the cosmic metaphor — the Solar dynasty's restoration is as inevitable as the sunrise.</em></p>
+  </div>
+
+  <h2>Most Powerful Kings — Final Ranking</h2>
+
+  <div class="data-table-wrap" style="overflow-x:auto;">
+    <table class="data-table">
+      <thead>
+        <tr><th>Rank</th><th>King</th><th>Branch/Era</th><th>Why Greatest</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Shri Rama (Vishnu Avatar)</strong></td><td>Raghuvansha, Treta Yuga</td><td>Supreme Being incarnated; gave 11,000 years of perfect Dharmic rule; Ramayana's moral universe shapes over a billion people</td></tr>
+        <tr><td>2</td><td><strong>Mandhata</strong></td><td>Early Solar, Treta Yuga</td><td>Greatest Chakravartin; conquered three worlds including the realm of the gods; no king of his era could match his glory</td></tr>
+        <tr><td>3</td><td><strong>Raghu</strong></td><td>Raghuvansha, Dvapara–Treta</td><td>Greatest mortal Solar emperor; gave away all wealth; established the Solar code of giving that Rama upheld</td></tr>
+        <tr><td>4</td><td><strong>Harishchandra</strong></td><td>Mid-Solar, Treta Yuga</td><td>Supreme satyavadin; the embodiment of Absolute Truth in the face of total destruction; greatest Solar archetype</td></tr>
+        <tr><td>5</td><td><strong>Bhagiratha</strong></td><td>Mid-Solar, Treta Yuga</td><td>Greatest tapasvin; brought the sacred Ganga to earth; "Bhagirath Prayatna" lives in every Indian language</td></tr>
+        <tr><td>6</td><td><strong>Sagara</strong></td><td>Mid-Solar, Treta Yuga</td><td>Creator of the ocean; greatest empire-builder before Rama; his name is in every tide on earth</td></tr>
+        <tr><td>7</td><td><strong>Ikshvaku</strong></td><td>Foundation, Early Treta</td><td>First Solar king; received the Bhagavad Gita's original teaching; foundation of all Solar greatness</td></tr>
+        <tr><td>8</td><td><strong>Maru</strong></td><td>Post-Rama, Kali Yuga</td><td>The living Solar king; yogically preserved for the cosmic future; the dynasty's eternal seed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ornament-divider">☀ ✦ ॐ ✦ ☀</div>
+
+  <h2>Suryavansha's Eternal Legacy</h2>
+  <p>The Suryavansha is more than a genealogy — it is a philosophical statement about the nature of civilization, dharma, and divine purpose working through human history. Each great Solar king represents an archetype: Ikshvaku (Foundation), Kakutstha (Heroism), Kuvalashva (Protection of Knowledge), Mandhata (Universal Power), Trishanku (Ambition vs Cosmic Limits), Harishchandra (Absolute Truth), Sagara (Vast Ambition and its Costs), Bhagiratha (Impossible Perseverance), Raghu (Sovereign Generosity), Aja (Love and Loss), Dasharatha (Duty vs Heart), and Rama (The Complete Divine Human). Together, these archetypes form a comprehensive map of the human spiritual journey — from foundation through power through love through sacrifice through transcendence.</p>
+
+  <p>The Sun rises every morning not to be thanked but to serve — this is the Solar code. And the Suryavansha, in its greatest kings, embodied this code generation after generation, creating a civilization that still shapes the moral imagination of over a billion people. The solar light they carried has never been extinguished — it continues in every temple lamp, every sunrise prayer, every act of dharmic kingship wherever it is practiced, and every reading of the Ramayana's immortal verse.</p>
+
+  <div style="text-align:center; margin: 48px 0 20px;">
+    <div style="font-family:'Cinzel Decorative', serif; font-size: 20px; color: var(--crimson); letter-spacing: 2px;">॥ इति सूर्यवंश महापुराण सम्पूर्णम् ॥</div>
+    <div style="font-family:'Cinzel', serif; font-size: 12px; color: #8a6030; letter-spacing: 3px; margin-top: 12px;">Thus Ends the Great Encyclopedia of the Solar Dynasty</div>
+    <div style="font-family:'EB Garamond', serif; font-size: 1.1rem; color: var(--sun-orange); margin-top: 16px; font-style: italic;">Jai Shri Ram ☀</div>
+  </div>
+</section>
+
+</div><!-- end content-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <h3>Suryavansha Encyclopedia</h3>
+  <p class="gold">सूर्यवंश — The Solar Dynasty of Hindu Dharma</p>
+  <p>Compiled from: Ramayana (Valmiki) • Mahabharata • Vishnu Purana • Bhagavata Purana<br>
+  Harivamsha • Vayu Purana • Matsya Purana • Raghuvamsha (Kalidasa) • Rig Veda</p>
+  <br>
+  <p style="opacity:0.6; font-size:0.82rem;">This is a scholarly synthesis for educational purposes. Scriptural references are cited where possible. Variant accounts across Puranas are noted. Some genealogical details represent traditional interpolations. Always consult original Sanskrit sources for primary research.<br><br>
+  <em class="gold">"Sarve bhavantu sukhinah — May all beings be happy." ☀</em></p>
+</footer>
+
+<script>
+// Generate golden star field (warm sun-colored stars)
+const starField = document.getElementById('stars');
+for (let i = 0; i < 180; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2.5 + 0.5;
+  const hue = Math.random() > 0.5 ? '#ffd870' : '#fff8e0';
+  star.style.cssText = `
+    width: ${size}px; height: ${size}px;
+    left: ${Math.random() * 100}%;
+    top: ${Math.random() * 100}%;
+    background: ${hue};
+    animation-delay: ${Math.random() * 5}s;
+    animation-duration: ${2 + Math.random() * 4}s;
+  `;
+  starField.appendChild(star);
+}
+</script>
+</body>
+</html>

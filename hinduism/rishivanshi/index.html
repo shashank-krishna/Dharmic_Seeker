@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishivanshi — The Sage-Lineages of Bharat | A Civilizational Encyclopedia</title>
+<meta name="description" content="A comprehensive knowledge portal on Rishivanshi traditions of Bharat — Brahmin subgroups, Kshatriya sage-lineages, Gotra systems, and Hindu social evolution.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96E;
+  --gold-dim: #8A6E2F;
+  --saffron: #E07B2A;
+  --saffron-pale: #F4B860;
+  --cream: #F5EDDA;
+  --parchment: #EDE0C4;
+  --ink: #1A120B;
+  --deep: #0D0906;
+  --charcoal: #1E1610;
+  --mid: #2C1F14;
+  --panel: #241A10;
+  --muted: #8B7355;
+  --text: #D4C5A9;
+  --text-bright: #EEE0C0;
+  --red-vedic: #9B2335;
+  --teal-dharma: #1E6B6B;
+  --border: rgba(201,168,76,0.2);
+  --border-bright: rgba(201,168,76,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background-color: var(--deep);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--charcoal); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ── Selection ── */
+::selection { background: var(--gold-dim); color: var(--cream); }
+
+/* ── Mandala Background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 60%),
+    repeating-conic-gradient(from 0deg at 50% 50%,
+      transparent 0deg 8deg,
+      rgba(201,168,76,0.015) 8deg 9deg,
+      transparent 9deg 18deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ══ NAV ══ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,9,6,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  gap: 1rem;
+}
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--saffron); }
+.nav-links {
+  display: flex;
+  gap: 0.2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+/* ══ HERO ══ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(224,123,42,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(155,35,53,0.04) 0%, transparent 50%);
+}
+/* Geometric mandala rings */
+.hero-mandala {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 95vw);
+  height: min(700px, 95vw);
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+  animation: mandala-rotate 120s linear infinite;
+}
+.hero-mandala::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.08);
+  animation: mandala-rotate 80s linear infinite reverse;
+}
+.hero-mandala::after {
+  content: '';
+  position: absolute;
+  inset: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.12);
+}
+@keyframes mandala-rotate { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+.hero-content { position: relative; z-index: 2; max-width: 860px; }
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--gold-light);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 60px rgba(201,168,76,0.25);
+}
+.hero-title-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+.hero-sanskrit {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--cream);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 660px;
+  margin: 1.5rem auto 2.5rem;
+  line-height: 1.9;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.pill {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-bright);
+  border-radius: 100px;
+  color: var(--gold);
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+.pill:hover { background: rgba(201,168,76,0.1); transform: translateY(-1px); }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  animation: bounce-cue 2.5s ease-in-out infinite;
+}
+.scroll-cue::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+@keyframes bounce-cue { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* ══ SECTIONS ══ */
+section { position: relative; z-index: 1; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.container-wide { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+
+.section-block {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.section-title em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--saffron-pale);
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 780px;
+  line-height: 1.9;
+  margin-bottom: 3rem;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 2rem 0;
+}
+.divider-center { margin: 2rem auto; }
+
+/* ══ CONCEPT GRID ══ */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.concept-card {
+  background: rgba(36,26,16,0.7);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.concept-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.concept-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.concept-card:hover::before { opacity: 1; }
+
+.concept-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.concept-term {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+.concept-sanskrit {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+.concept-body { font-size: 0.95rem; color: var(--text); line-height: 1.75; }
+
+/* ══ ACCORDION ══ */
+.accordion { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.acc-item { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.acc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: rgba(36,26,16,0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 1rem;
+}
+.acc-header:hover { background: rgba(36,26,16,0.9); }
+.acc-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.acc-icon {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.acc-item.open .acc-icon { transform: rotate(45deg); }
+.acc-body {
+  display: none;
+  padding: 1.5rem;
+  background: rgba(18,12,7,0.5);
+  border-top: 1px solid var(--border);
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+.acc-item.open .acc-body { display: block; }
+.acc-body h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--saffron);
+  letter-spacing: 0.15em;
+  margin: 1.2rem 0 0.5rem;
+  text-transform: uppercase;
+}
+.acc-body h4:first-child { margin-top: 0; }
+.acc-body p { margin-bottom: 0.8rem; }
+.acc-body ul { padding-left: 1.4rem; margin-bottom: 0.8rem; }
+.acc-body ul li { margin-bottom: 0.3rem; }
+.acc-body strong { color: var(--gold-light); font-weight: 500; }
+
+/* ══ TWO-COLUMN LAYOUT ══ */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+@media(max-width:768px){ .two-col { grid-template-columns: 1fr; } }
+
+/* ══ COMPARISON TABLE ══ */
+.table-wrap { overflow-x: auto; margin-top: 2rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+thead tr {
+  background: rgba(201,168,76,0.1);
+  border-bottom: 2px solid var(--gold-dim);
+}
+th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+tr:hover td { background: rgba(201,168,76,0.04); }
+td strong { color: var(--gold-light); }
+td em { color: var(--saffron-pale); font-style: normal; }
+.tag {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid;
+  text-transform: uppercase;
+  margin: 0.1rem;
+}
+.tag-gauda { border-color: var(--gold-dim); color: var(--gold); }
+.tag-dravida { border-color: var(--red-vedic); color: #D06080; }
+.tag-kshatra { border-color: var(--saffron); color: var(--saffron); }
+
+/* ══ COMMUNITY CARDS ══ */
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+.community-card {
+  background: rgba(28,20,12,0.8);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.community-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.05);
+}
+.community-card-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+.cc-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+.cc-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.badge-brahmin { background: rgba(201,168,76,0.12); border: 1px solid var(--gold-dim); color: var(--gold); }
+.badge-kshatra { background: rgba(224,123,42,0.12); border: 1px solid var(--saffron); color: var(--saffron); }
+.badge-rare { background: rgba(155,35,53,0.12); border: 1px solid var(--red-vedic); color: #D06080; }
+.community-card-body { padding: 1.2rem 1.5rem 1.5rem; }
+.cc-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+  align-items: baseline;
+}
+.cc-key {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.cc-val { color: var(--text); }
+
+/* ══ LINEAGE TREE ══ */
+.lineage-tree {
+  background: rgba(18,12,7,0.6);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.node-box {
+  background: rgba(36,26,16,0.9);
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  text-align: center;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+  cursor: default;
+}
+.node-box:hover { border-color: var(--gold); }
+.node-box.root {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.node-box.secondary { border-color: var(--saffron); color: var(--saffron-pale); }
+.node-line-v {
+  width: 1px;
+  height: 24px;
+  background: var(--gold-dim);
+  margin: 0 auto;
+}
+.node-children {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.node-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.node-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.node-child-line {
+  width: 1px;
+  height: 24px;
+  background: var(--gold-dim);
+}
+
+/* ══ PANCHA SPLIT ══ */
+.pancha-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+@media(max-width:768px){ .pancha-split { grid-template-columns: 1fr; } }
+.pancha-panel {
+  padding: 2.5rem;
+  border-right: 1px solid var(--border);
+}
+.pancha-panel:last-child { border-right: none; }
+.pancha-panel.gauda { background: rgba(201,168,76,0.04); }
+.pancha-panel.dravida { background: rgba(155,35,53,0.04); }
+.pancha-panel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.gauda .pancha-panel-title { color: var(--gold); }
+.dravida .pancha-panel-title { color: #D06080; }
+.pancha-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.2rem; }
+.pancha-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.pancha-list li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text-bright);
+  padding: 0.4rem 0.8rem;
+  border-left: 2px solid var(--border);
+  transition: border-color 0.2s, padding-left 0.2s;
+}
+.pancha-list li:hover { border-left-color: var(--gold); padding-left: 1rem; }
+
+/* ══ TIMELINE ══ */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold-dim) 10%, var(--gold-dim) 90%, transparent);
+}
+.tl-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.tl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--deep);
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(201,168,76,0.4);
+}
+.tl-content {}
+.tl-era {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.tl-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+.tl-body { font-size: 0.93rem; color: var(--text); line-height: 1.75; }
+
+/* ══ GOTRA CHART ══ */
+.gotra-section {
+  background: rgba(28,20,12,0.6);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.gotra-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.gotra-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.gotra-chip {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.8rem;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 100px;
+  color: var(--cream);
+  transition: all 0.2s;
+  cursor: default;
+}
+.gotra-chip:hover { background: rgba(201,168,76,0.15); border-color: var(--gold-dim); }
+
+/* ══ BLOCKQUOTE / SCRIPTURE ══ */
+.scripture {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--gold-dim);
+  background: rgba(201,168,76,0.04);
+  border-radius: 0 4px 4px 0;
+}
+.scripture-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--cream);
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+.scripture-source {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--saffron);
+  text-transform: uppercase;
+}
+
+/* ══ SCHOLARLY NOTE ══ */
+.note {
+  padding: 1rem 1.2rem;
+  background: rgba(30,107,107,0.1);
+  border: 1px solid rgba(30,107,107,0.3);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #A8CFC8;
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+.note strong { color: #C0E0DA; }
+
+/* ══ DISPUTE NOTE ══ */
+.dispute {
+  padding: 0.8rem 1.2rem;
+  background: rgba(155,35,53,0.08);
+  border: 1px solid rgba(155,35,53,0.25);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #C09090;
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+/* ══ FAQ ══ */
+.faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.faq-item {
+  background: rgba(28,20,12,0.6);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.faq-q {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-bright);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--gold-light); }
+.faq-a {
+  display: none;
+  padding: 0 1.5rem 1.2rem;
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+}
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-q { color: var(--gold); }
+
+/* ══ RARE FACTS ══ */
+.rare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.rare-card {
+  background: rgba(28,20,12,0.7);
+  border: 1px solid rgba(155,35,53,0.2);
+  border-radius: 6px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.rare-card::before {
+  content: '✦';
+  position: absolute;
+  top: 1rem; right: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--red-vedic);
+  opacity: 0.4;
+}
+.rare-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(155,35,53,0.2);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.rare-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 0.4rem;
+}
+.rare-body { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+/* ══ SAPTARISHI MAP ══ */
+.saptarishi-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0 2rem;
+  min-height: 320px;
+}
+.saptarishi-ring svg { overflow: visible; }
+
+/* ══ MASTER TABLE ══ */
+.master-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* ══ FINAL SUMMARY ══ */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(224,123,42,0.04));
+  border: 1px solid var(--border-bright);
+  border-radius: 8px;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+.summary-box h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.summary-box p { line-height: 1.9; margin-bottom: 1rem; }
+
+/* ══ FOOTER ══ */
+footer {
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.footer-note { font-size: 0.8rem; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+.footer-divider { width: 60px; height: 1px; background: var(--gold-dim); margin: 1.5rem auto; }
+
+/* ══ MEDIA ══ */
+@media(max-width:640px){
+  .nav-links { display: none; }
+  .concept-grid { grid-template-columns: 1fr; }
+  .community-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ══ ANIMATIONS ══ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ══ HIGHLIGHT ══ */
+.hl-gold { color: var(--gold-light); }
+.hl-saffron { color: var(--saffron-pale); }
+.hl-red { color: #D06080; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">ऋषि<span>वंशी</span> · RISHIVANSHI</div>
+    <ul class="nav-links">
+      <li><a href="#foundations">Foundations</a></li>
+      <li><a href="#pancha">Pancha Divisions</a></li>
+      <li><a href="#regional">Communities</a></li>
+      <li><a href="#kshatra">Kshatriya</a></li>
+      <li><a href="#brahma-kshatra">Brahma-Kshatra</a></li>
+      <li><a href="#scriptures">Scriptures</a></li>
+      <li><a href="#lineage">Lineage Trees</a></li>
+      <li><a href="#tables">Master Tables</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#rare">Rare Facts</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mandala"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">A Civilizational Encyclopedia of Bharat</p>
+    <div class="hero-sanskrit">ॐ ऋषिभ्यो नमः</div>
+    <h1 class="hero-title">Rishivanshi</h1>
+    <p class="hero-title-sub">The Sage-Lineages of Eternal Bharat</p>
+    <div class="divider divider-center"></div>
+    <p class="hero-desc">
+      A deeply researched, scripture-backed knowledge portal on the Rishivanshi traditions of Bharat — tracing the Brahmin subgroups, Kshatriya sage-lineages, Gotra systems, Pancha Gauda and Pancha Dravida divisions, regional communities, Brahma-Kshatra traditions, and the grand tapestry of Hindu social evolution across four millennia.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">Varna & Jati</span>
+      <span class="pill">Gotra Systems</span>
+      <span class="pill">Pancha Gauda</span>
+      <span class="pill">Pancha Dravida</span>
+      <span class="pill">Saptarishi Lineages</span>
+      <span class="pill">Brahma-Kshatra</span>
+      <span class="pill">Vedic Shakhas</span>
+      <span class="pill">Regional Brahmins</span>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §1  FOUNDATIONS
+══════════════════════════════════════════════ -->
+<section id="foundations" class="section-block">
+  <div class="container">
+    <p class="section-label">Chapter I</p>
+    <h2 class="section-title">Foundations of Hindu Social Identity</h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Hindu civilizational taxonomy is one of the most sophisticated social ontologies ever developed. To understand Rishivanshi traditions, one must first grasp the foundational vocabulary — each term carries millennia of scriptural weight and sociological meaning.
+    </p>
+
+    <div class="concept-grid">
+      <div class="concept-card fade-up">
+        <div class="concept-label">Cosmic Division</div>
+        <div class="concept-term">Varna</div>
+        <div class="concept-sanskrit">वर्ण — "Color / Hue / Category"</div>
+        <div class="concept-body">
+          The fourfold division of human society based on <em>guna</em> (quality) and <em>karma</em> (function): <strong>Brahmin</strong> (sacerdotal/intellectual), <strong>Kshatriya</strong> (martial/royal), <strong>Vaishya</strong> (mercantile/agricultural), and <strong>Shudra</strong> (artisanal/service). The Rigveda's Purusha Sukta (10.90) describes Varna as emerging from the cosmic Purusha's sacrifice. Critically, Varna is scriptural/theological; it is not identical to birth-based Jati.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Birth Community</div>
+        <div class="concept-term">Jati</div>
+        <div class="concept-sanskrit">जाति — "Birth-group / Species"</div>
+        <div class="concept-body">
+          The endogamous occupational community into which one is born. India has thousands of Jatis — each a living social organism with its own customs, marriage rules, oral history, patron deity, and regional dialect. Jati is the operational unit of Hindu society; Varna is the theological framework. Colonial censuses often confused or collapsed this distinction, generating many modern misconceptions.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Descent Line</div>
+        <div class="concept-term">Vansha</div>
+        <div class="concept-sanskrit">वंश — "Lineage / Bamboo-stalk"</div>
+        <div class="concept-body">
+          A patrilineal lineage descending from a common ancestor — divine, Rishi, or royal. The Suryavansha (Solar lineage) and Chandravansha (Lunar lineage) are the two great Kshatriya Vanshas. Among Brahmins, Vanshas connect to the Saptarishis. The metaphor of bamboo (vamsha) suggests an unbroken, segmented, upward-growing lineage.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Sage Ancestor</div>
+        <div class="concept-term">Gotra</div>
+        <div class="concept-sanskrit">गोत्र — "Cow-pen / Patrilineage"</div>
+        <div class="concept-body">
+          A strictly patrilineal exogamous clan named after a Vedic Rishi. All Brahmins and many Kshatriyas carry a Gotra. Marriage within the same Gotra is prohibited (sapinda/sagotra), making the system a powerful genetic diversity mechanism. The Ashvalayana Shrauta Sutra and Baudhayana Dharmasutra enumerate the major Gotras. Most derive from one of the Eight Sages (<em>Ashtarishis</em>).
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Three Sages</div>
+        <div class="concept-term">Pravara</div>
+        <div class="concept-sanskrit">प्रवर — "Most Excellent / Introduction"</div>
+        <div class="concept-body">
+          The three or five ancestral Rishis recited during Vedic rituals, fire sacrifices, and marriage ceremonies. A person's Pravara identifies which specific branch of a Gotra they belong to. For example, within Bharadvaja Gotra, the Pravara is <em>Angirasa, Bharhaspatya, Bharadvaja</em>. Pravara is often more specific than Gotra and is essential for verifying ritual purity.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Extended Clan</div>
+        <div class="concept-term">Kula</div>
+        <div class="concept-sanskrit">कुल — "Family / Household / Clan"</div>
+        <div class="concept-body">
+          A broader kinship unit than Gotra, typically centered on a shared <em>Kuldevi</em> (clan goddess) and <em>Kuldevata</em> (clan deity). A Kula may span multiple Gotras. Kula identity is often preserved in oral genealogies called <em>Vamshavalika</em> or <em>Panjika</em>, maintained by hereditary genealogists known as Badwas or Tiwaras.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">Transmission Chain</div>
+        <div class="concept-term">Parampara</div>
+        <div class="concept-sanskrit">परम्परा — "One after another"</div>
+        <div class="concept-body">
+          An unbroken lineage of teacher-to-student transmission, particularly of Vedic recitation, philosophical schools, or ritual arts. Parampara is how the Vedas were transmitted orally for millennia before writing — preserving phonetic accuracy down to pitch accents. A Parampara is as sacred as a Gotra: it guarantees the authenticity of received knowledge.
+        </div>
+      </div>
+
+      <div class="concept-card fade-up">
+        <div class="concept-label">The Central Concept</div>
+        <div class="concept-term">Rishivanshi</div>
+        <div class="concept-sanskrit">ऋषिवंशी — "Descended from Rishis"</div>
+        <div class="concept-body">
+          Any community — Brahmin, Kshatriya, or otherwise — that claims direct patrilineal or spiritual descent from a Vedic Rishi. Among Brahmins, this is encoded in their Gotra. Among certain Rajput clans, it appears in genealogical myths of Rishi parentage. The concept bridges cosmological genealogy with lived social identity, making Rishi ancestry the ultimate legitimizing credential in Hindu civilization.
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPTURE QUOTE -->
+    <div style="margin-top:3rem;">
+      <div class="scripture">
+        <div class="scripture-text">"Brāhmaṇo'sya mukhamāsīd bāhū rājanyaḥ kṛtaḥ, ūrū tadasya yad vaiśyaḥ padbhyāṃ śūdro ajāyata."</div>
+        <div class="scripture-source">Rigveda — Purusha Sukta 10.90.12 · On the Varna Origins from Cosmic Purusha</div>
+      </div>
+      <p style="font-size:0.9rem; color:var(--muted); margin-top:0.5rem;">Translation: "The Brahmin emerged from His mouth; the Kshatriya from His arms; the Vaishya from His thighs; the Shudra from His feet." — This verse is the oldest canonical reference to the Varna system and is cited in virtually every Dharmashastra tradition.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SAPTARISHI & GOTRA ORIGINS ══ -->
+<section class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container">
+    <p class="section-label">Chapter I — Continued</p>
+    <h2 class="section-title">The Saptarishi System & <em>Gotra Origins</em></h2>
+    <div class="divider"></div>
+    <p class="section-intro">The Gotra system's roots lie in the tradition of the Saptarishi — the Seven Great Sages who are the progenitors of the Brahmin lineages. Different Vedic texts enumerate different lists, but classical texts converge on a canonical seven.</p>
+
+    <!-- SVG Saptarishi Diagram -->
+    <div class="saptarishi-ring">
+      <svg viewBox="0 0 600 360" width="600" height="360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- Center -->
+        <circle cx="300" cy="180" r="120" fill="url(#rg1)" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="300" cy="180" r="70" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+        <text x="300" y="172" text-anchor="middle" font-family="Cinzel" font-size="11" fill="#E8C96E" letter-spacing="2">SAPTARISHI</text>
+        <text x="300" y="190" text-anchor="middle" font-family="Cormorant Garamond" font-size="10" fill="#8B7355" font-style="italic">Gotra Progenitors</text>
+        <!-- Spokes -->
+        <!-- Angiras -->
+        <line x1="300" y1="110" x2="300" y2="60" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="240" y="30" width="120" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="300" y="50" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">ANGIRAS</text>
+        <!-- Bharadvaja -->
+        <line x1="362" y1="130" x2="410" y2="80" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="400" y="55" width="140" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="470" y="75" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">BHARADVAJA</text>
+        <!-- Vishvamitra -->
+        <line x1="390" y1="210" x2="450" y2="230" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="450" y="215" width="140" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="520" y="235" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">VISHVAMITRA</text>
+        <!-- Gautama -->
+        <line x1="340" y1="290" x2="360" y2="330" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="290" y="320" width="130" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="355" y="340" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">GAUTAMA</text>
+        <!-- Kashyapa -->
+        <line x1="220" y1="290" x2="190" y2="330" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="100" y="320" width="130" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="165" y="340" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">KASHYAPA</text>
+        <!-- Vasishtha -->
+        <line x1="210" y1="210" x2="150" y2="230" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="10" y="215" width="130" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="75" y="235" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">VASISHTHA</text>
+        <!-- Atri -->
+        <line x1="238" y1="130" x2="190" y2="80" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="60" y="55" width="130" height="30" rx="3" fill="rgba(36,26,16,0.9)" stroke="#C9A84C" stroke-width="0.8"/>
+        <text x="125" y="75" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#E8C96E" letter-spacing="1">ATRI</text>
+      </svg>
+    </div>
+
+    <div class="two-col" style="margin-top:0;">
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem;">THE EIGHT ORIGINAL GOTRAS (ASHTARISHIS)</h3>
+        <p style="font-size:0.93rem;margin-bottom:1rem;">Baudhayana Dharmasutra lists <strong>eight foundational Gotras</strong>: Angiras, Atri, Bharadvaja, Gautama, Kashyapa, Vasishtha, Vishvamitra, and Agastya. All other Gotras are considered <em>apabhramsha</em> (branches) or <em>gotrapravaras</em> derived from these.</p>
+        <div class="note">
+          <strong>Scholarly note:</strong> The Ashvalayana Shrauta Sutra mentions 49 Gotra names, while later medieval lists expand to hundreds. The expansion reflects both genuine lineage multiplication and community-level adoption of prestigious Rishi names over centuries.
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem;">HOW GOTRA FUNCTIONS IN PRACTICE</h3>
+        <p style="font-size:0.93rem;margin-bottom:1rem;">In every major rite of passage — upanayana, vivaha (marriage), shraddha — a person declares their Gotra and Pravara. This ritual declaration establishes spiritual genealogy more than biological genealogy. The Gotra prohibition on marriage (<em>sagotra vivaha</em>) has been legally recognized in modern Indian family law.</p>
+        <div class="note">
+          <strong>Genetic dimension:</strong> A 2009 genetic study (Thanseem et al.) found that individuals of the same Gotra in endogamous Brahmin communities show lower Y-chromosome diversity, suggesting a partial real-world basis for the patrilineal transmission claim.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §2  PANCHA GAUDA & PANCHA DRAVIDA
+══════════════════════════════════════════════ -->
+<section id="pancha" class="section-block">
+  <div class="container">
+    <p class="section-label">Chapter II</p>
+    <h2 class="section-title">The Two Great Divisions: <em>Pancha Gauda & Pancha Dravida</em></h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Medieval Brahmin society was organized around two grand meta-groups — one north of the Vindhyas, one south. This classification, first systematized in the <em>Rajatarangini</em> tradition and referenced in the <em>Skanda Purana</em> and <em>Brahmanda Purana</em>, remains the most important macro-taxonomy of Brahmin communities in Hindu civilization.
+    </p>
+
+    <div class="scripture">
+      <div class="scripture-text">"Sarasvatā Kānyakubjaśca Gauḍā Māithila Utkalaḥ | Pañcagauḍā iti khyātā Vindhyasyottaravāsinaḥ || Karṇāṭakaśca Tailaṅgo Drāviḍo Mahārāṣṭrakaḥ | Gurjaraśceti pañcaiva Drāviḍā Vindhyadakṣiṇe ||"</div>
+      <div class="scripture-source">Attributed to Skanda Purana / Brahmanda Purana traditions · Medieval Classification Verse</div>
+    </div>
+
+    <div class="pancha-split">
+      <div class="pancha-panel gauda">
+        <div class="pancha-panel-title">✦ Pancha Gauda</div>
+        <div class="pancha-sub">Five Northern Brahmin Groups · North of Vindhyas</div>
+        <ul class="pancha-list">
+          <li><strong>Saraswata</strong> — Valley of Saraswati River, Punjab-Sindh</li>
+          <li><strong>Kanyakubja</strong> — Kanauj (Kanpur region), UP</li>
+          <li><strong>Gauda</strong> — Bengal, Assam, Eastern India</li>
+          <li><strong>Maithila</strong> — Mithila (North Bihar, Nepal Terai)</li>
+          <li><strong>Utkala</strong> — Odisha (Orissa) coastal belt</li>
+        </ul>
+      </div>
+      <div class="pancha-panel dravida">
+        <div class="pancha-panel-title">✦ Pancha Dravida</div>
+        <div class="pancha-sub">Five Southern Brahmin Groups · South of Vindhyas</div>
+        <ul class="pancha-list">
+          <li><strong>Karnataka</strong> — Karnataki, Havyaka, Shivalli Brahmins</li>
+          <li><strong>Tailanga</strong> — Telugu Brahmins (Andhra/Telangana)</li>
+          <li><strong>Dravida</strong> — Tamil Brahmins (Iyers, Iyengars, Dikshitars)</li>
+          <li><strong>Maharashtra</strong> — Deshastha, Chitpavan, Karhade, CKP</li>
+          <li><strong>Gurjara</strong> — Gujarat Brahmins (Audichya, Nagar, Modha)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:2rem;">
+      <strong>Historical caveat:</strong> The Pancha Gauda / Pancha Dravida classification is a <em>medieval scholastic framework</em>, not an ancient scriptural injunction. It appears in post-Gupta literature and was likely formalized between the 8th–12th centuries CE. Many Brahmin communities don't fit neatly into this schema. The Rajatarangini (12th c. Kashmir) and various Smriti texts reference variants of this list. The Namboodiri Brahmins of Kerala, for instance, are technically Dravida but have their own distinct tradition not well captured by the Mahārāṣṭraka or Drāviḍa label.
+    </div>
+
+    <!-- Accordion: Each Pancha Group -->
+    <div class="accordion" style="margin-top:2.5rem;">
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ SARASWATA BRAHMINS — People of the Lost River</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>Origins & Etymology</h4>
+          <p>Named after the Vedic river Saraswati, once flowing through modern Haryana-Rajasthan-Gujarat. As the river dried (estimated 2000–1900 BCE), communities migrated in multiple waves — westward to Sindh and Kashmir, eastward to Bengal, and eventually to Goa and Kerala as the <strong>Goud Saraswat Brahmins (GSB)</strong>. The Saraswata identity encompasses a vast and diverse range of communities united by this riverine origin myth.</p>
+          <h4>Major Subgroups</h4>
+          <ul>
+            <li><strong>Goud Saraswat Brahmin (GSB)</strong> — Goa, Coastal Karnataka, Kerala; Smartha and Vaishnava traditions; historically fish-eating Brahmins by special dispensation (an unusual custom documented in the <em>Saraswata Purana</em>)</li>
+            <li><strong>Kashmiri Pandit</strong> — Kashmir Valley; Shaiva tradition; Sanskrit scholarship; notable for sophisticated <em>Trika Shaivism</em> (Abhinavagupta lineage)</li>
+            <li><strong>Chitrapur Saraswat</strong> — North Kanara; distinct Guru Parampara of Chitrapur Math</li>
+            <li><strong>Rajapur Saraswat</strong> — Konkan coastal belt</li>
+            <li><strong>Punjabi Saraswat</strong> — Remaining communities in Punjab after Partition</li>
+          </ul>
+          <h4>Gotras & Vedic Affiliations</h4>
+          <div class="gotra-section">
+            <div class="gotra-title">Common Saraswata Gotras</div>
+            <div class="gotra-grid">
+              <span class="gotra-chip">Kashyapa</span><span class="gotra-chip">Bharadvaja</span><span class="gotra-chip">Vasishtha</span><span class="gotra-chip">Atri</span><span class="gotra-chip">Vishvamitra</span><span class="gotra-chip">Angiras</span><span class="gotra-chip">Gautama</span><span class="gotra-chip">Shandilyasa</span><span class="gotra-chip">Koundinya</span><span class="gotra-chip">Parasara</span>
+            </div>
+          </div>
+          <p style="margin-top:1rem;">Vedic affiliation: Primarily <strong>Rigveda, Samaveda</strong>. GSBs follow the Ashvalayana Shrauta Sutra and Gobhila Grihya Sutra. Kashmiri Pandits predominantly follow the <strong>Rigvedic Shakala shakha</strong>.</p>
+          <h4>Historical Role</h4>
+          <p>The Saraswatas produced some of India's most remarkable intellectuals: <strong>Abhinavagupta</strong> (Kashmiri Shaiva philosopher, 975–1025 CE), <strong>Kshemendra</strong> (Sanskrit poet), and in modern times, some of India's leading industrialists and scholars.</p>
+          <div class="dispute">⚑ Scholarly debate: Whether the <em>Saraswata Purana</em> (which details their fish-eating dispensation) is an early medieval interpolation to justify a practical adaptation, or genuinely ancient, remains debated. P.K. Gode's 1940s study of this text is foundational but contested by more recent scholarship.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ KANYAKUBJA BRAHMINS — The Pride of Kanauj</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>Origins & Etymology</h4>
+          <p>Named after <strong>Kanyakubja</strong> (modern Kanauj, UP), the most powerful city of north India between the 7th–12th centuries CE. The name derives from <em>Kanya</em> (maiden) and <em>Kubja</em> (hunchbacked) — referring to an origin legend involving the <em>Ramayana</em> (some identify it with King Kusha's city). Kanyakubja Brahmins were the Brahmins of the Gurjara-Pratihara and later the Gahadavala kingdoms.</p>
+          <h4>Five Divisions (Pancha-Kanyakubja)</h4>
+          <ul>
+            <li><strong>Saryupareen</strong> — West of Sarayu river; dominant in Awadh and Baghel regions</li>
+            <li><strong>Jijhotia</strong> — Bundelkhand (Madhya Pradesh)</li>
+            <li><strong>Kanyakubja proper</strong> — Kanauj region</li>
+            <li><strong>Baijalvad</strong> — Scattered communities in UP and Bihar</li>
+            <li><strong>Prakrit</strong> — Small surviving community</li>
+          </ul>
+          <h4>Historical Significance</h4>
+          <p>Kanyakubja Brahmins were massively influential in medieval north India. They were invited by rulers across Bengal (<strong>Adisura's invitation, c. 8th century CE</strong>), Mithila, and Rajputana to perform royal rituals and establish temples. This diaspora generated entire new communities — notably, the Bengali Brahmin community traces part of its origin to Kanyakubja migration.</p>
+          <div class="gotra-section">
+            <div class="gotra-title">Representative Kanyakubja Gotras</div>
+            <div class="gotra-grid">
+              <span class="gotra-chip">Kaushika</span><span class="gotra-chip">Bharadvaja</span><span class="gotra-chip">Vasishtha</span><span class="gotra-chip">Kashyapa</span><span class="gotra-chip">Atri</span><span class="gotra-chip">Shandilya</span><span class="gotra-chip">Garg</span><span class="gotra-chip">Parashara</span><span class="gotra-chip">Upamanyu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ MAITHIL BRAHMINS — Scholars of Mithila's Golden Tradition</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>Mithila: The Intellectual Capital of Ancient India</h4>
+          <p>Mithila (modern north Bihar + Nepal Terai) was one of the greatest centres of Sanskrit learning in ancient India — the kingdom of <strong>Janaka</strong>, father of Sita, and seat of the legendary philosopher-king debates in the Brihadaranyaka Upanishad. The Maithil Brahmins are perhaps the most rigorously genealogically documented Brahmin community in all of Bharat, maintaining uninterrupted <strong>Panjika</strong> (genealogical registers) for over a millennium.</p>
+          <h4>The Panjika System</h4>
+          <p>No marriage in a traditional Maithil Brahmin family happens without consulting the <em>Panjika</em> — handwritten genealogical registers maintained by hereditary genealogists (<em>panji-prabandhakas</em>). These records trace lineages back 1000+ years, making them one of the most extraordinary sociological documents in Indian history. The system was reportedly systematized under King <strong>Harsimhadeva</strong> (13th century CE) of Mithila.</p>
+          <h4>Two Major Divisions</h4>
+          <ul>
+            <li><strong>Shrotriya</strong> — The learned elite; traditionally married only within closely documented lineages</li>
+            <li><strong>Yogya</strong> — A larger community with less stringent genealogical requirements</li>
+          </ul>
+          <h4>Unique Marriage Custom: Kulinism</h4>
+          <p>The <em>Kulin</em> system — where certain elite families of established purity were considered of highest status — led to the practice of a single Kulin man marrying many women to maintain ritual purity across families. This practice, though socially complex and later criticized, is documented extensively in colonial Bengal-Bihar ethnographies and pre-colonial Smriti commentaries.</p>
+          <h4>Gotras & Vedic Traditions</h4>
+          <div class="gotra-section">
+            <div class="gotra-title">Maithil Brahmin Gotras</div>
+            <div class="gotra-grid">
+              <span class="gotra-chip">Shhandilya</span><span class="gotra-chip">Vatsa</span><span class="gotra-chip">Kaushika</span><span class="gotra-chip">Parasara</span><span class="gotra-chip">Bharadvaja</span><span class="gotra-chip">Kashyapa</span><span class="gotra-chip">Vasishtha</span><span class="gotra-chip">Savarna</span><span class="gotra-chip">Alaambaayana</span>
+            </div>
+          </div>
+          <p style="margin-top:1rem;">Primarily follow the <strong>Samaveda, Atharvaveda, and Shukla Yajurveda</strong>. The Mithila School of philosophy — particularly <em>Navya-Nyaya</em> (New Logic) — became the dominant philosophical tradition of eastern India, producing giants like <strong>Gangesa Upadhyaya</strong> (13th c.), whose <em>Tattvachintamani</em> revolutionized Indian logic.</p>
+          <h4>Famous Maithil Scholars</h4>
+          <ul>
+            <li><strong>Vidyapati</strong> (14th c.) — Maithili poet, considered the founding voice of Maithili literature</li>
+            <li><strong>Gangesa Upadhyaya</strong> — Founder of Navya-Nyaya school</li>
+            <li><strong>Mandana Mishra</strong> — Mimamsa philosopher who famously debated Adi Shankaracharya</li>
+            <li><strong>Vachaspati Mishra</strong> — Polymath who wrote commentaries on virtually every school of Hindu philosophy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ GAUDA BRAHMINS — Masters of Bengal and Eastern India</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>Etymology and Region</h4>
+          <p><em>Gauda</em> refers to ancient Bengal (Gauda Kingdom, centered near Murshidabad). The Gauda Brahmins are the dominant Brahmin community of Bengal, Assam, and parts of Odisha, with multiple subgroups distinguished by ritual practice, migration history, and Kulin status.</p>
+          <h4>Origin Tradition: The Adisura Migration</h4>
+          <p>The most important origin legend is that King <strong>Adisura</strong> of Bengal (approximately 8th century CE) invited five Kanyakubja Brahmins from Kanauj to perform a yajna, as no local Brahmins were deemed ritually qualified. These five — <strong>Bhatta Narayana, Shridhar, Dakshinavar, Vedagarbha, and Chhandara</strong> — are considered the ancestors of all Bengali Brahmins. Their descendants became the <em>Kulina</em> (highest status) category.</p>
+          <div class="dispute">⚑ Historical note: The Adisura legend appears in medieval Brahmin genealogies but is not attested in contemporaneous epigraphy. Historians like R.C. Majumdar note it may be a legitimizing origin myth rather than literal history. The actual Brahmin presence in Bengal predates any specific Kanauj migration.</div>
+          <h4>Major Subdivisions</h4>
+          <ul>
+            <li><strong>Rarhi/Radhi</strong> — Dominant subgroup, from the Rarh region (west Bengal); Kulina status system most prominent here</li>
+            <li><strong>Barendra</strong> — From North Bengal (Varendri region), considered equally ancient</li>
+            <li><strong>Vaidika</strong> — Smaller subgroup known for Vedic scholarship</li>
+          </ul>
+          <h4>Bengali Brahmin Gotras</h4>
+          <div class="gotra-section">
+            <div class="gotra-title">Common Bengal Brahmin Gotras</div>
+            <div class="gotra-grid">
+              <span class="gotra-chip">Shandilya</span><span class="gotra-chip">Bharadvaja</span><span class="gotra-chip">Vasishtha</span><span class="gotra-chip">Kashyapa</span><span class="gotra-chip">Savarna</span><span class="gotra-chip">Moudgalya</span><span class="gotra-chip">Kaushika</span><span class="gotra-chip">Parasara</span>
+            </div>
+          </div>
+          <h4>Famous Scholars</h4>
+          <p><strong>Nabadwip</strong> (Navadvipa) in Bengal became one of India's premier Sanskrit learning centres — producing <strong>Sri Chaitanya Mahaprabhu</strong> (founder of Gaudiya Vaishnavism), <strong>Krishnananda Agambagish</strong> (tantra), and the Navya-Nyaya tradition flourishing alongside its Maithil counterpart.</p>
+        </div>
+      </div>
+
+    </div><!-- end accordion -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §3  REGIONAL BRAHMIN COMMUNITIES (South)
+══════════════════════════════════════════════ -->
+<section id="regional" class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container-wide">
+    <p class="section-label">Chapter III</p>
+    <h2 class="section-title">Regional Brahmin Communities — <em>Detailed Profiles</em></h2>
+    <div class="divider"></div>
+    <p class="section-intro">Each regional Brahmin community represents a unique synthesis of Vedic tradition, local culture, language, and history — a distinct civilizational node in the grand network of Hindu Dharma.</p>
+
+    <div class="community-grid">
+
+      <!-- Namboodiri -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Namboodiri Brahmins</div>
+            <div class="cc-sub">Kerala's Living Vedic Tradition</div>
+          </div>
+          <span class="cc-badge badge-brahmin">Pancha Dravida</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Kerala, especially Malabar and central Kerala</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Rigveda (Shakalya), Samaveda, Krishna Yajurveda (Taittiriya)</span></div>
+          <div class="cc-row"><span class="cc-key">Gotras</span><span class="cc-val">Kashyapa, Bharadvaja, Vasishtha, Kaundinya, Jamadagni</span></div>
+          <div class="cc-row"><span class="cc-key">Language</span><span class="cc-val">Malayalam (Namboodiri dialect is distinctly archaic)</span></div>
+          <div class="cc-row"><span class="cc-key">Unique Custom</span><span class="cc-val">Primogeniture — only eldest son marries a Namboodiri woman; younger sons take Nair women (Sambandham relationship)</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">The Namboodiris are among the last living practitioners of <strong>Vedic agni-hotra and soma yagas</strong> in their original form. UNESCO-recognized Kutiyattam drama and the tradition of <em>Atiratram soma yaga</em> (last performed in 2011) are Namboodiri contributions. Their peculiar inheritance laws, which concentrated property in eldest-son hands, created complex social arrangements documented by anthropologist David Gellner and others.</p>
+        </div>
+      </div>
+
+      <!-- Tamil Iyer -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Tamil Brahmin — Iyer</div>
+            <div class="cc-sub">Smartha Tradition of Tamil Nadu</div>
+          </div>
+          <span class="cc-badge badge-brahmin">Pancha Dravida</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Tamil Nadu, global diaspora</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Rigveda (Ashvalayana), Samaveda (Kauthuma), Krishna Yajurveda (Taittiriya)</span></div>
+          <div class="cc-row"><span class="cc-key">Gotras</span><span class="cc-val">Bharadvaja, Kashyapa, Vasishtha, Agastya, Vishvamitra, Shandilya</span></div>
+          <div class="cc-row"><span class="cc-key">Philosophy</span><span class="cc-val">Advaita Vedanta (Adi Shankaracharya tradition)</span></div>
+          <div class="cc-row"><span class="cc-key">Subgroups</span><span class="cc-val">Vadama, Brihacharanam, Ashtasahashram, Vathima, Mulakanadu</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Iyers maintain five Shankaracharya Peethas as primary religious authority. Their cuisine (<em>Tambrahm</em> food), language (Brahmin Tamil dialect), and social customs form a distinctive sub-culture. The Agamic temple tradition (<em>Shaiva Agamas</em>) is predominantly maintained by Iyer communities, especially the <strong>Adishaiva/Shivacharya</strong> sub-group who hold hereditary temple priest roles.</p>
+        </div>
+      </div>
+
+      <!-- Iyengar -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Tamil Brahmin — Iyengar</div>
+            <div class="cc-sub">Vaishnava Acharya Tradition</div>
+          </div>
+          <span class="cc-badge badge-brahmin">Pancha Dravida</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Tamil Nadu, Karnataka, global diaspora</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Krishna Yajurveda (Taittiriya shakha)</span></div>
+          <div class="cc-row"><span class="cc-key">Philosophy</span><span class="cc-val">Vishishtadvaita (Thenkalai / Vadakalai split)</span></div>
+          <div class="cc-row"><span class="cc-key">Key Divisions</span><span class="cc-val">Thenkalai (southern school, Pillai Lokacharya) and Vadakalai (northern school, Vedanta Desika)</span></div>
+          <div class="cc-row"><span class="cc-key">Scriptures</span><span class="cc-val">Divya Prabandham (4000 Tamil Vaishnava hymns = Tamil Veda)</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Iyengars follow the Ramanuja tradition, maintaining the 108 Divya Desam temples. The Thenkalai-Vadakalai split (whether to recite Tamil Prabandham or Sanskrit Vedas first) has been one of the most enduring internal theological debates in south Indian Brahminism, documented since the 14th century CE.</p>
+        </div>
+      </div>
+
+      <!-- Chitpavan -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Chitpavan Brahmins</div>
+            <div class="cc-sub">The Konkan's Intellectuals of Power</div>
+          </div>
+          <span class="cc-badge badge-brahmin">Pancha Dravida</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Konkan coast, Western Maharashtra</span></div>
+          <div class="cc-row"><span class="cc-key">Etymology</span><span class="cc-val">"Chitpavan" — "purified by the funeral pyre" (origin myth involving Parashurama)</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Rigveda (Shakala), Samaveda</span></div>
+          <div class="cc-row"><span class="cc-key">Gotras</span><span class="cc-val">Kashyapa, Bhargava, Shandilya, Vasishtha, Vishvamitra, Bharadvaja, Gargya, Dhananjaya</span></div>
+          <div class="cc-row"><span class="cc-key">Historical Role</span><span class="cc-val">Peshwas of the Maratha Empire (Bajirao, Vishwanath, Balaji)</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">The Chitpavans rose from relative obscurity to become the dominant force in 18th-century Maharashtra as the <strong>Peshwa dynasty</strong> — the hereditary prime ministers of the Maratha Empire who effectively controlled the empire from 1713–1818 CE. Later, they produced modern India's most influential figures: <strong>Bal Gangadhar Tilak, Gopal Krishna Gokhale, Vinayak Damodar Savarkar, B.G. Kher</strong>.</p>
+          <div class="dispute" style="margin-top:0.8rem;">⚑ The Parashurama origin myth (that Chitpavans descended from 14 corpses Parashurama revived from a funeral pyre) is a community tradition, not historically verifiable. Colonial ethnographers like Enthoven documented it; historians like Rosalind O'Hanlon suggest it served social mobility purposes in a Brahmin-competitive landscape.</div>
+        </div>
+      </div>
+
+      <!-- Deshastha -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Deshastha Brahmins</div>
+            <div class="cc-sub">The Oldest Brahmins of the Deccan</div>
+          </div>
+          <span class="cc-badge badge-brahmin">Pancha Dravida</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Deccan plateau, Maharashtra, North Karnataka, Hyderabad-Karnataka</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Rigveda and Krishna Yajurveda (Taittiriya)</span></div>
+          <div class="cc-row"><span class="cc-key">Philosophy</span><span class="cc-val">Both Advaita Vedanta and Madhva Vaishnava traditions</span></div>
+          <div class="cc-row"><span class="cc-key">Subgroups</span><span class="cc-val">Rigvedi Deshastha, Yajurvedi Deshastha</span></div>
+          <div class="cc-row"><span class="cc-key">Historical Role</span><span class="cc-val">Administrators, ministers, scholars in Yadava, Bahmani, and Maratha kingdoms</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Deshasthas claim indigenous Deccan roots predating many other Brahmin migrations, hence the name (<em>desh</em> = region/country, <em>stha</em> = native of). The rivalry and competition between Deshastha and Chitpavan Brahmins for court positions under the Peshwas is a well-documented dynamic in Maratha-era history.</p>
+        </div>
+      </div>
+
+      <!-- Havyaka -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Havyaka Brahmins</div>
+            <div class="cc-sub">Forest Brahmins of Karnataka</div>
+          </div>
+          <span class="cc-badge badge-rare">Rare / Little-Known</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Uttara Kannada, Shimoga, Coorg districts of Karnataka</span></div>
+          <div class="cc-row"><span class="cc-key">Etymology</span><span class="cc-val">"Havyaka" — one who performs Havya (fire oblations)</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Rigveda (Shakala), Samaveda</span></div>
+          <div class="cc-row"><span class="cc-key">Unique Feature</span><span class="cc-val">Areca nut cultivation; endogamous even within Karnataka Brahmin groups</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Havyaka Brahmins are an extremely small, tightly endogamous group concentrated in the Western Ghats forest belt. Their dialect of Kannada (Havigannada) is considered archaic and distinctly preserves features of medieval Kannada. They are noted for a tradition of deep forest agriculture and are considered one of the most orthopraxy-preserving Brahmin groups in Karnataka.</p>
+        </div>
+      </div>
+
+      <!-- Tyagi -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Tyagi Brahmins</div>
+            <div class="cc-sub">The Cultivating Brahmins of Western UP & Haryana</div>
+          </div>
+          <span class="cc-badge badge-rare">Brahma-Kshatra</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Western UP (Meerut, Muzaffarnagar, Baghpat), Haryana</span></div>
+          <div class="cc-row"><span class="cc-key">Etymology</span><span class="cc-val">"Tyagi" — one who has renounced or given up priestly duties for land</span></div>
+          <div class="cc-row"><span class="cc-key">Gotras</span><span class="cc-val">Bharadvaja, Kashyapa, Vasishtha, Garga, Kaundinya</span></div>
+          <div class="cc-row"><span class="cc-key">Occupation</span><span class="cc-val">Historically: agriculture and land ownership, not priestly roles</span></div>
+          <div class="cc-row"><span class="cc-key">Status Claim</span><span class="cc-val">Consider themselves Brahmin by birth, Kshatriya by martial and agricultural occupation</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Tyagis are a fascinating case of <em>Brahmin-Kshatriya hybridity</em>. They claim Brahmin lineage but abandoned priestly functions in favour of land cultivation and, in medieval times, warrior roles. Colonial ethnographers like Crooke classified them as Brahmins. Their oral traditions speak of migration from sacred sites in the Doab and adoption of zamindari (landlord) roles. They maintain upanayana (sacred thread ceremony) and Brahminic gotra-pravara traditions.</p>
+        </div>
+      </div>
+
+      <!-- Bhumihar -->
+      <div class="community-card fade-up">
+        <div class="community-card-header">
+          <div>
+            <div class="cc-title">Bhumihar Brahmins</div>
+            <div class="cc-sub">The Brahmin Landowners of Bihar & Eastern UP</div>
+          </div>
+          <span class="cc-badge badge-kshatra">Brahma-Kshatra</span>
+        </div>
+        <div class="community-card-body">
+          <div class="cc-row"><span class="cc-key">Region</span><span class="cc-val">Bihar (dominant), Eastern UP, Jharkhand</span></div>
+          <div class="cc-row"><span class="cc-key">Etymology</span><span class="cc-val">"Bhu-mihar" — "Land-holder" / from Sanskrit Bhumika (earth)</span></div>
+          <div class="cc-row"><span class="cc-key">Gotras</span><span class="cc-val">Bharadvaja, Vasishtha, Kashyapa, Gautama, Shandilya, Atri, Parashara</span></div>
+          <div class="cc-row"><span class="cc-key">Vedic Aff.</span><span class="cc-val">Shukla and Krishna Yajurveda traditions</span></div>
+          <div class="cc-row"><span class="cc-key">Historical Role</span><span class="cc-val">Zamindars, soldiers, rulers — Darbhanga Raj and other small kingdoms</span></div>
+          <p style="font-size:0.88rem;color:var(--text);margin-top:0.8rem;line-height:1.75;">Bhumihars occupy a unique position in Hindu social history. They maintain the full apparatus of Brahmin identity — sacred thread, Gotra, Pravara, Vedic rituals — but do not accept <em>dakshina</em> (priestly fees) as that would demean their landed status. Their refusal to be "accepting priests" (Bengali Brahmin / Kanyakubja style) while maintaining Brahmin birth-status created the concept of the <strong>Bhumi-Brahman</strong> (Earth/Land Brahmin). Colonial censuses and Bihar Gazette records extensively document their dominant landowning role in 19th-century Bihar.</p>
+          <div class="dispute" style="margin-top:0.8rem;">⚑ The status debate: Some Brahmin groups historically disputed the Brahmin status of Bhumihars, noting their non-priestly occupation. Sociologist M.N. Srinivas analyzed this as a classic case of "Brahminization" — a community asserting and gradually achieving Brahmin status through adoption of Brahminic practices.</div>
+        </div>
+      </div>
+
+    </div><!-- end community-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §4  KSHATRIYA RISHI LINEAGES
+══════════════════════════════════════════════ -->
+<section id="kshatra" class="section-block">
+  <div class="container">
+    <p class="section-label">Chapter IV</p>
+    <h2 class="section-title">Kshatriya Groups Claiming <em>Rishi Descent</em></h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Several Rajput and warrior clans trace their origin not to solar or lunar dynasties, but directly to Rishis — making them Rishivanshi Kshatriyas. These communities represent the fascinating intersection of martial identity and sacerdotal ancestry.
+    </p>
+
+    <div class="accordion">
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ GAUTAM RAJPUTS — Warriors of the Gautama Gotra</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>Identity and Claim</h4>
+          <p>The <strong>Gautam Rajputs</strong> are a Rajput clan concentrated primarily in <strong>Uttar Pradesh</strong> (especially Etawah, Mainpuri, Agra, and Mathura districts) and parts of Madhya Pradesh. They claim descent from <strong>Maharishi Gautama</strong> — one of the Saptarishis and the progenitor of the Gautama Gotra. This would make them Kshatriyas by occupation but Brahminic by lineage — a classic Brahma-Kshatra combination.</p>
+          <h4>Historical Evidence</h4>
+          <p>Unlike many other Rajput clans whose genealogies connect to the Suryavansha or Chandravansha, the Gautam Rajputs explicitly claim Gotra-level Rishi ancestry. The <strong>Ain-i-Akbari</strong> (Abul Fazl's compilation under Emperor Akbar, 16th century) mentions them among the Rajput groups of the Gangetic plain. <strong>William Crooke's</strong> <em>Tribes and Castes of North-Western Provinces</em> (1896) documents them as a martial-agricultural community of Brahmin extraction.</p>
+          <h4>Gotras and Pravaras</h4>
+          <p>Gautam Rajputs maintain <strong>Gautama Gotra</strong> and declare Pravara as <em>Angirasa, Ayasya, Gautama</em> — the same Pravara as Brahmin Gautama Gotra families, which is itself evidence of claimed Brahmin lineage.</p>
+          <h4>Scriptural Basis</h4>
+          <div class="scripture">
+            <div class="scripture-text">"Kṣatrasya kṣatram asi — the Kshatra of the Kshatra" — the concept that some Kshatriyas derive their royal power directly from Rishi-derived sacred energy, not merely from birth.</div>
+            <div class="scripture-source">Atharvaveda — on the divine basis of kingship</div>
+          </div>
+          <div class="dispute">⚑ Scholarly note: The Rishi-descent claims of Rajput communities are generally considered legitimizing genealogical narratives rather than historical facts. The process of <strong>Rajputization</strong> (as analyzed by N.P. Singh and other medieval historians) involved many communities adopting both Rajput identity and prestigious Rishi-ancestry claims simultaneously, especially during the 10th–15th century period of social fluidity.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <span class="acc-title">✦ SENGAR RAJPUTS — The Line of Sage Shringi</span>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-body">
+          <h4>The Shringi Connection</h4>
+          <p>The <strong>Sengar Rajputs</strong>, found primarily in <strong>Etawah, Hamirpur, and Banda districts of Uttar Pradesh</strong>, claim descent from <strong>Rishi Shringi</strong> (also spelled Rishyashringa) — the celibate sage son of Rishi Vibhandaka, famous in the <strong>Ramayana</strong> for performing the <em>Putrakameshti Yajna</em> (the sacrifice that gave King Dasharatha his four sons, including Rama).</p>
+          <h4>The Ramayana Connection</h4>
+          <p>Valmiki Ramayana's Bala Kanda (1.9-10) describes how Rishyashringa was brought from the forest to Ayodhya by King Romapada of Anga and later performed the great Putrakameshti for Dasharatha. The Sengars trace their descent to Rishyashringa's lineage, claiming that his descendants became Kshatriyas in service to the Ayodhya kingdom — transitioning from Brahminic to Kshatriya function over generations.</p>
+          <h4>Community Profile</h4>
+          <ul>
+            <li>Considered a fairly orthodox Rajput clan with recognized land-rights and zamindari history</li>
+            <li>Maintain upanayana and Gotra-Pravara traditions reflecting Brahminic ancestry</li>
+            <li>Documented in Tod's <em>Annals and Antiquities of Rajasthan</em> and district gazetteers of UP</li>
+          </ul>
+          <div class="dispute">⚑ The Rishyashringa descent claim, while internally consistent and culturally significant, is not substantiated by external epigraphy or independently verifiable historical records. It belongs to the category of <em>origin vamshavalika</em> — community genealogical traditions maintained by hereditary genealogists (Badwas/Bhats).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §5  BRAHMA-KSHATRA TRADITIONS
+══════════════════════════════════════════════ -->
+<section id="brahma-kshatra" class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container">
+    <p class="section-label">Chapter V</p>
+    <h2 class="section-title">Brahma-Kshatra Traditions — <em>The Sage-Warrior Synthesis</em></h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Perhaps the most intellectually rich area of Hindu social history is the phenomenon of <em>Brahma-Kshatra</em> — communities, individuals, and lineages that embodied both Brahminic sacredness and Kshatriya martial power. This synthesis has scriptural precedent, historical documentation, and sociological implications that remain debated.
+    </p>
+
+    <div class="two-col">
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem;">SCRIPTURAL PRECEDENT</h3>
+        <p>The Rigveda and Mahabharata both acknowledge that <em>Varna can be acquired through karma</em>, not merely birth. The clearest examples:</p>
+        <ul style="padding-left:1.4rem;margin-top:0.8rem;font-size:0.95rem;">
+          <li style="margin-bottom:0.5rem;"><strong>Vishvamitra</strong> — Born a Kshatriya king (Kaushika), became a Brahmarishi through tapas. His Gotra-descendants are Brahmins.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Drona</strong> — Brahmin teacher who became arguably the greatest warrior of his era.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Parashurama</strong> — Brahmin by birth, embodied Kshatriya vengeance, considered avatar of Vishnu. Associated with Chitpavan and Namboodiri origin legends.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Ashwatthama</strong> — Son of Drona, born both Brahmin and warrior (had martial Kshatriya powers by birth).</li>
+        </ul>
+        <div class="scripture">
+          <div class="scripture-text">"Brahma-kṣatrasya yad vīryam..." — On the combined power of Brahminic knowledge and Kshatriya force.</div>
+          <div class="scripture-source">Mahabharata — Shantiparva · On the synthesis of Brahma and Kshatra</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem;">THE BHUMIHAR CASE IN DEPTH</h3>
+        <p>The Bhumihar Brahmin case is the most extensively documented Brahma-Kshatra situation in modern history:</p>
+        <ul style="padding-left:1.4rem;margin-top:0.8rem;font-size:0.95rem;">
+          <li style="margin-bottom:0.5rem;">They refuse priestly fees — yet maintain Brahmin Gotra and sacred thread</li>
+          <li style="margin-bottom:0.5rem;">They fought as zamindari soldiers in Mughal and British armies</li>
+          <li style="margin-bottom:0.5rem;">They controlled significant land in Bihar's Shahabad, Saran, and Champaran districts</li>
+          <li style="margin-bottom:0.5rem;">The <strong>Darbhanga Raj</strong> and <strong>Hathwa Raj</strong> (large zamindari estates) had significant Bhumihar associations</li>
+          <li style="margin-bottom:0.5rem;">Modern notable Bhumihars include multiple Chief Ministers, IPS officers, and academics</li>
+        </ul>
+        <div class="note">
+          <strong>Sociological analysis:</strong> M.N. Srinivas's concept of "Dominant Caste" perfectly applies to Bhumihars in Bihar — they wielded economic power (land), ritual status (Brahmin identity), and political influence simultaneously.
+        </div>
+      </div>
+    </div>
+
+    <!-- Vishvamitra: The Greatest Brahma-Kshatra Story -->
+    <div style="margin-top:3rem;">
+      <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);letter-spacing:0.08em;margin-bottom:1rem;">VISHVAMITRA: THE ARCHETYPAL BRAHMA-KSHATRA NARRATIVE</h3>
+      <p style="max-width:800px;font-size:1rem;line-height:1.9;">The story of King Kaushika's transformation into Brahmarishi Vishvamitra (narrated in detail in Valmiki Ramayana's Bala Kanda, Chs. 51–65) is the foundational Hindu text on Varna mobility through <em>tapas</em>. It directly challenges the notion of absolute birth-determined Varna: a Kshatriya attains the supreme Brahminic status through ascetic power. Importantly, his descendants carry the <strong>Kaushika Gotra</strong> as Brahmins — making them Brahmin-by-Gotra while descended from a royal Kshatriya family.</p>
+      <div class="timeline" style="margin-left:24px;">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-era">Origin</div>
+            <div class="tl-title">Kaushika — the Kshatriya King</div>
+            <div class="tl-body">King Kaushika of the Kushika dynasty, a powerful Kshatriya ruler, encounters Brahmarishi Vasishtha and is humbled by the divine power of Brahminic knowledge versus royal military power.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-era">Tapas</div>
+            <div class="tl-title">First Asceticism — Becomes "Rajarshi"</div>
+            <div class="tl-body">After defeat by Vasishtha's divine cow Kamadhenu, Kaushika renounces his kingdom and undertakes great austerities. He is first acknowledged as a <em>Rajarshi</em> (Royal Sage) — still Kshatriya identity but spiritually advanced.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-era">Progress</div>
+            <div class="tl-title">Becomes "Maharishi" — Still Not Brahmarishi</div>
+            <div class="tl-body">Despite more intense tapas and cosmic powers (including creating a new heaven for Trishanku), the gods acknowledge him as Maharishi but deny Brahmarishi status — as Vasishtha alone must recognize him.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-era">Culmination</div>
+            <div class="tl-title">Vasishtha Declares: "Brahmarishi Vishvamitra!"</div>
+            <div class="tl-body">After complete conquest of desires and anger, Vasishtha spontaneously declares him Brahmarishi. The transformation is complete. His lineage thereafter is considered Brahmin — the Kaushika Gotra. This is the scriptural proof-text for Varna fluidity in Hindu tradition.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §6  SCRIPTURAL REFERENCES
+══════════════════════════════════════════════ -->
+<section id="scriptures" class="section-block">
+  <div class="container">
+    <p class="section-label">Chapter VI</p>
+    <h2 class="section-title">Scriptural & Historical <em>Reference Framework</em></h2>
+    <div class="divider"></div>
+
+    <div class="two-col">
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin-bottom:1.2rem;text-transform:uppercase;">Primary Scriptural Sources</h3>
+        <div class="accordion">
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Rigveda & Vedic Literature</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p><strong>Purusha Sukta (RV 10.90)</strong> — foundational Varna theory. <strong>Nadistuti Sukta</strong> — references the Saraswati and northern geography. The Rigveda's <em>family books</em> (Mandalas 2–7) are each attributed to a Rishi family (Gritsamada/Shaunaka, Vishvamitra/Kaushika, Vamadeva/Gautama, Atri, Bharadvaja, Vasishtha), essentially forming the earliest Gotra documentation.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Dharmashastra Literature</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p><strong>Manusmriti</strong> (2nd c. BCE–2nd c. CE): Chapters 10 regulates inter-Varna marriage and birth-status; Chapter 2 on upanayana and Brahminic duties. <strong>Yajnavalkya Smriti</strong>: more nuanced on Gotra rules. <strong>Baudhayana Dharmasutra</strong>: earliest systematic Gotra lists. <strong>Vasistha Dharmasutra</strong>: important on Brahmin social rules.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Epics & Puranas</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p><strong>Mahabharata, Adiparva</strong>: Extensive genealogies of Rishis and royal houses. <strong>Vishnu Purana, Part 4</strong>: Systematic royal genealogies. <strong>Bhagavata Purana, Skandha 9</strong>: Solar and Lunar dynasty genealogies. <strong>Brahmanda Purana</strong>: Contains the classic Pancha Gauda / Pancha Dravida verse. <strong>Skanda Purana</strong>: Regional temple traditions and Brahmin lineages. <strong>Matsya Purana</strong>: Gotra lists with Pravara details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin-bottom:1.2rem;text-transform:uppercase;">Historical & Modern Sources</h3>
+        <div class="accordion">
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Epigraphy & Medieval Records</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p><strong>Copper plate inscriptions</strong> (tamra-shasan): The majority of royal land grants in medieval India (Gupta, Pallava, Rashtrakuta, Chola, Chalukya, Pala periods) record Brahmin Gotra and Pravara of grant recipients — providing historically verifiable Brahmin lineage data outside community tradition. Key collections: <em>Corpus Inscriptionum Indicarum</em> (Archaeological Survey of India). <strong>Temple inscriptions</strong>: Particularly Chola-era temple records (Tanjavur Brihadeeswara, Thanjavur) document Brahmin temple service lineages.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Colonial Ethnography</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p>Colonial-era ethnographies are valuable primary documents but must be read critically for imposed categories and imperial frameworks. Key works: <strong>William Crooke</strong>, <em>Tribes and Castes of North-Western Provinces and Oudh</em> (1896); <strong>R.V. Russell</strong>, <em>Tribes and Castes of the Central Provinces of India</em> (1916); <strong>Edgar Thurston</strong>, <em>Castes and Tribes of Southern India</em> (1909); <strong>H.H. Risley</strong>, <em>The People of India</em> (1908). These systematized community self-reports into a rigid hierarchy that often ossified previously fluid identities.</p>
+              <div class="dispute">⚑ Critical note: Susan Bayly (Caste, Society and Politics in India, 1999) and Nicholas Dirks (Castes of Mind, 2001) have argued that the modern caste system in its most rigid form is partly a colonial construction — that pre-colonial caste identities were more fluid and contextually negotiated. This debate is relevant to how Rishivanshi claims are evaluated.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" onclick="toggleAcc(this)">
+              <span class="acc-title">Modern Academic Research</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <p><strong>M.N. Srinivas</strong>: Concept of Sanskritization and Dominant Caste. <strong>Louis Dumont</strong>, <em>Homo Hierarchicus</em> (1966): Structural analysis of caste. <strong>P.V. Kane</strong>, <em>History of Dharmashastra</em> (5 vols): Most comprehensive academic treatment of Brahminic texts. <strong>Jan Heesterman</strong>: Vedic ritual studies. <strong>Sheldon Pollock</strong>: Sanskrit knowledge systems. <strong>Genetic studies</strong>: Reich et al. (2009, Nature) on ANI/ASI population structure; Metspalu et al. (2011) on South Asian genetic diversity — relevant to discussions of Brahmin genetic distinctiveness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §7  LINEAGE TREES
+══════════════════════════════════════════════ -->
+<section id="lineage" class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container">
+    <p class="section-label">Chapter VII</p>
+    <h2 class="section-title">Visual Lineage Structures & <em>Clan Trees</em></h2>
+    <div class="divider"></div>
+
+    <!-- Rishi to Brahmin Community Tree -->
+    <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin-bottom:1rem;text-transform:uppercase;">Rishi → Gotra → Community Branching Tree</h3>
+
+    <div class="lineage-tree">
+      <!-- Main Tree -->
+      <div class="tree-node">
+        <div class="node-box root">SAPTARISHI — Seven Primordial Sages</div>
+        <div class="node-line-v"></div>
+        <div class="node-children" style="gap:1.5rem;padding-top:1px;">
+
+          <!-- Angiras Branch -->
+          <div class="node-child">
+            <div class="node-child-line"></div>
+            <div class="node-box">ANGIRAS</div>
+            <div class="node-line-v"></div>
+            <div class="node-children" style="gap:0.6rem;padding-top:1px;">
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Bharadvaja<br>Gotra</div>
+              </div>
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Gautama<br>Branch</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Atri Branch -->
+          <div class="node-child">
+            <div class="node-child-line"></div>
+            <div class="node-box">ATRI</div>
+            <div class="node-line-v"></div>
+            <div class="node-children" style="gap:0.6rem;padding-top:1px;">
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Atri Gotra<br>Brahmins</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kashyapa Branch -->
+          <div class="node-child">
+            <div class="node-child-line"></div>
+            <div class="node-box">KASHYAPA</div>
+            <div class="node-line-v"></div>
+            <div class="node-children" style="gap:0.6rem;padding-top:1px;">
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Kashyapa<br>Gotra</div>
+              </div>
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Namboodiri<br>line</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vasishtha Branch -->
+          <div class="node-child">
+            <div class="node-child-line"></div>
+            <div class="node-box">VASISHTHA</div>
+            <div class="node-line-v"></div>
+            <div class="node-children" style="gap:0.6rem;padding-top:1px;">
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Vasishtha<br>Gotra</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vishvamitra Branch -->
+          <div class="node-child">
+            <div class="node-child-line"></div>
+            <div class="node-box">VISHVAMITRA</div>
+            <div class="node-line-v"></div>
+            <div class="node-children" style="gap:0.6rem;padding-top:1px;">
+              <div class="node-child">
+                <div class="node-child-line"></div>
+                <div class="node-box secondary" style="font-size:0.65rem;padding:0.3rem 0.7rem;">Kaushika<br>Gotra</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:2rem;font-style:italic;">↓ Each Gotra branches into regional communities over historical time ↓</p>
+
+      <!-- Second tier -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.8rem;margin-top:1.5rem;">
+        <div style="text-align:center;">
+          <div class="node-box" style="font-size:0.7rem;">Bharadvaja Gotra</div>
+          <div class="node-line-v" style="margin:0 auto;"></div>
+          <div style="font-size:0.7rem;color:var(--muted);padding:0.3rem;border:1px solid var(--border);border-radius:3px;background:rgba(18,12,7,0.5);">Kanyakubja · Gauda · Maithil · Iyer · Chitpavan · Deshastha</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="node-box" style="font-size:0.7rem;">Kashyapa Gotra</div>
+          <div class="node-line-v" style="margin:0 auto;"></div>
+          <div style="font-size:0.7rem;color:var(--muted);padding:0.3rem;border:1px solid var(--border);border-radius:3px;background:rgba(18,12,7,0.5);">Saraswat · Namboodiri · Havyaka · Tamil Brahmin · GSB</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="node-box" style="font-size:0.7rem;">Kaushika Gotra</div>
+          <div class="node-line-v" style="margin:0 auto;"></div>
+          <div style="font-size:0.7rem;color:var(--muted);padding:0.3rem;border:1px solid var(--border);border-radius:3px;background:rgba(18,12,7,0.5);">Kanyakubja · Gautam Rajputs (Kshatriya branch)</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="node-box" style="font-size:0.7rem;">Vasishtha Gotra</div>
+          <div class="node-line-v" style="margin:0 auto;"></div>
+          <div style="font-size:0.7rem;color:var(--muted);padding:0.3rem;border:1px solid var(--border);border-radius:3px;background:rgba(18,12,7,0.5);">Multiple northern & southern groups · Utkala · Maithil</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="node-box" style="font-size:0.7rem;">Gautama Gotra</div>
+          <div class="node-line-v" style="margin:0 auto;"></div>
+          <div style="font-size:0.7rem;color:var(--muted);padding:0.3rem;border:1px solid var(--border);border-radius:3px;background:rgba(18,12,7,0.5);">Brahmin Gautamas · Gautam Rajputs (Brahma-Kshatra)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §8  MASTER TABLES
+══════════════════════════════════════════════ -->
+<section id="tables" class="section-block">
+  <div class="container-wide">
+    <p class="section-label">Chapter VIII</p>
+    <h2 class="section-title">Master Comparison Tables</h2>
+    <div class="divider"></div>
+
+    <!-- TABLE 1: All Major Brahmin Groups -->
+    <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin-bottom:0.5rem;text-transform:uppercase;">Master Table — Major Brahmin Communities of Bharat</h3>
+    <p class="master-note">Table covers principal groups; hundreds of subgroups and regional variants exist beyond this list.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Community</th>
+            <th>Division</th>
+            <th>Region</th>
+            <th>Vedic Affil.</th>
+            <th>Key Gotras</th>
+            <th>Philosophy</th>
+            <th>Notable History</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kashmiri Pandit</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Saraswata</td>
+            <td>Kashmir Valley</td>
+            <td>Rigveda (Shakala)</td>
+            <td>Bharadvaja, Kashyapa, Vasishtha, Atri</td>
+            <td>Shaiva Advaita (Trika)</td>
+            <td>Abhinavagupta, Kshemendra; Sharada script custodians</td>
+          </tr>
+          <tr>
+            <td><strong>Goud Saraswat (GSB)</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Saraswata</td>
+            <td>Goa, Coastal Karnataka</td>
+            <td>Rigveda, Samaveda</td>
+            <td>Kashyapa, Bharadvaja, Atri, Koundinya</td>
+            <td>Smartha + Vaishnava</td>
+            <td>Saraswata Purana; unique fish-eating dispensation</td>
+          </tr>
+          <tr>
+            <td><strong>Kanyakubja</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Pancha Gauda</td>
+            <td>UP, Kanauj</td>
+            <td>Shukla Yajurveda</td>
+            <td>Kaushika, Bharadvaja, Vasishtha, Garg</td>
+            <td>Smartha Vedanta</td>
+            <td>Adisura migration to Bengal; Gurjara-Pratihara patronage</td>
+          </tr>
+          <tr>
+            <td><strong>Maithil</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Pancha Gauda</td>
+            <td>Mithila (N. Bihar, Nepal)</td>
+            <td>Samaveda, Shukla YV</td>
+            <td>Shandilya, Vatsa, Kaushika, Parasara</td>
+            <td>Navya-Nyaya, Mimamsa</td>
+            <td>Panjika system; Gangesa; Vachaspati Mishra; Vidyapati</td>
+          </tr>
+          <tr>
+            <td><strong>Gauda (Bengali)</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Pancha Gauda</td>
+            <td>Bengal, Assam</td>
+            <td>Shukla Yajurveda</td>
+            <td>Shandilya, Bharadvaja, Savarna, Moudgalya</td>
+            <td>Gaudiya Vaishnavism</td>
+            <td>Navadvipa learning centre; Chaitanya Mahaprabhu</td>
+          </tr>
+          <tr>
+            <td><strong>Utkala</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Pancha Gauda</td>
+            <td>Odisha</td>
+            <td>Krishna Yajurveda</td>
+            <td>Kashyapa, Bharadvaja, Atri</td>
+            <td>Shakta-Vaishnava</td>
+            <td>Jagannath temple administration</td>
+          </tr>
+          <tr>
+            <td><strong>Tyagi</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Brahma-Kshatra</td>
+            <td>W. UP, Haryana</td>
+            <td>Shukla Yajurveda</td>
+            <td>Bharadvaja, Kashyapa, Vasishtha</td>
+            <td>Smartha</td>
+            <td>Brahmin landowners; renounced priestly duties</td>
+          </tr>
+          <tr>
+            <td><strong>Bhumihar</strong><br><span class="tag tag-gauda">Gauda</span></td>
+            <td>Brahma-Kshatra</td>
+            <td>Bihar, E. UP</td>
+            <td>Shukla & Krishna YV</td>
+            <td>Bharadvaja, Vasishtha, Gautama, Kashyapa</td>
+            <td>Smartha</td>
+            <td>Darbhanga Raj; Hathwa estates; dominant caste Bihar</td>
+          </tr>
+          <tr>
+            <td><strong>Namboodiri</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida</td>
+            <td>Kerala</td>
+            <td>Rigveda, KYV (Taittiriya)</td>
+            <td>Kashyapa, Bharadvaja, Koundinya, Jamadagni</td>
+            <td>Advaita (Adi Shankara's tradition)</td>
+            <td>Soma yagas; Kutiyattam; Adi Shankaracharya's birth community</td>
+          </tr>
+          <tr>
+            <td><strong>Iyer (Tamil)</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida</td>
+            <td>Tamil Nadu</td>
+            <td>Rigveda, Samaveda, KYV</td>
+            <td>Bharadvaja, Kashyapa, Vasishtha, Agastya</td>
+            <td>Advaita Vedanta</td>
+            <td>Shaiva Agama temple custodians; 5 Shankaracharya Peethas</td>
+          </tr>
+          <tr>
+            <td><strong>Iyengar (Tamil)</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida</td>
+            <td>Tamil Nadu, Karnataka</td>
+            <td>Krishna Yajurveda (Taittiriya)</td>
+            <td>Bharadvaja, Atri, Shandilya</td>
+            <td>Vishishtadvaita (Ramanuja)</td>
+            <td>108 Divya Desam temples; Divya Prabandham tradition</td>
+          </tr>
+          <tr>
+            <td><strong>Deshastha</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida</td>
+            <td>Maharashtra, N. Karnataka</td>
+            <td>Rigveda, KYV</td>
+            <td>Bharadvaja, Kashyapa, Vasishtha, Atri</td>
+            <td>Advaita + Madhva</td>
+            <td>Yadava, Bahmani, Maratha court administrators</td>
+          </tr>
+          <tr>
+            <td><strong>Chitpavan</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida</td>
+            <td>Konkan, W. Maharashtra</td>
+            <td>Rigveda (Shakala)</td>
+            <td>Kashyapa, Bhargava, Shandilya, Dhananjaya</td>
+            <td>Smartha (Advaita)</td>
+            <td>Peshwa dynasty; Tilak, Gokhale, Savarkar</td>
+          </tr>
+          <tr>
+            <td><strong>Havyaka</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida (Karnataka)</td>
+            <td>Uttara Kannada, W. Ghats</td>
+            <td>Rigveda, Samaveda</td>
+            <td>Bharadvaja, Kashyapa, Atri</td>
+            <td>Smartha</td>
+            <td>Forest Brahmins; Havigannada dialect; extreme orthopraxy</td>
+          </tr>
+          <tr>
+            <td><strong>Shivalli</strong><br><span class="tag tag-dravida">Dravida</span></td>
+            <td>Pancha Dravida (Karnataka)</td>
+            <td>Tulu Nadu (Udupi/Mangalore)</td>
+            <td>Shukla Yajurveda</td>
+            <td>Kashyapa, Bharadvaja, Vasishtha</td>
+            <td>Dvaita (Madhva tradition)</td>
+            <td>Udupi Krishna temple priests; Madhvacharya's community</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TABLE 2: Rishivanshi Kshatriya -->
+    <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin:3rem 0 0.5rem;text-transform:uppercase;">Rishi-Descended Kshatriya Lineages</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Clan / Community</th>
+            <th>Claimed Rishi Ancestor</th>
+            <th>Gotra</th>
+            <th>Region</th>
+            <th>Historical Evidence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gautam Rajputs</strong><br><span class="tag tag-kshatra">Kshatriya</span></td>
+            <td>Maharishi Gautama (Saptarishi)</td>
+            <td>Gautama</td>
+            <td>Etawah, Mainpuri, Agra (UP)</td>
+            <td>Ain-i-Akbari; W. Crooke (1896); District Gazetteers</td>
+            <td>Community tradition; Gotra evidence</td>
+          </tr>
+          <tr>
+            <td><strong>Sengar Rajputs</strong><br><span class="tag tag-kshatra">Kshatriya</span></td>
+            <td>Rishi Shringi/Rishyashringa (Ramayana)</td>
+            <td>Kashyapa (claimed)</td>
+            <td>Etawah, Hamirpur, Banda (UP)</td>
+            <td>J. Tod; UP district gazetteers; oral vamshavalika</td>
+            <td>Oral tradition; no contemporaneous epigraphic support</td>
+          </tr>
+          <tr>
+            <td><strong>Brahmin-Rajput (Vishvamitra descendants)</strong><br><span class="tag tag-kshatra">Brahma-Kshatra</span></td>
+            <td>Vishvamitra (Brahmarishi, born Kshatriya)</td>
+            <td>Kaushika</td>
+            <td>Pan-India</td>
+            <td>Rigveda Book 3; Valmiki Ramayana Bala Kanda</td>
+            <td>Scripturally documented; unique reverse case</td>
+          </tr>
+          <tr>
+            <td><strong>Bhumihar Brahmin</strong><br><span class="tag tag-kshatra">Brahma-Kshatra</span></td>
+            <td>Various Saptarishi lines</td>
+            <td>Bharadvaja, Vasishtha, Gautama, others</td>
+            <td>Bihar, E. UP</td>
+            <td>Extensive colonial Bihar records; MN Srinivas analysis</td>
+            <td>Brahmin by identity; Kshatriya by function</td>
+          </tr>
+          <tr>
+            <td><strong>Tyagi Brahmin</strong><br><span class="tag tag-kshatra">Brahma-Kshatra</span></td>
+            <td>Various Rishi lines (Brahmin origin)</td>
+            <td>Bharadvaja, Kashyapa, others</td>
+            <td>W. UP, Haryana</td>
+            <td>W. Crooke; UP Gazetteers; community oral tradition</td>
+            <td>Brahmin origin; warrior-agricultural function</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TABLE 3: Rishi-Gotra Master -->
+    <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.12em;margin:3rem 0 0.5rem;text-transform:uppercase;">Rishi → Gotra → Pravara Master Reference</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Primary Rishi</th>
+            <th>Gotra Name</th>
+            <th>Standard Pravara (3-sage)</th>
+            <th>Sub-gotras</th>
+            <th>Communities Bearing This Gotra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Angiras</strong></td>
+            <td>Angirasa</td>
+            <td>Angirasa, Ambarisha, Yuvanashva</td>
+            <td>Bharadvaja, Gautama, Shaunaka</td>
+            <td>Pan-India; base for Bharadvaja and Gautama gotras</td>
+          </tr>
+          <tr>
+            <td><strong>Bharadvaja</strong></td>
+            <td>Bharadvaja</td>
+            <td>Angirasa, Bharhaspatya, Bharadvaja</td>
+            <td>Garga, Kapishthalya</td>
+            <td>Kanyakubja, Maithil, Gauda, Iyer, Chitpavan, Deshastha, Namboodiri</td>
+          </tr>
+          <tr>
+            <td><strong>Vishvamitra</strong></td>
+            <td>Kaushika</td>
+            <td>Vishvamitra, Aghamarshana, Kaushika</td>
+            <td>Devala, Lohita</td>
+            <td>Kanyakubja, Saraswat, Gautam Rajputs</td>
+          </tr>
+          <tr>
+            <td><strong>Gautama</strong></td>
+            <td>Gautama</td>
+            <td>Angirasa, Ayasya, Gautama</td>
+            <td>Sharadvan, Nodhas</td>
+            <td>Kanyakubja, Maithil, Bhumihar; Gautam Rajputs (Kshatriya)</td>
+          </tr>
+          <tr>
+            <td><strong>Kashyapa</strong></td>
+            <td>Kashyapa</td>
+            <td>Kashyapa, Avatsara, Naidhruva</td>
+            <td>Rebha, Sandilya</td>
+            <td>Saraswat (GSB, Kashmiri), Namboodiri, Havyaka, Utkala, Tamil Brahmins</td>
+          </tr>
+          <tr>
+            <td><strong>Vasishtha</strong></td>
+            <td>Vasishtha</td>
+            <td>Vasishtha, Shakti, Parasara</td>
+            <td>Upamanyu, Kundinya</td>
+            <td>Pan-India; especially dominant in northern and southern groups</td>
+          </tr>
+          <tr>
+            <td><strong>Atri</strong></td>
+            <td>Atri</td>
+            <td>Atri, Archananasa, Syavasva</td>
+            <td>Mudgala, Shyavaasva</td>
+            <td>Saraswat, Deshastha, Tamil Brahmins, Havyaka</td>
+          </tr>
+          <tr>
+            <td><strong>Agastya</strong></td>
+            <td>Agastya</td>
+            <td>Agastya, Mahendra, Mahidhara</td>
+            <td>—</td>
+            <td>Tamil Brahmins (especially Iyers); special reverence in South India</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §9  TIMELINE
+══════════════════════════════════════════════ -->
+<section class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container">
+    <p class="section-label">Chapter IX</p>
+    <h2 class="section-title">Timeline of <em>Brahmin Evolution in Bharat</em></h2>
+    <div class="divider"></div>
+
+    <div class="timeline" style="margin-left:0;padding-left:3rem;">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 1500–1000 BCE</div>
+          <div class="tl-title">Vedic Rishi Era — Foundation of Gotra System</div>
+          <div class="tl-body">The Rigveda is composed by Rishi families (Angiras, Bharadvaja, Vasishtha, Vishvamitra, Atri, Gautama, Kashyapa). The "family books" (Mandalas 2–7) are each associated with a specific Rishi clan — this is the earliest record of Brahminic lineage. The Gotra system begins as a practical identifier of which Vedic family a person belongs to.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 900–600 BCE</div>
+          <div class="tl-title">Brahmana & Upanishad Period — Brahminic Consolidation</div>
+          <div class="tl-body">Vast Brahmin commentary literature (Brahmanas, Aranyakas) elaborates ritual. The early Upanishads (Brihadaranyaka, Chandogya) are composed in Mithila and the Kuru-Panchala region, documenting Brahmin intellectual flourishing. The Grihya Sutras begin codifying Gotra-Pravara rules. The Taittiriya tradition spreads deep into South India via migration.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 300 BCE – 300 CE</div>
+          <div class="tl-title">Dharmashastra Era — Social Codification</div>
+          <div class="tl-body">Manusmriti, Yajnavalkya Smriti, and related texts systematize Varna-Jati rules. The Brahminic priesthood becomes institutionalized. Royal patronage (Gupta-era beginnings, Satavahanas, Kushanas) creates stable Brahmin temple and court communities. Major Brahmin migrations begin with royal invitations — south Indian Brahmin communities receive land grants from Pallava and Satavahana rulers.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 300–700 CE</div>
+          <div class="tl-title">Gupta Age & Post-Gupta — Golden Era of Brahmin Scholarship</div>
+          <div class="tl-body">The Gupta Empire becomes the high-water mark of Brahminic culture. Nalanda and Vikramashila flourish. Adi Shankaracharya (788–820 CE, early part of next era) consolidates the five Peetha system. The Pancha Dravida framework begins crystallizing. The Chola, Pallava, and Chalukya dynasties make massive Brahmin land grants documented in copper plate inscriptions.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 700–1200 CE</div>
+          <div class="tl-title">Medieval Period — Crystallization of Regional Identities</div>
+          <div class="tl-body">The Pancha Gauda / Pancha Dravida classification is formalized (referenced in Brahmanda Purana tradition, c. 8th–10th c.). The Adisura migration legend of Bengal. Kanyakubja migration patterns across north India. The Panjika system of Mithila begins. Tamil Bhakti movement and Divya Prabandham tradition shape Iyengar identity. Ramanuja (1017–1137 CE) founds Vishishtadvaita Vaishnava tradition among Tamil Brahmins.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 1200–1700 CE</div>
+          <div class="tl-title">Sultanate & Early Mughal — Brahmin Resilience & New Roles</div>
+          <div class="tl-body">Despite political disruption, Brahminic institutions survive through temple networks and Mutt (monastic) systems. The Navya-Nyaya school of Navadvipa (Bengal) and Mithila reaches its peak (Gangesa, Raghunatha Shiromani). Madhvacharya (1238–1317 CE) founds Dvaita Vedanta — Shivalli Brahmins of Karnataka become the custodians. The Vijayanagara Empire provides massive patronage to Karnataka and Tamil Brahmins. Bhumihar and Tyagi communities consolidate their Brahmin-warrior identities under Mughal administration.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">c. 1700–1900 CE</div>
+          <div class="tl-title">Maratha Era & Colonial Period — Brahmin Political Power & Classification</div>
+          <div class="tl-body">Chitpavan Brahmins become the Peshwas of the Maratha Empire — the most remarkable example of Brahminic political power in post-medieval India. Colonial census operations (1871, 1881, 1891, 1901) ossify community boundaries and create the modern caste census we know today. Colonial ethnographies document and simultaneously distort Brahmin community identities. The Brahmo Samaj, Arya Samaj, and reform movements challenge traditional Brahminic authority.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-era">Post-1947 to Present</div>
+          <div class="tl-title">Modern Period — Continuity, Transformation & Global Diaspora</div>
+          <div class="tl-body">Post-independence reservations (OBC/SC/ST policies) transform the social landscape for Brahmin communities. Mass migration to cities and abroad creates diaspora communities that maintain Gotra-Pravara traditions digitally and through diaspora cultural organizations. Genetic studies (2009–present) begin mapping the population genetics of Brahmin communities. Vedic schools (Gurukuls) see partial revival. The Atiratram soma yaga (2011, Kerala) demonstrates continuity of ancient Namboodiri Vedic traditions. Modern digital Panjika systems preserve Maithil genealogies online.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §10  FAQ
+══════════════════════════════════════════════ -->
+<section id="faq" class="section-block">
+  <div class="container">
+    <p class="section-label">Chapter X</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is the Gotra system purely religious, or does it have a real biological basis?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          The Gotra system is primarily a <em>socio-ritual</em> institution — its purpose is to define exogamy rules (avoiding same-Gotra marriage) and to establish identity in ritual contexts. However, genetic studies do suggest partial biological correlation: communities maintaining strict Gotra-based exogamy for many generations show measurable Y-chromosome clustering by Gotra within endogamous Brahmin populations. The 2009 study by Thanseem et al. on South Indian Brahmin populations found Y-chromosome diversity patterns broadly consistent with patrilineal descent claims. However, this is population-level correlation, not a one-to-one genetic genealogy going back to a specific Rishi individual.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can a person change their Gotra, and has this happened historically?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          Traditionally, Gotra is considered immutable and inherited only patrilineally. However, history records several mechanisms of Gotra "change" or assignment: (1) <strong>Adoption</strong> — an adopted son takes the adoptive father's Gotra per Dharmashastra rules (Manusmriti 9.142). (2) <strong>Vishvamitra's case</strong> — a Kshatriya achieved Brahmarishi status through tapas, effectively creating a new Brahmin Gotra from a royal line. (3) <strong>Community-level adoption</strong> — many communities historically adopted prestigious Gotra names to improve social status. This is sociologically documented but scripturally irregular. (4) <strong>Granting of Gotra</strong> — in some traditions, a guru could grant his Gotra to initiated disciples.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What exactly is the difference between Pancha Gauda and Pancha Dravida? Are all Brahmins covered?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          The Pancha Gauda / Pancha Dravida is a <em>medieval scholastic framework</em> dividing Brahmins primarily by geography (north/south of Vindhyas). It covers the most prominent groups of medieval India but does NOT cover all Brahmin communities. Notable communities not fitting neatly into this framework include: Namboodiri Brahmins (technically Dravida but with highly distinctive traditions), Konkani Brahmins in detail, Saraswat communities in multiple forms, Vaidiki Brahmins of Andhra, North-Eastern Brahmin communities, and numerous lesser-known regional groups. The framework is best understood as a high-level medieval taxonomy, not a comprehensive or exhaustive classification.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Are Bhumihars really Brahmins, or is this a disputed claim?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          This is one of the most debated questions in Bihar social history. The Bhumihars themselves unequivocally claim and maintain Brahmin identity — they wear the sacred thread, maintain Gotra-Pravara traditions, perform upanayana, and recite Vedic texts. The main point of contention historically was their refusal to accept priestly fees (dakshina) — which traditional Brahmin communities associated with priestly function argued disqualified them from being "functional Brahmins." However, Dharmashastra itself does not require priestly practice as a condition of Brahmin birth-status. Colonial records, including the Bengal District Gazetteers and Risley's census work, generally classified them as Brahmins. Modern sociologists like M.N. Srinivas analyzed them as a "dominant caste" with Brahmin identity. The scholarly consensus today leans towards accepting their Brahmin identity claim, while acknowledging their martial-agricultural function as a historical Brahma-Kshatra adaptation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How did Brahmin communities end up in places as different as Kerala and Kashmir?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          Brahmin migration is one of the most fascinating and extensively documented phenomena in Indian social history. The major routes and mechanisms were: (1) <strong>Royal invitations</strong> — Medieval kings regularly invited Brahmin scholars and priests from prestigious centres (Kanauj, Mithila, Kashi) to perform yagas, establish temples, and legitimize their rule. The Adisura legend in Bengal, the Kerala tradition of Brahmin settlement under Kerala kings, and Tamil Brahmin communities tracing migration to northern origins — all follow this pattern. (2) <strong>Temple establishment</strong> — As new temples were built across India, Brahmin families were settled near them as hereditary priests. (3) <strong>Trade route-linked settlement</strong> — Saraswat Brahmins followed ancient trade routes from the Saraswati basin westward to Sindh and east to Bengal. (4) <strong>Refugee movement</strong> — The destruction of Buddhist/Hindu institutions in north India by Turkic invasions (12th–13th c.) drove many learned Brahmin families southward and eastward.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is the significance of the Saptarishis in modern Brahmin practice?
+          <span>+</span>
+        </div>
+        <div class="faq-a">
+          The Saptarishis are invoked in virtually every significant Brahminic ritual. In the daily Sandhyavandanam (dawn/dusk prayer), the rishi of each Vedic mantra is recited. In marriage ceremonies, the groom recites his Gotra and Pravara — tracing the chain back to a Saptarishi. In Shraddha (ancestral rites), the Saptarishi ancestors are honored alongside more immediate ancestors. The ritual recitation format is: "Asmat Gotre Janmanah, [Gotra name]-Gotrasyah, [Pravara 1, Pravara 2, Pravara 3]-Pravarasya" — "Of my birth Gotra, of the [name] Gotra, of the [three-sage] Pravara." This keeps the Saptarishi connection ritually alive across thousands of years of social change.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  §11  RARE FACTS
+══════════════════════════════════════════════ -->
+<section id="rare" class="section-block" style="background:rgba(18,12,7,0.4);">
+  <div class="container">
+    <p class="section-label">Chapter XI</p>
+    <h2 class="section-title">Rare & Lesser-Known Facts</h2>
+    <div class="divider"></div>
+    <p class="section-intro">Facts that most general introductions to caste history omit — drawing from specialist scholarship, inscriptions, and oral tradition studies.</p>
+
+    <div class="rare-grid">
+      <div class="rare-card">
+        <div class="rare-num">01</div>
+        <div class="rare-title">The "Lost" Saraswata Shakha</div>
+        <div class="rare-body">There was a distinct Vedic Shakha called the <em>Saraswata Shakha</em> of the Samaveda, reportedly preserved by communities along the Saraswati river. As the river dried, this Shakha became extinct — possibly the first major textual loss in Indian civilization. Only fragments are referenced in Anukramanis (Vedic indices).</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">02</div>
+        <div class="rare-title">Maithil Panjika: 1000 Years of Genealogy</div>
+        <div class="rare-body">The Maithil Brahmin Panjika system maintains uninterrupted written genealogies reportedly dating to the 11th–12th centuries CE. Some families can trace documented lineage to 30+ generations. These are now being digitized and are among the most extraordinary genealogical records anywhere in the world — comparable to Icelandic saga genealogies or Imperial Chinese clan records.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">03</div>
+        <div class="rare-title">The GSB Fish Exception: A Rishi's Dispensation</div>
+        <div class="rare-body">The Goud Saraswat Brahmins of Goa are among the very few Brahmin communities that traditionally eat fish. Their justification comes from the <em>Saraswata Purana</em>, which narrates that Rishi Saraswata — born to the river goddess Saraswati — survived the 12-year drought by eating the fish of the sacred river, maintaining Vedic learning while others perished. His descendants were therefore granted dispensation. Whether this is ancient tradition or medieval rationalization is debated.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">04</div>
+        <div class="rare-title">Adi Shankaracharya Was a Namboodiri</div>
+        <div class="rare-body">The most influential philosopher-reformer of Hinduism (c. 788–820 CE) was born into the Namboodiri Brahmin community of Kerala — perhaps the most conservative Vedic Brahmin community in India. His revolutionary non-dualist philosophy (Advaita Vedanta), which he spread across all of India in his brief 32-year life, emerged from this deeply orthodox background. He established four Peethas at the four corners of India — ensuring north-south Brahminic intellectual connection.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">05</div>
+        <div class="rare-title">The Havyaka Dialect: Medieval Kannada Frozen in Time</div>
+        <div class="rare-body">The Havigannada (Havyaka Kannada) dialect spoken by Havyaka Brahmins of Karnataka's Western Ghats preserves phonological and grammatical features of medieval (10th–12th century) Kannada that have been lost in standard modern Kannada. Linguists consider this dialect a living museum of early Kannada, similar to how Icelandic preserves Old Norse.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">06</div>
+        <div class="rare-title">Vishvamitra Created a Parallel Universe</div>
+        <div class="rare-body">According to the Ramayana (Valmiki, Bala Kanda), when King Trishanku wanted to ascend to heaven in his mortal body and was rejected by Vasishtha and then the gods, Brahmarishi Vishvamitra began creating an entirely new universe — new stars, new sky, even a new Indra. The terrified gods compromised, agreeing to let Trishanku remain suspended in a parallel heaven. This is considered the most dramatic demonstration of Brahminic creative-tapas power in any Sanskrit text.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">07</div>
+        <div class="rare-title">The Navya-Nyaya Revolution from Mithila</div>
+        <div class="rare-body">The "New Logic" school (Navya-Nyaya) founded by Gangesa Upadhyaya in 13th-century Mithila is considered by logicians to be one of the most sophisticated logical systems ever developed — comparable in certain respects to 20th-century symbolic logic. It was exclusively developed and transmitted by Maithil Brahmin scholars, making Mithila the world centre of formal logic for nearly 400 years. Philosophers at Harvard and Oxford began engaging seriously with Navya-Nyaya only in the late 20th century.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">08</div>
+        <div class="rare-title">The Thenkalai-Vadakalai Split: 800 Years of Unresolved Debate</div>
+        <div class="rare-body">The Iyengar community's split into Thenkalai (southern school) and Vadakalai (northern school) hinges on a theological question that remains unresolved after 800 years: does salvation come from God's grace alone (like a mother-cat carrying her kitten — passive) or does it require a tiny element of human effort (like a baby monkey clinging to its mother — active)? The "cat vs. monkey" debate has produced centuries of Sanskrit and Tamil philosophical literature and shaped two distinct temple liturgical traditions.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">09</div>
+        <div class="rare-title">Copper Plates as Brahmin Genealogical Records</div>
+        <div class="rare-body">Medieval South Indian copper plate land grants (tamra-shasan) are arguably the most historically reliable Brahmin genealogical records available. They routinely list the Gotra, Pravara, Vedic Shakha, and family lineage of Brahmin grant recipients — verified by the issuing royal authority. The Archaeological Survey of India's Corpus Inscriptionum Indicarum contains thousands of such records. These allow historians to cross-reference community tradition against state-certified genealogical data from 600–1300 CE.</div>
+      </div>
+
+      <div class="rare-card">
+        <div class="rare-num">10</div>
+        <div class="rare-title">Agastya: The Rishi Who Conquered the South</div>
+        <div class="rare-body">Rishi Agastya is unique among the great Rishis in having a documented role as a cultural ambassador between north and south India. The Ramayana and Puranas describe him crossing the Vindhyas (when the mountains were blocking the sky) and settling in the Deccan — a mythological encoding of the southward spread of Vedic culture. His gotra appears in Tamil Brahmin communities, and he is revered as the father of classical Tamil grammar (<em>Agattiyam</em>), making him simultaneously a Vedic Sanskrit Rishi and the patron sage of the Tamil language tradition.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  FINAL SUMMARY
+══════════════════════════════════════════════ -->
+<section class="section-block">
+  <div class="container">
+    <p class="section-label">Encyclopedic Summary</p>
+    <h2 class="section-title">The Grand Synthesis — <em>Rishivanshi Civilization</em></h2>
+    <div class="divider"></div>
+
+    <div class="summary-box">
+      <h3>What Makes the Rishivanshi Tradition Unique in World History</h3>
+      <p>No other civilization has maintained a genealogical system of such antiquity, scope, and sociological consequence as the Gotra-Pravara system of Hindu India. From the Rigvedic Rishi families composing hymns around campfires in the Punjab plain (c. 1500 BCE) to a Maithil Brahmin in 21st-century New York declaring "Bharadvaja Gotra, Angirasa-Bharhaspatya-Bharadvaja Pravara" before his daughter's wedding — a chain of identity stretching 3,500 years remains unbroken.</p>
+
+      <h3 style="margin-top:1.5rem;">The Brahmin Diversity Paradox</h3>
+      <p>What the evidence reveals is a profound diversity within unity. Brahmin communities differ dramatically in language (Tamil, Malayalam, Kannada, Marathi, Bengali, Maithili, Hindi, Kashmiri, Konkani, Odia), cuisine, ritual practice, philosophical school, marriage custom, and occupation — and yet are united by the shared apparatus of Gotra, Pravara, sacred thread, and Vedic Shakha affiliation. This is not monolithic "Brahminism" but a civilizational federalism of knowledge traditions.</p>
+
+      <h3 style="margin-top:1.5rem;">The Historical Complexity</h3>
+      <p>The honest scholar must acknowledge: (1) Not all Rishi-descent claims are historically verifiable; many are community tradition with deep cultural significance but no external corroboration. (2) The Varna system as a birth-based hierarchy has caused real social suffering, documented extensively in Indian history — this is not separate from the intellectual and cultural achievements of Brahminic civilization. (3) The colonial reorganization of caste has permanently altered the landscape, making it impossible to perfectly reconstruct pre-colonial social dynamics. (4) Modern Brahmin communities are as diverse in their social positions as any other group — the category "Brahmin" today covers Oxford professors and village priests, IIT graduates and subsistence farmers.</p>
+
+      <h3 style="margin-top:1.5rem;">The Living Legacy</h3>
+      <p>Despite these complexities, the Rishivanshi traditions continue to live through: unbroken Vedic recitation in Kerala (Namboodiri soma yagas), the Maithil Panjika genealogical system, the Tamil Brahmin music tradition that produced Thyagaraja and M.S. Subbulakshmi, the philosophical schools that produced Shankaracharya, Ramanuja, and Madhva, and the millions of families worldwide who begin their children's education by invoking the name of a Rishi who composed a hymn at the dawn of civilization.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:4rem;">
+      <div class="hero-sanskrit" style="font-size:2rem;margin-bottom:0.5rem;">ॐ तत् सत्</div>
+      <p style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;color:var(--muted);">AUM — THAT IS TRUTH</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ऋषिवंशी</div>
+  <div class="footer-divider"></div>
+  <p class="footer-note">
+    This knowledge portal is an academic and educational reference, synthesizing scriptural, historical, epigraphic, and sociological sources. Claims marked with ⚑ represent disputed interpretations. Community traditions are presented as cultural knowledge, distinct from verified historical evidence. Sources span the Rigveda to modern genetic studies and should be independently consulted for primary research.
+  </p>
+  <div class="footer-divider"></div>
+  <p style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--muted);margin-top:1rem;">RISHIVANSHI CIVILIZATIONAL ENCYCLOPEDIA · A PORTAL TO THE SAGE-LINEAGES OF BHARAT</p>
+</footer>
+
+<script>
+// Accordion toggle
+function toggleAcc(header) {
+  const item = header.parentElement;
+  const wasOpen = item.classList.contains('open');
+  // Close all in same accordion parent
+  const parent = item.parentElement;
+  parent.querySelectorAll('.acc-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// FAQ toggle
+function toggleFaq(qEl) {
+  const item = qEl.parentElement;
+  item.classList.toggle('open');
+  qEl.querySelector('span').textContent = item.classList.contains('open') ? '−' : '+';
+}
+
+// Scroll-triggered fade
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

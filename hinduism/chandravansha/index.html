@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandravansha — The Complete Lunar Dynasty Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+:root {
+  --gold: #c9932a;
+  --gold-light: #e8b84b;
+  --gold-pale: #f5dfa0;
+  --ink: #1a0e05;
+  --parchment: #fdf6e3;
+  --parchment-dark: #f0e6c8;
+  --vermillion: #8b1a1a;
+  --moon-blue: #1a2a4a;
+  --moon-silver: #b8c8d8;
+  --copper: #7a4a1a;
+  --lotus: #8b3a5a;
+  --sage: #2a4a2a;
+  --cream: #faf4e8;
+  --shadow: rgba(26,14,5,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: linear-gradient(160deg, #0a0518 0%, #1a0e28 40%, #0e1828 70%, #05100a 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,147,42,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.moon-glow {
+  width: 180px; height: 180px;
+  background: radial-gradient(circle at 40% 40%, #fff8e8 0%, #e8d090 40%, #c9932a 70%, rgba(201,147,42,0.3) 100%);
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  box-shadow: 0 0 60px 30px rgba(201,147,42,0.3), 0 0 120px 60px rgba(201,147,42,0.1);
+  animation: moonPulse 4s ease-in-out infinite;
+  position: relative;
+}
+
+.moon-glow::after {
+  content: '☽';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  color: rgba(26,14,5,0.25);
+  line-height: 1;
+}
+
+@keyframes moonPulse {
+  0%, 100% { box-shadow: 0 0 60px 30px rgba(201,147,42,0.3), 0 0 120px 60px rgba(201,147,42,0.1); }
+  50% { box-shadow: 0 0 80px 40px rgba(201,147,42,0.45), 0 0 160px 80px rgba(201,147,42,0.15); }
+}
+
+.hero-devanagari {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 2.2rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--gold-light);
+  text-shadow: 0 0 40px rgba(201,147,42,0.5), 0 2px 4px rgba(0,0,0,0.8);
+  letter-spacing: 6px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--moon-silver);
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.hero-desc {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: rgba(232,184,75,0.7);
+  max-width: 700px;
+  line-height: 1.9;
+  font-style: italic;
+}
+
+.star-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ============ NAV ============ */
+.toc-nav {
+  background: linear-gradient(135deg, #0e0a1a 0%, #12100a 100%);
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding: 30px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.toc-nav h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.toc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.toc-link {
+  color: var(--moon-silver);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.toc-link:hover { color: var(--gold-light); }
+
+/* ============ MAIN CONTENT ============ */
+.content-wrap {
+  background: var(--parchment);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  padding: 70px 60px;
+  border-bottom: 1px solid var(--parchment-dark);
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background: var(--cream);
+}
+
+.section-number {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--vermillion);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-top: 12px;
+}
+
+.section-devanagari {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.1rem;
+  color: var(--copper);
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--vermillion);
+  margin: 40px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--parchment-dark);
+}
+
+h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  color: var(--copper);
+  margin: 30px 0 12px;
+}
+
+h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--moon-blue);
+  margin: 20px 0 8px;
+}
+
+p { margin-bottom: 16px; }
+
+strong { color: var(--vermillion); font-weight: 600; }
+
+em { color: var(--copper); }
+
+/* ============ SPECIAL BOXES ============ */
+.scripture-box {
+  background: linear-gradient(135deg, #1a0e28 0%, #0e1828 100%);
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  color: var(--gold-pale);
+}
+
+.scripture-box .source {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.scripture-box p {
+  font-style: italic;
+  font-size: 0.97rem;
+  line-height: 1.9;
+  color: var(--gold-pale);
+  margin: 0;
+}
+
+.fact-box {
+  background: linear-gradient(135deg, #1a1a0e 0%, #2a180a 100%);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  color: var(--gold-pale);
+}
+
+.fact-box h4 {
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.info-card h4 {
+  color: var(--vermillion);
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* ============ LINEAGE TREES ============ */
+.lineage-container {
+  overflow-x: auto;
+  margin: 30px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #fdf9f0 0%, #f0e8d0 100%);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  box-shadow: inset 0 2px 8px rgba(201,147,42,0.1);
+}
+
+.lineage-tree {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  min-width: 800px;
+}
+
+.tree-node {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.node-box {
+  background: linear-gradient(135deg, var(--moon-blue) 0%, #0a1520 100%);
+  color: var(--gold-light);
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  font-size: 0.78rem;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  min-width: 80px;
+}
+
+.node-box.divine { background: linear-gradient(135deg, #1a0028 0%, #2a0050 100%); border-color: #9b59b6; }
+.node-box.sage { background: linear-gradient(135deg, #0a1a0a 0%, #1a3a1a 100%); border-color: #27ae60; }
+.node-box.king { background: linear-gradient(135deg, #1a0a00 0%, #3a1a00 100%); border-color: var(--gold); }
+.node-box.avatar { background: linear-gradient(135deg, #1a0010 0%, #3a0020 100%); border-color: #e74c3c; }
+.node-box.queen { background: linear-gradient(135deg, #2a0a1a 0%, #4a1a2a 100%); border-color: #e91e8c; }
+
+.node-line {
+  width: 2px;
+  height: 25px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.node-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  gap: 0;
+}
+
+.h-line {
+  position: absolute;
+  top: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+/* ============ ASCII TREE ============ */
+.ascii-tree {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  background: #0a0518;
+  color: var(--gold-light);
+  padding: 30px;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 24px 0;
+  border: 1px solid rgba(201,147,42,0.3);
+}
+
+/* ============ TABLES ============ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.88rem;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.data-table thead tr {
+  background: linear-gradient(135deg, var(--moon-blue) 0%, #0a1520 100%);
+  color: var(--gold-light);
+}
+
+.data-table th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+}
+
+.data-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--parchment-dark);
+  vertical-align: top;
+}
+
+.data-table tbody tr:nth-child(even) { background: rgba(201,147,42,0.04); }
+.data-table tbody tr:hover { background: rgba(201,147,42,0.08); }
+
+/* ============ KING PROFILE ============ */
+.king-profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  border-left: 5px solid var(--gold);
+  border-radius: 4px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.king-emblem {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--moon-blue), #0a1520);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.king-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.3rem;
+  color: var(--vermillion);
+  margin-bottom: 4px;
+}
+
+.king-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1rem;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+
+.king-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background: var(--parchment-dark);
+  color: var(--copper);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(122,74,26,0.3);
+}
+
+.tag.dynasty { background: rgba(26,42,74,0.1); color: var(--moon-blue); border-color: var(--moon-blue); }
+.tag.era { background: rgba(139,26,26,0.08); color: var(--vermillion); border-color: var(--vermillion); }
+
+.king-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.detail-item { }
+.detail-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  color: var(--copper);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+/* ============ TIMELINE ============ */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  margin: 30px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--gold), rgba(201,147,42,0.2));
+}
+
+.timeline-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  padding-left: 70px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 18px;
+  top: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--copper));
+  border: 2px solid white;
+  box-shadow: 0 0 8px rgba(201,147,42,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: white;
+  font-family: 'Cinzel', serif;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-era {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--vermillion);
+  margin-bottom: 6px;
+}
+
+/* ============ DYNASTY BRANCHES ============ */
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.branch-card {
+  background: white;
+  border: 1px solid var(--parchment-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.branch-header {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.branch-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.branch-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: white;
+}
+
+.branch-subtitle {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+.branch-body { padding: 16px 20px; font-size: 0.88rem; line-height: 1.7; }
+
+.branch-yadu { background: linear-gradient(135deg, #1a0028, #2a0050); }
+.branch-puru { background: linear-gradient(135deg, #001a28, #003050); }
+.branch-kuru { background: linear-gradient(135deg, #1a0a00, #3a1800); }
+.branch-bharata { background: linear-gradient(135deg, #001a00, #003000); }
+.branch-haiha { background: linear-gradient(135deg, #1a1a00, #3a3000); }
+.branch-krivi { background: linear-gradient(135deg, #1a000a, #3a0018); }
+
+/* ============ COMPARISON TABLE ============ */
+.compare-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+/* ============ HIGHLIGHT BLOCKS ============ */
+.highlight-gold {
+  background: linear-gradient(135deg, rgba(201,147,42,0.12), rgba(201,147,42,0.05));
+  border: 1px solid rgba(201,147,42,0.3);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.highlight-blue {
+  background: linear-gradient(135deg, rgba(26,42,74,0.08), rgba(26,42,74,0.03));
+  border: 1px solid rgba(26,42,74,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.highlight-red {
+  background: linear-gradient(135deg, rgba(139,26,26,0.08), rgba(139,26,26,0.03));
+  border: 1px solid rgba(139,26,26,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  background: linear-gradient(135deg, #0a0518, #0e1828);
+  color: var(--moon-silver);
+  text-align: center;
+  padding: 50px 40px;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.88rem;
+  line-height: 2;
+}
+
+.site-footer .gold { color: var(--gold); }
+.site-footer h3 { font-family: 'Cinzel Decorative', serif; color: var(--gold); margin-bottom: 16px; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .section { padding: 40px 24px; }
+  .king-profile { grid-template-columns: 1fr; }
+  .toc-nav { padding: 20px 24px; }
+  .hero { padding: 40px 20px; }
+}
+
+/* ============ DIVIDERS ============ */
+.ornament-divider {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.4rem;
+  letter-spacing: 12px;
+  opacity: 0.6;
+  margin: 30px 0;
+}
+
+/* Print */
+@media print {
+  .toc-nav { position: static; }
+  .hero { min-height: auto; padding: 40px; }
+}
+
+/* Inline Sanskrit */
+.skt {
+  font-family: 'Noto Serif Devanagari', serif;
+  color: var(--copper);
+  font-size: 0.95em;
+}
+
+.latin { font-style: italic; color: var(--copper); }
+
+ul, ol { margin: 10px 0 16px 24px; }
+li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<!-- STAR FIELD -->
+<div class="hero">
+  <div class="star-field" id="stars"></div>
+  <div class="moon-glow"></div>
+  <div class="hero-devanagari">चन्द्रवंश</div>
+  <h1 class="hero-title">CHANDRAVANSHA</h1>
+  <p class="hero-subtitle">The Complete Lunar Dynasty Encyclopedia</p>
+  <p class="hero-desc">
+    From the cosmic birth of Chandra (Moon God) through Brahma's lineage, across twenty-eight generations of kings, sages, and avatars — to the final descendants recorded in the Puranas at the dawn of Kali Yuga. A comprehensive scriptural atlas of the greatest dynasty in Hindu Dharma.
+  </p>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="toc-nav">
+  <h3>Navigate the Dynasty</h3>
+  <div class="toc-grid">
+    <a href="#intro" class="toc-link">I. Introduction</a>
+    <a href="#origins" class="toc-link">II. Cosmic Origins</a>
+    <a href="#origin-lineage" class="toc-link">III. Origin Lineage</a>
+    <a href="#branches" class="toc-link">IV. Major Branches</a>
+    <a href="#pururava" class="toc-link">V. Pururava & Urvashi</a>
+    <a href="#nahusha" class="toc-link">VI. Nahusha</a>
+    <a href="#yayati" class="toc-link">VII. Yayati</a>
+    <a href="#yadu" class="toc-link">VIII. Yadu Lineage</a>
+    <a href="#puru" class="toc-link">IX. Puru Lineage</a>
+    <a href="#kuru" class="toc-link">X. Kuru Dynasty</a>
+    <a href="#bharata" class="toc-link">XI. Bharata</a>
+    <a href="#krishna" class="toc-link">XII. Krishna's Dynasty</a>
+    <a href="#pandava-kaurava" class="toc-link">XIII. Pandavas & Kauravas</a>
+    <a href="#lesser" class="toc-link">XIV. Lesser Branches</a>
+    <a href="#rare" class="toc-link">XV. Rare & Hidden Facts</a>
+    <a href="#comparison" class="toc-link">XVI. Scriptural Comparisons</a>
+    <a href="#charts" class="toc-link">XVII. Dynasty Charts</a>
+    <a href="#kali" class="toc-link">XVIII. Final Descendants</a>
+    <a href="#summary" class="toc-link">XIX. Master Summary</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrap">
+
+<!-- ====================================================
+     SECTION I — INTRODUCTION
+     ==================================================== -->
+<section class="section" id="intro">
+  <span class="section-number">SECTION I</span>
+  <h1 class="section-title">Introduction to Chandravansha</h1>
+  <div class="section-devanagari">चन्द्रवंश का परिचय</div>
+
+  <p>The <strong>Chandravansha</strong> (<span class="skt">चन्द्रवंश</span>), or the Lunar Dynasty, stands as one of the two great royal lineages (<em>vamshas</em>) of ancient India in Hindu Dharma — the other being the <strong>Suryavansha</strong> (Solar Dynasty). Its roots stretch beyond time itself, beginning not with a human king but with the <em>Paramjyoti</em> (Supreme Light) manifesting through the cosmic chain of Brahma → Atri → Soma (Chandra). This dynasty gave rise to the most complex, philosophically rich, and politically turbulent genealogy ever recorded in Hindu scripture.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>What is Chandravansha?</h4>
+      <p>Chandravansha literally means "the lineage (vansha) of the Moon (Chandra)." It refers to the clan of kings, sages, and divine beings who traced their origin to the Moon God Soma/Chandra, born from the mind of Brahma through Sage Atri. The dynasty's founder on earth is generally considered to be <strong>King Pururava</strong>, son of Budha (Mercury) and Ilā.</p>
+    </div>
+    <div class="info-card">
+      <h4>Scale & Importance</h4>
+      <p>This single dynasty produced: the <strong>Pandavas and Kauravas</strong> (Mahabharata's protagonists), <strong>Shri Krishna</strong> and the entire Yadava clan, the <strong>108 Kauravas</strong>, the great king <strong>Bharata</strong> who gave India its name (<em>Bharatavarsha</em>), the philosopher-king <strong>Yayati</strong>, and hundreds of other figures spread across 28+ generations.</p>
+    </div>
+    <div class="info-card">
+      <h4>Primary Scriptural Sources</h4>
+      <p>Mahabharata (Adi Parva, Udyoga Parva, Shanti Parva), Bhagavata Purana (Skandha 9), Vishnu Purana (Book IV), Harivamsha, Matsya Purana, Vayu Purana, Brahma Purana, Agni Purana — all provide detailed and sometimes diverging accounts of this lineage.</p>
+    </div>
+    <div class="info-card">
+      <h4>Geographic Extent</h4>
+      <p>The dynasty ruled across the entire Indian subcontinent — from Prayaga (Allahabad) and Hastinapura in the north, to Mathura and Dwaraka in the west, to Magadha in the east, and territories described as far as the Himalayas and the southern seas.</p>
+    </div>
+  </div>
+
+  <h2>Chandravansha vs. Suryavansha: The Two Great Dynasties</h2>
+
+  <div class="compare-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Chandravansha (Lunar)</th>
+          <th>Suryavansha (Solar)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Sanskrit Name</strong></td><td>चन्द्रवंश (Chandravansha)</td><td>सूर्यवंश (Suryavansha)</td></tr>
+        <tr><td><strong>Divine Origin</strong></td><td>Brahma → Atri → Chandra (Moon God)</td><td>Brahma → Marichi → Kashyapa → Surya (Sun God)</td></tr>
+        <tr><td><strong>Earthly Founder</strong></td><td>Pururava (son of Budha-Mercury)</td><td>Ikshvaku (son of Manu Vaivasvata)</td></tr>
+        <tr><td><strong>Symbol</strong></td><td>Crescent Moon, Silver, Night</td><td>Solar disc, Gold, Day</td></tr>
+        <tr><td><strong>Primary Capital</strong></td><td>Pratishthana → Hastinapura</td><td>Ayodhya</td></tr>
+        <tr><td><strong>Famous Avatars</strong></td><td>Krishna (Vishnu's 8th avatar)</td><td>Rama (Vishnu's 7th avatar)</td></tr>
+        <tr><td><strong>Nature</strong></td><td>Dynamic, conflicted, philosophically complex</td><td>Steady, righteous, dharmic continuity</td></tr>
+        <tr><td><strong>Great War</strong></td><td>Mahabharata War (Kurukshetra)</td><td>Lanka War (Ramayana)</td></tr>
+        <tr><td><strong>End in Kali Yuga</strong></td><td>Ends with Kshmaka / Uparichara branch</td><td>Ends with Sumitra (post-Rama)</td></tr>
+        <tr><td><strong>Characteristic</strong></td><td>Complex dharmic dilemmas, fratricidal wars</td><td>Upholding Dharma against external evil</td></tr>
+        <tr><td><strong>Key Scripture</strong></td><td>Mahabharata, Bhagavata Purana</td><td>Ramayana, Vishnu Purana</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Role of Chandravansha in Hindu Cosmology & Itihasa</h2>
+
+  <p>In the grand framework of Hindu Dharma, the Chandravansha represents the <em>Kshatriya</em> principle in its most evolved and tested form. While the Suryavansha embodies steadfast solar Dharma — clear, bright, and unwavering — the Chandravansha embodies the lunar principle: <strong>phases, cycles, tidal forces, and the interplay of light and shadow</strong>. This is why the Mahabharata, centered on the Chandravansha, explores the most nuanced questions of Dharma: When relatives fight, which side is right? Can Dharma be upheld through adharmic means? What is the duty of a warrior who faces his own kin?</p>
+
+  <div class="scripture-box">
+    <div class="source">MAHABHARATA — ADI PARVA 1.1 (Sauptikaparvan reference)</div>
+    <p>"Aho bata mahat papam kartum vyavasita vayam | Yad rajyasukhalobhena hantum svajanam udyatah ||" — "Alas, what a great sin we are about to commit, that out of greed for royal pleasure, we are prepared to kill our own kinsmen." (Arjuna's lament — reflecting the essential Chandravansha dilemma.)</p>
+  </div>
+
+  <p>The Chandravansha is also <strong>astronomically significant</strong>. The Moon in Vedic tradition governs <em>manas</em> (mind), <em>amrita</em> (nectar), and <em>time cycles</em>. The lunar calendar (<em>Chandra Maasa</em>) governs Hindu ritual life. The dynasty that descends from the Moon is therefore the dynasty most intimately connected to human consciousness, emotion, and the ebb and flow of Dharma itself.</p>
+</section>
+
+<!-- ====================================================
+     SECTION II — COSMIC ORIGINS
+     ==================================================== -->
+<section class="section" id="origins">
+  <span class="section-number">SECTION II</span>
+  <h1 class="section-title">Cosmic Origins of Chandravansha</h1>
+  <div class="section-devanagari">सोम की दिव्य उत्पत्ति</div>
+
+  <h2>The Birth of Chandra (Soma)</h2>
+
+  <p>The origin of Chandra (also called <strong>Soma</strong>, <span class="skt">सोम</span>) is described differently across Puranas, reflecting the multi-layered cosmological understanding of the Moon's divine function. Here are the primary accounts:</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">①</div>
+      <div class="timeline-content">
+        <div class="timeline-era">BRAHMA PURANA / VISHNU PURANA ACCOUNT</div>
+        <div class="timeline-title">Birth from the Eyes of Sage Atri</div>
+        <p><strong>Brahma</strong> asked his mind-born son <strong>Atri</strong> (one of the Saptarishi / Seven Sages) to propagate creation. Atri performed fierce austerities (<em>tapasya</em>) at a sacred mountain. The heat of his penance became so intense that it illuminated all ten directions. Brahma, pleased, appeared and asked him to cast off this light. From Atri's eyes — overflowing with concentrated divine power — emerged a radiant being who fell to earth. The ten protectors of the directions (<em>Dikpalas</em>) received this being in their joined palms. <strong>This being was Soma/Chandra</strong>, radiant as ten million moons. The Dikpalas carried him in a divine chariot drawn by white horses across the sky, and wherever the chariot went, the earth received divine nectar (<em>amrita</em>).</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">②</div>
+      <div class="timeline-content">
+        <div class="timeline-era">BHAGAVATA PURANA — SKANDHA 9, CHAPTER 14</div>
+        <div class="timeline-title">Soma — Lord of Medicinal Herbs and Brahmins</div>
+        <p>The Bhagavata states that Chandra was born from the mind of Brahma himself. He became the lord of <em>aushadhis</em> (medicinal plants), Brahmins, Pitrs (ancestors), and water. Brahma consecrated him as the king of Brahmins (<em>Brahmanas</em>), plants, and the stars. Chandra then performed a great Rajasuya Yajna and became exceedingly proud. His most famous act of arrogance: <strong>abducting Tara</strong>, wife of Brihaspati (Guru of the Devas).</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">③</div>
+      <div class="timeline-content">
+        <div class="timeline-era">HARIVAMSHA ACCOUNT</div>
+        <div class="timeline-title">Chandra as Son of Dharma</div>
+        <p>The Harivamsha (a supplement to the Mahabharata) offers a variant: Chandra is son of <strong>Dharma</strong> and one of the three Atri daughters. This connects the Moon God directly to cosmic Dharma principle, explaining why violations of Dharma in the Chandravansha have cosmological consequences.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">④</div>
+      <div class="timeline-content">
+        <div class="timeline-era">RIGVEDIC TRADITION</div>
+        <div class="timeline-title">Soma as Sacred Plant and Cosmic Principle</div>
+        <p>In the Rigveda (Mandala IX), <em>Soma</em> is both a sacred ritual plant pressed for its juice and a cosmic deity. The Soma hymns (over 100 in the 9th Mandala alone) describe Soma as the king of all plants, the source of immortality (<em>amrita</em>), and the friend of Indra. The transition from Soma-as-plant to Soma-as-Moon-God represents one of the most significant evolutions in Vedic cosmology.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Tarakamaya War — How Chandravansha Was Nearly Never Born</h2>
+
+  <p>The most dramatic event in the pre-history of the dynasty: <strong>Chandra abducted Tara</strong> (<span class="skt">तारा</span>), the beautiful wife of <strong>Brihaspati</strong> (Jupiter, Guru of the Devas). Despite repeated demands by the Devas and Brahma himself, Chandra refused to release her. This triggered the <strong>Tarakamaya War</strong> (<em>Tara war</em>) — a cosmic conflict between the Devas (supporting Brihaspati) and the Danavas/Asuras (supporting Chandra, hoping to weaken the Devas' Guru).</p>
+
+  <div class="highlight-red">
+    <p><strong>The War Party Alignments:</strong></p>
+    <ul>
+      <li><strong>For Brihaspati:</strong> Indra, Vishnu, all Devas, the Saptarishis, Brahma</li>
+      <li><strong>For Chandra:</strong> Shukracharya (Venus, Guru of Asuras), Danavas, Daityas, and many Asura clans</li>
+    </ul>
+    <p>The war shook the cosmos. Finally, Brahma intervened with divine authority and compelled Chandra to return Tara. But by then, Tara was pregnant. When forced to reveal the father, she confessed: <strong>the child was Chandra's</strong>. This child was <strong>Budha</strong> (Mercury, <span class="skt">बुध</span>) — the progenitor of the entire earthly Chandravansha.</p>
+  </div>
+
+  <div class="scripture-box">
+    <div class="source">BHAGAVATA PURANA 9.14.3–9</div>
+    <p>"Soma became the king of stars, plants, and Brahmins. After his Rajasuya, overcome with pride, he abducted Tara, Brihaspati's wife. Despite the plea of Devas and Brahma, he did not release her. A great war ensued. Finally Brahma commanded, and Soma relented. Tara gave birth to Budha, who became the founder of the Chandravansha."</p>
+  </div>
+
+  <h2>Chandra's Attributes and Astronomical Significance</h2>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>Names of Chandra</h4>
+      <ul>
+        <li><strong>Soma</strong> (<span class="skt">सोम</span>) — Sacred nectar-giver</li>
+        <li><strong>Indu</strong> (<span class="skt">इन्दु</span>) — Drop of bliss</li>
+        <li><strong>Shashin</strong> (<span class="skt">शशिन्</span>) — Bearer of the rabbit mark</li>
+        <li><strong>Nishapati</strong> — Lord of the night</li>
+        <li><strong>Kalanidhih</strong> — Treasury of the phases (Kalas)</li>
+        <li><strong>Mriganka</strong> — Deer-marked</li>
+        <li><strong>Chandrama</strong> — The moon planet</li>
+        <li><strong>Taradhipati</strong> — Lord of stars</li>
+        <li><strong>Oshadhinatha</strong> — Lord of medicinal herbs</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Chandra's Wives</h4>
+      <p>Chandra married the 27 daughters of <strong>Daksha Prajapati</strong> — these 27 wives are the 27 <em>Nakshatras</em> (lunar mansions). They are: Ashvini, Bharani, Krittika, Rohini, Mrigashira, Ardra, Punarvasu, Pushya, Ashlesha, Magha, Purva Phalguni, Uttara Phalguni, Hasta, Chitra, Swati, Vishakha, Anuradha, Jyeshtha, Mula, Purva Ashadha, Uttara Ashadha, Shravana, Dhanishtha, Shatabhisha, Purva Bhadrapada, Uttara Bhadrapada, Revati.</p>
+      <p><strong>Rohini</strong> was Chandra's favorite, causing jealousy among the others. When they complained to Daksha, he cursed Chandra with waning — giving us the lunar phases (waxing and waning fortnight).</p>
+    </div>
+    <div class="info-card">
+      <h4>Chandra in Jyotisha</h4>
+      <p>In Vedic astrology (<em>Jyotisha</em>), Chandra governs: mind (<em>manas</em>), mother, emotions, water, milk, silver, pearls, white things, the number 2, Monday (<em>Somavara</em>). Chandra's rashi: Karka (Cancer). Chandra's exaltation: Vrishabha (Taurus) at 3°. Chandra's debilitation: Vrischika (Scorpio) at 3°. Chandra rules the 4th house in a natural zodiac chart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION III — ORIGIN LINEAGE TREE
+     ==================================================== -->
+<section class="section" id="origin-lineage">
+  <span class="section-number">SECTION III</span>
+  <h1 class="section-title">The Complete Origin Lineage</h1>
+  <div class="section-devanagari">मूल वंशावली — ब्रह्मा से पुरुरवा तक</div>
+
+  <p>The lineage from the cosmic Absolute to the first human king of the Chandravansha is described as follows across Puranas. I present the <strong>consensus account</strong> followed by variant readings:</p>
+
+  <div class="ascii-tree">
+CHANDRAVANSHA ORIGIN LINEAGE — BRAHMA TO YAYATI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAHMA (ब्रह्मा)
+│  Creator of Universe, Father of Saptarishis
+│
+├─── ATRI (अत्रि) ←── Mind-born son of Brahma (Manasaputra)
+│         │         Maharishi, one of the Saptarishi
+│         │         Wife: Anusuya (daughter of Kardama Muni)
+│         │         (Note: Dattatreya, Durvasa also born to Atri)
+│         │
+│         └──── SOMA / CHANDRA (सोम / चन्द्र)
+│                    │  Born from Atri's eyes through tapasya
+│                    │  Moon God, Lord of Night Sky
+│                    │  King of Brahmins, Plants, Stars, Pitrs
+│                    │  Wives: 27 daughters of Daksha (27 Nakshatras)
+│                    │  Favorite wife: ROHINI
+│                    │
+│               + TARA (wife of Brihaspati) ←─ ABDUCTED (Tarakamaya War)
+│                    │
+│                    └──── BUDHA (बुध) [Mercury]
+│                               │  Born of Chandra + Tara (illegitimate at first)
+│                               │  God of Intelligence & Merchants
+│                               │  Extremely learned, wise, fair-complexioned
+│                               │
+│               ILĀ / IDA (इला)  ←──── daughter of Manu Vaivasvata
+│                    │  (Note: some Puranas say Ilā was born male as Sudyumna
+│                    │   then transformed to female by Shiva's curse in Sharyati's
+│                    │   forest; Bhagavata 9.1 describes this in detail)
+│                    │
+│                    └────┘ BUDHA + ILĀ
+│                               │
+│                               └──── PURURAVA (पुरूरवा) ←─ FIRST HUMAN KING
+│                                         │  Son of Budha & Ilā
+│                                         │  Capital: Pratishthana (modern Prayagraj area)
+│                                         │  Famous for love story with Urvashi (Apsara)
+│                                         │
+│                               URVASHI (apsara) ←── Wife/lover of Pururava
+│                                         │
+│                    ┌─────────────────────┼──────────────────────┐
+│                    │                     │                      │
+│               AAYUS           DHĪMĀN         (4 other sons: Amāvasu,
+│                (आयुस)         (धीमान्)          Vishvayu, Shatāyu, etc.)
+│                    │
+└──────── AAYUS (आयुस)
+              │  Son of Pururava & Urvashi
+              │  Second king of Chandravansha
+              │  Wife: Svarbhanavi (or Prabha, daughter of Shvarbhanu)
+              │
+         ┌────┼────┬────┬────┐
+         │    │    │    │    │
+      NAHUSHA VṚDDHA RAMBHA RAJI ANENA
+     (नहुष)                              
+         │
+      NAHUSHA (नहुष)
+         │  One of the greatest kings
+         │  Briefly became Indra (King of Devas)
+         │  Fell from heaven due to pride/sin
+         │  Cursed to become a python by Agastya
+         │  Wives: Multiple, including Viraja
+         │
+    ┌────┴────┬──────┬──────┬──────────┐
+    │         │      │      │          │
+  YATI      YAYĀTI  SANYATI  ĀYATI   Others
+ (ascetic)  (ययाति)
+              │
+           YAYĀTI ←── PIVOTAL FIGURE: Married TWO great women
+              │
+         ┌────┴──────────────────────────────────┐
+    DEVAYĀNI (देवयानी)              SHARMISHTHĀ (शर्मिष्ठा)
+  daughter of SHUKRACHARYA         daughter of VRISHAPARVA
+  (Guru of Asuras)                  (King of Asuras)
+         │                                    │
+    ┌────┴────┐                    ┌───────────┴───────────┐
+    │         │                   │           │            │
+  YADU      TURVASU             DRUHYU      ANUDRUHYU    PURU
+ (यदु)     (तुर्वसु)           (द्रुह्यु)               (पूरु)
+    │                                                      │
+[YADU LINEAGE]                                    [PURU LINEAGE]
+[leads to Krishna]                               [leads to Bharata,
+[Yadavas, Vrishni]                              Kurus, Pandavas]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>Ilā — The Gender-Fluid Progenitor</h2>
+
+  <p>One of the most remarkable figures in the origin of Chandravansha is <strong>Ilā</strong> (<span class="skt">इला</span>), whose story occurs in the Bhagavata Purana (9.1), Vishnu Purana (4.1), and Mahabharata (Adi Parva). Ilā was originally born as <strong>Sudyumna</strong>, son of Manu Vaivasvata, as a male. While hunting, Sudyumna accidentally entered a forest where Shiva and Parvati were engaged in private sport. By divine dispensation, all males who entered this forest were transformed into females. Thus Sudyumna became <strong>Ilā</strong>, a beautiful woman.</p>
+
+  <p>Budha (Mercury), son of Chandra, encountered Ilā in this form and married her. They had a son, <strong>Pururava</strong>. Later, through Vishnu's grace, Ilā alternated between male form (Sudyumna) and female form (Ilā) each month. This gender alternation has profound symbolism — Mercury as a planet represents dual-natured intelligence; the progenitor of an entire dynasty embodying both masculine and feminine principles establishes that the Chandravansha was never rigid in its conception of identity.</p>
+
+  <div class="scripture-box">
+    <div class="source">BHAGAVATA PURANA 9.1.16–43</div>
+    <p>"After Manu's sacrifice, his son Sudyumna was born. He was then transformed into a woman called Ilā by Shiva's grace/curse in that sacred forest. Budha the son of the Moon God met her and fathered upon her a son of great qualities — Pururava, the king of great fame and valor."</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION IV — MAJOR DYNASTIC BRANCHES
+     ==================================================== -->
+<section class="section" id="branches">
+  <span class="section-number">SECTION IV</span>
+  <h1 class="section-title">Major Dynastic Branches of Chandravansha</h1>
+  <div class="section-devanagari">प्रमुख शाखाएँ</div>
+
+  <p>The Chandravansha branched dramatically at <strong>Yayati's five sons</strong> — each son founding a distinct clan with its own geography, character, and destiny. Here is the master branching diagram followed by individual branch analysis:</p>
+
+  <div class="ascii-tree">
+YAYATI'S FIVE SONS — THE GREAT BRANCHING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                         YAYĀTI
+                    (Father of Dynasties)
+          ┌──────────────────────────────────┐
+    [Devayāni's sons]                 [Sharmishthā's sons]
+          │                                  │
+    ┌─────┴──────┐            ┌──────────────┼──────────────┐
+    │            │            │              │              │
+  YADU        TURVASU      DRUHYU        ANUDRUHYU        PURU
+  (यदु)       (तुर्वसु)    (द्रुह्यु)   (अनुद्रुह्यु)   (पूरु)
+    │            │            │                            │
+    │      [Became king    [Settled in    [Lesser        [Took
+    │       of Turvasu     NW/Gandhara-   branch,        Yayati's
+    │       regions]       like regions,  merged         old age
+    │                      disappeared]  into other     YOGICALLY
+    │                                    clans]         — inherited
+    │                                                    kingdom]
+    │
+  YADU'S MAIN BRANCHES:
+    │
+    ├── SAHASRAJIT (eldest)
+    │     ├── Shatajit
+    │     │     ├── Mahāhaya, Venuhaya, Haihaya → HAIHAYA CLAN
+    │     │     │     └── Kārtavīryārjuna (1000 arms, enemy of Parashurama)
+    │     └── Kroshtu / Kroshtā ←── This line leads to Krishna
+    │           │
+    │           └── → (through many generations)
+    │                 → Sātvata → Andhaka, Vrishni, Bhoja, Madhu clans
+    │                   → Shūrasena → Vasudeva → KRISHNA
+    │
+    └── (Other Yadu sub-branches: Bhīma, Krokana, etc.)
+
+PURU'S LINE:
+    │
+    └── PURU
+          │
+          ├── Janamejaya (I)
+          ├── Prāchinvat
+          ├── Pravīra
+          ├── ... (multiple generations)
+          └── BHARATA (भरत) ←── gave name "Bhārata" to India
+                │
+                └── HASTIN (founded Hastinapura)
+                      │
+                      └── → Kuru → Shāntanu → Bhīshma
+                                           ↘ Vichitravirya → Dhritarashtra → Duryodhana etc.
+                                                           → Pāndu → Pandavas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <div class="branch-grid">
+    <div class="branch-card">
+      <div class="branch-header branch-yadu">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">🌙</div>
+        <div>
+          <div class="branch-title">Yadu / Yadava Dynasty</div>
+          <div class="branch-subtitle">Devayani's firstborn line</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Founding:</strong> Yadu, eldest son of Yayati by Devayani. Yayati cursed Yadu (see Section VII) for refusing to give his youth, so Yadu's line was barred from direct kingship. Yet paradoxically this branch became the <em>most spiritually important</em> — producing Krishna.</p>
+        <p><strong>Sub-clans:</strong> Haihaya (Kartaviryarjuna), Satvata, Vrishni, Andhaka, Bhoja, Chedi, Mathura Yadavas.</p>
+        <p><strong>Peak power:</strong> Mathura under Ugrasena/Kamsa, then Dwaraka under Krishna.</p>
+      </div>
+    </div>
+    <div class="branch-card">
+      <div class="branch-header branch-puru">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">👑</div>
+        <div>
+          <div class="branch-title">Puru / Kuru Dynasty</div>
+          <div class="branch-subtitle">Sharmishtha's youngest — royal inheritors</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Founding:</strong> Puru, youngest son of Yayati by Sharmishtha. Puru alone agreed to take his father's old age; rewarded with the kingdom. Through Puru came Bharata (gave India its name), Hastin (founded Hastinapura), and eventually the Kuru dynasty.</p>
+        <p><strong>Capital:</strong> Hastinapura (on Ganga).</p>
+        <p><strong>Peak power:</strong> Emperor Bharata, then Kuru, then Shantanu's era.</p>
+      </div>
+    </div>
+    <div class="branch-card">
+      <div class="branch-header branch-bharata">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">🏛️</div>
+        <div>
+          <div class="branch-title">Bharata / Pan-India Clans</div>
+          <div class="branch-subtitle">Puru's great descendant Bharata</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Bharata</strong> (<span class="skt">भरत</span>) was so powerful he conquered the entire known world and performed the <em>Sarvamedha</em> (sacrifice of everything). India is called <em>Bharatavarsha</em> after him. From Bharata's line descend multiple sub-clans including the Kurus, Panchalas, Khasas, and others.</p>
+      </div>
+    </div>
+    <div class="branch-card">
+      <div class="branch-header branch-haiha">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">⚔️</div>
+        <div>
+          <div class="branch-title">Haihaya Dynasty</div>
+          <div class="branch-subtitle">Yadu sub-branch — Kartaviryarjuna</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Haihaya</strong> descended from Yadu's son Sahasrajit's grandson. They ruled Mahishmati on the Narmada River. Their greatest king <strong>Kartaviryarjuna</strong> (Sahasrabahu — 1000 arms) was a great devotee of Dattatreya who became virtually invincible. He was eventually killed by Parashurama for his arrogance in stealing Jamadagni's wish-cow. The Haihaya-Parashurama war led to the 21-times massacre of Kshatriyas by Parashurama.</p>
+      </div>
+    </div>
+    <div class="branch-card">
+      <div class="branch-header branch-krivi">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">🌊</div>
+        <div>
+          <div class="branch-title">Turvasu Branch</div>
+          <div class="branch-subtitle">Devayani's second son</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Turvasu</strong> received rule over the south-east. His descendants are associated with the <em>Yavana</em> territories in some Puranic texts — possibly reflecting ancient contacts with the Greek world. The Turvasu branch eventually merged into other lineages and did not produce major later dynasties of note in the Mahabharata era.</p>
+      </div>
+    </div>
+    <div class="branch-card">
+      <div class="branch-header branch-bharata" style="background:linear-gradient(135deg,#2a1a00,#4a3000)">
+        <div class="branch-icon" style="background:rgba(255,255,255,0.1)">🏔️</div>
+        <div>
+          <div class="branch-title">Druhyu Branch</div>
+          <div class="branch-subtitle">Sharmishtha's second son</div>
+        </div>
+      </div>
+      <div class="branch-body">
+        <p><strong>Druhyu</strong> received the northwest territories. His descendants — the <em>Druhyus</em> — are mentioned in the Mahabharata as ruling areas beyond the Himalayas and in the far north/west. Some scholars connect the Druhyu with early Indo-European migrations; this remains debated. They largely disappeared from mainstream Puranic records after a few generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION V — PURURAVA & URVASHI
+     ==================================================== -->
+<section class="section" id="pururava">
+  <span class="section-number">SECTION V</span>
+  <h1 class="section-title">Pururava & Urvashi — The First Great Romance</h1>
+  <div class="section-devanagari">पुरूरवा और उर्वशी</div>
+
+  <div class="king-profile">
+    <div class="king-emblem">👑</div>
+    <div>
+      <div class="king-name">Pururava</div>
+      <div class="king-sanskrit">पुरूरवा</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Chandravansha</span>
+        <span class="tag era">Treta/Dvapara boundary</span>
+        <span class="tag">Son of Budha & Ilā</span>
+        <span class="tag">1st Human King</span>
+      </div>
+      <p><strong>Name Meaning:</strong> "Puru-rava" — "one who cries/speaks in many ways" or "the far-shouting one." Also interpreted as "he whose speech (rava) is extensive/broad (puru)."</p>
+    </div>
+  </div>
+
+  <div class="king-details">
+    <div class="detail-item"><div class="detail-label">Parents</div><div class="detail-value">Father: Budha (Mercury); Mother: Ilā (daughter of Manu Vaivasvata)</div></div>
+    <div class="detail-item"><div class="detail-label">Capital</div><div class="detail-value">Pratishthana (modern Prayagraj region; confluence of rivers)</div></div>
+    <div class="detail-item"><div class="detail-label">Wife</div><div class="detail-value">Urvashi (celestial Apsara); other queens unnamed in scriptures</div></div>
+    <div class="detail-item"><div class="detail-label">Sons</div><div class="detail-value">Aayus (eldest), Dhimaan, Amavasu, Vishvayu, Shataayu, Dridhayu (6 sons by Urvashi — Bhagavata 9.14)</div></div>
+    <div class="detail-item"><div class="detail-label">Scriptural References</div><div class="detail-value">Rigveda 10.95; Shatapatha Brahmana; Bhagavata 9.14; Vishnu Purana 4.6</div></div>
+  </div>
+
+  <h2>The Love Story of Pururava and Urvashi</h2>
+
+  <p>The story of Pururava and Urvashi is one of the oldest love stories in world literature, first told in the <strong>Rigveda (Mandala 10, Hymn 95)</strong> — making it over 3,000 years old. It was later elaborated in the Shatapatha Brahmana, and Kalidasa wrote his famous Sanskrit play <em>Vikramorvasiyam</em> based on it.</p>
+
+  <p>Urvashi (<span class="skt">उर्वशी</span> — "she who conquers the heart of all beings" or "born from the thigh of Narayana") was the most beautiful of the Apsaras. She agreed to live with Pururava as his wife on <strong>three conditions</strong>:</p>
+
+  <ol>
+    <li>Her pet lambs (kept beside the bed) must never be taken away</li>
+    <li>She must never see Pururava naked except in intimate moments</li>
+    <li>She must be fed only ghee (clarified butter)</li>
+  </ol>
+
+  <p>The Gandharvas, missing Urvashi, conspired to break this arrangement. One night they stole the lambs, causing Urvashi to cry out. Pururava leapt out to retrieve them — and in a flash of lightning, Urvashi saw him unclothed. The conditions broken, she was obligated to return to Gandharvaloka.</p>
+
+  <div class="scripture-box">
+    <div class="source">RIGVEDA 10.95 — DIALOGUE OF PURURAVA AND URVASHI</div>
+    <p>"O Urvashi! Stay yet another night... I who yearn for thee as the first rays of dawn yearn for the earth — why do you flee? You are like breath itself to me, like the mind's own companion..." (Pururava's plea). Urvashi replies: "What need is there, Pururava, for words? I have departed like the first of the dawns. Return home! You are hard to catch, like the wind..."</p>
+  </div>
+
+  <p>After wandering in grief for years, Pururava found Urvashi in a sacred lake in Kurukshetra along with four other Apsaras in the form of swans. She revealed that she was pregnant with his child. The Gandharvas, moved by Pururava's penance, eventually granted him a place in the Gandharva world. The six sons born to them became the progenitors of the Chandravansha's first generation of earthly kings.</p>
+
+  <div class="highlight-gold">
+    <h4>Symbolic Significance</h4>
+    <p>In Vedantic interpretation, Pururava represents the individual soul (<em>Jivatma</em>) and Urvashi represents divine grace or transcendental bliss. The soul "catches" divine bliss briefly, then loses it through inadvertent transgression (ego/naked-self), and must wander in spiritual longing until reunion. The three conditions represent the three gunas that must be maintained in proper proportion for the divine relationship to sustain.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VI — NAHUSHA
+     ==================================================== -->
+<section class="section" id="nahusha">
+  <span class="section-number">SECTION VI</span>
+  <h1 class="section-title">Nahusha — The King Who Became Indra</h1>
+  <div class="section-devanagari">नहुष — इन्द्र बने राजा</div>
+
+  <div class="king-profile">
+    <div class="king-emblem">⚡</div>
+    <div>
+      <div class="king-name">Nahusha</div>
+      <div class="king-sanskrit">नहुष</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Chandravansha</span>
+        <span class="tag">Son of Aayus</span>
+        <span class="tag">Temporary Indra</span>
+        <span class="tag">Cursed to Python form</span>
+      </div>
+      <p><strong>Name Meaning:</strong> "Nahusha" — from root "nah" (to bind) — "one who binds/captivates all beings with his power" or "he who brought all beings under his authority."</p>
+    </div>
+  </div>
+
+  <p>Nahusha was the grandson of Pururava (son of Aayus) and one of the most powerful and tragic figures in the early Chandravansha. His story contains one of the most profound lessons about the dangers of <em>ahankara</em> (ego) even for the righteous.</p>
+
+  <h2>Nahusha as Indra</h2>
+
+  <p>When <strong>Indra</strong> was afflicted with Brahma-hatya (sin of killing a Brahmin — specifically Vritra, who was a Brahmin demon) and went into hiding, the Devas were left without a king. The sages and Devas unanimously selected <strong>Nahusha</strong> as temporary Indra due to his extreme virtue, power, and generosity. He had gained sufficient merit by performing thousands of <em>Ashvamedha</em> (horse sacrifices) and <em>Vajapeya</em> yajnas.</p>
+
+  <p>For a time, Nahusha ruled Svarga magnificently. But power intoxicated him. He began coveting <strong>Indrani</strong> (Shachi Devi, wife of Indra). Shachi played for time, pretending to consider his proposal, while Indra found a way to purify himself of Brahma-hatya through Vishnu's guidance.</p>
+
+  <h2>The Fall of Nahusha</h2>
+
+  <p>Nahusha's fatal mistake: he demanded to be carried in a palanquin borne by the Saptarishis (Seven Sages) — the most sacred Brahmins. This was an act of supreme arrogance. During the procession, he repeatedly said <strong>"Sarpa! Sarpa!"</strong> (Move fast! Move fast!) to the sages, prodding the great <strong>Agastya Muni</strong> with his foot. Agastya cursed him on the spot: <em>"You fool, you who dare kick a sage — become a serpent (sarpa) and fall!"</em></p>
+
+  <div class="scripture-box">
+    <div class="source">MAHABHARATA — UDYOGA PARVA 11–17 (Nahusha episode)</div>
+    <p>Agastya cursed: "You have touched my head with your foot! You shall fall from this high position and become a great serpent on the earth, crawling on your belly!" Nahusha immediately fell from the heavens and became a mighty python (ajagara) and remained so for thousands of years, until his liberation during the Pandavas' exile.</p>
+  </div>
+
+  <h2>Liberation by Yudhishthira</h2>
+
+  <p>During the Pandavas' 12-year forest exile, the python Nahusha trapped <strong>Bhima</strong> in its coils. Only <strong>Yudhishthira's</strong> correct answers to Nahusha's deep questions on Dharma liberated him from the curse. This episode (Mahabharata, Vana Parva, "Ajagaraparva") is one of the most celebrated philosophical dialogues in the epic, covering what makes a true Brahmin, the nature of Dharma, and the definition of virtue.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>Nahusha's Children</h4>
+      <ul>
+        <li><strong>Yati</strong> — eldest; renounced kingdom, became ascetic</li>
+        <li><strong>Yayati</strong> — second; great philosopher-king, ancestor of Pandavas and Yadavas</li>
+        <li><strong>Sanyati</strong> — ruled portions of the kingdom</li>
+        <li><strong>Ayati</strong></li>
+        <li><strong>Viyati</strong></li>
+        <li><strong>Kriti</strong> (variants across Puranas)</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Key Lessons from Nahusha's Story</h4>
+      <ul>
+        <li>Even a supremely virtuous king can fall through pride</li>
+        <li>Disrespecting sages/teachers destroys accumulated merit</li>
+        <li>Position (even Indra's throne) creates temptation that must be resisted</li>
+        <li>Liberation comes through genuine wisdom, not power</li>
+        <li>The Chandravansha carries the seed of both greatness and fall</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VII — YAYATI
+     ==================================================== -->
+<section class="section" id="yayati">
+  <span class="section-number">SECTION VII</span>
+  <h1 class="section-title">Yayati — The Philosopher-King & Father of Dynasties</h1>
+  <div class="section-devanagari">ययाति — राजाओं का पिता</div>
+
+  <div class="king-profile">
+    <div class="king-emblem">🌟</div>
+    <div>
+      <div class="king-name">Yayati</div>
+      <div class="king-sanskrit">ययाति</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Chandravansha</span>
+        <span class="tag era">Satya-Treta boundary</span>
+        <span class="tag">Son of Nahusha</span>
+        <span class="tag">Father of 5 dynasties</span>
+      </div>
+      <p><strong>Name Meaning:</strong> "Yayati" — possibly from "yaya" (to go, to move with speed) — "the swift-going one" or "he who moves between worlds." Also interpreted as "one who has traversed all desires."</p>
+    </div>
+  </div>
+
+  <h2>Yayati's Two Marriages — The Caste-Crossing Union</h2>
+
+  <p>Yayati's story begins with a deeply unconventional union. The great sage <strong>Shukracharya</strong> (Usanas, Guru of the Asuras) had a brilliant daughter <strong>Devayani</strong>. The Asura king Vrishaparva had a daughter <strong>Sharmishtha</strong>. An argument broke out between Devayani and Sharmishtha (whose maid Devayani was temporarily made), leading to Sharmishtha pushing Devayani into a dry well.</p>
+
+  <p>King Yayati, hunting in the forest, found Devayani in the well and pulled her out. Smitten by her beauty, and at her request, he married her — despite being a Kshatriya and she a Brahmin's daughter (a technical Anuloma marriage). As reparations, Sharmishtha was given to Devayani as a maidservant.</p>
+
+  <p>However, Sharmishtha, also in love with Yayati, secretly requested children from him. Yayati, persuaded by Sharmishtha's logic (she was a queen's daughter who deserved progeny), secretly sired three sons upon her. When Devayani discovered this, she returned to her father Shukracharya in fury.</p>
+
+  <h2>Shukracharya's Curse and Puru's Sacrifice</h2>
+
+  <div class="scripture-box">
+    <div class="source">MAHABHARATA — ADI PARVA 81–88; BHAGAVATA PURANA 9.18</div>
+    <p>Shukracharya cursed Yayati: "Since you enjoyed sensual pleasure out of turn, you shall be immediately afflicted with old age (jaara)!" Yayati begged for relief. Shukracharya softened: "If any of your sons agrees to exchange his youth for your old age, you may regain youth temporarily."</p>
+  </div>
+
+  <p>Yayati approached his sons one by one:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Son</th><th>Mother</th><th>Response to Father's Request</th><th>Consequence</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Yadu</strong></td><td>Devayani</td><td>Refused — "I have many pleasures to enjoy myself"</td><td>Cursed by Yayati: "Your progeny shall never bear royal authority of kings"</td></tr>
+      <tr><td><strong>Turvasu</strong></td><td>Devayani</td><td>Refused — various reasons</td><td>Cursed: "Your lineage will be base and undisciplined"</td></tr>
+      <tr><td><strong>Druhyu</strong></td><td>Sharmishtha</td><td>Refused</td><td>Cursed: "You shall be dependent on boats for your kingdom, living among barbarians"</td></tr>
+      <tr><td><strong>Anudruhyu</strong></td><td>Sharmishtha</td><td>Refused or absent in some versions</td><td>Minor role in lineage</td></tr>
+      <tr><td><strong>Puru</strong></td><td>Sharmishtha</td><td><strong>Agreed wholeheartedly</strong></td><td>Received Yayati's old age; upon return, received the entire ancestral kingdom</td></tr>
+    </tbody>
+  </table>
+
+  <p>Yayati lived with Puru's youth for 1,000 years, enjoying all worldly pleasures. At the end, having come to a profound philosophical realization about the insatiability of desire, he returned youth to Puru and declared:</p>
+
+  <div class="scripture-box">
+    <div class="source">MAHABHARATA — ADI PARVA 85.12–14</div>
+    <p>"Na jatu kamah kamanamupasobhate | Havisha krishnavartmeva bhuya evabhivarddhate ||" — "Desires are never quenched by enjoyment of desires, just as fire becomes more blazing when offered oblations of ghee. So having tried all pleasures for a thousand years, I have found contentment only in renunciation."</p>
+  </div>
+
+  <h2>Yayati's Ascent and Second Fall from Heaven</h2>
+
+  <p>Through his great sacrifices and renunciation, Yayati ascended to Svarga. There, in one of the Mahabharata's most poignant scenes, he was asked by Indra: "Tell me, O king, on whose merit do you rely?" Yayati replied: "On mine alone!" — and instantly began to fall from Svarga for this pride. The story of Yayati's two falls (first from virtue through lust, second from Svarga through pride) makes him one of the most complex moral figures in the Chandravansha.</p>
+
+  <div class="highlight-gold">
+    <h4>Symbolic Analysis</h4>
+    <p>Yayati represents the archetypal human soul caught between spiritual aspiration and sensory compulsion. His 1,000-year indulgence followed by renunciation reflects the Hindu understanding that some souls must exhaust desires through experience rather than suppression. His final teaching — "Desire grows by feeding" — became a cornerstone of Hindu philosophical thought.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION VIII — YADU LINEAGE
+     ==================================================== -->
+<section class="section" id="yadu">
+  <span class="section-number">SECTION VIII</span>
+  <h1 class="section-title">The Yadu Lineage — From Curse to Krishna</h1>
+  <div class="section-devanagari">यदुवंश — श्रीकृष्ण तक</div>
+
+  <p>Despite being cursed by Yayati that his lineage would "never bear royal sovereignty," the Yadu clan became paradoxically the <em>most spiritually exalted</em> branch of the entire Chandravansha — for it produced <strong>Shri Krishna</strong>, the Supreme Being's avatar and the greatest figure in Hindu Dharma.</p>
+
+  <div class="ascii-tree">
+YADU LINEAGE — COMPLETE LINE TO KRISHNA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YADU (son of Yayati)
+  │
+  ├── SAHASRAJIT (eldest son of Yadu)
+  │     ├── SHATAJIT (son of Sahasrajit)
+  │     │     ├── MAHĀHAYA → Haihaya branch → KĀRTAVĪRYĀRJUNA
+  │     │     ├── VENUHAYA
+  │     │     └── HAIHAYA
+  │     └── KROSTU / KROSHTU (second son of Yadu, this line → Krishna)
+  │
+  └── KROSTU LINE:
+        │
+        KROSTU
+          │
+          VRIJINĪVAT (or Vrijinavan)
+            │
+            SVĀHI
+              │
+              USHANAS
+                │
+                CHITRARATHA
+                  │
+                  SHASHABINDU (Chakravarti — universal monarch)
+                    │
+                  PRITHUSHRAVA
+                    │
+                  DHARMA (or Dharmanetra)
+                    │
+                  USHANAS (II)
+                    │
+                  RUCHAKA
+                    │
+                  JYĀMAGHA (married Shaibya — notable for his devotion to wife)
+                    │
+                  VIDARBHA (founded Vidarbha kingdom)
+                    │
+             ┌──────┴──────┐
+           KRATHA         KAISHIKA       LOMAPĀDA
+             │                                │
+           (Vidarbha branch)            (another sub-branch)
+             │
+          Through Kratha branch:
+             KUNTI region
+             │
+           DHRISHTA
+             │
+           NIVRITI
+             │
+           DASHARHA (gave name to Dasharha clan)
+             │
+           VYOMAN
+             │
+           JIMUTA
+             │
+           VIKRITI
+             │
+           BHIMARATHA
+             │
+           NAVARATHA
+             │
+           DASHARATHA (different from Rama's father)
+             │
+           SHAKUNI (not Mahabharata's Shakuni)
+             │
+           KARAMBHI
+             │
+           DEVARĀTA
+             │
+           DEVAKSHATRA
+             │
+           MADHU (founded MADHU clan)
+             │  (Madhu's descendants: Vrishnis, Andhakas, Bhojas)
+           KURUVASHA
+             │
+           ANŪ
+             │
+           PURUHOTRA
+             │
+           AIYUS
+             │
+           SĀTVATA (founded SĀTVATA clan — very important)
+                │
+       ┌────────┼──────────┬──────────┬──────────┐
+       │        │          │          │          │
+    BHAJAMĀNA DEVĀVRIDHA ANDHAKA   VRISHNI    MAHĀBHOJA
+       │                    │        │    (Bhoja clan)
+  [Bhajamana branch]    [Andhaka]  [Vrishni] — MAIN LINE
+                                      │
+                     SUMITRA (or Svaphalka variant) → through several kings
+                                      │
+                                    DEVAMĪDHA
+                                      │
+                                    SHŪRASENA
+                           ┌──────────┤
+                           │          │
+                        VASUDEVA   PRITHA/KUNTI
+                        (वासुदेव)  (adopted by Kuntibhoja)
+                           │
+               ┌───────────┼───────────┐
+               │           │           │
+           BALARĀMA     KRISHNA     SUBHADRĀ
+          (बलराम)      (कृष्ण)     (subhadrā)
+                (8th child of Devaki & Vasudeva)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>Key Figures in the Yadu Lineage</h2>
+
+  <h3>Shashabindu — The Universal Emperor</h3>
+  <p>Among the early Yadu kings, <strong>Shashabindu</strong> (<span class="skt">शशबिन्दु</span>) is notable as one of the Chakravartins (universal monarchs) mentioned in the Mahabharata. He had 10,000 wives and 100,000 sons. He performed the great <em>Rajasuya Yajna</em> and was considered the equal of Indra in Svarga. His exact position varies across Puranas.</p>
+
+  <h3>Jyamagha — The Devoted Husband</h3>
+  <p><strong>Jyamagha</strong> is notable for a remarkable story of marital devotion. His wife <strong>Shaibya</strong> was barren but Jyamagha refused to take another wife out of love for her. When he captured a princess (<strong>Visali</strong>) in battle, Shaibya jealously asked who this woman was. Jyamagha declared — thinking quickly — that this was their "future daughter-in-law"! Vishnu/divine grace then arranged that Shaibya bore a son <strong>Vidarbha</strong>, who later married Visali. This gave rise to the Vidarbha kingdom — famous for the Damayanti-Nala story (in Naishadha Charita).</p>
+
+  <h3>Satvata — Clan Founder</h3>
+  <p><strong>Satvata</strong> is the critical branch point. His six sons — Bhajamana, Devavridha, Andhaka, Vrishni, Mahabhoja, and one other — became the founders of the major Yadava clans. The Bhagavata Purana (9.24) devotes considerable space to this branching. The <em>Satvata</em> clan name itself is used as an honorific for Krishna and Yadavas throughout the Mahabharata.</p>
+
+  <h2>The Vrishni Clan — Direct Line to Krishna</h2>
+
+  <div class="ascii-tree">
+VRISHNI LINE (from Satvata) → KRISHNA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SATVATA
+  │
+  VRISHNI (founded Vrishni clan)
+    │
+    ├── SUMITRA (or various intermediate kings depending on Purana)
+    │
+    Through intermediate generation (~10 kings):
+    ANDHAKA line merges with Vrishni line at Devamidha's level
+    │
+    DEVAMĪDHA
+      │
+      SHŪRASENA
+        │  (ruled Mathura/Shurasena kingdom)
+        │  Note: his daughter PRITHA/KUNTI was given in adoption to
+        │  his childless cousin Kuntibhoja, hence called KUNTI
+        │
+   ┌────┼────┬────┬────┐
+   │    │    │    │    │
+VASUDEVA DEVABHAGA DEVASRAVAS ANADHRISHTI etc.
+(वासुदेव)  (10 sons of Shurasena total)
+   │
+   │ Married DEVAKI (daughter of Devaka; she is Vishnu-avatar's destined mother)
+   │
+   (KAMSA usurped the throne of Mathura, imprisoning Vasudeva & Devaki)
+   │
+   Eight children of Vasudeva + Devaki:
+   1. Kirtiman (killed by Kamsa)
+   2. Sushena (killed by Kamsa)
+   3. Udayin (killed by Kamsa)
+   4. Bhadrasena (killed by Kamsa)
+   5. Rijudasa (killed by Kamsa)
+   6. Bhadradeha (killed by Kamsa)
+   7. BALARĀMA (7th — transferred to Rohini's womb miraculously)
+   8. KRISHNA (8th — born at midnight, spirited to Gokula)
+
+Note: Vasudeva also had other wives including ROHINI
+  (mother of Balarama after miraculous transfer, also mother of Sarana etc.)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>The Andhaka Clan</h2>
+  <p><strong>Andhaka</strong>, another son of Satvata, founded the Andhaka clan. His descendant <strong>Ugrasena</strong> was the rightful king of Mathura. Ugrasena's son was <strong>Kamsa</strong> — the villain of Krishna's youth narrative. Interestingly, both Krishna (liberator) and Kamsa (oppressor) were from the same Yadava Chandravanshi stock — uncle and nephew. This creates the extraordinary situation where the avatar of Vishnu destroys his own clan's oppressor-cousin.</p>
+
+  <h2>The Bhoja Clan</h2>
+  <p><strong>Mahabhoja</strong>'s descendants formed the <strong>Bhoja</strong> clan. The Bhojas ruled the Bhoja kingdom (Yadava territory). <strong>Shishupala</strong>, Krishna's great enemy, was from the Chedi kingdom but had Bhoja/Yadava connections through marriage alliances. The Mahabharata mentions Bhojas as a significant Yadava sub-group who aligned differently in the Kurukshetra war.</p>
+</section>
+
+<!-- ====================================================
+     SECTION IX — PURU LINEAGE
+     ==================================================== -->
+<section class="section" id="puru">
+  <span class="section-number">SECTION IX</span>
+  <h1 class="section-title">The Puru Lineage — To Emperor Bharata</h1>
+  <div class="section-devanagari">पूरु वंश — भारत तक</div>
+
+  <div class="ascii-tree">
+PURU LINEAGE — COMPLETE TO BHARATA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PURU (youngest son of Yayati; received kingdom)
+  │  Wife: Paushti (daughter of Kausalya)
+  │
+  ├── JANAMEJAYA (I) (son of Puru)
+  │     │  Wife: Ananta
+  │     └── PRACHINVAT (son)
+  │           │
+  │           └── MANASYU
+  │                 │  Three sons: Shakta, Sahana, Vagmi
+  │                 └── ABHAYADA → SUDHANVĀ → BAHUGAVA → SAMYĀTI
+  │
+  SAMYĀTI
+    │
+    AHAMYĀTI
+      │
+      SĀTVATA (this is a different Satvata in Puru line — not Yadu line's Satvata)
+        │
+        ROUDRĀSHVA
+          │  10 sons (by an Apsara Ghritachi)
+          │
+          RITEYU  ┐
+          KAKSHEYU │
+          Others   │ → leads to sub-branches
+          │
+          Main line continues through:
+          │
+        MATINĀRA
+          │
+          TANSU (main line)
+            │
+            ILINĀ (married a Daitya princess in some accounts)
+              │
+              DUSHYANTA (दुष्यन्त)
+                │  King of Prayaga/Hastinapura region
+                │  Famous love story with SHAKUNTALA
+                │  (Shakuntala = daughter of Vishwamitra + Apsara Menaka)
+                │
+                BHARATA (भरत) ←── GREATEST KING, gave name to India
+                │
+           ┌────┼────┬────────────────────┐
+           │    │    │                    │
+         BHUMANYU BHUVANA  SUHOTRA   (other sons)
+           │            (or alternate lineages)
+         BHUMANYU (became heir)
+           │
+         SUHOTRA
+           │  Three sons: Hastin, Ajamīdha, Dvimīdha
+           │
+           ├── HASTIN → founded HASTINAPURA (हस्तिनापुर)
+           │     │      (on the banks of Ganga)
+           │     ├── VIKUNTHAN
+           │     │     └── ...→ leads to Ajamīdha sub-branch
+           │     └── AJAMĪDHA (main line continues)
+           │
+           └── AJAMĪDHA (important branching point)
+                 │  Three wives; sons:
+                 ├── RIKSHU → SAMVARANA → KURU (founded Kuru clan)
+                 ├── NĪLA → Shashadeva → Mridyota → ...
+                 ├── JAHNU (another branch)
+                 └── BRIHADISHU → ...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>Dushyanta and Shakuntala — Origin of Emperor Bharata</h2>
+
+  <p><strong>Dushyanta</strong> (<span class="skt">दुष्यन्त</span>) — a king of the Puru line — while hunting encountered <strong>Shakuntala</strong> in the hermitage of sage Kanva. Shakuntala was the biological daughter of the brahmarshi <strong>Vishwamitra</strong> and the celestial Apsara <strong>Menaka</strong>, but was raised by sage Kanva in his forest ashrama. The two fell in love and contracted a <em>Gandharva Vivaha</em> (love marriage).</p>
+
+  <p>Dushyanta returned to his kingdom, and through the curse of <strong>Durvasa Muni</strong> (whom Shakuntala neglected while lost in thoughts of Dushyanta), he forgot her entirely. The famous ring he had given her — the proof of their union — was lost in a river, swallowed by a fish. Years later the ring was found, recovered from the fish's belly, and Dushyanta's memory returned. He recognized and accepted Shakuntala and their remarkable son <strong>Bharata</strong>.</p>
+
+  <h2>Emperor Bharata — Who Named India</h2>
+
+  <div class="king-profile">
+    <div class="king-emblem">🌍</div>
+    <div>
+      <div class="king-name">Emperor Bharata</div>
+      <div class="king-sanskrit">सम्राट् भरत</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Puru-Chandravansha</span>
+        <span class="tag era">Ancient Chakravarti Era</span>
+        <span class="tag">Son of Dushyanta & Shakuntala</span>
+        <span class="tag">Universal Emperor</span>
+      </div>
+    </div>
+  </div>
+
+  <p>As a child, Bharata was so powerful he tamed lions in the forest, playing with them as pets. He counted their teeth with his bare hands, earning him the name <em>"Sarvadamana"</em> (subduer of all) before being renamed Bharata. As emperor, he performed numerous great sacrifices including the <em>Mahabhisheka</em> and conquered the known world from the Himalayas to the southern oceans, from the eastern seas to the western. India received the name <strong>Bharatavarsha</strong> — the realm of Bharata.</p>
+
+  <div class="scripture-box">
+    <div class="source">VISHNU PURANA 2.1.31</div>
+    <p>"This land north of the ocean and south of the Himavan mountain is called Bharata, and therein dwell the descendants of Bharata." — This verse establishes the name of India itself as deriving from King Bharata of the Chandravansha.</p>
+  </div>
+
+  <p>Bharata had nine sons by three wives, but none proved worthy of inheriting his throne. He renounced them all (with the queens' consent — a highly unusual scriptural episode) and adopted a son through merit: <strong>Bhumanyu</strong>. This preference for merit over birth-right is a recurring Chandravanshi motif that will echo through to Yudhishthira's era.</p>
+</section>
+
+<!-- ====================================================
+     SECTION X — KURU DYNASTY
+     ==================================================== -->
+<section class="section" id="kuru">
+  <span class="section-number">SECTION X</span>
+  <h1 class="section-title">The Kuru Dynasty — Hastinapura to Mahabharata</h1>
+  <div class="section-devanagari">कुरुवंश — हस्तिनापुर से महाभारत तक</div>
+
+  <div class="ascii-tree">
+KURU DYNASTY — FULL LINEAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+...BHARATA → BHUMANYU → SUHOTRA → AJAMĪDHA → RIKSHU → SAMVARANA
+                                                                │
+                                                       SAMVARANA
+                                                             │
+                                                        Married TAPATI
+                                                   (daughter of Sun God Surya)
+                                                             │
+                                                          KURU (कुरु)
+                                                   (gave name to Kuru dynasty
+                                                    and Kurukshetra region)
+                                                             │
+                                              KURU performed immense tapasya
+                                              at Kurukshetra (Kuru-kshetra)
+                                              plowing the land for sacred grain
+                                                             │
+                                                     VIDURATHA
+                                                             │
+                                                      ANASHVĀ
+                                                             │
+                                                     PARIKSHIT (I)
+                                                   (different from Mahabharata's
+                                                    Parikshit; this is an earlier one)
+                                                             │
+                                                      BHĪMASENA (I)
+                                                             │
+                                                      PRATICHEPA
+                                                             │
+                                                       SHANTANU (शान्तनु)
+                                                    ┌────────┤
+                                                    │        │
+                                                DEVĀPI    (abdicates)
+                                                    │
+                                                SHANTANU becomes king
+                                             Wives:
+                                             1. GANGĀ (Ganga goddess)
+                                             2. SATYAVATĪ (fisherman's daughter)
+                                                    │
+                               ┌────────────────────┼────────────────┐
+                               │                    │                │
+                         [by Ganga]           [by Satyavati]  [Satyavati's
+                         DEVAVRATA             CHITRĀNGADA    pre-marriage
+                         (later BHĪSHMA)       VICHITRAVIRYA   son: VYĀSA]
+                               │
+                  DEVAVRATA/BHĪSHMA (भीष्म)
+                  ├── Terrible vow of celibacy (Bhīshma Pratigya)
+                  ├── Greatest warrior of Mahabharata era
+                  ├── Had no children (by vow)
+                  └── Died on bed of arrows at Kurukshetra
+                               │
+                  VICHITRAVIRYA married:
+                  1. AMBIKĀ (daughter of Kashi king)
+                  2. AMBĀLIKĀ (daughter of Kashi king)
+                  (died without children — disease)
+                               │
+                  By NIYOGA (levirate) with VYĀSA (son of Satyavati):
+                               │
+                    ┌──────────┴──────────┐
+                    │                     │
+             [by Ambika]          [by Ambalika]      [by a maid]
+             DHRITARĀSHTRA         PĀNDU            VIDURA
+            (blind from birth)   (pale/ill)         (born of wisdom,
+                                                      the most dharmic)
+                    │                     │
+           [100 sons + 1 daughter]    [5 sons — Pandavas]
+              KAURAVAS                PANDAVAS
+                    │                     │
+           DURYODHANA (eldest)      YUDHISHTHIRA (eldest)
+           + 99 brothers            BHĪMA
+           + DUSHASHANA             ARJUNA
+           + VIKARNA (most just)    NAKULA
+           + DUSSAHA                SAHADEVA
+           etc.
+           + DUSHASHALA (daughter)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>Shantanu — The King of Three Lives</h2>
+
+  <div class="king-profile">
+    <div class="king-emblem">🏞️</div>
+    <div>
+      <div class="king-name">Shantanu</div>
+      <div class="king-sanskrit">शान्तनु</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Kuru-Puru-Chandravansha</span>
+        <span class="tag">Son of Pratipa</span>
+        <span class="tag">Father of Bhishma, Chitrangada, Vichitravīrya</span>
+      </div>
+      <p><strong>Name Meaning:</strong> "Shanta-nu" — "he whose touch brings peace and good health to the aged/ill" — it is said that anyone Shantanu touched was cured of disease and old age was reversed.</p>
+    </div>
+  </div>
+
+  <p>Shantanu's story is pivotal for three reasons: (1) his marriage to <strong>Ganga</strong> produced Bhishma, the greatest warrior; (2) his obsessive love for <strong>Satyavati</strong> compelled his son Devavrata to take the terrible oath of celibacy and throne-renunciation, forever altering the dynasty's succession; (3) his two sons by Satyavati died without heirs, requiring the extraordinary measure of <em>niyoga</em> (levirate union) with sage Vyasa.</p>
+
+  <h2>Bhishma — The Grandfather of the Mahabharata</h2>
+
+  <div class="king-profile">
+    <div class="king-emblem">⚔️</div>
+    <div>
+      <div class="king-name">Bhishma (Devavrata)</div>
+      <div class="king-sanskrit">भीष्म / देवव्रत</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Kuru-Chandravansha</span>
+        <span class="tag">Son of Shantanu & Ganga</span>
+        <span class="tag">8th Vasu reborn</span>
+        <span class="tag">Iccha-Mrityu (death at will)</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Bhishma was actually the eighth of the <em>Ashta-Vasus</em> (divine beings), who had stolen the wish-cow of sage Vasishtha in a previous birth. As punishment, all eight were born as mortals; the other seven died at birth (released by mother Ganga as per her agreement with Shantanu), but the eighth (Dyaus Vasu) lived as <strong>Bhishma</strong> to work off more karma.</p>
+
+  <p>His terrible vow (<em>Bhishma Pratigya</em>): (1) to never ascend the throne of Hastinapura, (2) to never marry. In return, he was granted the boon of <em>Iccha-Mrityu</em> — death only at his own will. This made him virtually unkillable unless he chose to die. He lay on a bed of arrows at Kurukshetra for 58 days waiting for the auspicious <em>Uttarayana</em> (winter solstice) moment to depart.</p>
+
+  <h2>Dhritarashtra, Pandu, and Vidura — Three Brothers, Three Destinies</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Name</th><th>Sanskrit</th><th>Mother</th><th>Condition at Birth</th><th>Significance</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dhritarashtra</strong></td><td>धृतराष्ट्र</td>
+        <td>Ambika (closed her eyes when seeing Vyasa)</td>
+        <td>Born blind</td>
+        <td>Became king despite blindness; father of 100 Kauravas. His blindness symbolizes his "blind" attachment to his son Duryodhana — the root cause of the Mahabharata war.</td>
+      </tr>
+      <tr>
+        <td><strong>Pandu</strong></td><td>पाण्डु</td>
+        <td>Ambalika (turned pale in fear when seeing Vyasa)</td>
+        <td>Born pale/albino ("Pandu" = pale)</td>
+        <td>Became king; could not beget children directly due to Kindama Muni's curse (death if he engages in sex). His five sons the Pandavas were born through divine boons to his wives.</td>
+      </tr>
+      <tr>
+        <td><strong>Vidura</strong></td><td>विदुर</td>
+        <td>A palace maidservant (substituted by Satyavati when Ambalika sent her maid)</td>
+        <td>Born of Dharma (said to be Yamadharma reborn due to sage Mandavya's curse)</td>
+        <td>Most righteous of the three. Prime minister. Author of "Vidura Niti." Did not fight in the Kurukshetra war. His advice was always correct but rarely followed.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ====================================================
+     SECTION XI — BHARATA & KURU TO PANDAVAS
+     ==================================================== -->
+<section class="section" id="bharata">
+  <span class="section-number">SECTION XI</span>
+  <h1 class="section-title">Pandavas & Kauravas — The Final Generation</h1>
+  <div class="section-devanagari">पाण्डव और कौरव</div>
+
+  <h2>The Pandavas — Five Sons of Pandu</h2>
+
+  <p>Pandu was cursed by sage Kindama that he would die if he united with a woman. He retreated to the forest with his two wives. His first wife <strong>Kunti</strong> had a divine boon from sage Durvasa: she could summon any god and bear a son by him. She used this boon to give Pandu five sons:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Pandava</th><th>Sanskrit</th><th>Divine Father</th><th>Earthly Mother</th><th>Qualities</th><th>Weapon/Field</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Yudhishthira</strong></td><td>युधिष्ठिर</td>
+        <td>Yama (Dharmaraja)</td><td>Kunti</td>
+        <td>Supreme dharmic ruler, truthfulness, justice. Never uttered a lie in his life (except once, regarding Ashwatthama).</td>
+        <td>Spear; governance; philosophy</td>
+      </tr>
+      <tr>
+        <td><strong>Bhima</strong></td><td>भीम</td>
+        <td>Vayu (Wind God)</td><td>Kunti</td>
+        <td>Immense physical strength (strength of 10,000 elephants), voracious appetite, fierce protector of family.</td>
+        <td>Mace (Gada); wrestling</td>
+      </tr>
+      <tr>
+        <td><strong>Arjuna</strong></td><td>अर्जुन</td>
+        <td>Indra (King of Devas)</td><td>Kunti</td>
+        <td>Greatest archer ever born. Receiver of Bhagavad Gita. Ambidextrous (Savyasachi). Won Draupadi at svayamvara.</td>
+        <td>Bow (Gandiva); divine arrows</td>
+      </tr>
+      <tr>
+        <td><strong>Nakula</strong></td><td>नकुल</td>
+        <td>Ashvins (Twin Divine Physicians)</td><td>Madri</td>
+        <td>Most handsome of all men, expert in horse training and Ayurveda, loyal and skilled warrior.</td>
+        <td>Sword; horse mastery</td>
+      </tr>
+      <tr>
+        <td><strong>Sahadeva</strong></td><td>सहदेव</td>
+        <td>Ashvins (Twin Divine Physicians)</td><td>Madri</td>
+        <td>Wisest of Pandavas, expert in astrology and signs, adept at cattle-raising, humble yet brilliant.</td>
+        <td>Sword; astrology</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The Kauravas — 100 Sons of Dhritarashtra</h2>
+
+  <p>Gandhari (Dhritarashtra's wife, princess of Gandhara, sister of Shakuni) wrapped her eyes in cloth out of devotion to her blind husband, never to use her sight again. She was pregnant for two years. Sage Vyasa had granted her a boon of 100 sons. When the mass of flesh was born, Vyasa divided it into 101 pieces (100 sons + 1 daughter), placing each in a jar of ghee to mature.</p>
+
+  <div class="fact-box">
+    <h4>The 100 Kauravas</h4>
+    <p>The most notable Kauravas: <strong>Duryodhana</strong> (eldest, the primary antagonist), <strong>Dushashana</strong> (second, who dragged Draupadi by her hair), <strong>Vikarna</strong> (the most righteous Kaurava, who alone protested the disrobing of Draupadi), <strong>Yuyutsu</strong> (born of a Vaishya woman, fought on the Pandava side), and <strong>Dushashala</strong> (the one daughter, married to Jayadratha). All 99 brothers except Vikarna and Yuyutsu fought for Duryodhana. All were killed at Kurukshetra except Yuyutsu.</p>
+  </div>
+
+  <h2>Their Common Wife — Draupadi</h2>
+
+  <p><strong>Draupadi</strong> (<span class="skt">द्रौपदी</span>), also called Krishnaa, Panchali, and Yajnaseni, was born from a sacred fire — the daughter of King Drupada of Panchala. In a previous life she had prayed to Shiva for a husband with five qualities; Shiva granted "you shall have five husbands." Thus she married all five Pandavas. She is considered a partial avatar of Shri (Lakshmi). The Draupadi swayamvara (where Arjuna shot the rotating fish-eye) is one of the Mahabharata's most celebrated episodes.</p>
+
+  <h2>Pandava Children at Kurukshetra</h2>
+
+  <table class="data-table">
+    <thead><tr><th>Father</th><th>Mother</th><th>Son</th><th>Fate</th></tr></thead>
+    <tbody>
+      <tr><td>Yudhishthira</td><td>Draupadi</td><td>Prativindhya</td><td>Killed at Kurukshetra by Ashwatthama</td></tr>
+      <tr><td>Bhima</td><td>Draupadi</td><td>Srutasoma</td><td>Killed at Kurukshetra by Ashwatthama</td></tr>
+      <tr><td>Arjuna</td><td>Draupadi</td><td>Shrutakarma</td><td>Killed at Kurukshetra by Ashwatthama</td></tr>
+      <tr><td>Nakula</td><td>Draupadi</td><td>Shatanika</td><td>Killed at Kurukshetra by Ashwatthama</td></tr>
+      <tr><td>Sahadeva</td><td>Draupadi</td><td>Shrutasena</td><td>Killed at Kurukshetra by Ashwatthama</td></tr>
+      <tr><td>Bhima</td><td>Hidimba (Rakshasi)</td><td><strong>Ghatotkacha</strong></td><td>Killed by Karna's Shakti weapon — his death saved Arjuna</td></tr>
+      <tr><td>Arjuna</td><td>Subhadra (Krishna's sister)</td><td><strong>Abhimanyu</strong></td><td>Killed in the Chakravyuha (circular formation) by 6 warriors simultaneously</td></tr>
+      <tr><td>Abhimanyu</td><td>Uttara</td><td><strong>Parikshit</strong></td><td>Killed in womb by Ashwatthama's Brahmastra; revived by Krishna; became last Kuru king</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ====================================================
+     SECTION XII — KRISHNA'S DYNASTY
+     ==================================================== -->
+<section class="section" id="krishna">
+  <span class="section-number">SECTION XII</span>
+  <h1 class="section-title">Krishna's Dynasty — The Yadavas of Dwaraka</h1>
+  <div class="section-devanagari">श्रीकृष्ण का वंश — द्वारका</div>
+
+  <div class="king-profile">
+    <div class="king-emblem">🪈</div>
+    <div>
+      <div class="king-name">Shri Krishna</div>
+      <div class="king-sanskrit">श्री कृष्ण — वासुदेव</div>
+      <div class="king-meta">
+        <span class="tag dynasty">Yadu-Vrishni-Chandravansha</span>
+        <span class="tag era">Late Dvapara Yuga</span>
+        <span class="tag">8th Avatar of Vishnu</span>
+        <span class="tag">Son of Vasudeva & Devaki</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Krishna's position in Chandravansha is uniquely paradoxical: <strong>he is both a descendant of the dynasty AND the Supreme Absolute</strong> incarnated within it. The Bhagavata Purana presents his entire earthly career as <em>Lila</em> (divine play). His Chandravanshi lineage is: Brahma → Atri → Chandra → Budha → Pururava → Aayus → Nahusha → Yayati → Yadu → (through ~20 generations) → Shurasena → Vasudeva → <strong>Krishna</strong>.</p>
+
+  <h2>Krishna's Wives and Children</h2>
+
+  <p>Krishna had 8 principal wives (<em>Ashtabharyas</em>) and after the defeat of Narakasura, married 16,100 captive women to restore their dignity (all considered his wives). His principal sons:</p>
+
+  <table class="data-table">
+    <thead><tr><th>Wife</th><th>Prominent Son(s)</th><th>Significance</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rukmini</strong> (Lakshmidevi's avatar)</td><td>Pradyumna (eldest — reborn Kamadeva)</td><td>Most prominent son; killed Shambara demon; married Mayavati</td></tr>
+      <tr><td><strong>Satyabhama</strong></td><td>Bhanu (eldest of her sons)</td><td>Satyabhama's sons were 10; she fought alongside Krishna against Narakasura</td></tr>
+      <tr><td><strong>Jambavati</strong></td><td>Samba (led to destruction of Yadavas)</td><td>Samba's mischievous behavior with sages led to the iron pestle curse</td></tr>
+      <tr><td><strong>Nagnajiti</strong></td><td>Various sons</td><td>Won by Krishna tying 7 bulls</td></tr>
+      <tr><td><strong>Kalindi</strong></td><td>Various sons</td><td>Daughter of Sun God, sought Krishna as husband</td></tr>
+      <tr><td><strong>Mitravinda</strong></td><td>Various sons</td><td>Won at svayamvara by Krishna</td></tr>
+      <tr><td><strong>Bhadra</strong></td><td>Various sons</td><td>Cousin of Krishna (Kekaya princess)</td></tr>
+      <tr><td><strong>Lakshmana</strong></td><td>Various sons</td><td>Madra princess</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The Yadava Destruction — End of Krishna's Clan</h2>
+
+  <p>The destruction of the Yadava clan is one of the Mahabharata/Bhagavata's most poignant passages. The proximate cause was the prank of young Yadava men (<strong>Samba</strong> led them) who dressed Samba as a pregnant woman and asked sages Vishwamitra, Kanva, and Narada what "she" would give birth to. The insulted sages cursed: "She shall give birth to an iron pestle that will destroy the entire Yadava clan!"</p>
+
+  <p>An iron pestle was indeed born. King Ugrasena, horrified, had it ground to powder and thrown into the sea. But a small piece remained; a fish swallowed it. Years later, the powder grew as reeds on the seashore. A hunter used the one remaining fragment (that the fish had swallowed) as an arrowhead.</p>
+
+  <p>In a drunken festival at Prabhasa (coastal pilgrimage site), the Yadavas began fighting among themselves, uprooted the iron reeds from the shore, and killed each other with them. <strong>Balarama</strong> departed via yoga (a great serpent emerged from his mouth — revealing his Adishesha identity). Krishna was sitting alone in meditation when the hunter <strong>Jara</strong> mistook his foot (visible through foliage) for a deer and shot him with that last iron-fragment arrow.</p>
+
+  <div class="scripture-box">
+    <div class="source">MAHABHARATA — MAUSALA PARVA 7.17–25; BHAGAVATA PURANA 11.30</div>
+    <p>Krishna said to Jara: "Do not be afraid. You have done what was to be done. Go." Then he departed for his eternal abode — the Vaikuntha loka. Arjuna arrived and cremated the body. Dwaraka was submerged in the ocean. The Chandravanshi-Yadava era ended.</p>
+  </div>
+
+  <h2>Balarama's Lineage</h2>
+
+  <p><strong>Balarama</strong> (<span class="skt">बलराम</span>), elder brother of Krishna, is considered an avatar of <em>Adishesha</em> (the primeval serpent). His wife was <strong>Revati</strong>, daughter of King Raivata (from a different era — she was from an earlier Yuga brought forward). His sons include <strong>Nisatha</strong> and <strong>Ulmuka</strong>. Balarama was offered to both Pandavas and Kauravas in the Kurukshetra war; he chose to remain neutral and perform a pilgrimage. He was the guru of both Bhima and Duryodhana in mace-fighting.</p>
+
+  <h2>Pradyumna and Aniruddha — Krishna's Line</h2>
+
+  <div class="ascii-tree">
+KRISHNA'S DIRECT DESCENDANTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KRISHNA + RUKMINI
+     │
+  PRADYUMNA (reborn Kamadeva — killed Shambara demon)
+     │
+     + MAYAVATI (Rati, Kamadeva's wife reborn)
+     │
+  ANIRUDDHA (grandson of Krishna)
+     │
+     + USHA (daughter of demon Bana)
+     │  (Aniruddha-Usha love story: Usha dreamed of Aniruddha,
+     │   had her friend Chitralekha paint portraits until identified,
+     │   Chitralekha magically transported sleeping Aniruddha to Shonitpura;
+     │   Bana captured him; Krishna-Balarama waged war against Bana + Shiva)
+     │
+   VAJRA (son of Aniruddha — last Yadava royal; survived the destruction)
+     │
+   VAJRA was enthroned by Arjuna as king of Indraprastha
+   after the Yadava destruction — continuing the Vrishni line minimally
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION XIII — PANDAVA-KAURAVA CONNECTIONS
+     ==================================================== -->
+<section class="section" id="pandava-kaurava">
+  <span class="section-number">SECTION XIII</span>
+  <h1 class="section-title">Pandava-Kaurava-Krishna — The Triple Connection</h1>
+  <div class="section-devanagari">एक ही वंश के तीन शाखाएँ</div>
+
+  <p>One of the most remarkable features of the Mahabharata is that its three principal groups — Pandavas, Kauravas, and Krishna's Yadavas — were <em>all part of the same Chandravansha</em>, connected through different branches of Yayati's descendants. Here is the connection made explicit:</p>
+
+  <div class="highlight-blue">
+    <h4>How Pandavas/Kauravas and Krishna Are Related</h4>
+    <ul>
+      <li><strong>Pandavas/Kauravas:</strong> Yayati → Puru → (through 20+ generations) → Kuru → Shantanu → [Pandu/Dhritarashtra] → Pandavas/Kauravas</li>
+      <li><strong>Krishna:</strong> Yayati → Yadu → (through 20+ generations) → Shurasena → Vasudeva → Krishna</li>
+      <li><strong>Kunti Connection:</strong> Kunti (mother of Pandavas) was the daughter of <strong>Shurasena</strong> — making her Krishna's paternal aunt (<em>Bua</em>). Therefore Krishna and the Pandavas were cousins (Krishna = Arjuna's first cousin, technically). This is why Krishna naturally sided with Pandavas — they were his maternal family's relatives. He called Arjuna "<em>Partha</em>" (son of Pritha/Kunti).</li>
+    </ul>
+  </div>
+
+  <div class="ascii-tree">
+THE TRIPLE COUSINAGE — CHANDRAVANSHA CONNECTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+         YAYATI
+        /        \
+    YADU         PURU
+      │              │
+  ~20 generations  ~20 generations
+      │              │
+  SHURASENA      SHANTANU
+   /     \           │
+VASUDEVA PRITHA   VICHITRAVIRYA
+(father  (=KUNTI)     │
+of Krishna) │      PANDU ←────────── married KUNTI
+   │        │         │
+KRISHNA    Married  ARJUNA, BHIMA, etc.
+           PANDU
+
+CONCLUSION:
+ - KUNTI was daughter of SHURASENA (Vasudeva's father)
+ - VASUDEVA = Kunti's brother (given in adoption, so technically cousin)
+ - KRISHNA = Vasudeva's son = Kunti's nephew
+ - ARJUNA = Kunti's son
+ - Therefore: KRISHNA = ARJUNA's cousin (maternal side)
+ - Krishna calls himself "Suhrit" (friend) AND is genuinely family
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <h2>Jarasandha — The Most Powerful Kaurava-Era Enemy</h2>
+
+  <p><strong>Jarasandha</strong> (<span class="skt">जरासन्ध</span> — "joined by Jara") was king of Magadha. He was born in two halves from two wives of King Brihadratha; a Rakshasi named <strong>Jara</strong> joined the two halves. He was Krishna's greatest political enemy — the Magadha empire-builder who attacked Mathura 18 times, forcing Krishna to relocate the Yadavas to Dwaraka. He kept 86 kings captive for a planned human sacrifice (Naramedha Yajna). He was finally killed by <strong>Bhima</strong> in a duel arranged by Krishna and Arjuna, who entered his palace disguised as Brahmin guests.</p>
+
+  <p>Jarasandha's lineage: <strong>Vrihadratha</strong> (son of Vasumati, daughter of Kashi king) → Jarasandha → <strong>Sahadeva</strong> (Jarasandha's son, who became an ally of Pandavas after his father's death).</p>
+
+  <h2>Shishupala — Krishna's Cousin and Greatest Critic</h2>
+
+  <p><strong>Shishupala</strong> (<span class="skt">शिशुपाल</span> — "protector of children") was king of Chedi. His mother was a sister of Vasudeva (Krishna's father), making Shishupala Krishna's maternal cousin. Born with three eyes and four arms (omen of a great demon), his mother was told these extra limbs would fall off in the lap of his destined killer. They fell off in Krishna's lap. Vasudeva's sister begged Krishna to spare her son 100 times; Krishna promised. Shishupala spent his life insulting Krishna, and at Yudhishthira's Rajasuya Yajna, the 100th insult was uttered. Krishna cut off his head with the Sudarshana Chakra.</p>
+</section>
+
+<!-- ====================================================
+     SECTION XIV — LESSER KNOWN BRANCHES
+     ==================================================== -->
+<section class="section" id="lesser">
+  <span class="section-number">SECTION XIV</span>
+  <h1 class="section-title">Lesser-Known Branches of Chandravansha</h1>
+  <div class="section-devanagari">अल्पज्ञात शाखाएँ</div>
+
+  <h2>The Krivi / Kekayas (Puru Sub-branch)</h2>
+  <p>From Ajamidha's sons emerged the <strong>Krivi</strong> and <strong>Panchala</strong> lineages. The Panchalas (whose great king was Drupada, father of Draupadi) were a Puru-Chandravanshi branch, making Draupadi herself a Chandravanshi by birth. The Kekeya kingdom (five tribes) was another Puru branch; Kekeyi (Rama's stepmother) came from Kekeyas, forming a rare Suryavansha-Chandravansha marriage connection.</p>
+
+  <h2>The Matsya Kingdom</h2>
+  <p><strong>Matsya</strong> kingdom (fish-kingdom) of Virata (where Pandavas spent their 13th year in disguise) was ruled by king Virata, who is connected through the Matsya branch of the Puru lineage. The Matsya kingdom is modern Alwar-Jaipur area of Rajasthan.</p>
+
+  <h2>Nala-Damayanti Branch</h2>
+  <p><strong>Nala</strong>, king of Nishadha, is related to the Yadava branch through the Vidarbha kingdom connection. Damayanti was from Vidarbha (Yadu lineage through Jyamagha-Vidarbha). Their love story (told as a sub-narrative in Mahabharata's Vana Parva) is one of the most beautiful in Sanskrit literature.</p>
+
+  <h2>Chedi Kingdom (Shishupala's Line)</h2>
+  <p>The <strong>Chedi</strong> kingdom's royal lineage was Chandravanshi through the Yadu/Yadava connections. Their kings, while politically aligned with Jarasandha against Krishna, were blood relatives of the Yadavas.</p>
+
+  <h2>The Shurasena Kingdom</h2>
+  <p>Shurasena's kingdom (Mathura region) was the most direct ancestor of Krishna's Dwaraka empire. Shurasena had ten sons and five daughters; his most famous descendants: Vasudeva (father of Krishna), Kunti (mother of Pandavas). This kingdom effectively bridged the Puru and Yadu lineages through the Kunti connection.</p>
+
+  <h2>Paurava Sub-dynasties</h2>
+  <p>Several minor Paurava (Puru-descendant) kingdoms existed across north India: the <strong>Kashi</strong> royal family (Amba, Ambika, Ambalika were Kashi princesses), the <strong>Koshala</strong> minor branch, the <strong>Kuninda</strong> kingdom (Himalayan region). Many of these appear briefly in the Mahabharata's geography.</p>
+
+  <h2>The Shalya Branch (Madra Kingdom)</h2>
+  <p><strong>Shalya</strong>, king of Madra, was Madri's (second wife of Pandu) brother, and maternal uncle of Nakula and Sahadeva. Madra kingdom was northwest India (modern Punjab-Pakistan border area). Although Shalya fought for the Kauravas (tricked by Duryodhana's hospitality), his nephews were Pandavas. He became the charioteer of Karna on the 17th day of battle — a reluctant position where he actually subtly undermined Karna's confidence. He was killed by Yudhishthira on the last day of war.</p>
+</section>
+
+<!-- ====================================================
+     SECTION XV — RARE & HIDDEN INFORMATION
+     ==================================================== -->
+<section class="section" id="rare">
+  <span class="section-number">SECTION XV</span>
+  <h1 class="section-title">Rare & Hidden Information — What Most Don't Know</h1>
+  <div class="section-devanagari">दुर्लभ तथ्य और रहस्य</div>
+
+  <h2>1. The Gender-Fluid Origin of Chandravansha</h2>
+  <p>As noted, Ilā/Sudyumna — the progenitor — alternated between male and female each month. This means the "mother" and "father" of the Chandravansha (Ilā the mother, Sudyumna the father) were the <em>same being</em>. This is mentioned in Vishnu Purana 4.1, Bhagavata 9.1, and Mahabharata Adi Parva, yet is rarely discussed in popular Puranic storytelling.</p>
+
+  <h2>2. Yayati's Daughters — The Forgotten Connections</h2>
+  <p>Yayati also had daughters by Devayani and Sharmishtha. One of Devayani's daughters (some traditions name her <strong>Madhavi</strong>) was given as "currency" by her father Yayati to sage <strong>Galava</strong> in lieu of 800 white horses with dark ears as Guru dakshina. Madhavi successively married four kings (including Harischandra's descendants) and bore sons who became great kings — then returned to her father, and ultimately chose a life of asceticism. This extraordinary story (Mahabharata, Udyoga Parva, "Galavacharita") is one of the most stunning feminist narratives in Sanskrit literature, rarely cited.</p>
+
+  <h2>3. Shashabindu — The Forgotten Chakravarti</h2>
+  <p>Shashabindu of the Yadu lineage is listed as one of the <em>Saptacharana</em> (seven universal emperors) in Vishnu Purana and performed great yajnas rivaling Indra. He is almost never mentioned in popular literature despite being designated a Chakravarti by the Puranas.</p>
+
+  <h2>4. The 28 Kurus Before Shantanu</h2>
+  <p>The Mahabharata and Vishnu Purana list approximately 28–32 kings of the Kuru line between Kuru (the eponymous founder) and Shantanu. These kings — Anashvan, Parikshit (I), Bhimasena (I), Pratichepa, Pratikshepa, Abhimanyu (I), Khaṇḍapāṇi, Janamejaya (II), Mahāsāla, Shūratha, etc. — are almost entirely absent from popular Puranic discussions. They represent ~1,000+ years of Kuru rule before the Mahabharata's events.</p>
+
+  <h2>5. Roudrashva's 10 Apsara Sons</h2>
+  <p>An intermediate Puru-lineage king <strong>Roudrashva</strong> had 10 sons by the Apsara <strong>Ghritachi</strong>. These 10 sons — Rikeyu, Kaksheyu, Sthandileyu, Krineyumsha, Jaleyu, Sthalyu, Dhaneyu, Vaneshu, Vaneyu, and others — founded minor Puru sub-dynasties that are entirely absent from mainstream tellings.</p>
+
+  <h2>6. Devapi's Abdication — The Climate Miracle</h2>
+  <p><strong>Devapi</strong>, elder brother of Shantanu, should have been king of Hastinapura. He abdicated due to a skin condition (vitiligo according to Vishnu Purana) which technically disqualified him for Kshatriya rituals. He became a sage. Years later when drought struck Hastinapura for 12 years, only Devapi (as a realized sage) could perform the Indra-yajna to bring rain. This created the unusual situation where a man who abdicated his throne saved his brother's kingdom from divine wrath.</p>
+
+  <h2>7. Draupadi Was Also Chandravanshi</h2>
+  <p>Draupadi (Drupada's daughter) belonged to the Panchala royal family, which descended from the Puru-Chandravansha through Ajamidha → Nila → Panchala branch. Thus when Draupadi married the five Pandavas, it was partly an intra-Chandravanshi union — two branches of the same dynasty intermarrying.</p>
+
+  <h2>8. The Ashwatthama Curse — A Living Chandravanshi?</h2>
+  <p>After the massacre of the sleeping Pandava camp, Krishna cursed <strong>Ashwatthama</strong> (son of Drona, not a Chandravanshi himself, but connected to the lineage through service) to wander the earth for 3,000 years as a cursed being, bleeding from the forced removal of the gem on his forehead. This curse technically extends to our current era. While Ashwatthama is not a Chandravanshi by blood, his curse represents the last recorded curse associated with a Chandravansha event.</p>
+
+  <h2>9. The Yayati Paradox — Merit Over Birth</h2>
+  <p>Yayati, who gave Puru the kingdom, had cursed Yadu that his lineage "shall not have royal power." Yet Yadu's line produced Krishna — the Supreme Being. This creates the profound scriptural paradox: a father's curse can shape a dynasty's political destiny, but no curse can obstruct divine will. The Yadu line became the spiritually dominant line precisely because they were freed from the political burden of kingship.</p>
+
+  <h2>10. Astronomical Encoding of the Dynasty</h2>
+  <p>The Chandravansha is astronomically structured. Chandra's 27 wives = 27 Nakshatras (a complete lunar cycle of 27.3 days). Budha/Mercury is the planet of intelligence — appropriate for the dynasty's emphasis on philosophical kings. The dynasty's most famous teaching — the Bhagavad Gita — was given on a battlefield illuminated by Arjuna's chariot (with white horses = Chandravanshi color) under the star-sign connected to Arjuna's birth. Every major figure's name has an astronomical/cosmic correspondence in Jyotisha tradition.</p>
+</section>
+
+<!-- ====================================================
+     SECTION XVI — SCRIPTURAL COMPARISONS
+     ==================================================== -->
+<section class="section" id="comparison">
+  <span class="section-number">SECTION XVI</span>
+  <h1 class="section-title">Scriptural Comparisons & Variant Accounts</h1>
+  <div class="section-devanagari">पुराणों में भिन्नता</div>
+
+  <p>Hindu scriptures are <em>not</em> a monolithic text with one version — they represent centuries of preserved oral tradition from multiple regional centers. Divergences between Puranas are normal, expected, and often theologically meaningful. Below are the major divergences in Chandravansha accounts:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Point of Divergence</th><th>Bhagavata Purana</th><th>Vishnu Purana</th><th>Mahabharata</th><th>Matsya/Vayu Purana</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Birth of Chandra</td>
+        <td>From Brahma's mind</td>
+        <td>From Atri's eyes (tapasya)</td>
+        <td>From Atri's eyes (Adi Parva)</td>
+        <td>Born from ocean churning (one version)</td>
+      </tr>
+      <tr>
+        <td>Budha's mother</td>
+        <td>Tara (wife of Brihaspati)</td>
+        <td>Tara (same)</td>
+        <td>Tara (same)</td>
+        <td>Some say Budha was born directly of Chandra + Rohini</td>
+      </tr>
+      <tr>
+        <td>Ilā's gender</td>
+        <td>Born female, then alternating</td>
+        <td>Born male as Sudyumna, transformed to female</td>
+        <td>Born male, transformed female, monthly alternation</td>
+        <td>Various — some say permanently female after transformation</td>
+      </tr>
+      <tr>
+        <td>Pururava's sons</td>
+        <td>Six: Aayus, Dhiman, Amavasu, Vishvayu, Shataayu, Dridhayu</td>
+        <td>Three to four sons mentioned</td>
+        <td>Aayus is primary; others mentioned variously</td>
+        <td>Some list seven sons</td>
+      </tr>
+      <tr>
+        <td>Yayati's curse on Yadu</td>
+        <td>Detailed; Yadu barred from "Anushishta" (kingship)</td>
+        <td>Similar but less detailed</td>
+        <td>Mentioned in Adi Parva</td>
+        <td>Matsya Purana adds different details about why Yadu refused</td>
+      </tr>
+      <tr>
+        <td>Generations Yadu→Shurasena</td>
+        <td>~22 kings listed (Bhagavata 9.24)</td>
+        <td>~17–18 kings (Vishnu Purana 4.11–4.13)</td>
+        <td>Less detailed; focuses on Bharata/Kuru line</td>
+        <td>Matsya lists slightly different kings</td>
+      </tr>
+      <tr>
+        <td>Bharata's sons</td>
+        <td>Nine sons abandoned; adopted Bhumanyu</td>
+        <td>Sons disqualified; various accounts</td>
+        <td>Bharata had multiple sons by different queens</td>
+        <td>Some texts say Bharata directly passed to Bhumanyu</td>
+      </tr>
+      <tr>
+        <td>100 Kauravas' names</td>
+        <td>Not fully listed</td>
+        <td>Not fully listed</td>
+        <td>Most complete list in Adi Parva (all 100 named)</td>
+        <td>Partial lists only</td>
+      </tr>
+      <tr>
+        <td>Krishna's wives</td>
+        <td>8 principal + 16,100 (Bhagavata 10.58–10.69)</td>
+        <td>8 principal mentioned</td>
+        <td>Mentions Rukmini, Satyabhama most prominently</td>
+        <td>Various numbers given</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-gold">
+    <h4>Scholarly Note on Divergences</h4>
+    <p>The most reliable approach, endorsed by traditional scholars like <strong>Nilakantha Chaturdhara</strong> (the Mahabharata commentator) and modern scholars like <strong>A.D. Pusalker</strong> and <strong>R.C. Hazra</strong>, is: (1) The Mahabharata's genealogical sections (Adi Parva and Shanti Parva) are the oldest strata; (2) Bhagavata and Vishnu Puranas represent mature, theological elaborations; (3) The Matsya and Vayu Puranas preserve older genealogical traditions that sometimes differ from later Bhagavata theology. Where they agree, the account is most reliable. Where they differ on peripheral details, all versions carry truth-value at their respective levels of metaphorical, historical, and theological meaning.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION XVII — VISUAL DYNASTY CHARTS
+     ==================================================== -->
+<section class="section" id="charts">
+  <span class="section-number">SECTION XVII</span>
+  <h1 class="section-title">Visual Dynasty Charts & Master Timeline</h1>
+  <div class="section-devanagari">दृश्य वंशावली और समयरेखा</div>
+
+  <h2>Complete Succession Chart: Kuru Line to Parikshit</h2>
+
+  <div class="lineage-container">
+    <div style="text-align:center; font-family:'Cinzel',serif; font-size:0.7rem; color:#7a4a1a; margin-bottom:20px; letter-spacing:2px;">KURU DYNASTY — MAIN LINE OF SUCCESSION</div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:0; font-family:'Cinzel',serif; font-size:0.72rem;">
+      <!-- Root -->
+      <div style="background:linear-gradient(135deg,#2a0050,#1a0028);color:#e8b84b;padding:8px 20px;border:1px solid #9b59b6;border-radius:4px;text-align:center;min-width:120px;">YAYATI → PURU</div>
+      <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+      <!-- Row 1 -->
+      <div style="background:linear-gradient(135deg,#1a0a00,#3a1800);color:#e8b84b;padding:8px 20px;border:1px solid #c9932a;border-radius:4px;text-align:center;min-width:120px;">~20 GENERATIONS</div>
+      <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+      <div style="background:linear-gradient(135deg,#001a28,#003050);color:#b8c8d8;padding:8px 20px;border:1px solid #3498db;border-radius:4px;text-align:center;min-width:120px;">KURU (founder)</div>
+      <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+      <div style="background:linear-gradient(135deg,#001a28,#003050);color:#b8c8d8;padding:8px 20px;border:1px solid #3498db;border-radius:4px;text-align:center;min-width:120px;">~10 KINGS</div>
+      <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+      <div style="background:linear-gradient(135deg,#1a0a00,#3a1800);color:#e8b84b;padding:8px 20px;border:1px solid #c9932a;border-radius:4px;text-align:center;min-width:180px;">SHANTANU + GANGA / SATYAVATI</div>
+      <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+      <!-- Branching -->
+      <div style="display:flex;gap:60px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="background:linear-gradient(135deg,#2a0a1a,#4a1a2a);color:#e91e8c;padding:8px 14px;border:1px solid #e91e8c;border-radius:4px;text-align:center;min-width:100px;font-size:0.68rem;">BHISHMA<br>(by Ganga)<br>No children</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+          <div style="background:linear-gradient(135deg,#1a0a00,#3a1800);color:#e8b84b;padding:8px 14px;border:1px solid #c9932a;border-radius:4px;text-align:center;min-width:160px;font-size:0.68rem;">VICHITRAVIRYA + AMBIKA/AMBALIKA<br>(by Satyavati)</div>
+          <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+          <div style="background:rgba(0,0,0,0.05);border:1px dashed #c9932a;padding:6px 12px;border-radius:4px;text-align:center;font-size:0.65rem;color:#7a4a1a;min-width:160px;">NIYOGA with VYASA</div>
+          <div style="width:2px;height:20px;background:#c9932a;opacity:0.6;"></div>
+          <div style="display:flex;gap:30px;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+              <div style="background:linear-gradient(135deg,#1a0028,#2a0050);color:#b8c8d8;padding:6px 12px;border:1px solid #9b59b6;border-radius:4px;text-align:center;font-size:0.68rem;min-width:90px;">DHRITARASHTRA<br>(blind)</div>
+              <div style="width:2px;height:16px;background:#c9932a;opacity:0.6;"></div>
+              <div style="background:linear-gradient(135deg,#1a0028,#2a0050);color:#e8b84b;padding:6px 12px;border:1px solid #c9932a;border-radius:4px;text-align:center;font-size:0.65rem;min-width:90px;">100 KAURAVAS<br>Duryodhana etc.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+              <div style="background:linear-gradient(135deg,#002a00,#004000);color:#a8e8a8;padding:6px 12px;border:1px solid #27ae60;border-radius:4px;text-align:center;font-size:0.68rem;min-width:90px;">PANDU<br>(pale)</div>
+              <div style="width:2px;height:16px;background:#c9932a;opacity:0.6;"></div>
+              <div style="background:linear-gradient(135deg,#002a00,#004000);color:#e8b84b;padding:6px 12px;border:1px solid #c9932a;border-radius:4px;text-align:center;font-size:0.65rem;min-width:90px;">5 PANDAVAS<br>+ Arjuna → Abhimanyu</div>
+              <div style="width:2px;height:16px;background:#c9932a;opacity:0.6;"></div>
+              <div style="background:linear-gradient(135deg,#1a0a00,#3a1800);color:#f5dfa0;padding:6px 12px;border:2px solid #e8b84b;border-radius:4px;text-align:center;font-size:0.68rem;min-width:90px;">PARIKSHIT<br>Last Kuru King</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Master Timeline — Chandravansha from Origin to Kali Yuga</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#9b59b6,#6c3483)">∞</div>
+      <div class="timeline-content">
+        <div class="timeline-era">COSMIC ORIGIN — BEFORE TIME</div>
+        <div class="timeline-title">Brahma → Atri → Chandra / Tarakamaya War / Birth of Budha</div>
+        <p>The cosmic foundation of the dynasty. No earthly time can be assigned. Chandra's creation, his abduction of Tara, and Budha's consequential birth occur in cosmic time before the human Yugas as we count them.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#c9932a,#7a4a1a)">I</div>
+      <div class="timeline-content">
+        <div class="timeline-era">SATYA YUGA / TRETA YUGA BOUNDARY</div>
+        <div class="timeline-title">Pururava to Yayati (~8 generations)</div>
+        <p>Pururava, Aayus, Nahusha, Yayati. The foundational human kings. Characterized by extreme virtue mixed with cosmic-scale errors — Nahusha's pride (Indra-fall), Yayati's lust-and-wisdom arc. These kings lived for thousands of years according to scriptural accounts.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#c9932a,#7a4a1a)">II</div>
+      <div class="timeline-content">
+        <div class="timeline-era">TRETA YUGA</div>
+        <div class="timeline-title">The Five Sons — Dynasty Branches (Yadu, Puru, Turvasu, Druhyu, Anudruhyu)</div>
+        <p>The great branching. Dozens of kingdoms established. Haihaya Dynasty rises and falls (Kartaviryarjuna vs. Parashurama). The Yadu clan spreads across north-central India. The Puru line consolidates around Hastinapura area.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#27ae60,#1a5c1a)">III</div>
+      <div class="timeline-content">
+        <div class="timeline-era">LATE TRETA / DVAPARA YUGA BOUNDARY</div>
+        <div class="timeline-title">Emperor Bharata — India Named</div>
+        <p>Dushyanta-Shakuntala love story. Birth of Emperor Bharata. He conquers all of Bharatavarsha (India). India receives his name. This represents the peak of Chandravanshi political power in its pan-Indian sense.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#e74c3c,#8b1a1a)">IV</div>
+      <div class="timeline-content">
+        <div class="timeline-era">DVAPARA YUGA — MIDDLE PERIOD</div>
+        <div class="timeline-title">Kuru Dynasty Consolidation (Hastinapura era begins)</div>
+        <p>Kuru (eponymous founder) sanctifies Kurukshetra. Approximately 28 kings rule Hastinapura. The Kurus become the dominant political power of north India. Gradual moral decline begins alongside political expansion.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#e74c3c,#8b1a1a)">V</div>
+      <div class="timeline-content">
+        <div class="timeline-era">LATE DVAPARA YUGA — PRE-KRISHNA</div>
+        <div class="timeline-title">Shantanu Era — Bhishma's Vow — Vichitravirya's Death</div>
+        <p>Bhishma's terrible oath. The succession crisis. Vyasa's niyoga producing Dhritarashtra, Pandu, and Vidura. The seeds of the Mahabharata catastrophe are planted. Simultaneously in the Yadu branch: Ugrasena rules Mathura, Kamsa murders Vasudeva's first 6 children.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#3498db,#1a4a7a)">VI</div>
+      <div class="timeline-content">
+        <div class="timeline-era">LATE DVAPARA YUGA — KRISHNA'S ERA</div>
+        <div class="timeline-title">Krishna's Birth, Kamsa's Death, Dwaraka's Foundation</div>
+        <p>Krishna born in Mathura prison at midnight (Ashtami of Krishna Paksha, Rohini Nakshatra). Kamsa killed. Mathura liberated. Jarasandha's repeated attacks force Dwaraka's founding (coastal Gujarat). Yadavas consolidate at Dwaraka.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#e74c3c,#8b0000)">VII</div>
+      <div class="timeline-content">
+        <div class="timeline-era">LATE DVAPARA YUGA — THE GREAT WAR</div>
+        <div class="timeline-title">Kurukshetra War — 18 Days, 18 Akshauhinis</div>
+        <p>The Mahabharata war destroys virtually all of the active Chandravanshi generation. All 100 Kauravas killed. All 5 Pandava sons (by Draupadi) killed. Abhimanyu (Arjuna's son) killed. Ghatotkacha killed. Only the Pandavas, Satyaki, Yuyutsu, Ashwatthama, and a few others survive on all sides combined.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:linear-gradient(135deg,#95a5a6,#5a6a6a)">VIII</div>
+      <div class="timeline-content">
+        <div class="timeline-era">KALI YUGA BEGINS (3102 BCE by traditional calculation)</div>
+        <div class="timeline-title">Krishna Departs — Dwaraka Submerged — Parikshit's Kingdom</div>
+        <p>Krishna departs (Mausala Parva). Yadavas destroy themselves. Dwaraka submerged. Pandavas begin their final journey (Mahaprasthana). Parikshit (Abhimanyu's son) becomes king. Kali Yuga formally begins. Parikshit rules for 60 years, then is cursed by Shringi (son of Shamika), killed by Takshaka naga in 7 days. His son Janamejaya performs the Sarpa Satra (snake sacrifice) — during which Vaishampayana first recites the Mahabharata to him.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Dynasty Power Comparison Chart</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Dynasty/Branch</th><th>Period</th><th>Peak Territory</th><th>Greatest King</th><th>Fate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Yadu (Early)</strong></td><td>Post-Yayati to Satvata era</td><td>North-central India</td><td>Shashabindu (Chakravarti)</td><td>Split into Vrishni, Andhaka, Bhoja sub-clans</td></tr>
+      <tr><td><strong>Haihaya</strong></td><td>Treta Yuga</td><td>Mahishmati + Narmada basin</td><td>Kartaviryarjuna (1000 arms)</td><td>Destroyed by Parashurama</td></tr>
+      <tr><td><strong>Puru (Early)</strong></td><td>Post-Yayati to Bharata</td><td>Ganga-Yamuna plain</td><td>Emperor Bharata (gave India its name)</td><td>Continued as Kuru dynasty</td></tr>
+      <tr><td><strong>Kuru</strong></td><td>Dvapara Yuga main period</td><td>Hastinapura, North India</td><td>Emperor Bharata / Yudhishthira</td><td>Destroyed at Kurukshetra; last king Parikshit</td></tr>
+      <tr><td><strong>Vrishni-Yadava</strong></td><td>Late Dvapara Yuga</td><td>Dwaraka + coastal Gujarat</td><td>Krishna (political genius + divine avatar)</td><td>Self-destroyed at Prabhasa; Dwaraka submerged</td></tr>
+      <tr><td><strong>Mathura Yadava</strong></td><td>Immediately pre-Krishna</td><td>Mathura + Shurasena region</td><td>Ugrasena (rightful king)</td><td>Merged into Dwaraka-Yadava under Krishna</td></tr>
+      <tr><td><strong>Chedi</strong></td><td>Mahabharata era</td><td>Chedi (central India)</td><td>Shishupala</td><td>Killed by Krishna's Sudarshana; kingdom absorbed</td></tr>
+      <tr><td><strong>Panchala</strong></td><td>Mahabharata era</td><td>Panchala (north India)</td><td>Drupada</td><td>Allied with Pandavas; kingdom survived Kurukshetra</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ====================================================
+     SECTION XVIII — FINAL DESCENDANTS IN KALI YUGA
+     ==================================================== -->
+<section class="section" id="kali">
+  <span class="section-number">SECTION XVIII</span>
+  <h1 class="section-title">Final Descendants in Kali Yuga</h1>
+  <div class="section-devanagari">कलियुग में अन्तिम वंशज</div>
+
+  <h2>The Kuru Line After Kurukshetra</h2>
+
+  <div class="ascii-tree">
+LAST KURU-CHANDRAVANSHI KINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ABHIMANYU (killed at Kurukshetra)
+     │
+     + UTTARA (daughter of Matsya king Virata)
+     │
+  PARIKSHIT (I) ←── killed in womb by Ashwatthama's Brahmastra;
+     │           revived by Krishna; born JUST as Kali Yuga began
+     │           Ruled 60 years from Hastinapura
+     │           Cursed by Shringi (son of Shamika): die in 7 days from snake
+     │           Spent 7 days on a platform listening to Bhagavata Purana
+     │           (narrated by Shuka Deva — the great spiritual event)
+     │           Bitten by Takshaka naga; departed
+     │
+  JANAMEJAYA (II)
+     │  Son of Parikshit; performed Sarpa Satra (snake sacrifice)
+     │  interrupted by Astika Muni (stopping extinction of Nagas)
+     │  It was at this sacrifice that the Mahabharata was first
+     │  publicly recited by Vaishampayana
+     │
+  SHATANIKA
+     │
+  SAHASRANIKA
+     │
+  ASHVAMEDHADATA
+     │
+  ASIMAKRISHNA
+     │
+  NEMICHAKRA (moved capital from Hastinapura to Kaushambi
+              when Hastinapura was flooded by Ganga)
+     │
+  CHITRARATHA
+     │
+  SUCHIRATHA
+     │
+  VRISHNIMAT
+     │
+  SUSHENA
+     │
+  SUNITHA
+     │
+  NRICHAKSHA
+     │
+  SUKHIBALA
+     │
+  PARIPLAVA
+     │
+  MEDHĀVĪ
+     │
+  NRIPANJAYA
+     │
+  DURVA
+     │
+  TIMI
+     │
+  BRIHADRATA (Brihatkshatra in some versions)
+     │
+  VASUDĀNA
+     │
+  SHATANIKA (II)
+     │
+  UDAYANA (famous Avanti king — historical figure)
+     │
+  KSHMAKA ←── LAST KING of the Kuru-Chandravansha mentioned in Puranas
+              After Kshmaka, the lineage ends or merges into unnamed rulers
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </div>
+
+  <div class="scripture-box">
+    <div class="source">VISHNU PURANA 4.21 — ON KALI YUGA KINGS</div>
+    <p>The Vishnu Purana prophecies: "In Kali Yuga, kings will be mostly unrighteous, short-lived, avaricious, and will rule for short periods. The lineages of great royal families will diminish. The Kurus' line will end with Kshmaka." The Bhagavata (12.1) makes similar prophecies about the degeneration of royal lineages in Kali Yuga.</p>
+  </div>
+
+  <h2>Surviving Yadava Lines</h2>
+
+  <p>From the Yadava side, only <strong>Vajra</strong> (son of Aniruddha, great-grandson of Krishna) survived the Prabhasa massacre. Arjuna installed him as king over the Vrishni/Yadava survivors who remained. Some Puranas mention that small Yadava settlements survived in various locations. The Harivamsha mentions that some Yadavas escaped to the forests and mountains.</p>
+
+  <p>Traditional Hindu communities including the <strong>Yadav/Ahir</strong> communities of north India, the <strong>Jadejas</strong> of Kutch, and certain <strong>Rajput clans</strong> claim descent from the Yadava lineage. The <strong>Bhati Rajputs</strong> of Rajasthan claim direct descent from Krishna's grandson Vajra. These are traditional claims that cannot be fully verified historically but are part of living oral tradition.</p>
+
+  <h2>Gotra Connections to Chandravansha</h2>
+
+  <p>The <em>gotra</em> system (patrilineal clan identity) in Hinduism preserves some of these ancient connections. The <strong>Atri gotra</strong> traces to Sage Atri (father of Chandra). The <strong>Bharadwaja gotra</strong> is connected to the Puru-Bharata line through Drona's ancestry. The <strong>Vasistha gotra</strong> intersects with Kuru kings through Vasistha's role as Kuru dynasty's purohit. Many North Indian communities with Chandravanshi descent use gotras that reflect these ancient Chandravanshi connections.</p>
+</section>
+
+<!-- ====================================================
+     SECTION XIX — MASTER SUMMARY
+     ==================================================== -->
+<section class="section" id="summary">
+  <span class="section-number">SECTION XIX</span>
+  <h1 class="section-title">Master Summary, Cheat Sheet & Rankings</h1>
+  <div class="section-devanagari">सारांश — सबसे महत्वपूर्ण तथ्य</div>
+
+  <h2>Most Important Kings of Chandravansha</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Rank</th><th>King</th><th>Dynasty Branch</th><th>Why Greatest</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Krishna (Vishnu avatar)</strong></td><td>Yadu-Vrishni</td><td>Supreme Being incarnated; gave Bhagavad Gita; steered Mahabharata's just outcome; spiritually greatest</td></tr>
+      <tr><td>2</td><td><strong>Emperor Bharata</strong></td><td>Puru</td><td>Gave India its name; first universal emperor of Chandravansha lineage; conquered all of Bharatavarsha</td></tr>
+      <tr><td>3</td><td><strong>Yudhishthira</strong></td><td>Kuru-Pandu</td><td>Greatest dharmic king; only mortal in Mahabharata era to enter heaven with physical body; embodiment of righteous rule</td></tr>
+      <tr><td>4</td><td><strong>Yayati</strong></td><td>Early Chandravansha</td><td>Father of all 5 major branches; greatest philosopher-king; his teaching on desire remains foundational in Hindu ethics</td></tr>
+      <tr><td>5</td><td><strong>Kartaviryarjuna</strong></td><td>Yadu-Haihaya</td><td>1000 arms; devotee of Dattatreya; greatest political empire-builder of Treta Yuga; defeated Ravana in battle</td></tr>
+      <tr><td>6</td><td><strong>Nahusha</strong></td><td>Early Puru</td><td>Temporarily became Indra; greatest human conqueror before his downfall; story demonstrates limits of power</td></tr>
+      <tr><td>7</td><td><strong>Shantanu</strong></td><td>Kuru</td><td>His touch healed the aged; pivotal historical figure whose personal choices shaped the Mahabharata's entire arc</td></tr>
+      <tr><td>8</td><td><strong>Parikshit</strong></td><td>Kuru-Abhimanyu</td><td>Spent 7 days hearing Bhagavata Purana from Shuka Deva; died in supreme meditative awareness; model of how to face death</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Simplified Lineage Cheat Sheet</h2>
+
+  <div class="ascii-tree" style="font-size:0.78rem;">
+CHANDRAVANSHA QUICK REFERENCE — FROM BRAHMA TO KALI YUGA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAHMA → ATRI → CHANDRA (Moon God)
+    ↓
+CHANDRA + TARA (wife of Brihaspati) → BUDHA (Mercury)
+    ↓
+BUDHA + ILĀ (daughter of Manu) → PURURAVA (1st Human King)
+    ↓
+PURURAVA + URVASHI (Apsara) → AAYUS
+    ↓
+AAYUS → NAHUSHA (became Indra; fell; cursed to be python)
+    ↓
+NAHUSHA → YAYATI (philosopher-king; wife: Devayani + Sharmishtha)
+    ↓
+YAYATI'S 5 SONS:
+    ├─ YADU [by Devayani] → Satvata → Vrishni → Vasudeva → KRISHNA
+    ├─ TURVASU [by Devayani] → southeast branch, largely ended
+    ├─ DRUHYU [by Sharmishtha] → northwest branch, ended
+    ├─ ANUDRUHYU [by Sharmishtha] → minor branch
+    └─ PURU [by Sharmishtha] → inherited kingdom
+           ↓
+    PURU → ~15 generations → DUSHYANTA
+           ↓
+    DUSHYANTA + SHAKUNTALA → EMPEROR BHARATA (India named)
+           ↓
+    BHARATA → ~10 generations → AJAMIDHA → RIKSHU → SAMVARANA
+           ↓
+    SAMVARANA + TAPATI → KURU (founded Kuru dynasty & Kurukshetra)
+           ↓
+    KURU → ~10 generations → SHANTANU
+           ↓
+    SHANTANU + GANGA → BHISHMA (no children; great warrior)
+    SHANTANU + SATYAVATI → CHITRANGADA (killed), VICHITRAVIRYA (died childless)
+    SATYAVATI + VYASA (pre-marriage son) → NIYOGA arrangement
+           ↓
+    VICHITRAVIRYA via NIYOGA with VYASA:
+    AMBIKA → DHRITARASHTRA (blind) → 100 KAURAVAS (Duryodhana, etc.)
+    AMBALIKA → PANDU (pale) → 5 PANDAVAS (by divine union)
+    MAIDSERVANT → VIDURA (wisest, no political role)
+           ↓
+    PANDU → (by boons to Kunti & Madri):
+    YUDHISHTHIRA (by Yama), BHIMA (by Vayu), ARJUNA (by Indra),
+    NAKULA + SAHADEVA (by Ashvins)
+           ↓
+    ARJUNA + SUBHADRA → ABHIMANYU
+           ↓
+    ABHIMANYU + UTTARA → PARIKSHIT (revived by Krishna; last Kuru king)
+           ↓
+    PARIKSHIT → JANAMEJAYA → ... → KSHMAKA (last in Puranas)
+
+═══════════════════════════════════════════════════════════════════
+THE YADU LINE (parallel track):
+YADU → ~20 kings → SHURASENA → VASUDEVA
+VASUDEVA + DEVAKI → KRISHNA (8th Vishnu avatar)
+VASUDEVA + ROHINI → BALARAMA
+KRISHNA + RUKMINI → PRADYUMNA → ANIRUDDHA → VAJRA
+  (Vajra = last known Yadava royal after Dwaraka's submersion)
+═══════════════════════════════════════════════════════════════════
+  </div>
+
+  <h2>Most Powerful Branches (Final Assessment)</h2>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>🏆 Politically Most Powerful</h4>
+      <p><strong>Puru/Kuru Branch</strong> — Gave India the concept of Dharmic monarchy, the Chakravarti (universal emperor) ideal in Bharata, and the most consequential political dynasty in Hindu Itihasa. Ruled for thousands of years from Hastinapura.</p>
+    </div>
+    <div class="info-card">
+      <h4>🌟 Spiritually Most Exalted</h4>
+      <p><strong>Yadu/Vrishni Branch</strong> — Despite being cursed away from kingship, this branch produced Shri Krishna — the Supreme Absolute's complete avatar. The Bhagavad Gita, the most influential scripture in Hinduism globally, was given by a Yadava Chandravanshi (Krishna) to a Kuru Chandravanshi (Arjuna). No other dynasty can claim this spiritual legacy.</p>
+    </div>
+    <div class="info-card">
+      <h4>⚔️ Militarily Most Formidable</h4>
+      <p><strong>Haihaya Branch</strong> (Yadu sub-branch) — Kartaviryarjuna with his 1,000 arms and armies that defeated Ravana of Lanka in battle. Only Parashurama (Brahmin with divine weapons) could destroy them. Their military might was described as unparalleled in the Treta Yuga.</p>
+    </div>
+    <div class="info-card">
+      <h4>📜 Philosophically Most Influential</h4>
+      <p><strong>Kuru Branch specifically</strong> — The Mahabharata war produced the Bhagavad Gita, the Shanti Parva (containing Bhishma's exhaustive teachings), Vidura Niti, Yaksha Prashna, and Nahusha's philosophical dialogue with Yudhishthira. More philosophical content emerged from this branch than any other.</p>
+    </div>
+  </div>
+
+  <h2>Rare Facts — 10 Things Most People Don't Know</h2>
+
+  <ol>
+    <li><strong>The Chandravansha's founder Ilā was simultaneously male and female</strong> — alternating every month, making Chandravansha's first king also its first queen.</li>
+    <li><strong>Yayati had a daughter Madhavi</strong> given to sage Galava as "currency" — she bore four kings' sons and became a great ascetic, one of the most remarkable feminist figures in Sanskrit literature.</li>
+    <li><strong>Nahusha became Indra</strong> and was only the second human (after certain legendary figures) to rule Svarga, confirming that the Chandravansha's virtue rivaled the Devas.</li>
+    <li><strong>Kartaviryarjuna (Haihaya-Yadu branch) defeated Ravana</strong> in battle, capturing him and releasing him only at Pulastya's request — this is rarely discussed alongside the Ramayana.</li>
+    <li><strong>Draupadi was also Chandravanshi by birth</strong> — the Panchala dynasty (her father Drupada's line) descended from the Puru-Chandravansha, making the entire Mahabharata conflict an intra-Chandravanshi affair.</li>
+    <li><strong>Bhishma was actually the 8th Vasu god reborn</strong> — a divine being who lived through the entire Chandravansha's greatest era as a neutral grandfatherly figure, making him unique in all of Hindu mythology.</li>
+    <li><strong>The last surviving Yadava royalty was Vajra</strong> (Krishna's great-grandson), who was made king by Arjuna after the Yadava self-destruction — a detail almost entirely absent from popular narratives.</li>
+    <li><strong>Parikshit's 7-day Bhagavata hearing</strong> — the reason the Bhagavata Purana was first compiled and spoken aloud was because the last Chandravanshi king had 7 days to live and sought the highest spiritual knowledge. The entire Purana is essentially the dynasty's last gift to humanity.</li>
+    <li><strong>The Kuru lineage continued for ~28+ generations after Parikshit</strong> in Kali Yuga (Janamejaya → Kshmaka), a period covered in Vishnu Purana's Kali Yuga prophecy sections, entirely absent from popular storytelling.</li>
+    <li><strong>The name "India / Bharat" itself is a Chandravanshi legacy</strong> — from Emperor Bharata of the Puru branch, born of Dushyanta and the Apsara-daughter Shakuntala. Every time the country's name is spoken, it honors this dynasty.</li>
+  </ol>
+
+  <div class="ornament-divider">☽ ✦ ॐ ✦ ☾</div>
+
+  <h2>Connection to Modern India</h2>
+
+  <p>The Chandravansha's influence on modern India is immeasurable and ongoing:</p>
+
+  <ul>
+    <li><strong>India's name</strong> — "Bharat" (official name in the Constitution: Article 1) comes directly from Emperor Bharata of the Puru-Chandravansha.</li>
+    <li><strong>The Bhagavad Gita</strong> — spoken by Krishna (Chandravanshi) to Arjuna (Chandravanshi) — remains the most-read Hindu scripture globally, cited by Mahatma Gandhi, S. Radhakrishnan, Swami Vivekananda, and countless others.</li>
+    <li><strong>Lunar calendar</strong> — the Hindu Panchang (almanac) is based on the Moon's movements; Chandravansha gave this calendar its mythological depth.</li>
+    <li><strong>Yadava communities</strong> — tens of millions of Indians identify with Yadava/Ahir heritage, tracing lineage to the Chandravanshi Yadu clan.</li>
+    <li><strong>Rajput dynasties</strong> — many Rajput clans of medieval India claimed Chandravanshi (specifically Yadava and Paurava) descent, shaping the political history of medieval India.</li>
+  </ul>
+</section>
+
+</div><!-- end content-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <h3>Chandravansha Encyclopedia</h3>
+  <p class="gold">चन्द्रवंश — The Lunar Dynasty of Hindu Dharma</p>
+  <p>Compiled from: Mahabharata • Harivamsha • Bhagavata Purana • Vishnu Purana<br>
+  Brahma Purana • Matsya Purana • Vayu Purana • Agni Purana • Rigveda</p>
+  <br>
+  <p style="opacity:0.6; font-size:0.82rem;">This is a scholarly synthesis for educational purposes. Scriptural references are cited where possible. Variant accounts across Puranas are noted. Some genealogical details represent traditional interpolations. Always consult original Sanskrit sources for primary research.<br><br>
+  <em class="gold">"Sarve bhavantu sukhinah" — May all beings be happy.</em></p>
+</footer>
+
+<script>
+// Generate star field
+const starField = document.getElementById('stars');
+for (let i = 0; i < 200; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2.5 + 0.5;
+  star.style.cssText = `
+    width: ${size}px; height: ${size}px;
+    left: ${Math.random() * 100}%;
+    top: ${Math.random() * 100}%;
+    animation-delay: ${Math.random() * 4}s;
+    animation-duration: ${2 + Math.random() * 4}s;
+  `;
+  starField.appendChild(star);
+}
+</script>
+</body>
+</html>

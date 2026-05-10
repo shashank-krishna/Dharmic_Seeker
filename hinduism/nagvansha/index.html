@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagavansha — The Serpent Lineage of Bharat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+  :root {
+    --bg-deep: #0a0804;
+    --bg-mid: #110e07;
+    --bg-card: #1a1408;
+    --bg-card2: #1f1a0c;
+    --gold: #c8963e;
+    --gold-light: #e8b84b;
+    --gold-pale: #f2d07a;
+    --copper: #b5612a;
+    --emerald: #1a6b4a;
+    --emerald-light: #2d9e6f;
+    --emerald-pale: #5ecfa0;
+    --red-deep: #7a1a1a;
+    --red: #c0392b;
+    --cream: #f5e8c8;
+    --cream-dim: #d4c49a;
+    --text-main: #e8d89c;
+    --text-sub: #b8a870;
+    --text-dim: #7a6a48;
+    --border-gold: rgba(200,150,62,0.3);
+    --border-em: rgba(46,158,111,0.25);
+    --shadow: 0 8px 40px rgba(0,0,0,0.7);
+    --glow-gold: 0 0 30px rgba(200,150,62,0.15);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-mid); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 20px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(30,20,5,0) 40%, var(--bg-deep) 100%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(200,150,62,0.06) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .serpent-ring {
+    position: absolute;
+    width: 600px; height: 600px;
+    border: 1px solid rgba(200,150,62,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: rotate 60s linear infinite;
+  }
+  .serpent-ring:nth-child(2) { width:800px; height:800px; border-color:rgba(200,150,62,0.05); animation-duration:90s; animation-direction:reverse; }
+  .serpent-ring:nth-child(3) { width:1000px; height:1000px; border-color:rgba(46,158,111,0.04); animation-duration:120s; }
+
+  @keyframes rotate { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-content { position: relative; z-index: 2; }
+
+  .devanagari-title {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+    margin-bottom: 12px;
+    text-shadow: 0 0 40px rgba(232,184,75,0.4);
+  }
+
+  .hero h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.2rem, 7vw, 5.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold) 40%, var(--copper) 70%, var(--gold-pale) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 20px rgba(200,150,62,0.3));
+  }
+
+  .hero-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    color: var(--emerald-pale);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    opacity: 0.8;
+  }
+
+  .hero-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 20px auto; width: fit-content;
+  }
+  .hero-divider span { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
+  .hero-divider span:last-child { background: linear-gradient(to left, transparent, var(--gold)); }
+  .hero-divider .gem { font-size: 1.4rem; color: var(--gold-light); }
+
+  .hero-desc {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    font-style: italic;
+    line-height: 2;
+  }
+
+  .hero-stats {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem; font-weight: 700;
+    color: var(--gold-light);
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: block;
+  }
+
+  /* ── NAV ── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,8,4,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-gold);
+    padding: 0 20px;
+    overflow-x: auto;
+  }
+  .nav-inner {
+    display: flex; gap: 0;
+    max-width: 1200px; margin: 0 auto;
+    white-space: nowrap;
+  }
+  .nav-inner a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 14px 16px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-inner a:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(200,150,62,0.08);
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--emerald-light);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--gold-pale);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--gold);
+    margin-bottom: 8px;
+    margin-top: 40px;
+  }
+
+  .title-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--emerald));
+    margin-bottom: 32px;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top:0; left:0;
+    width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--gold), var(--copper));
+  }
+  .card.emerald::before { background: linear-gradient(to bottom, var(--emerald-light), var(--emerald)); }
+  .card.red::before { background: linear-gradient(to bottom, var(--red), var(--red-deep)); }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+  /* ── PULL QUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 32px 0;
+    background: rgba(200,150,62,0.04);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--cream-dim);
+    line-height: 2;
+  }
+  .pullquote cite {
+    display: block; margin-top: 8px;
+    font-size: 0.85rem; font-style: normal;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: rgba(200,150,62,0.06);
+    border: 1px solid rgba(200,150,62,0.2);
+    border-radius: 3px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight.green {
+    background: rgba(46,158,111,0.06);
+    border-color: rgba(46,158,111,0.2);
+  }
+
+  /* ── TABLE ── */
+  .data-table {
+    width: 100%; border-collapse: collapse;
+    margin: 24px 0; font-size: 0.9rem;
+  }
+  .data-table th {
+    background: rgba(200,150,62,0.1);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-gold);
+  }
+  .data-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(200,150,62,0.08);
+    color: var(--text-sub);
+    vertical-align: top;
+  }
+  .data-table tr:hover td { background: rgba(200,150,62,0.03); }
+  .data-table td:first-child { color: var(--gold-pale); font-weight: 500; }
+
+  /* ── LINEAGE TREE ── */
+  .lineage-tree {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: var(--emerald-pale);
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--border-em);
+    border-radius: 3px;
+    padding: 24px 28px;
+    overflow-x: auto;
+    line-height: 1.7;
+    white-space: pre;
+  }
+  .lineage-tree .node { color: var(--gold-light); font-weight: bold; }
+  .lineage-tree .deity { color: var(--emerald-pale); }
+  .lineage-tree .king { color: var(--cream); }
+  .lineage-tree .branch { color: var(--copper); }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 8px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), var(--emerald), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px rgba(200,150,62,0.5);
+  }
+  .timeline-item.myth::before { background: var(--emerald-light); box-shadow: 0 0 8px rgba(46,158,111,0.5); }
+  .timeline-date {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .timeline-title { font-weight: 600; color: var(--cream); margin-bottom: 4px; }
+  .timeline-text { font-size: 0.95rem; color: var(--text-sub); }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-right: 6px; margin-bottom: 4px;
+  }
+  .badge.myth { background: rgba(46,158,111,0.15); color: var(--emerald-pale); border: 1px solid rgba(46,158,111,0.3); }
+  .badge.hist { background: rgba(200,150,62,0.15); color: var(--gold-pale); border: 1px solid rgba(200,150,62,0.3); }
+  .badge.folk { background: rgba(181,97,42,0.15); color: #e8905a; border: 1px solid rgba(181,97,42,0.3); }
+  .badge.sym  { background: rgba(122,26,26,0.3);  color: #e88080; border: 1px solid rgba(192,57,43,0.3); }
+
+  /* ── DYNASTY BLOCK ── */
+  .dynasty-block {
+    background: var(--bg-card2);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    margin-bottom: 36px;
+    overflow: hidden;
+  }
+  .dynasty-header {
+    background: linear-gradient(135deg, rgba(200,150,62,0.12), rgba(46,158,111,0.06));
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border-gold);
+    display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .dynasty-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.25rem;
+    color: var(--gold-pale);
+  }
+  .dynasty-period {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--emerald-light);
+    letter-spacing: 0.1em;
+  }
+  .dynasty-body { padding: 24px 28px; }
+  .dynasty-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 0.95rem; }
+  .dynasty-key { color: var(--text-dim); min-width: 120px; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 2px; }
+  .dynasty-val { color: var(--text-sub); flex: 1; }
+
+  /* ── NAGA LIST ── */
+  .naga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .naga-item {
+    background: rgba(200,150,62,0.04);
+    border: 1px solid var(--border-gold);
+    border-radius: 3px;
+    padding: 14px 16px;
+  }
+  .naga-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .naga-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
+
+  /* ── SYMBOL BOX ── */
+  .symbol-row {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(200,150,62,0.08);
+  }
+  .symbol-icon { font-size: 2rem; min-width: 44px; text-align: center; }
+  .symbol-content .symbol-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .symbol-content p { font-size: 0.9rem; color: var(--text-sub); }
+
+  /* ── FACT BOX ── */
+  .fact-box {
+    background: rgba(122,26,26,0.12);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-left: 3px solid var(--red);
+    padding: 14px 20px;
+    margin: 12px 0;
+    font-size: 0.92rem;
+    color: var(--text-sub);
+  }
+  .fact-box strong { color: #e88080; }
+
+  /* ── REVISION CARD ── */
+  .rev-item {
+    padding: 12px 16px;
+    border-left: 2px solid var(--gold);
+    margin-bottom: 10px;
+    background: rgba(200,150,62,0.03);
+    font-size: 0.92rem;
+    color: var(--text-sub);
+  }
+  .rev-item strong { color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 50px 24px;
+    text-align: center;
+    background: var(--bg-mid);
+    border-top: 1px solid var(--border-gold);
+  }
+  footer .footer-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  footer p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:700px) {
+    .hero-stats { gap: 24px; }
+    .dynasty-header { flex-direction: column; }
+    .dynasty-key { min-width: 90px; }
+    .lineage-tree { font-size: 0.7rem; }
+  }
+
+  p { margin-bottom: 14px; }
+  strong { color: var(--gold-pale); }
+  em { color: var(--emerald-pale); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="serpent-ring"></div>
+    <div class="serpent-ring"></div>
+    <div class="serpent-ring"></div>
+  </div>
+  <div class="hero-content">
+    <div class="devanagari-title">नागवंश — सर्पकुलस्य महाइतिहासः</div>
+    <h1>NAGAVANSHA</h1>
+    <div class="hero-sub">The Serpent Lineage of Eternal Bharat</div>
+    <div class="hero-divider">
+      <span></span>
+      <span class="gem">🐍</span>
+      <span></span>
+    </div>
+    <p class="hero-desc">
+      A scholarly visual encyclopedia of the serpent dynasties — from the cosmic depths of Patala Loka to the iron thrones of Chotanagpur, from the primordial Kashyapa-Kadru creation to living royal claimants of the 21st century.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5000+</div>
+        <span class="stat-label">Years of Tradition</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">14</div>
+        <span class="stat-label">Major Dynasties</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">108</div>
+        <span class="stat-label">Named Nagas</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">22</div>
+        <span class="stat-label">Regions Covered</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ NAV ══ -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#meaning">I. Meaning</a>
+    <a href="#origins">II. Origins</a>
+    <a href="#ancestors">III. Ancestors</a>
+    <a href="#cosmology">IV. Cosmology</a>
+    <a href="#dynasties">V. Dynasties</a>
+    <a href="#strategies">VI. Strategies</a>
+    <a href="#trees">VII. Lineage Trees</a>
+    <a href="#present">VIII. Present Day</a>
+    <a href="#scriptures">IX. Scriptures</a>
+    <a href="#symbolism">X. Symbolism</a>
+    <a href="#rare">XI. Rare Facts</a>
+    <a href="#charts">XII. Charts</a>
+    <a href="#summary">XIII. Summary</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — MEANING
+══════════════════════════════════════════════ -->
+<section id="meaning" class="section">
+  <div class="container">
+    <div class="section-label">Section I</div>
+    <h2 class="section-title">Meaning of Naga &amp; Nagavansha</h2>
+    <div class="title-line"></div>
+
+    <p>
+      The Sanskrit word <strong>Nāga</strong> (नाग) carries extraordinary semantic density. Derived from the root <em>nag</em> — meaning "to go," "to move," or "to ascend" — it simultaneously denotes the physical cobra or serpent, a semi-divine being of immense wisdom and power, a clan or tribal group of the Indian subcontinent, a class of royalty who claimed descent from these beings, and an esoteric symbol of kundalini energy coiled at the base of consciousness. The word <strong>Nagavansha</strong> (नागवंश) joins <em>nāga</em> with <em>vaṃśa</em> (lineage, bamboo stalk, dynasty) — literally meaning <em>the lineage of the serpent-people</em>.
+    </p>
+    <p>
+      This single term unifies mythology, history, tribology, and symbolism across more than three millennia of Indian civilization. Understanding it requires separating four distinct but intertwined traditions:
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🐍 Mythological Nagas</div>
+        <span class="badge myth">Mythological</span>
+        <p>Semi-divine serpent beings born of Kashyapa and Kadru. They inhabit Naga Loka (Patala), guard underwater treasures, and appear in the Mahabharata, Ramayana, and Puranas. They are shape-shifters who can assume human form. Their greatest king is <strong>Vasuki</strong>; the cosmic serpent is <strong>Ananta Shesha</strong> upon whom Vishnu reclines.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">🏛️ Historical Nagavanshi Dynasties</div>
+        <span class="badge hist">Historical</span>
+        <p>Actual ruling dynasties across the subcontinent — from the Bharashiva Nagas of the 3rd–4th century CE to the Chotanagpur Nagvanshi kings recorded until the 20th century. These dynasties used Naga imagery for legitimacy but were historical rulers documented in inscriptions, coins, and chronicles.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🌿 Tribal/Ethnic Nagvanshi Claims</div>
+        <span class="badge folk">Folklore</span>
+        <p>Numerous tribal communities across Jharkhand, Chhattisgarh, Odisha, Nagaland, Manipur, and the Northeast claim Naga ancestry. The Munda, Oraon, Nagavanshi Kshatriyas, and Nagbansi communities of Jharkhand trace lineage to a founding serpent ancestor or early Naga king. These claims blend historical memory with oral tradition.</p>
+      </div>
+      <div class="card red">
+        <div class="card-title">🔱 Symbolic Serpent Worship</div>
+        <span class="badge sym">Symbolic</span>
+        <p>Across South Asia, the serpent is worshipped as a fertility deity, guardian of water sources, and embodiment of Kundalini Shakti. Naga panchami worship, Naga stones (<em>nagakals</em>), and cobra shrines in Tamil Nadu, Kerala, Karnataka, and Bengal represent a distinct, pan-Indian serpent-reverence tradition independent of dynastic claims.</p>
+      </div>
+    </div>
+
+    <h3 class="section-subtitle">Evolution of Serpent Symbolism in Hindu Civilization</h3>
+    <p>
+      The serpent as a sacred symbol appears as early as the <strong>Indus Valley Civilization</strong> (c. 2600–1900 BCE), where serpent motifs are found on seals. The oldest textual reference appears in the <strong>Rigveda</strong> (c. 1500–1200 BCE), where Ahi Vritta — the serpent-demon slain by Indra — represents drought and cosmic obstruction. By the Atharva Veda, serpents are propitiated as protective forces. The great <strong>transition</strong> from serpent-as-enemy to serpent-as-protector mirrors the political integration of serpent-worshipping tribal groups into the Vedic fold.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item myth">
+        <div class="timeline-date">Rigvedic Period (c. 1500–900 BCE)</div>
+        <div class="timeline-title">Serpent as Cosmic Adversary</div>
+        <div class="timeline-text">Ahi/Vritra — the serpent-dragon slain by Indra. Serpent = drought, darkness, obstruction.</div>
+      </div>
+      <div class="timeline-item myth">
+        <div class="timeline-date">Atharva Veda / Late Vedic (c. 900–600 BCE)</div>
+        <div class="timeline-title">Propitiation of Sarpa Devatas</div>
+        <div class="timeline-text">Serpent hymns for protection from snake-bite. Serpent as guardian of boundaries, fields, and homes.</div>
+      </div>
+      <div class="timeline-item myth">
+        <div class="timeline-date">Epic Period (c. 400 BCE–400 CE)</div>
+        <div class="timeline-title">Nagas as Semi-Divine Nobility</div>
+        <div class="timeline-text">Mahabharata introduces a fully developed Naga civilization with kings, queens, palaces in Patala. Intermarriage with Kshatriyas (Arjuna–Ulupi) normalizes Naga-human relations.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Gupta Period (c. 300–550 CE)</div>
+        <div class="timeline-title">Naga Dynasties in Political Record</div>
+        <div class="timeline-text">Bharashiva, Padmavati, and Vidisha Naga kingdoms appear in inscriptions. Samudra Gupta records conquering Naga kings.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Medieval Period (c. 600–1300 CE)</div>
+        <div class="timeline-title">Nagavanshi Royal Traditions</div>
+        <div class="timeline-text">Chotanagpur Nagvanshis, Kashmir Naga traditions, Bastar Naga connections emerge. Naga worship integrates with Shaiva, Shakta, and Vaishnava traditions.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Modern Period (1800 CE–Present)</div>
+        <div class="timeline-title">Community Identity & Colonial Documentation</div>
+        <div class="timeline-text">British administrators document Nagvanshi zamindars in Jharkhand. Living royal families maintain ceremonial claims. Academic study distinguishes history from mythology.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — ORIGINS
+══════════════════════════════════════════════ -->
+<section id="origins" class="section">
+  <div class="container">
+    <div class="section-label">Section II</div>
+    <h2 class="section-title">Mythological Origins</h2>
+    <div class="title-line"></div>
+
+    <h3 class="section-subtitle">The Kashyapa–Kadru Foundation</h3>
+    <p>
+      All Puranic genealogies of the Nagas trace their origin to <strong>Rishi Kashyapa</strong>, the primordial progenitor of almost all beings. Kashyapa had multiple wives, daughters of the cosmic progenitor <strong>Daksha</strong>. The two most significant for Naga genealogy are <strong>Kadru</strong> and <strong>Vinata</strong>. Kadru, whose name means "tawny" or "reddish-brown" — the color of a serpent's underbelly — became the mother of all Nagas. Vinata became the mother of Garuda and Aruna.
+    </p>
+    <p>
+      The <strong>Adiparva of the Mahabharata</strong> (1.14–1.58) gives the most comprehensive account. Kashyapa offers his wives a boon. Kadru desires 1,000 powerful serpent sons; Vinata desires two sons surpassing all beings in strength, splendor, and speed. Kashyapa grants both boons. Kadru lays a thousand eggs; Vinata lays two. After 500 years, Kadru's eggs hatch into the thousand Nagas. Vinata, impatient, prematurely breaks open one egg — from it emerges Aruna, incomplete (only half-formed), who curses his mother to 500 years of slavery to Kadru. The second egg, nurtured to completion, hatches Garuda — the eternal enemy of the Nagas.
+    </p>
+
+    <div class="pullquote">
+      "Kadrur nāgāḥ sahasraṃ tu jajñire vīryavattarāḥ" — From Kadru were born a thousand serpents, exceedingly powerful.
+      <cite>— Mahabharata, Adi Parva 1.14</cite>
+    </div>
+
+    <p>
+      This origin story encodes a profound cosmic tension: <strong>Nagas and Garuda are eternal antagonists</strong>, born of rival co-wives to the same father. The enmity between serpents and the eagle-god Garuda (who became Vishnu's vehicle) represents the balance between terrestrial-chthonic forces (Nagas, water, earth, underground treasure) and aerial-solar forces (Garuda, fire, sky, divine authority). Many Naga dynasties notably placed their identity on the terrestrial-chthonic side — keepers of rivers, forests, and ancestral land.
+    </p>
+
+    <h3 class="section-subtitle">Janamejaya's Sarpa Satra — The Great Serpent Sacrifice</h3>
+    <p>
+      The most dramatic Naga episode in the Mahabharata is the <strong>Sarpa Satra</strong> (Serpent Sacrifice) of King <strong>Janamejaya</strong>, son of Parikshit. The story begins when Parikshit, a Kuru king, insults the meditating sage Shamika. Shamika's son Shringi curses Parikshit to die within seven days from snakebite. The Naga king <strong>Takshaka</strong> executes the curse, killing Parikshit.
+    </p>
+    <p>
+      Janamejaya, enraged, launches a cosmic <em>yajna</em> designed to pull all serpents in the universe into its sacrificial fire. Thousands of Nagas perish. The yajna threatens the entire Naga race with extinction. The Naga king Vasuki, terrified, instructs his sister's son — the brahmin <strong>Astika</strong> (whose mother was a Naga princess named Jaratkaru) — to stop the sacrifice. Astika arrives at the yajna, praises Janamejaya with such eloquence that the king offers him any boon. Astika asks for the cessation of the sacrifice, which Janamejaya, bound by his word, must grant. This event is commemorated as a seminal act of mercy and dharmic restraint.
+    </p>
+
+    <div class="highlight green">
+      <strong>Significance for Nagavanshi Identity:</strong> The Sarpa Satra episode establishes several foundational principles for Nagavanshi royal ideology: (1) Nagas can be threatened by brahminic fire-power; (2) Naga survival requires strategic brahminic alliances; (3) The memory of persecution legitimizes Naga claims to royal protection; (4) Astika becomes a model ancestor — half-Naga, half-brahmin — symbolizing the necessary synthesis of serpent-power with Vedic authority.
+    </div>
+
+    <h3 class="section-subtitle">Krishna and Kaliya — Serpent Subordinated to Dharma</h3>
+    <p>
+      The <strong>Bhagavata Purana</strong> (10.16) narrates how the young Krishna dives into the Yamuna river to subdue <strong>Kaliya Naga</strong>, a great multi-headed serpent who had poisoned the river's waters. Krishna dances upon Kaliya's hoods, forcing the serpent to submit. Rather than killing Kaliya, Krishna banishes him to the distant ocean island of <em>Ramanaka Dvipa</em>, sparing him because Garuda — who feared the ocean island's guardian sage — would not pursue him there. Kaliya's wives (the Naginis) beg Krishna to spare their husband, demonstrating the Naga capacity for devotion.
+    </p>
+    <p>
+      This episode symbolizes the <strong>purification of sacred rivers from serpent-toxins</strong> — a metaphor for establishing settled agrarian civilization in forest and river territories held by Naga tribes. It also demonstrates that properly subdued (not destroyed) Nagas become auspicious, protective forces. Many later Nagavanshi rulers would invoke this narrative to position themselves as Nagas who had been "tamed by dharma" and thus legitimized as benevolent rulers.
+    </p>
+
+    <h3 class="section-subtitle">Arjuna and Ulupi — The Royal Naga Marriage</h3>
+    <p>
+      During his twelve-year <em>tirtha-yatra</em> (pilgrimage), the Pandava hero <strong>Arjuna</strong> bathes at the Ganga near Haridwar. The Naga princess <strong>Ulupi</strong>, daughter of the Naga king Kauravya, sees Arjuna and is overcome with love. She drags him into the Naga kingdom beneath the river and marries him in accordance with Gandharva custom. Their union produces a son — <strong>Iravan</strong> (also called Aravan), who fights in the Mahabharata war. This union establishes a direct <em>genetic</em> link between the Pandava Kshatriya lineage and the Naga royal line, a precedent invoked by later Nagavanshi kingdoms claiming connections to the epic heroes.
+    </p>
+    <p>
+      The Ulupi-Arjuna narrative also appears in later tradition: Ulupi brings the dead Arjuna back to life using the <em>Nagamani</em> (serpent jewel) after Babruvahana kills him, demonstrating the life-restoring power of Naga medicine — a power later associated with Nagavanshi rulers as healers and guardians.
+    </p>
+
+    <h3 class="section-subtitle">Balarama and Serpent Symbolism</h3>
+    <p>
+      Balarama (Baladeva), Krishna's elder brother, is himself considered a partial incarnation of <strong>Ananta Shesha</strong> — the cosmic serpent. His weapon is the plough (<em>hala</em>) and the pestle (<em>musala</em>). His skin is described as white — in iconography he is often shown with a serpent hood rising behind his head. At the end of his earthly life, a great white serpent is seen leaving his mouth, confirming his identity as the incarnate Shesha. Balarama represents the agricultural, terrestrial aspect of divine power — exactly the qualities Nagavanshi kings would claim: mastery of earth, water, and grain.
+    </p>
+
+    <h3 class="section-subtitle">Shiva's Association with Nagas</h3>
+    <p>
+      <strong>Mahadeva Shiva</strong> wears Vasuki as an ornament around his neck. The Rudra Samhita of the Shiva Purana explains that after the churning of the ocean (<em>Samudra Manthan</em>), where Vasuki served as the churning rope, Shiva accepted Vasuki as a constant companion to honor his sacrifice. Shiva also wears serpents as earrings, bracelets, and a sacred thread — making him the ultimate Naga deity. The <strong>Shaiva affiliations of most Nagavanshi dynasties</strong> directly derive from this symbolism. By worshipping Shiva, Nagavanshi kings simultaneously honored their serpent ancestors through their divine protector.
+    </p>
+
+    <h3 class="section-subtitle">Vishnu and Ananta Shesha</h3>
+    <p>
+      <strong>Ananta</strong> (the Endless) or <strong>Shesha</strong> (the Remainder) is the cosmic serpent of infinite coils upon whose body Vishnu rests during the <em>pralaya</em> (dissolution of the universe). Shesha bears the weight of all worlds upon his hoods. He is simultaneously Vishnu's bed, his canopy, his devotee, and his very cosmic support. In the Bhagavata Purana, Shesha is described as the greatest of all Nagas — beyond the influence of time, fire, or dissolution. He incarnates as Lakshmana to serve Rama, and as Balarama to serve Krishna. Naga dynasties that aligned with Vaishnava traditions specifically invoked the Shesha-Vishnu mythology to claim their lineage was cosmic, not merely terrestrial.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — ANCESTORS
+══════════════════════════════════════════════ -->
+<section id="ancestors" class="section">
+  <div class="container">
+    <div class="section-label">Section III</div>
+    <h2 class="section-title">The Major Naga Ancestors</h2>
+    <div class="title-line"></div>
+    <p>The Puranas enumerate 108 principal Nagas (the <em>Ashtottara Sata Nagas</em>), but the following are the most theologically and historically significant:</p>
+
+    <div class="naga-grid">
+      <div class="naga-item">
+        <div class="naga-name">🐍 Ananta / Shesha</div>
+        <div class="naga-desc">Supreme cosmic serpent; Vishnu's couch and canopy; bearer of all worlds; incarnates as Lakshmana and Balarama.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Vasuki</div>
+        <div class="naga-desc">King of Nagas; used as churning rope at Samudra Manthan; worn by Shiva as ornament; protects the Naga race.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Takshaka</div>
+        <div class="naga-desc">King of Takshashila Nagas; kills Parikshit; escapes Janamejaya's yajna. Associated with the northwest (Gandhara region).</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Karkotaka</div>
+        <div class="naga-desc">Bites King Nala in the Mahabharata; appears in Kashmiri Naga traditions; major Naga of the northwest.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Padma</div>
+        <div class="naga-desc">Great Naga associated with the Padma river and lotuses; connected to wealth and prosperity; invoked in Padmavati traditions.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Kulika</div>
+        <div class="naga-desc">One of the eight great Nagas of astrological significance (Ashta Naga); invoked in Naga Panchami rituals.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Mahapadma</div>
+        <div class="naga-desc">Guards underground treasure (nidhis); one of Kubera's nine treasures is called Mahapadma; linked to wealth-Nagas of eastern India.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Dhritarashtra</div>
+        <div class="naga-desc">Not the Kuru king — a Naga king of this name appears in Mahabharata Naga genealogies as Vasuki's kin.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Shankhapala</div>
+        <div class="naga-desc">Naga king appearing in Buddhist Jataka tales; associated with shell-like markings; revered in Sri Lanka.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Elapatra</div>
+        <div class="naga-desc">Was once accidentally cursed by a sage; seeks redemption; a repentant Naga symbolizing the dharmic path.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Kaliya</div>
+        <div class="naga-desc">Multi-headed Naga of the Yamuna; subdued by Krishna; exiled to the ocean; wives are great devotees.</div>
+      </div>
+      <div class="naga-item">
+        <div class="naga-name">🐍 Mucalinda</div>
+        <div class="naga-desc">Buddhist-Naga who sheltered the meditating Siddhartha Gautama from a storm; central to Buddhist serpent traditions.</div>
+      </div>
+    </div>
+
+    <h3 class="section-subtitle">The Eight Great Nagas — Ashta Naga</h3>
+    <p>In temple iconography, ritual worship, and architectural programs, eight Nagas are invoked as directional guardians and are commonly carved on temple walls, doorframes, and Naga Panchami offerings:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Naga</th><th>Direction / Domain</th><th>Iconography</th><th>Scriptural Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ananta</td><td>Center / Above all</td><td>Infinite coils, white color</td><td>Vishnu Purana, Bhagavata</td></tr>
+        <tr><td>Vasuki</td><td>East</td><td>Worn by Shiva, multi-hooded</td><td>Mahabharata, Shiva Purana</td></tr>
+        <tr><td>Takshaka</td><td>North-West</td><td>Golden color, fierce</td><td>Mahabharata Adi Parva</td></tr>
+        <tr><td>Karkotaka</td><td>North</td><td>Many-spotted, forest dweller</td><td>Mahabharata Vana Parva</td></tr>
+        <tr><td>Padma</td><td>East/Water</td><td>Lotus-hued, wealth-bearing</td><td>Padma Purana</td></tr>
+        <tr><td>Mahapadma</td><td>South-East</td><td>Great lotus, nidhi guardian</td><td>Matsya Purana</td></tr>
+        <tr><td>Shankhapala</td><td>South</td><td>Conch-white, healing</td><td>Buddhist Jataka, Puranas</td></tr>
+        <tr><td>Kulika</td><td>West</td><td>Yellow-black striped</td><td>Tantra texts, Panchami liturgy</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — COSMOLOGY
+══════════════════════════════════════════════ -->
+<section id="cosmology" class="section">
+  <div class="container">
+    <div class="section-label">Section IV</div>
+    <h2 class="section-title">Naga Lokas &amp; Puranic Cosmology</h2>
+    <div class="title-line"></div>
+
+    <p>
+      The Nagas inhabit the <strong>Patala</strong> realm — the seven sub-terrestrial worlds described in the Vishnu Purana and Bhagavata Purana lying beneath the earth's surface, each more opulent than the previous. Patala is not a realm of punishment (that is Naraka) — it is described as extraordinarily beautiful, lit by the radiance of jewels on serpent hoods, filled with fragrant flowers, magnificent palaces, and the constant music of celestial nymphs.
+    </p>
+
+    <div class="card">
+      <div class="card-title">The Seven Layers of Patala (Vishnu Purana 2.5)</div>
+      <table class="data-table">
+        <thead><tr><th>Layer</th><th>Name</th><th>Dominant Beings</th><th>Characteristic</th></tr></thead>
+        <tbody>
+          <tr><td>1st</td><td>Atala</td><td>Bala, son of Maya</td><td>White soil; source of illusory powers</td></tr>
+          <tr><td>2nd</td><td>Vitala</td><td>Hara-Bhava (Shiva form)</td><td>Black soil; gold is generated here</td></tr>
+          <tr><td>3rd</td><td>Sutala</td><td>Bali (great Asura king)</td><td>Copper-colored; Vishnu guards Bali here</td></tr>
+          <tr><td>4th</td><td>Talatala</td><td>Maya (architect of demons)</td><td>Yellow soil; Maya's three cities</td></tr>
+          <tr><td>5th</td><td>Mahatala</td><td>Many-hooded Nagas (Krodhavasha)</td><td>Grey soil; great serpent cities</td></tr>
+          <tr><td>6th</td><td>Rasatala</td><td>Panis and Daityas</td><td>Rocky; enemies of the gods</td></tr>
+          <tr><td>7th</td><td>Patala (deepest)</td><td>Vasuki, Takshaka, Ananta</td><td>Brilliant, jewel-lit, serpent paradise</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Below even the deepest Patala lies <strong>Ananta Shesha</strong> bearing all creation upon his hoods. The <em>Bhumi</em> (Earth goddess) herself rests upon Shesha. This cosmological structure is crucial for Nagavanshi political theology: kings who claimed Naga descent were claiming to be connected to the very foundations of the Earth — literally the people closest to the bedrock of existence. Their rulership was thus not merely political but <em>ontological</em>.
+    </p>
+
+    <p>
+      The primary Naga capital in Patala is <strong>Bhogavati</strong> (or Bhogavati Puri) — a city of immense splendor described in the Mahabharata as rivaling Indra's Amaravati. Bhogavati is associated with Vasuki's court and is the city from which Naga princes like Ulupi and Kauravya's daughter traveled to the earthly realm. Some traditions identify Bhogavati with the source of the Ganges at Gomukh, reinforcing the Naga-river connection.
+    </p>
+
+    <div class="highlight">
+      <strong>The Naga-Kubera Connection:</strong> Nagas are consistently portrayed as guardians of underground wealth — <em>nidhis</em> (treasures). The Kubera-Naga connection is crucial: Kubera, the god of wealth, shares his domain with Nagas who guard the nine great treasures (Nava Nidhi). Nagavanshi kings claimed this cosmological role as earthly treasure-guardians — masters of mines, forests, rivers, and subterranean resources. This explains their historical settlements near mines (iron, copper, diamonds in Jharkhand and Chhattisgarh).
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — DYNASTIES
+══════════════════════════════════════════════ -->
+<section id="dynasties" class="section">
+  <div class="container">
+    <div class="section-label">Section V</div>
+    <h2 class="section-title">Historical Nagavanshi Dynasties</h2>
+    <div class="title-line"></div>
+
+    <!-- BHARASHIVA -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Bharashiva Nagas</div>
+          <div style="margin-top:6px"><span class="badge hist">Historical</span><span class="badge myth">Shaiva</span></div>
+        </div>
+        <div class="dynasty-period">c. 170 – 340 CE | Northern India</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Founder</div><div class="dynasty-val">Bhavanaga / Śivanandin — exact founder disputed; name Bharashiva means "those who bear Shiva on their shoulders"</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Claimed Ancestry</div><div class="dynasty-val">Direct Naga lineage; claimed to have performed ten Ashvamedha (horse) sacrifices using the waters of the Ganga</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Capital</div><div class="dynasty-val">Padmavati (modern Pawaya, Madhya Pradesh); possibly also Mathura</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Region Ruled</div><div class="dynasty-val">Northern Madhya Pradesh, parts of modern Uttar Pradesh, Bundelkhand</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Political Significance</div><div class="dynasty-val">Ended Kushana overlordship in northern India; created power vacuum that enabled Gupta rise; possibly allies of early Guptas</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Religious Practice</div><div class="dynasty-val">Ardent Shaivas; performed Ashvamedha yajnas; built Shiva temples; used the emblem of a bull (Nandi) on coins</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Evidence</div><div class="dynasty-val">Allahabad Prasasti of Samudragupta mentions "Naga" kings subdued; Puranas list them; copper plates from Padmavati</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Decline</div><div class="dynasty-val">Conquered by Samudragupta (c. 335 CE) during his <em>digvijaya</em>; Gana-pati Naga and Nagasena mentioned as defeated Naga kings</div></div>
+      </div>
+    </div>
+
+    <!-- PADMAVATI NAGAS -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Padmavati Nagas</div>
+          <div style="margin-top:6px"><span class="badge hist">Historical</span></div>
+        </div>
+        <div class="dynasty-period">c. 200 – 400 CE | Madhya Pradesh</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Capital</div><div class="dynasty-val">Padmavati (ancient name of modern Pawaya near Gwalior)</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Key Kings</div><div class="dynasty-val">Ganapati Naga, Nagasena, Achyuta Naga, Nagadatta, Skandanaga, Prabhakara</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Coins</div><div class="dynasty-val">Silver and copper coins bearing snake symbol; some with Brahmi legend "Padmavati Nagasya"</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Cultural Achievement</div><div class="dynasty-val">City of Padmavati was a major trade and religious center; lotus imagery on coins connects to Naga-Padma traditions</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Intermarriage</div><div class="dynasty-val">Chandragupta I's queen Kumaradevi was likely from a Licchavi-connected Naga family; some scholars see Naga-Gupta marriage alliances</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Decline</div><div class="dynasty-val">Absorbed by the expanding Gupta Empire under Samudragupta; some branches continued as Gupta vassals</div></div>
+      </div>
+    </div>
+
+    <!-- VIDISHA NAGAS -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Vidisha / Mathura Nagas</div>
+          <div style="margin-top:6px"><span class="badge hist">Historical</span><span class="badge folk">Locally Revered</span></div>
+        </div>
+        <div class="dynasty-period">c. 200 – 350 CE | Madhya Pradesh / UP</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Capital</div><div class="dynasty-val">Vidisha (modern Besnagar, near Sanchi); also strong at Mathura</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Key Kings</div><div class="dynasty-val">Bhavanaga, Vrishanaga, Devanaga, Ganapati Naga</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Evidence</div><div class="dynasty-val">Puranas clearly distinguish "Mathura" Nagas and "Padmavati" Nagas; Besnagar inscriptions; Gupta period references</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Naga Worship</div><div class="dynasty-val">Mathura was a major center of Naga sculpture — hundreds of Naga yaksha figures from 2nd–3rd century CE found here</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Cultural Note</div><div class="dynasty-val">Naga sculptures from Mathura show the transition from pre-Brahminic Naga worship to Puranic Naga theology</div></div>
+      </div>
+    </div>
+
+    <!-- CHOTANAGPUR NAGVANSHI -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Chotanagpur Nagvanshi Dynasty</div>
+          <div style="margin-top:6px"><span class="badge hist">Historical</span><span class="badge folk">Oral Tradition</span></div>
+        </div>
+        <div class="dynasty-period">c. 64 CE (traditional) – 1952 CE | Jharkhand</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Founding Legend</div><div class="dynasty-val">Phani Mukut Rai, born of a Naga woman and a Brahmin named Paundraka Mukut, emerges from a serpent mound (Nagdaha lake) and becomes the first king of Chotanagpur.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Traditional Capital</div><div class="dynasty-val">Sutiambe, then Khukra, then Doisa, then Navratangarh, then Palamu, finally Ranchi (after Mughal period)</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Region</div><div class="dynasty-val">Entire Chotanagpur plateau — modern Jharkhand; approximately 27,000 sq km at peak</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Tribal Relations</div><div class="dynasty-val">Deeply intertwined with Munda, Oraon, and Kurukh tribal communities; kings performed tribal rituals alongside Hindu rites</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Mughal Period</div><div class="dynasty-val">Maharaja Durjan Sal (r. 1616–1641) captured by Mughal forces; kept at Gwalior fort for 12 years; later released and granted Zamindari rights</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">British Period</div><div class="dynasty-val">Became subsidiary zamindars under the British. The Permanent Settlement (1793) formalized their land rights. Last active ruler was Vijay Sahi.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Religious Identity</div><div class="dynasty-val">Originally nature-worship / Naga-centered; gradually absorbed Shaiva Hinduism; patronized temples to Shiva, Durga, and local Naga deities</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Claim Basis</div><div class="dynasty-val">The dynasty's extraordinary longevity (almost 1900 years if traditional dates accepted) is unprecedented in Indian history; even with compressed dates, they clearly rule from at least 10th century CE</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Present Day</div><div class="dynasty-val">The Nagvanshi royal family in Ranchi maintains ceremonial recognition; family members remain culturally prominent in Jharkhand politics</div></div>
+      </div>
+    </div>
+
+    <!-- KASHMIR NAGAS -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Kashmir Naga Traditions</div>
+          <div style="margin-top:6px"><span class="badge myth">Mythological</span><span class="badge hist">Historical</span></div>
+        </div>
+        <div class="dynasty-period">Ancient – Medieval | Kashmir Valley</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Source Text</div><div class="dynasty-val"><em>Nilamata Purana</em> (c. 6th–8th century CE) — dedicated almost entirely to Kashmir's Naga traditions. Describes Kashmir valley as originally a great lake (Sati-saras) drained by Vishnu / Kashyapa to create habitable land, inhabited originally by Nagas under king Nila.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Key Nagas</div><div class="dynasty-val">Nila (chief Naga of Kashmir), Takshaka, Karkotaka (especially important in Kashmir), Nandikeshvara</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Karkotaka Dynasty</div><div class="dynasty-val">A historical Karkota dynasty ruled Kashmir from c. 625 CE (Durlabhvardhana) to 855 CE; named after the Naga Karkotaka; the greatest king was Lalitaditya Muktapida (r. 724–760 CE) who built Martand Sun Temple</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Naga Worship</div><div class="dynasty-val">Kashmir has hundreds of sacred Naga springs (nagas) — including Veth (Vitasta/Jhelum), Nund Nag, Anchar Lake Naga. Each village had a tutelary Naga spirit; annual Naga Panchami festivals still observed</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Cultural Legacy</div><div class="dynasty-val">The Kashmiri word "nag" for sacred spring/lake is directly cognate with Naga; the landscape of Kashmir is essentially mapped by Naga sacred geography</div></div>
+      </div>
+    </div>
+
+    <!-- MANIPUR -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Manipur Serpent-Lineage Traditions</div>
+          <div style="margin-top:6px"><span class="badge folk">Oral Tradition</span><span class="badge myth">Mythological</span></div>
+        </div>
+        <div class="dynasty-period">Ancient – Present | Northeast India</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Epic Connection</div><div class="dynasty-val">Arjuna during his pilgrimage reaches Manipur (Manalur); weds Chitrangada, daughter of King Chitravahana. Their son Babruvahana later encounters Arjuna in battle. Manipur thus has direct epic-period Kshatriya lineage claims.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Meitei Traditions</div><div class="dynasty-val">The Meitei people's creation mythology features the serpent deity <em>Pakhangba</em> — a dragon-serpent who is one of the oldest Meitei divine beings. The royal Ningthouja clan traces connections to this serpent deity.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Ulupi Connection</div><div class="dynasty-val">Some traditions place Ulupi's kingdom near Manipur, creating a Naga-Manipur connection through Arjuna's Naga wife</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Naga Tribes</div><div class="dynasty-val">The Naga peoples of Nagaland / Manipur hills are ethnically distinct from the Nagavansha but the name creates persistent confusion; they are Tibeto-Burman speaking hill tribes, not historically related to Sanskrit Naga traditions</div></div>
+      </div>
+    </div>
+
+    <!-- SOUTH INDIA -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">South Indian Naga-Linked Traditions</div>
+          <div style="margin-top:6px"><span class="badge sym">Symbolic</span><span class="badge hist">Historical</span></div>
+        </div>
+        <div class="dynasty-period">Ancient – Present | Kerala, Tamil Nadu, Karnataka</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Pallavas</div><div class="dynasty-val">The Pallava dynasty (c. 275–897 CE) claimed descent from a Brahmin named Ashvatthaman and a Naga princess. Their emblem was a serpent. Early Pallava kings carried the epithet "Naga" in their names. The Brahmin-Naga union (echoing the Astika tradition) gave them dual Brahminic and Kshatriya legitimacy.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Kadamba Connection</div><div class="dynasty-val">The Kadamba dynasty of Karnataka (c. 345 CE) traces its origin to Mayurasharman, a Brahmin who fought the Pallavas and established a kingdom. Some Kadamba traditions mention Naga ancestry for their queens.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Nair Traditions (Kerala)</div><div class="dynasty-val">The Nair community of Kerala has rich Naga traditions. Sarpakavu (sacred serpent groves) are maintained by Nair families. The Nair claim of Naga ancestry reflects the Brahmin-Naga synthesis of South Indian feudal culture.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Naga Panchami in South</div><div class="dynasty-val">Tamil tradition identifies major Naga sacred centers: Nagercoil (Nagaraja temple), Mannarasala (Kerala), Subrahmanya (Karnataka). These are not dynasty-related but represent independent Naga worship traditions of immense antiquity.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Nagapattinam</div><div class="dynasty-val">Literally "Naga Town" — major Tamil port city. Buddhist and Shaiva Naga traditions converged here; the city was a major Naga worship center in the early medieval period.</div></div>
+      </div>
+    </div>
+
+    <!-- NEPAL -->
+    <div class="dynasty-block">
+      <div class="dynasty-header">
+        <div>
+          <div class="dynasty-name">Nepalese Naga Traditions</div>
+          <div style="margin-top:6px"><span class="badge myth">Mythological</span><span class="badge hist">Historical</span></div>
+        </div>
+        <div class="dynasty-period">Ancient – Present | Nepal Valley</div>
+      </div>
+      <div class="dynasty-body">
+        <div class="dynasty-row"><div class="dynasty-key">Foundation Myth</div><div class="dynasty-val">Like Kashmir, Nepal Valley was traditionally a great lake (Nagahrada) inhabited by Nagas until Manjushri (or Vishnu) cut the surrounding hills and drained it. The Nagas remained as protective spirits of the valley.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Licchavi Connection</div><div class="dynasty-val">The Licchavi dynasty of Nepal (c. 400–750 CE) had strong Naga traditions. King Manadeva I's inscriptions reference Naga worship. The Licchavi queens possibly had Naga-ancestry claims similar to the Bihar Licchavi-Naga connection.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Naga Puja</div><div class="dynasty-val">Naga Panchami (called "Nag Panchami" locally) is a major festival in Nepal. Naga images are worshipped on every doorpost. Kathmandu's Rani Pokhari and Taudah Lake have Naga guardians.</div></div>
+        <div class="dynasty-row"><div class="dynasty-key">Newari Traditions</div><div class="dynasty-val">Newari Nagas have specific names (Nagaraja, etc.) and are believed to live in the valley's waters. Agricultural prosperity is linked to propitiation of these Nagas — a continuity of the Naga-as-rain-and-fertility tradition.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6 — STRATEGIES
+══════════════════════════════════════════════ -->
+<section id="strategies" class="section">
+  <div class="container">
+    <div class="section-label">Section VI</div>
+    <h2 class="section-title">Kingdom Strategies &amp; Expansion Methods</h2>
+    <div class="title-line"></div>
+
+    <p>Nagavanshi dynasties across history displayed surprisingly consistent strategic patterns that can be analyzed across several domains:</p>
+
+    <div class="grid-2">
+      <div class="card emerald">
+        <div class="card-title">💧 Water &amp; River Control</div>
+        <p>The most consistent Naga strategy. Every major Nagavanshi kingdom was established near a significant river or water source: Bharashiva Nagas near the Ganga; Padmavati Nagas near the Sindh river; Chotanagpur Nagvanshis controlling the Damodar, Subarnarekha, and Son rivers. Control of water = control of agriculture = political power. Their cosmological identity as <em>rulers of underground water</em> translated directly into building check dams, tanks, and irrigation systems — giving them practical agrarian authority.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🌲 Forest Control &amp; Territorial Defense</div>
+        <p>Nagavanshi kingdoms were typically established in forested, hilly, or inaccessible terrain — the Chotanagpur plateau is the classic example. Forests provided natural defense, resources (timber, medicinal plants, game), and connection to tribal forest-dwelling communities who became loyal military recruits. The Naga-as-forest-guardian identity gave rulers religious authority over tribal forest communities that no Brahminic king could easily achieve.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🏛️ Temple Legitimacy</div>
+        <p>Nagavanshi kings were prolific temple builders — particularly Shaiva temples. The Bharashivas' ten Ashvamedha yajnas using Ganga water were designed to establish them as the equals of ancient Vedic kings. The Chotanagpur Nagvanshis patronized local Shaiva shrines and integrated tribal sacred sites into a Brahminic framework. Temple patronage served as a "legitimacy machine" — converting wealth into religious authority, attracting brahmins, and creating a theocratic buffer against military rivals.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">💍 Strategic Marriage Alliances</div>
+        <p>The Arjuna-Ulupi model was repeatedly followed in practice. Naga dynasties formed marriage alliances with Kshatriya families to gain military prestige, and with Brahmin families to gain religious legitimacy. The Bharashiva-Gupta connection (possibly through a Naga queen marrying into the Gupta line) is the most consequential example — the Nagavanshi women who married into rising dynasties carried with them claims to ancient, cosmic lineage that enhanced their husbands' royal prestige.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">⚔️ Military Organization</div>
+        <p>Naga military forces characteristically combined: (1) regular infantry from the peasant-agricultural base; (2) tribal forest warriors — expert archers, hunters, and jungle fighters; (3) elephant corps where possible (the jungle-forest terrain made elephant capture and training natural). The Chotanagpur Nagvanshis famously used the dense forested plateau as a buffer against Mughal expansion — Akbar's generals repeatedly failed to subjugate the region fully.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">🔮 Esoteric &amp; Spiritual Authority</div>
+        <p>Nagavanshi rulers maintained authority through control of sacred serpent shrines, Naga festivals, and ritual healing. The <em>Nagamani</em> (serpent jewel, believed to be a luminous gem found in cobra hoods) was associated with royal healing power. Rulers positioned themselves as intermediaries between the serpent world (with its underground wealth and medicinal power) and the human world — a shamanic-royal role that predated Brahminic religion and survived alongside it.</p>
+      </div>
+    </div>
+
+    <h3 class="section-subtitle">The Brahmin Alliance Model</h3>
+    <p>
+      The most sophisticated long-term strategy of Nagavanshi dynasties was the systematic construction of Brahmin-Naga alliances. The mythological model (Astika = Brahmin + Naga) was actively recreated in practice: Naga kings invited brahmins to settle in their territories, granted them tax-free <em>agrahara</em> villages, and asked them to validate the Naga lineage within the Puranic-Vedic framework. In return, the brahmins wrote genealogies, performed rituals, and provided the dynasty with religious legitimacy within the broader Hindu political universe.
+    </p>
+    <p>
+      The <strong>Chotanagpur Nagvanshis</strong> executed this most effectively — transforming from a tribal Naga-worship tradition into a recognized Hindu Kshatriya dynasty over centuries, while maintaining a tribal-identity base that gave them a political constituency unlike any purely Brahminic Hindu king.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7 — LINEAGE TREES
+══════════════════════════════════════════════ -->
+<section id="trees" class="section">
+  <div class="container">
+    <div class="section-label">Section VII</div>
+    <h2 class="section-title">Lineage Trees &amp; Family Connections</h2>
+    <div class="title-line"></div>
+
+    <h3 class="section-subtitle">Master Cosmic Lineage: Kashyapa → Naga World</h3>
+    <div class="lineage-tree">
+<span class="node">BRAHMA (Svayambhu)</span>
+    │
+    ├── MARICHI (Prajapati son of Brahma)
+    │       │
+    │       └── <span class="node">KASHYAPA</span> (married 13 daughters of Daksha)
+    │               │
+    │               ├── <span class="deity">KADRU</span> ──── Mother of all NAGAS ────────────────────┐
+    │               │       │                                                   │
+    │               │       ├── <span class="king">SHESHA / ANANTA</span> (cosmic serpent, Vishnu's couch)  │
+    │               │       ├── <span class="king">VASUKI</span> (king of Nagas; worn by Shiva)              │
+    │               │       ├── <span class="king">TAKSHAKA</span> (kills Parikshit; northwest kingdom)       │
+    │               │       ├── <span class="king">KARKOTAKA</span> (Kashmir's chief Naga)                    │
+    │               │       ├── <span class="king">PADMA</span> (wealth, lotus, fertility)                     │
+    │               │       ├── <span class="king">MAHAPADMA</span> (treasure guardian)                       │
+    │               │       ├── <span class="king">SHANKHAPALA</span> (healing, purity)                       │
+    │               │       ├── <span class="king">KULIKA</span> (western Naga)                               │
+    │               │       ├── <span class="king">KALIYA</span> (Yamuna; subdued by Krishna)                 │
+    │               │       └── [900+ other Nagas]                                               │
+    │               │                                                                           │
+    │               └── <span class="deity">VINATA</span> ──── Mother of BIRDS                               │
+    │                       ├── ARUNA (dawn god, charioteer of Surya)                          │
+    │                       └── <span class="node">GARUDA</span> (eternal enemy of Nagas; Vishnu's vehicle)  │
+    │                                                                                           │
+    └───────────────────────────────────────────────────────────────────────────────────────────┘
+                              ETERNAL ENMITY: GARUDA vs NAGAS
+    </div>
+
+    <h3 class="section-subtitle">Vasuki's Lineage → Historical Naga Royal Lines</h3>
+    <div class="lineage-tree">
+<span class="node">VASUKI</span> (King of Nagas; Patala capital: Bhogavati)
+    │
+    ├── Sister: <span class="branch">JARATKARU</span> (married Rishi Jaratkaru = Brahmin-Naga union)
+    │       └── <span class="king">ASTIKA</span> (half Naga, half Brahmin; saved Nagas from Janamejaya's yajna)
+    │               └── Astika's descendants = BRAHMIN-NAGA hybrid clans (Astika Gotra brahmins)
+    │
+    ├── Daughter of KAURAVYA (Naga king, kin of Vasuki)
+    │       └── <span class="king">ULUPI</span> (married ARJUNA Pandava)
+    │               └── <span class="king">IRAVAN / ARAVAN</span> (fought in Kurukshetra; dies on Day 8)
+    │
+    └── VASUKI's broader kin → claimed by later dynasties:
+            ├── <span class="branch">BHARASHIVA NAGAS</span> (Madhya Pradesh, c. 170-340 CE)
+            │       └── Bhavanaga → Vrishanaga → Ganapati Naga → Nagasena → Achyuta Naga
+            │
+            ├── <span class="branch">PADMAVATI NAGAS</span> (Madhya Pradesh, c. 200-400 CE)
+            │       └── [Branch of Bharashiva or allied; coins from Pawaya]
+            │
+            └── <span class="branch">VIDISHA / MATHURA NAGAS</span> (UP/MP, c. 200-350 CE)
+                    └── Bhavanaga → Vrishanaga → Devanaga → Ganapati Naga
+    </div>
+
+    <h3 class="section-subtitle">Chotanagpur Nagvanshi Lineage (Traditional)</h3>
+    <div class="lineage-tree">
+<span class="node">PAUNDRAKA MUKUT</span> (Brahmin) × <span class="node">NAGA WOMAN</span> (from Nagdaha lake)
+    │
+    └── <span class="king">PHANI MUKUT RAI</span> (c. 64 CE traditional; first Nagvanshi king)
+            │
+            └── [Early Kings: Madhu Karan Rai, Prithvi Karan Rai, Kesho Rai...]
+                    │
+                    └── [c. 10th-12th CE — better documented rulers]
+                            │
+                            ├── Shiv Das Mukut Rai
+                            ├── Bhim Karan Rai
+                            ├── Jai Karan Rai
+                            ├── Prithvi Karan Rai (moves capital to Khukra)
+                            │
+                            └── [Mughal Period Kings]
+                                    ├── <span class="king">DURJAN SAL</span> (r. 1616-1641; captured by Mughals 1616;
+                                    │       held at Gwalior Fort 12 years; released 1628)
+                                    │       → Granted royal title by Mughals; most famous Nagvanshi king
+                                    │
+                                    ├── Raghunath Shah
+                                    ├── Ramshah
+                                    ├── Yadu Nath Shah
+                                    │
+                                    └── [British Period]
+                                            ├── Droop Narayan Singh
+                                            ├── Vishwanath Shah Deo
+                                            └── Vijay Sahi (last zamindari king; abolished 1952)
+    </div>
+
+    <h3 class="section-subtitle">The Pallava-Naga Connection (South India)</h3>
+    <div class="lineage-tree">
+<span class="node">ASHVATTHAMAN</span> (son of Drona; brahmin; cursed to immortality by Krishna)
+    × 
+<span class="node">NAGA PRINCESS</span> (daughter of a Naga king)
+    │
+    └── [Pallava founding ancestor — per Pallava tradition]
+            │
+            └── <span class="branch">PALLAVA DYNASTY</span> (c. 275–897 CE, South India)
+                    ├── Simhavishnu (c. 550 CE)
+                    ├── Mahendravarman I (c. 600-630 CE) — converted from Jainism to Shaivism
+                    ├── Narasimhavarman I "Mamalla" (c. 630-668 CE) — built Mahabalipuram
+                    ├── Narasimhavarman II (c. 700-728 CE) — Shore Temple, Mahabalipuram
+                    └── Nandivarman III (c. 830-869 CE) — last great Pallava king
+
+NOTE: The Brahmin-Naga origin story of the Pallavas mirrors the Astika (brahmin-born-of-naga-mother)
+mythology. This was a standard South Indian legitimacy formula = Brahminic knowledge + Kshatriya power.
+    </div>
+
+    <h3 class="section-subtitle">The Kashmir Karkota Dynasty</h3>
+    <div class="lineage-tree">
+<span class="node">KARKOTAKA</span> (great Naga of Kashmir, bites King Nala in Mahabharata)
+    │
+    └── Mythological ancestor of the KARKOTA DYNASTY
+            │
+            └── <span class="king">DURLABHVARDHANA</span> (c. 625 CE; founded dynasty)
+                    │
+                    ├── Pratapaditya I
+                    ├── Chandrapida "Vajraditya" (c. 712 CE; withstood Arab invasions)
+                    ├── <span class="king">LALITADITYA MUKTAPIDA</span> (c. 724-760 CE; greatest king)
+                    │       → Defeated Arabs, Tibetans, Turks; empire stretched to Bengal and Deccan
+                    │       → Built Martand Sun Temple (masterpiece of Kashmiri architecture)
+                    │
+                    └── Jayapida Vinayaditya (c. 779-810 CE)
+                            └── [Dynasty ends c. 855 CE; succeeded by Utpala dynasty]
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 8 — PRESENT DAY
+══════════════════════════════════════════════ -->
+<section id="present" class="section">
+  <div class="container">
+    <div class="section-label">Section VIII</div>
+    <h2 class="section-title">Present-Day Nagvanshi Communities</h2>
+    <div class="title-line"></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🏯 Chotanagpur Royal Descendants</div>
+        <p>The Nagvanshi royal family of Ranchi, Jharkhand, remains the most prominent living claimant dynasty. The family descended from the last zamindars maintains cultural presence in Jharkhand politics and society. Their traditional title was <em>Maharaja</em>; British records recognized them as the premier zamindars of the Chotanagpur region. Post-1952 (abolition of zamindari), the family remains influential in cultural and religious spheres.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">🌿 Nagvanshi Kshatriyas of Jharkhand</div>
+        <p>A recognized community in Jharkhand with OBC status. They claim descent from the ancient Nagvanshi dynasty and constitute a significant social group. Their gotras include Nag, Nagbansi, and several others. They practice a blend of Shaiva Hinduism with older Naga-worship elements, still observing Nag Panchami with particular devotion.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🐍 Nag Gotra Communities</div>
+        <p>Across India, the "Nag" gotra (exogamous ancestral group) is found among multiple communities: certain Brahmin families (particularly in MP, Rajasthan, and Punjab claiming descent from the sage-Naga synthesis tradition); Kshatriya communities in central India; and tribal communities in Jharkhand, MP, and Chhattisgarh. The Nag gotra among Brahmins specifically claims descent from the Naga snake as a spiritual ancestor — not a biological one.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">🏔️ Nair Families of Kerala</div>
+        <p>Many aristocratic Nair families maintain <em>sarpakavu</em> (sacred serpent groves) and claim historical connections to Naga deities. The concept of <em>nagabana</em> (serpent's forest) as family sacred property reflects the Naga-as-family-guardian tradition. The Mannarasala Nagaraja temple in Kerala is served by a hereditary Nair priestess family claiming Naga-deity connection.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🏛️ Tribal Nagvanshi Identities</div>
+        <p>Multiple Adivasi communities in Jharkhand, Odisha, and Chhattisgarh maintain Naga ancestor traditions: the Munda community has myths of Naga water-spirits as ancestral guardians; Oraon communities have Naga-related creation stories; Baiga tribals in MP worship Nag Devata as a primary deity. These represent pre-Hindu, animistic Naga traditions that long predate Puranic literature.</p>
+      </div>
+      <div class="card emerald">
+        <div class="card-title">📜 Surnames &amp; Gotras</div>
+        <p>Surnames indicating Naga connection: <strong>Nag, Nagvanshi, Nagvansi, Nagavanshi, Naik</strong> (may derive from Nayaka/Naga), <strong>Nagpal</strong> (guardian of Nagas), <strong>Nagdev</strong>, <strong>Nagaraja</strong>. In South India: <strong>Nagaraj, Nair</strong> (may connect), <strong>Nagappa</strong>. In Kashmir: surnames derived from Naga-spring villages. In Bengal: Nag surname is common among certain communities.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <strong>Critical Distinction:</strong> There is a persistent confusion between the <em>Naga peoples of Nagaland</em> (Tibeto-Burman tribal groups of Northeast India) and the <em>Nagavanshi tradition</em> of Hindu lineage. These are entirely separate phenomena. The Northeast Naga peoples derive their name from a Burmese/Assamese term of disputed etymology — not from Sanskrit <em>nāga</em>. They have no historical or cultural connection to the Nagavanshi dynastic tradition, though British colonial administrators sometimes conflated them, causing persistent modern confusion.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 9 — SCRIPTURES
+══════════════════════════════════════════════ -->
+<section id="scriptures" class="section">
+  <div class="container">
+    <div class="section-label">Section IX</div>
+    <h2 class="section-title">Scriptural &amp; Historical Sources</h2>
+    <div class="title-line"></div>
+
+    <table class="data-table">
+      <thead><tr><th>Source</th><th>Key Naga Content</th><th>Scholarly Status</th></tr></thead>
+      <tbody>
+        <tr><td>Mahabharata — Adi Parva</td><td>Kashyapa-Kadru genealogy; Sarpa Satra; Naga kings list; Ulupi-Arjuna; Naga palace descriptions</td><td>Core canonical text; composed c. 400 BCE–400 CE</td></tr>
+        <tr><td>Mahabharata — Aranyaka Parva</td><td>Karkotaka bites Nala; Naga king list; forest Nagas</td><td>Canonical</td></tr>
+        <tr><td>Ramayana — Uttara Kanda</td><td>Origin of serpents; Garuda-Naga enmity; Lanka Nagas</td><td>Canonical (Uttara Kanda considered later addition)</td></tr>
+        <tr><td>Vishnu Purana (Book 2)</td><td>Patala cosmology; seven underworlds; Shesha as world-bearer</td><td>c. 1st–3rd century CE; authoritative Vaishnava text</td></tr>
+        <tr><td>Bhagavata Purana (Book 10)</td><td>Kaliya subdued by Krishna; detailed Naga lore</td><td>c. 9th century CE; most popular Purana</td></tr>
+        <tr><td>Matsya Purana</td><td>Lists of Naga dynasties; Naga kings of Padmavati</td><td>c. 3rd–5th century CE; historically valuable for dynasties</td></tr>
+        <tr><td>Vayu Purana</td><td>Post-Gupta Naga dynasty lists; genealogical data</td><td>c. 3rd–4th century CE; important for dynastic lists</td></tr>
+        <tr><td>Brahmanda Purana</td><td>Naga lore; connections with Tantra; Naga deities</td><td>c. 5th–7th century CE</td></tr>
+        <tr><td>Nilamata Purana</td><td>Entire text dedicated to Kashmir Naga traditions; Nila Naga of Kashmir</td><td>c. 6th–8th century CE; primary source for Kashmir Nagas</td></tr>
+        <tr><td>Skanda Purana</td><td>Naga worship at various tirthas; Naga festival prescriptions</td><td>c. 7th–11th century CE; regional traditions</td></tr>
+        <tr><td>Harivamsha</td><td>Supplement to Mahabharata; Krishna's early life; Kaliya Naga</td><td>c. 1st–4th century CE</td></tr>
+        <tr><td>Allahabad Pillar Inscription</td><td>Samudragupta's Prasasti lists Naga kings he defeated</td><td>c. 350 CE; VERIFIED HISTORICAL DOCUMENT</td></tr>
+        <tr><td>Nagpur Copper Plates (Vakatakas)</td><td>References to Naga kings as predecessors; land grants</td><td>c. 4th–5th century CE; archaeological evidence</td></tr>
+        <tr><td>Chotanagpur State Records</td><td>Zamindari records; Nagvanshi genealogies; British surveys</td><td>19th–20th century; partially reliable</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pullquote">
+      "Padmāvatī-nagara-rājaṃ Nāgadattaṃ vijitya..." — [Samudragupta] having conquered the Naga king Nagadatta of Padmavati...
+      <cite>— Allahabad Pillar Prasasti of Samudragupta, c. 350 CE (paraphrase)</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 10 — SYMBOLISM
+══════════════════════════════════════════════ -->
+<section id="symbolism" class="section">
+  <div class="container">
+    <div class="section-label">Section X</div>
+    <h2 class="section-title">Symbolism &amp; Spiritual Meaning</h2>
+    <div class="title-line"></div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">🔄</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Cyclical Time &amp; Eternity</div>
+        <p>The serpent eating its own tail (<em>Ouroboros</em>) — also present in Indian tradition as the world-serpent encircling time — represents the cyclical nature of cosmic ages (<em>yugas</em>) and the eternal return. Shesha bears all creation, then remains after its dissolution — the "remainder" at the end of time, the indestructible substratum. Nagavanshi kings claimed this eternal quality: their lineage predates creation and survives all catastrophes.</p>
+      </div>
+    </div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">⚡</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Kundalini Shakti — The Coiled Serpent Power</div>
+        <p>In Tantric physiology, the <em>Kundalini</em> is described as a coiled serpent sleeping at the base of the spine (<em>muladhara chakra</em>). Awakened through yoga, it rises through the six chakras to the <em>sahasrara</em> (crown), producing enlightenment. The Naga thus represents latent divine energy within every being. Nagavanshi royal claims to Naga ancestry were, in the Tantric framework, claims to a lineage of awakened power — rulers whose very bloodline contained activated Kundalini energy.</p>
+      </div>
+    </div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">💧</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Fertility, Rain &amp; Agricultural Abundance</div>
+        <p>Nagas are universally associated with water, rain, and agricultural fertility across South and Southeast Asia. They inhabit rivers, lakes, springs, and underground aquifers. Propitiating Nagas was believed to bring rain, prevent drought, and ensure crop fertility. The <em>Nagakals</em> (serpent stones) placed under sacred trees at village boundaries, or in <em>sarpakavu</em> groves, serve as permanent fertility-insurance shrines. Nagavanshi kings who controlled water systems also controlled the practical implementation of this belief.</p>
+      </div>
+    </div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">💎</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Underground Wealth &amp; Mineral Resources</div>
+        <p>The Naga as guardian of underground treasure (<em>nidhi</em>) directly corresponds to the mineral-rich territories that Nagavanshi kingdoms typically occupied: the Jharkhand plateau (iron, copper, mica, coal); the Vindhyan belt (limestone, diamond-bearing kimberlites near Panna); the Western Ghats (gold deposits). The <em>Nagamani</em> — the mythical jewel in the serpent's hood — represents the alchemical transformation of earth-substance into spiritual luminosity. Rulers who claimed Naga ancestry claimed divine right over mineral resources.</p>
+      </div>
+    </div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">🏛️</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Architecture &amp; Sacred Space</div>
+        <p>The <em>nagashila</em> (serpent stone) at temple entrances, the serpent balustrades of Khmer temples (derived from Indian Naga traditions), the multi-hooded canopy over Shiva-lingas, and the Naga deity carved above doorways of South Indian temples all reflect the architectural encoding of Naga symbolism as boundary-protection. The Naga guards the threshold between sacred and profane space — just as Nagavanshi rulers claimed to guard the boundary between civilized and forest territory.</p>
+      </div>
+    </div>
+
+    <div class="symbol-row">
+      <div class="symbol-icon">⭐</div>
+      <div class="symbol-content">
+        <div class="symbol-title">Astrological Significance — Ketu &amp; Rahu</div>
+        <p>In Hindu astrology (<em>Jyotisha</em>), <strong>Rahu</strong> (the ascending lunar node) and <strong>Ketu</strong> (the descending lunar node) are depicted as serpent-demons: Rahu as the severed head, Ketu as the severed tail of the great serpent Svarbhanu who swallowed the sun and moon. They represent karmic shadow planets — the points of eclipse. Naga-related maladies (sarp dosha, Kala Sarpa Yoga) in a horoscope require propitiation of Naga deities. This astrological tradition further embedded Naga identity into every Hindu family's ritual practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 11 — RARE FACTS
+══════════════════════════════════════════════ -->
+<section id="rare" class="section">
+  <div class="container">
+    <div class="section-label">Section XI</div>
+    <h2 class="section-title">Rare &amp; Lesser-Known Facts</h2>
+    <div class="title-line"></div>
+
+    <div class="fact-box">
+      <strong>1. The Naga-Buddhist Synthesis:</strong> Buddhism extensively adopted Naga traditions. The Naga Mucalinda shelters the Buddha during meditation. Nagarjuna — the greatest Madhyamaka Buddhist philosopher — is said to have received the Prajnaparamita texts from the Nagas of the undersea realm. Tibetan Buddhism has a fully developed Naga (Klu) tradition. The Naga traditions of Cambodia, Thailand, Laos, and Indonesia derive directly from this Buddhist-Hindu synthesis brought by Indian traders and priests.
+    </div>
+
+    <div class="fact-box">
+      <strong>2. The Forgotten Naga Kingdoms of Assam:</strong> The Ahom chronicles (<em>Buranji</em>) mention pre-Ahom Naga kingdoms in the Brahmaputra valley. The Koch dynasty (c. 1515–1949), which ruled much of Assam and Bengal, had significant Naga-worship traditions in their founding mythology. The Bodo-Kachari peoples of Assam have Naga-serpent origin myths predating recorded history.
+    </div>
+
+    <div class="fact-box">
+      <strong>3. Nagavanshi Influence on Southeast Asia:</strong> The founding myth of the Khmer Empire involves the union of an Indian Brahmin (Kaundinya) with a Naga princess — the exact Arjuna-Ulupi template. The Naga-balustrade temples of Angkor Wat, the serpent bridges of Cambodia, and Thai royal Naga-coronation imagery all derive from the Nagavanshi political-mythological template exported by Indian traders and priests between 200–900 CE.
+    </div>
+
+    <div class="fact-box">
+      <strong>4. The Nag Hammadi Serpent Parallel:</strong> While not directly related, scholars note that Gnostic traditions (found in Nag Hammadi, Egypt) also feature a serpent as a wisdom-bringer, contrasting with the Judeo-Christian "evil serpent." This parallel may reflect shared ancient Near Eastern serpent-wisdom traditions that influenced both Vedic and Semitic traditions through common Bronze Age trade networks — though this remains highly speculative.
+    </div>
+
+    <div class="fact-box">
+      <strong>5. The Vakataka-Naga Connection:</strong> The great Vakataka dynasty (c. 250–500 CE) — patrons of the Ajanta Caves — were closely linked to the Naga dynasties. Prabhavati Gupta, daughter of Chandragupta II (whose mother may have been a Naga princess), married Vakataka king Rudrasena II. This created a Gupta-Vakataka-Naga triple alliance that dominated central India for generations.
+    </div>
+
+    <div class="fact-box">
+      <strong>6. Naga Tantra — The Secret Tradition:</strong> Several Tantra texts describe specifically "Naga Tantra" practices — ritual worship involving real cobras, using venom as an initiatory substance, and invoking Kundalini through serpent-visualization practices. The Natha tradition, associated with Gorakshanath, has deep Naga-worship elements. The <em>Siddhas</em> (perfected beings) of Shaiva Tantra are often depicted with serpents, and some traditions describe Nagas as the original teachers of alchemical (<em>rasa-vidya</em>) knowledge.
+    </div>
+
+    <div class="fact-box">
+      <strong>7. The Naga-Dravidian Question:</strong> Scholars including Iravatham Mahadevan have argued that Naga worship was originally a pre-Vedic, Dravidian tradition that was subsequently absorbed into the Brahminic-Puranic framework. The Tamil <em>Murugan</em> (whose vehicle is the peacock, enemy of serpents) versus the Shaiva-Naga tradition may represent a historical conflict between different cultural groups. The rich Naga-worship of Kerala and Tamil Nadu may preserve the most ancient stratum of pre-Vedic serpent traditions.
+    </div>
+
+    <div class="fact-box">
+      <strong>8. Durjan Sal's Diamond Connection:</strong> When Nagvanshi king Durjan Sal was captured by Mughal forces in 1616, it was because he was mining diamonds in the Chotanagpur region — diamonds that the Mughals wanted. His release after 12 years at Gwalior Fort was contingent on surrendering diamond mining rights. This event perfectly illustrates the ancient Naga-as-underground-treasure-guardian mythology playing out in 17th century political reality.
+    </div>
+
+    <div class="fact-box">
+      <strong>9. The Naga Panchami Timing:</strong> Naga Panchami (5th day of Shukla Paksha in Shravan) is timed to the monsoon peak — when cobras are driven out of their underground burrows by rising water tables and appear near human habitation. The ritual is thus a practical agricultural safety measure (propitiate the snakes that emerge during flooding) that was given mythological depth. The timing preserves an ecological truth within a theological framework.
+    </div>
+
+    <div class="fact-box">
+      <strong>10. Nagavanshi Queens in Gupta History:</strong> There is a significant scholarly hypothesis (R.C. Majumdar, A.S. Altekar) that Chandragupta I's queen Kumaradevi was from the Licchavis, but that the Licchavis themselves had Naga marriage alliances — making the earliest Gupta queens part-Naga in genealogical claim. If true, the entire Gupta Golden Age was built on a Nagavanshi-Gupta royal synthesis. Chandragupta II was called <em>Naga-Kula-Prasava</em> (born of the Naga clan) by some sources.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 12 — CHARTS
+══════════════════════════════════════════════ -->
+<section id="charts" class="section">
+  <div class="container">
+    <div class="section-label">Section XII</div>
+    <h2 class="section-title">Dynasty Comparison &amp; Timeline Charts</h2>
+    <div class="title-line"></div>
+
+    <h3 class="section-subtitle">Major Nagavanshi Dynasties — Comparison Table</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Dynasty</th><th>Period</th><th>Region</th><th>Capital</th><th>Religion</th><th>Evidence Type</th><th>Notable Achievement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bharashiva Nagas</td><td>c. 170–340 CE</td><td>N. MP, UP</td><td>Padmavati</td><td>Shaiva</td><td>Puranas + Inscriptions</td><td>10 Ashvamedha yajnas; ended Kushana rule</td></tr>
+        <tr><td>Padmavati Nagas</td><td>c. 200–400 CE</td><td>N. MP</td><td>Padmavati</td><td>Shaiva</td><td>Coins + Allahabad Prasasti</td><td>Major trade center; silver coinage</td></tr>
+        <tr><td>Mathura Nagas</td><td>c. 200–350 CE</td><td>UP (Mathura)</td><td>Mathura</td><td>Shaiva/Vaishnava</td><td>Sculptures + Coins</td><td>Major Naga sculpture program</td></tr>
+        <tr><td>Karkota (Kashmir)</td><td>c. 625–855 CE</td><td>Kashmir Valley</td><td>Srinagar region</td><td>Shaiva</td><td>Rajatarangini + Coins</td><td>Lalitaditya's empire; Martand Temple</td></tr>
+        <tr><td>Pallavas (Naga claim)</td><td>c. 275–897 CE</td><td>South India</td><td>Kanchipuram</td><td>Shaiva → Vaishnava</td><td>Inscriptions + Temples</td><td>Mahabalipuram; Shore Temple</td></tr>
+        <tr><td>Chotanagpur Nagvanshi</td><td>c. 10th CE–1952</td><td>Jharkhand</td><td>Ranchi region</td><td>Shaiva + Tribal</td><td>Zamindari records + Oral</td><td>Durjan Sal's resistance to Mughals</td></tr>
+        <tr><td>Bastar Naga traditions</td><td>Medieval–Present</td><td>Chhattisgarh</td><td>Jagdalpur</td><td>Tribal Shaiva</td><td>Oral + Regional texts</td><td>Danteshwari worship; forest traditions</td></tr>
+        <tr><td>Kerala Nair Naga</td><td>Ancient–Present</td><td>Kerala</td><td>Various</td><td>Shakta/Naga</td><td>Temple records + Custom</td><td>Mannarasala temple; sarpakavu tradition</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="section-subtitle">ASCII Timeline of Nagavanshi History</h3>
+    <div class="lineage-tree">
+BCE  ──────────────────────────────────────────────────────────────────────  CE
+
+1500 BCE  │  Rigvedic Ahi/Vritra — serpent as cosmic enemy
+          │
+900 BCE   │  Atharva Veda — serpent propitiations begin
+          │
+600 BCE   │  Early Upanishads — Naga as wisdom symbol
+          │
+400 BCE   │  MAHABHARATA composition begins
+          │  → Sarpa Satra, Ulupi, Vasuki, Shesha fully described
+          │
+200 BCE   │  Buddhist Jatakas — Naga kings in Buddhist stories
+          │  Mauryan Empire — Naga sculptures at Mathura begin
+          │
+0 CE      │══════════════════════════════════════════════════════════════════
+          │
+100 CE    │  Naga coins appear at Mathura
+          │
+170 CE    │  ███ BHARASHIVA NAGA DYNASTY begins
+          │
+200 CE    │  ███ PADMAVATI NAGA DYNASTY | ███ MATHURA NAGAS
+          │  Puranas recording Naga dynasties composed
+          │
+300 CE    │  ████ VAKATAKA-NAGA alliances
+          │
+335 CE    │  Samudragupta conquers Naga kings (Allahabad Prasasti)
+          │
+350 CE    │  GUPTA GOLDEN AGE begins (Naga-Gupta marriage alliances)
+          │
+400 CE    │  End of Bharashiva/Padmavati Nagas (absorbed by Guptas)
+          │
+500 CE    │  Nilamata Purana — Kashmir Naga text
+          │
+625 CE    │  ███████████ KARKOTA DYNASTY of Kashmir begins
+          │
+700 CE    │  ████ PALLAVA DYNASTY peak (South India)
+          │  Arab invasions repelled by Kashmir Nagas
+          │
+724 CE    │  LALITADITYA MUKTAPIDA — greatest Kashmir Naga king
+          │
+855 CE    │  Karkota Dynasty ends
+          │
+900 CE    │  ████████████████ CHOTANAGPUR NAGVANSHI (est.)
+          │
+1000 CE   │  Naga worship fully integrated into Bhakti/Tantra
+          │
+1200 CE   │  Delhi Sultanate — pressure on Nagvanshi kingdoms
+          │
+1400 CE   │  Nagvanshi kingdoms in Jharkhand maintain independence
+          │
+1616 CE   │  Durjan Sal captured by Mughals; Naga-Mughal conflict
+          │
+1628 CE   │  Durjan Sal released; diamond rights surrendered
+          │
+1800 CE   │  British colonial documentation begins
+          │
+1900 CE   │  Nagvanshi zamindars fully documented
+          │
+1952 CE   │  Abolition of zamindari; formal dynastic authority ends
+          │
+PRESENT   │  Living communities, cultural identity, temple traditions
+    </div>
+
+    <h3 class="section-subtitle">Regional Spread of Naga Traditions</h3>
+    <div class="lineage-tree">
+REGION                  │ TYPE                    │ KEY TRADITION
+────────────────────────┼─────────────────────────┼──────────────────────────────
+Jharkhand / Chotanagpur │ Royal Dynasty            │ Nagvanshi kings; Durjan Sal
+Madhya Pradesh          │ Historical Kingdoms      │ Bharashiva, Padmavati, Vidisha
+Uttar Pradesh (Mathura) │ Sculpture + Coins        │ Naga yaksha tradition
+Kashmir Valley          │ Sacred Geography         │ Karkota dynasty; Nila Naga
+Rajasthan               │ Nagaur / Naga clans      │ Takshak Naga traditions
+Gujarat                 │ Naga Panchami            │ Cobra worship in temples
+Maharashtra             │ Naga stones              │ Nagpur (Nag = cobra city)
+Andhra Pradesh          │ Temple traditions        │ Nagoba festival (Adilabad)
+Karnataka               │ Naga stones + Kadambas   │ Sarpakavu, tribal Naga
+Kerala                  │ Sarpakavu groves         │ Mannarasala; Nair traditions
+Tamil Nadu              │ Naga temples             │ Nagercoil, Uttaramerur
+Assam / Northeast       │ Pre-Vedic traditions     │ Bodo-Koch Naga myths
+Nepal Valley            │ Naga lakes + festivals   │ Naga Panchami; Licchavi Nagas
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 13 — SUMMARY
+══════════════════════════════════════════════ -->
+<section id="summary" class="section">
+  <div class="container">
+    <div class="section-label">Section XIII</div>
+    <h2 class="section-title">Final Encyclopedia Summary</h2>
+    <div class="title-line"></div>
+
+    <h3 class="section-subtitle">Most Important Nagas to Remember</h3>
+    <div class="grid-3">
+      <div class="card"><div class="card-title">Ananta Shesha</div><p>Cosmic substratum; Vishnu's bed; world-bearer; incarnates as Lakshmana &amp; Balarama. The ultimate Naga ancestor.</p></div>
+      <div class="card"><div class="card-title">Vasuki</div><p>King of Nagas; churning-rope of Samudra Manthan; Shiva's ornament; protector of Naga race; head of Naga political community.</p></div>
+      <div class="card"><div class="card-title">Takshaka</div><p>Most politically active Naga; kills Parikshit; creates the crisis leading to Sarpa Satra; historically linked to Takshashila (modern Pakistan).</p></div>
+      <div class="card emerald"><div class="card-title">Astika</div><p>Half-Brahmin, half-Naga; stops Janamejaya's mass killing of Nagas; model for Brahmin-Naga political synthesis.</p></div>
+      <div class="card emerald"><div class="card-title">Ulupi</div><p>Naga princess; Arjuna's wife; connects Pandava heroic line to Naga royalty; model for Naga-Kshatriya marriage alliances.</p></div>
+      <div class="card emerald"><div class="card-title">Karkotaka</div><p>Great Naga of Kashmir; bites Nala; founding ancestor of the Karkota dynasty; represents the historically documented Naga-dynasty connection.</p></div>
+    </div>
+
+    <h3 class="section-subtitle">Simplified Revision Notes</h3>
+    <div class="rev-item"><strong>Origin:</strong> Nagas = children of Kashyapa + Kadru; born from 1000 eggs; siblings of Garuda (eternal enemy)</div>
+    <div class="rev-item"><strong>Cosmic Role:</strong> Shesha bears the Earth; Vasuki churned the cosmic ocean; Nagas guard underground wealth and water</div>
+    <div class="rev-item"><strong>Epic Episodes:</strong> Sarpa Satra (Janamejaya tries to destroy Nagas; Astika saves them) → Ulupi-Arjuna (Naga-Kshatriya marriage) → Kaliya-Krishna (Naga subdued by dharma)</div>
+    <div class="rev-item"><strong>Historical Dynasties:</strong> Bharashiva (UP/MP, c.170-340 CE) → Padmavati (MP, c.200-400 CE) → Karkota-Kashmir (c.625-855 CE) → Chotanagpur Nagvanshi (c.10th-20th CE)</div>
+    <div class="rev-item"><strong>Strategies:</strong> River/water control + forest defense + temple legitimacy + Brahmin alliance + strategic marriages</div>
+    <div class="rev-item"><strong>Symbolism:</strong> Fertility, rain, underground wealth, kundalini energy, cyclical time, threshold protection</div>
+    <div class="rev-item"><strong>Evidence Types:</strong> Puranic lists (mythology) → coin finds (semi-historical) → Allahabad Prasasti (verified history) → zamindari records (modern history)</div>
+    <div class="rev-item"><strong>Present Day:</strong> Nagvanshi Kshatriyas of Jharkhand; Ranchi royal family; Nag gotra communities; Kerala sarpakavu traditions</div>
+
+    <h3 class="section-subtitle">Beginner-Friendly Summary</h3>
+    <div class="card emerald" style="margin-top:20px;">
+      <div class="card-title">📖 Who Were the Nagavanshis? — In Simple Terms</div>
+      <p>Imagine a very ancient, very widespread family of rulers and communities in India who all shared one powerful claim: <em>we are descended from the serpent-people</em>. In Hindu mythology, the Nagas were magnificent semi-divine beings — part snake, part human, extremely intelligent and powerful — who lived in beautiful underground kingdoms and guarded all the water and treasure in the earth.</p>
+      <p>Over thousands of years, real rulers found it politically useful to say they descended from these mythological Nagas: it made them seem ancient, powerful, connected to nature's deepest forces. So across India — from the forests of Jharkhand to the mountains of Kashmir to the rice fields of Kerala — you find communities and kings saying "our ancestors were Nagas."</p>
+      <p>Some of these claims can be verified historically (like the Bharashiva Nagas of Madhya Pradesh, mentioned in ancient inscriptions). Others are deeply traditional but hard to verify (like the 1900-year lineage of Chotanagpur). And some are purely symbolic — the cobra on Shiva's neck, the serpent supporting Vishnu, the Kundalini energy in Tantra yoga.</p>
+      <p>The real legacy of the Nagavansha is not just about one dynasty. It is about how serpent symbolism became the common language for claiming connection to Earth's deepest, most ancient powers — and how that claim was used for over 3,000 years to justify rulership, protect communities, and give meaning to the relationship between humans, rivers, forests, and the sacred underground world.</p>
+    </div>
+
+    <h3 class="section-subtitle">Scholarly Debates — Where Experts Disagree</h3>
+    <div class="grid-2">
+      <div class="card red">
+        <div class="card-title">Were Nagas a Real Tribe?</div>
+        <p><strong>Yes (D.R. Bhandarkar, V.A. Smith):</strong> Nagas were real non-Vedic tribal groups — possibly Tibeto-Burman or Proto-Dravidian — who were incorporated into the Vedic-Puranic framework. Their "serpent" identity was a totemic marker, not a literal claim of snake-ancestry.</p>
+        <p style="margin-top:8px;"><strong>No (Puranic tradition):</strong> Nagas were genuinely semi-divine beings whose physical form was serpentine but who could assume human form; the historical dynasties simply preserved memory of this ancient divine ancestry.</p>
+      </div>
+      <div class="card red">
+        <div class="card-title">Were Nagavanshi Dynasties One Group?</div>
+        <p><strong>No (modern consensus):</strong> The various "Naga" dynasties — Bharashiva, Padmavati, Karkota, Chotanagpur — were independent, unrelated groups who adopted the Naga identity as a prestige marker. They had no shared ethnic or genealogical connection.</p>
+        <p style="margin-top:8px;"><strong>Partial yes (traditional historians):</strong> Common Naga ancestry claims suggest cultural continuity; the Naga identity may represent a pre-Vedic cultural-political network that found common expression through serpent symbolism.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-title">🐍 NAGAVANSHA — THE ETERNAL LINEAGE 🐍</div>
+  <p>
+    This encyclopedia draws upon the Mahabharata, major Puranas, epigraphical records, regional chronicles, and modern historical scholarship. Where mythology and history diverge, both traditions are presented with clear distinction. This document is intended as a scholarly reference and should be cross-referenced with primary sources for academic use.
+  </p>
+  <p style="margin-top:12px; color:#5a4a28;">
+    Sources: Mahabharata (Adi, Vana Parvas) · Vishnu Purana · Bhagavata Purana · Matsya Purana · Nilamata Purana · Allahabad Pillar Prasasti · Rajatarangini (Kalhana) · Colonial Gazetteers of Bengal Presidency · Archaeological Survey of India Reports · R.C. Majumdar's History of Ancient India
+  </p>
+</footer>
+
+</body>
+</html>

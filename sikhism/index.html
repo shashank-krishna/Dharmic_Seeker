@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikh Dharma — The Living Civilization | Digital Encyclopedia</title>
+<meta name="description" content="A comprehensive, historically accurate digital encyclopedia of Sikh Dharma — its Gurus, philosophy, kingdoms, warriors, scriptures, and civilizational role.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+/* ============================================================
+   DESIGN SYSTEM — Sikh Dharma Portal
+   Theme: Sacred Civilization — Saffron × Navy × Gold × Ivory
+   ============================================================ */
+:root {
+  --saffron:      #E8751A;
+  --saffron-lt:   #F5A623;
+  --saffron-dk:   #B85C14;
+  --gold:         #C9962C;
+  --gold-lt:      #E8C86A;
+  --gold-dk:      #8B6914;
+  --navy:         #0A1628;
+  --navy-mid:     #122040;
+  --navy-lt:      #1C3260;
+  --steel:        #2A4A7F;
+  --ivory:        #F5F0E8;
+  --ivory-dk:     #E8E0D0;
+  --cream:        #FAF6EF;
+  --text-primary: #1A1208;
+  --text-sec:     #4A3820;
+  --text-light:   #F5F0E8;
+  --glass-bg:     rgba(255,255,255,0.06);
+  --glass-border: rgba(201,150,44,0.25);
+  --shadow-gold:  0 8px 40px rgba(201,150,44,0.18);
+  --shadow-deep:  0 20px 80px rgba(10,22,40,0.6);
+  --font-display: 'Cinzel Decorative', serif;
+  --font-title:   'Cinzel', serif;
+  --font-body:    'EB Garamond', serif;
+  --font-ui:      'Rajdhani', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--ivory);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+::selection { background: var(--saffron); color: var(--navy); }
+
+/* ============================================================ SCROLLBAR */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+/* ============================================================ UTILITY */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--saffron-lt);
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.section-label::before, .section-label::after {
+  content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--saffron-lt);
+}
+.section-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700; line-height: 1.15;
+  color: var(--ivory);
+  margin-bottom: 1rem;
+}
+.section-title span { color: var(--gold-lt); }
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem; color: rgba(245,240,232,0.7);
+  max-width: 680px; line-height: 1.8; margin-bottom: 3rem;
+}
+.divider {
+  width: 80px; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  margin: 1.5rem 0 2.5rem;
+  border-radius: 2px;
+}
+.badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  background: rgba(232,117,26,0.15);
+  border: 1px solid rgba(232,117,26,0.4);
+  color: var(--saffron-lt);
+  margin-bottom: 12px;
+}
+
+/* ============================================================ KHANDA SVG ANIMATION */
+@keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotate-rev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes pulse-glow { 0%,100%{opacity:0.6} 50%{opacity:1} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes fade-up { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes shimmer {
+  0%{background-position:-400px 0} 100%{background-position:400px 0}
+}
+@keyframes expand-line { from{width:0} to{width:80px} }
+@keyframes counter { from { content: '0'; } }
+
+/* ============================================================ NAVIGATION */
+#navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: rgba(10,22,40,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,150,44,0.2);
+  transition: all 0.3s ease;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 68px; max-width: 1400px; margin: 0 auto;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: var(--ivory);
+}
+.nav-brand .khanda-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.nav-brand span {
+  font-family: var(--font-title); font-size: 1rem; font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(245,240,232,0.7);
+  text-decoration: none; padding: 8px 12px; border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--gold-lt); background: rgba(201,150,44,0.1); }
+.nav-toggle { display: none; cursor: pointer; color: var(--ivory); font-size: 1.5rem; background: none; border: none; }
+
+/* ============================================================ HERO */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, #060E1A 0%, #0A1628 40%, #122040 70%, #0D1A32 100%);
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: 
+    repeating-linear-gradient(60deg, var(--gold) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(-60deg, var(--gold) 0px, transparent 1px, transparent 40px);
+}
+.hero-radial {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,117,26,0.08) 0%, transparent 70%);
+}
+.hero-center { position: relative; text-align: center; z-index: 2; padding: 80px 24px 60px; }
+.hero-khanda {
+  width: 140px; height: 140px; margin: 0 auto 40px;
+  position: relative; animation: float 4s ease-in-out infinite;
+}
+.hero-khanda svg { width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(232,117,26,0.5)); }
+.hero-ik-onkar {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--saffron-lt); margin-bottom: 20px;
+  opacity: 0; animation: fade-up 1s 0.3s forwards;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 900; line-height: 1.05;
+  background: linear-gradient(135deg, #F5F0E8 0%, #E8C86A 40%, #F5A623 70%, #E8751A 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  opacity: 0; animation: fade-up 1s 0.5s forwards;
+}
+.hero-subtitle {
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: rgba(245,240,232,0.5); letter-spacing: 0.2em;
+  margin-bottom: 32px;
+  opacity: 0; animation: fade-up 1s 0.7s forwards;
+}
+.hero-tagline {
+  font-family: var(--font-body);
+  font-style: italic; font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(245,240,232,0.65); max-width: 600px; margin: 0 auto 48px;
+  opacity: 0; animation: fade-up 1s 0.9s forwards;
+}
+.hero-cta-row {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fade-up 1s 1.1s forwards;
+}
+.btn-primary {
+  font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 32px; border-radius: 4px;
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-dk));
+  color: white; text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.3s; box-shadow: 0 4px 20px rgba(232,117,26,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,117,26,0.5); }
+.btn-secondary {
+  font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 32px; border-radius: 4px;
+  background: transparent; border: 1px solid rgba(201,150,44,0.5);
+  color: var(--gold-lt); text-decoration: none; cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-secondary:hover { background: rgba(201,150,44,0.1); border-color: var(--gold-lt); }
+.hero-stats {
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+  margin-top: 60px; padding-top: 48px;
+  border-top: 1px solid rgba(201,150,44,0.15);
+  opacity: 0; animation: fade-up 1s 1.3s forwards;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 900;
+  background: linear-gradient(135deg, var(--saffron-lt), var(--gold-lt));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  display: block;
+}
+.hero-stat .label {
+  font-family: var(--font-ui); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.4);
+}
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  text-align: center;
+  opacity: 0; animation: fade-up 1s 1.5s forwards;
+}
+.hero-scroll span {
+  display: block; font-family: var(--font-ui); font-size: 0.65rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,240,232,0.35);
+  margin-bottom: 8px;
+}
+.scroll-line {
+  width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: 0 auto; animation: pulse-glow 2s infinite;
+}
+
+/* ============================================================ INTRO SECTION */
+#intro {
+  background: var(--cream);
+  color: var(--text-primary);
+  padding: 100px 0;
+}
+#intro .section-title { color: var(--text-primary); }
+#intro .section-subtitle { color: var(--text-sec); }
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.intro-text p {
+  font-size: 1.05rem; line-height: 1.9;
+  color: var(--text-sec); margin-bottom: 1.2rem;
+}
+.intro-text p strong { color: var(--saffron-dk); }
+.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.concept-card {
+  background: white; border-radius: 10px;
+  padding: 20px; border-left: 3px solid var(--saffron);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: all 0.3s;
+}
+.concept-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.concept-card h4 {
+  font-family: var(--font-title); font-size: 0.9rem; font-weight: 700;
+  color: var(--saffron-dk); margin-bottom: 6px;
+}
+.concept-card p { font-size: 0.85rem; line-height: 1.6; color: var(--text-sec); }
+
+/* ============================================================ DARK SECTIONS */
+.section-dark {
+  background: var(--navy-mid);
+  padding: 100px 0;
+}
+.section-navy { background: var(--navy); padding: 100px 0; }
+.section-light { background: var(--ivory); color: var(--text-primary); padding: 100px 0; }
+.section-light .section-title { color: var(--text-primary); }
+.section-light .section-subtitle { color: var(--text-sec); }
+.section-light p { color: var(--text-sec); }
+
+/* ============================================================ GURU TIMELINE */
+#gurus { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 100px 0; }
+.gurus-header { text-align: center; margin-bottom: 60px; }
+.guru-timeline { position: relative; }
+.guru-timeline::before {
+  content: '';
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--saffron), var(--gold), var(--saffron));
+  transform: translateX(-50%);
+}
+.guru-card {
+  display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0;
+  margin-bottom: 60px; align-items: center;
+}
+.guru-card:nth-child(even) .guru-content { grid-column: 3; }
+.guru-card:nth-child(even) .guru-spacer { grid-column: 2; }
+.guru-card:nth-child(even) .guru-empty { grid-column: 1; }
+.guru-content {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 28px 30px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s;
+  position: relative;
+}
+.guru-content:hover {
+  border-color: rgba(201,150,44,0.5);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+.guru-number {
+  font-family: var(--font-display);
+  font-size: 3rem; font-weight: 900;
+  position: absolute; top: -20px; right: 20px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+}
+.guru-name {
+  font-family: var(--font-title);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--gold-lt); margin-bottom: 4px;
+}
+.guru-dates {
+  font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.1em; color: var(--saffron-lt); margin-bottom: 12px;
+}
+.guru-content h4 {
+  font-family: var(--font-ui); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(245,240,232,0.5); margin: 14px 0 6px;
+}
+.guru-content p, .guru-content ul { font-size: 0.92rem; line-height: 1.75; color: rgba(245,240,232,0.8); }
+.guru-content ul { padding-left: 18px; }
+.guru-content li { margin-bottom: 4px; }
+.guru-dot {
+  width: 20px; height: 20px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(232,117,26,0.2), 0 0 0 8px rgba(232,117,26,0.08);
+  justify-self: center;
+}
+.guru-empty { opacity: 0; }
+.guru-tag {
+  display: inline-block;
+  font-family: var(--font-ui); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 12px;
+  background: rgba(232,117,26,0.15); border: 1px solid rgba(232,117,26,0.3);
+  color: var(--saffron-lt); margin-right: 6px; margin-bottom: 6px;
+}
+
+/* ============================================================ PHILOSOPHY GRID */
+.philosophy-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.philosophy-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px; padding: 32px 28px;
+  transition: all 0.4s; position: relative; overflow: hidden;
+}
+.philosophy-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+}
+.philosophy-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-gold); border-color: rgba(201,150,44,0.4); }
+.philosophy-card .icon {
+  font-size: 2.5rem; margin-bottom: 16px; display: block;
+}
+.philosophy-card h3 {
+  font-family: var(--font-title); font-size: 1.15rem; font-weight: 700;
+  color: var(--gold-lt); margin-bottom: 8px;
+}
+.philosophy-card p { font-size: 0.9rem; line-height: 1.75; color: rgba(245,240,232,0.75); }
+
+/* ============================================================ SCRIPTURE SECTION */
+.scripture-layout {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start;
+}
+.scripture-card {
+  background: linear-gradient(145deg, rgba(18,32,64,0.8), rgba(10,22,40,0.9));
+  border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 40px; margin-bottom: 24px;
+  box-shadow: var(--shadow-deep);
+}
+.scripture-card h3 {
+  font-family: var(--font-title); font-size: 1.4rem; font-weight: 700;
+  color: var(--gold-lt); margin-bottom: 8px;
+}
+.scripture-card .subtitle {
+  font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--saffron-lt); margin-bottom: 16px;
+}
+.scripture-card p { font-size: 0.95rem; line-height: 1.8; color: rgba(245,240,232,0.75); }
+.gurbani-verse {
+  background: linear-gradient(135deg, rgba(232,117,26,0.08), rgba(201,150,44,0.08));
+  border: 1px solid rgba(201,150,44,0.3);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 24px; margin: 20px 0;
+}
+.gurbani-verse .verse {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  line-height: 1.9; color: var(--gold-lt);
+}
+.gurbani-verse .translation {
+  font-size: 0.85rem; color: rgba(245,240,232,0.6);
+  margin-top: 8px; font-style: normal;
+}
+
+/* ============================================================ KINGDOM SECTION */
+.kingdoms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.kingdom-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px; padding: 32px;
+  transition: all 0.4s;
+}
+.kingdom-card:hover { border-color: rgba(201,150,44,0.5); box-shadow: var(--shadow-gold); transform: translateY(-4px); }
+.kingdom-card .era {
+  font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--saffron-lt); margin-bottom: 8px;
+}
+.kingdom-card h3 {
+  font-family: var(--font-title); font-size: 1.25rem; font-weight: 700;
+  color: var(--ivory); margin-bottom: 12px;
+}
+.kingdom-card p { font-size: 0.88rem; line-height: 1.75; color: rgba(245,240,232,0.7); }
+.kingdom-stat-row { display: flex; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
+.kingdom-stat { text-align: center; }
+.kingdom-stat .val {
+  font-family: var(--font-title); font-size: 1.1rem; font-weight: 700;
+  color: var(--gold-lt); display: block;
+}
+.kingdom-stat .desc {
+  font-family: var(--font-ui); font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.4);
+}
+
+/* ============================================================ WARRIOR SECTION */
+.warriors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+.warrior-card {
+  background: linear-gradient(150deg, var(--navy-lt), var(--navy-mid));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px; padding: 32px;
+  position: relative; overflow: hidden;
+  transition: all 0.4s;
+}
+.warrior-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s;
+}
+.warrior-card:hover::after { transform: scaleX(1); }
+.warrior-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+.warrior-era { font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-lt); margin-bottom: 6px; }
+.warrior-name { font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: var(--ivory); margin-bottom: 4px; }
+.warrior-title { font-size: 0.8rem; color: var(--gold-lt); font-style: italic; margin-bottom: 14px; }
+.warrior-card p { font-size: 0.88rem; line-height: 1.75; color: rgba(245,240,232,0.75); }
+.warrior-card ul { font-size: 0.85rem; line-height: 1.7; color: rgba(245,240,232,0.7); padding-left: 16px; }
+.warrior-card li { margin-bottom: 4px; }
+.warrior-card h4 { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.45); margin: 12px 0 6px; }
+
+/* ============================================================ GURUDWARA */
+.gurudwara-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.gurudwara-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), transparent);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px; overflow: hidden;
+  transition: all 0.4s;
+}
+.gurudwara-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-gold); border-color: rgba(201,150,44,0.5); }
+.gurudwara-visual {
+  height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(232,117,26,0.12), rgba(201,150,44,0.12));
+  font-size: 5rem; position: relative; overflow: hidden;
+}
+.gurudwara-visual::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201,150,44,0.03) 10px, rgba(201,150,44,0.03) 11px);
+}
+.gurudwara-info { padding: 22px 22px 24px; }
+.gurudwara-info h3 { font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 4px; }
+.gurudwara-info .loc { font-family: var(--font-ui); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--saffron-lt); margin-bottom: 8px; }
+.gurudwara-info p { font-size: 0.83rem; line-height: 1.7; color: rgba(245,240,232,0.7); }
+
+/* ============================================================ COMPARISON TABLE */
+.comparison-table { width: 100%; border-collapse: collapse; }
+.comparison-table th {
+  font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 20px; text-align: left;
+  background: rgba(232,117,26,0.15);
+  border-bottom: 2px solid var(--saffron);
+  color: var(--saffron-lt);
+}
+.comparison-table td {
+  padding: 14px 20px; font-size: 0.88rem;
+  border-bottom: 1px solid rgba(201,150,44,0.1);
+  color: rgba(245,240,232,0.8); vertical-align: top;
+}
+.comparison-table tr:hover td { background: rgba(255,255,255,0.03); }
+.comparison-table td:first-child {
+  font-family: var(--font-title); font-weight: 600;
+  color: var(--gold-lt); white-space: nowrap;
+}
+
+/* ============================================================ SYMBOLS */
+.symbols-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+.symbol-card {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 14px; padding: 28px 20px; text-align: center;
+  transition: all 0.3s;
+}
+.symbol-card:hover { border-color: rgba(201,150,44,0.5); box-shadow: var(--shadow-gold); }
+.symbol-icon { font-size: 3rem; margin-bottom: 16px; display: block; }
+.symbol-card h3 { font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 8px; }
+.symbol-card p { font-size: 0.82rem; line-height: 1.7; color: rgba(245,240,232,0.7); }
+
+/* ============================================================ TIMELINE MASTER */
+.master-timeline { position: relative; padding-left: 48px; }
+.master-timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--saffron), var(--gold), var(--saffron)); }
+.tl-event { position: relative; margin-bottom: 32px; }
+.tl-event::before { content: ''; position: absolute; left: -38px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--saffron), var(--gold)); box-shadow: 0 0 0 3px rgba(232,117,26,0.2); }
+.tl-event .year { font-family: var(--font-title); font-size: 0.85rem; font-weight: 700; color: var(--saffron-lt); margin-bottom: 4px; }
+.tl-event h4 { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 700; color: var(--ivory); margin-bottom: 4px; }
+.tl-event p { font-size: 0.85rem; line-height: 1.7; color: rgba(245,240,232,0.65); }
+
+/* ============================================================ RARE FACTS */
+.facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fact-card {
+  background: linear-gradient(145deg, rgba(232,117,26,0.06), rgba(201,150,44,0.04));
+  border: 1px solid rgba(201,150,44,0.2);
+  border-left: 4px solid var(--saffron);
+  border-radius: 0 12px 12px 0; padding: 24px;
+  transition: all 0.3s;
+}
+.fact-card:hover { border-left-color: var(--gold-lt); background: rgba(232,117,26,0.08); }
+.fact-card .num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: rgba(232,117,26,0.25); }
+.fact-card h4 { font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 8px; }
+.fact-card p { font-size: 0.85rem; line-height: 1.75; color: rgba(245,240,232,0.75); }
+
+/* ============================================================ FAQ */
+.faq-list { max-width: 820px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(201,150,44,0.15); }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; text-align: left;
+  font-family: var(--font-ui); font-size: 1rem; font-weight: 600;
+  color: var(--ivory); letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--gold-lt); }
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid rgba(201,150,44,0.4);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem; color: var(--gold-lt);
+  transition: all 0.3s;
+}
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
+}
+.faq-answer-inner {
+  padding-bottom: 22px;
+  font-size: 0.92rem; line-height: 1.85;
+  color: rgba(245,240,232,0.72);
+}
+.faq-item.open .faq-icon { background: var(--saffron); border-color: var(--saffron); transform: rotate(45deg); }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ============================================================ RELATIONSHIP SECTION */
+.relation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.relation-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 14px; padding: 28px; }
+.relation-card h3 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 12px; }
+.relation-card p { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.75); }
+.relation-card ul { font-size: 0.85rem; line-height: 1.75; color: rgba(245,240,232,0.7); padding-left: 16px; }
+.relation-card li { margin-bottom: 6px; }
+
+/* ============================================================ FOOTER */
+footer {
+  background: #060E1A;
+  border-top: 1px solid rgba(201,150,44,0.15);
+  padding: 60px 0 30px; text-align: center;
+}
+footer .brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold-lt); margin-bottom: 16px; }
+footer p { font-size: 0.85rem; color: rgba(245,240,232,0.4); line-height: 1.9; }
+footer p a { color: var(--saffron-lt); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 24px; margin: 24px 0; flex-wrap: wrap; }
+.footer-links a { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-lt); }
+
+/* ============================================================ RESPONSIVE */
+@media (max-width: 900px) {
+  .intro-grid, .scripture-layout, .kingdoms-grid, .facts-grid { grid-template-columns: 1fr; gap: 40px; }
+  .philosophy-grid, .relation-grid { grid-template-columns: 1fr 1fr; }
+  .guru-timeline::before { left: 20px; }
+  .guru-card { grid-template-columns: 1fr; }
+  .guru-card:nth-child(even) .guru-content,
+  .guru-card:nth-child(odd) .guru-content { grid-column: 1; }
+  .guru-dot { display: none; }
+  .guru-empty { display: none; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+}
+@media (max-width: 600px) {
+  .philosophy-grid, .relation-grid, .concept-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+  .comparison-table { font-size: 0.8rem; }
+  .comparison-table th, .comparison-table td { padding: 10px 12px; }
+}
+
+/* ============================================================ MOBILE NAV */
+.mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(6,14,26,0.98); backdrop-filter: blur(20px);
+  flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-title); font-size: 1.4rem; font-weight: 600;
+  color: var(--ivory); text-decoration: none; transition: color 0.2s;
+}
+.mobile-nav a:hover { color: var(--gold-lt); }
+.mobile-nav-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: var(--ivory);
+  font-size: 2rem; cursor: pointer;
+}
+
+/* ============================================================ HIGHLIGHT BOX */
+.highlight-box {
+  background: linear-gradient(135deg, rgba(232,117,26,0.1), rgba(201,150,44,0.08));
+  border: 1px solid rgba(201,150,44,0.25);
+  border-radius: 16px; padding: 32px; margin: 24px 0;
+}
+.highlight-box h4 { font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 10px; }
+.highlight-box p { font-size: 0.9rem; line-height: 1.8; color: rgba(245,240,232,0.78); }
+</style>
+</head>
+<body>
+
+<!-- ================================================================ NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#hero">
+      <div class="khanda-icon">☬</div>
+      <span>Sikh Dharma</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#intro">Origin</a></li>
+      <li><a href="#gurus">Gurus</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#scriptures">Scriptures</a></li>
+      <li><a href="#kingdoms">Kingdoms</a></li>
+      <li><a href="#warriors">Warriors</a></li>
+      <li><a href="#gurudwaras">Gurudwaras</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
+  <a href="#intro" onclick="document.getElementById('mobileNav').classList.remove('open')">Origin</a>
+  <a href="#gurus" onclick="document.getElementById('mobileNav').classList.remove('open')">Gurus</a>
+  <a href="#philosophy" onclick="document.getElementById('mobileNav').classList.remove('open')">Philosophy</a>
+  <a href="#scriptures" onclick="document.getElementById('mobileNav').classList.remove('open')">Scriptures</a>
+  <a href="#kingdoms" onclick="document.getElementById('mobileNav').classList.remove('open')">Kingdoms</a>
+  <a href="#warriors" onclick="document.getElementById('mobileNav').classList.remove('open')">Warriors</a>
+  <a href="#gurudwaras" onclick="document.getElementById('mobileNav').classList.remove('open')">Gurudwaras</a>
+  <a href="#faq" onclick="document.getElementById('mobileNav').classList.remove('open')">FAQ</a>
+</div>
+
+<!-- ================================================================ HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-radial"></div>
+  <div class="hero-center container">
+    <div class="hero-khanda">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5A623"/>
+            <stop offset="100%" stop-color="#E8751A"/>
+          </linearGradient>
+        </defs>
+        <!-- Outer circle -->
+        <circle cx="60" cy="60" r="54" stroke="url(#g1)" stroke-width="2" fill="none" opacity="0.4"/>
+        <circle cx="60" cy="60" r="48" stroke="url(#g1)" stroke-width="0.5" fill="none" opacity="0.2"/>
+        <!-- Central double-edged sword (Khanda) -->
+        <rect x="57" y="18" width="6" height="68" rx="3" fill="url(#g1)"/>
+        <path d="M60 18 L53 35 L60 86 L67 35 Z" fill="url(#g1)" opacity="0.9"/>
+        <!-- Chakkar (ring) -->
+        <circle cx="60" cy="60" r="18" stroke="url(#g1)" stroke-width="3.5" fill="none"/>
+        <!-- Left kirpan -->
+        <path d="M42 22 L28 75 Q35 80 40 72 L54 28 Z" fill="url(#g1)" opacity="0.8"/>
+        <!-- Right kirpan -->
+        <path d="M78 22 L92 75 Q85 80 80 72 L66 28 Z" fill="url(#g1)" opacity="0.8"/>
+      </svg>
+    </div>
+    <div class="hero-ik-onkar">☬ ੴ — Ik Onkar — One Universal Creator</div>
+    <h1 class="hero-title">Sikh Dharma</h1>
+    <div class="hero-subtitle">The Living Civilization of the Punjab</div>
+    <p class="hero-tagline">
+      "Rehat pyaari mujhko, Sikh pyaara naahe" — The Guru loves those who live by the Rehat (discipline) — <em>Guru Gobind Singh Ji</em>
+    </p>
+    <div class="hero-cta-row">
+      <a href="#intro" class="btn-primary">Explore the Dharma</a>
+      <a href="#gurus" class="btn-secondary">Meet the Ten Gurus</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">10</span><span class="label">Sikh Gurus</span></div>
+      <div class="hero-stat"><span class="num">530+</span><span class="label">Years of History</span></div>
+      <div class="hero-stat"><span class="num">30M+</span><span class="label">Sikhs Worldwide</span></div>
+      <div class="hero-stat"><span class="num">3,430</span><span class="label">Hymns in Guru Granth Sahib by Gurus</span></div>
+      <div class="hero-stat"><span class="num">1469</span><span class="label">Year of First Guru's Birth</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ================================================================ INTRODUCTION -->
+<section id="intro">
+  <div class="container">
+    <div class="section-label">The Foundation</div>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2 class="section-title">What is <span>Sikh Dharma?</span></h2>
+        <div class="divider"></div>
+        <p>The word <strong>"Sikh"</strong> derives from the Sanskrit word <em>Śiṣya</em> (शिष्य) — meaning <strong>disciple or learner</strong> — and the Pali <em>sikkha</em>, meaning to learn, to practice. A Sikh is fundamentally one who seeks truth, learns continuously, and lives by the teachings of the Gurus.</p>
+        <p><strong>Sikh Dharma</strong> (popularly called Sikhism in Western scholarship) is a monotheistic, revelatory spiritual tradition that emerged in the Punjab region of the Indian subcontinent in the late 15th century CE under the guidance of Guru Nanak Dev Ji (1469–1539 CE).</p>
+        <p>It is distinct from both Hinduism and Islam, yet emerged in the rich spiritual landscape of the Bhakti movement, Sant traditions of northern India, and the mystical Sufi currents of the region. It neither simply synthesized these traditions nor rejected them — it articulated a <strong>direct, universal revelation</strong> that transcended sectarian boundaries.</p>
+        <p>Sikh Dharma is centred on the direct relationship between the human soul and <strong>Waheguru</strong> (the Wondrous Enlightener, the One Creator), meditation on the Divine Name (<em>Naam Simran</em>), selfless service (<em>Seva</em>), and righteous living (<em>Dharam</em>). It rejects caste, ritualism, and intermediaries between the soul and the Divine.</p>
+
+        <div class="highlight-box" style="margin-top:28px;">
+          <h4>Historical Context: 15th–Century Punjab</h4>
+          <p>Punjab in 1469 was a land at the crossroads of civilizations — under the Lodi Sultanate and the shadow of Timurid invasions, wracked by caste oppression, religious coercion, and social inequality. Brahmanical ritualism had calcified, Islamic rulers imposed jizya on non-Muslims, and the common people — peasants, artisans, women — were spiritually homeless. Into this fractured world, Guru Nanak brought a revolutionary message: God dwells within every human heart, and liberation requires no temple, priest, caste, or king — only sincere love of the Divine Name.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-family:var(--font-title);font-size:1.2rem;color:var(--text-primary);margin-bottom:20px;font-weight:700;">Core Concepts of Sikh Dharma</h3>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>☬ Ik Onkar</h4>
+            <p>There is One Universal Creator God — formless, beyond birth and death, self-illuminated. The foundational declaration of Sikh theology.</p>
+          </div>
+          <div class="concept-card">
+            <h4>🙏 Naam Simran</h4>
+            <p>Meditation and constant remembrance of the Divine Name. The central spiritual practice — a direct path to liberation from ego and illusion (Maya).</p>
+          </div>
+          <div class="concept-card">
+            <h4>🤝 Seva</h4>
+            <p>Selfless service to humanity without expectation of reward — expressed through Langar (free community kitchen), care for the sick, and community work.</p>
+          </div>
+          <div class="concept-card">
+            <h4>⚖️ Kirat Karni</h4>
+            <p>Honest, dignified labor as a spiritual path. Earning one's living through righteous means — rejecting begging and exploitation.</p>
+          </div>
+          <div class="concept-card">
+            <h4>🌍 Sarbat da Bhala</h4>
+            <p>Prayer and action for the well-being of all humanity — the universal, inclusive ethic at the heart of Sikh social consciousness.</p>
+          </div>
+          <div class="concept-card">
+            <h4>⚔️ Khalsa</h4>
+            <p>The community of pure, initiated Sikhs created by Guru Gobind Singh Ji in 1699 — warriors of righteousness bound by the Amrit ceremony.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ ORIGIN -->
+<section class="section-dark" id="origin">
+  <div class="container">
+    <div class="section-label">Roots & Context</div>
+    <h2 class="section-title">Origin & Historical Context</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Understanding how Sikh Dharma emerged from the spiritual soil of the Indian subcontinent — and why it is simultaneously rooted in Indic civilization and distinctly itself.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:48px;">
+      <div class="philosophy-card">
+        <span class="icon">🕉️</span>
+        <h3>Bhakti Movement Roots</h3>
+        <p>The Bhakti saints — Kabir, Ravidas, Namdev, Mirabai, Ramananda — pioneered a devotional, casteless, direct path to God centuries before Guru Nanak. The Guru absorbed and transcended this tradition, including hymns of Bhakti saints in the Guru Granth Sahib. Scholars like W.H. McLeod and Pashaura Singh acknowledge deep Indic civilizational continuity.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">☪️</span>
+        <h3>Sufi Influences Encountered</h3>
+        <p>Guru Nanak traveled widely and engaged deeply with Sufi mystics. He visited Mecca, Baghdad, and numerous Sufi centers. He acknowledged the sincere devotion within Islamic Sufi traditions while firmly rejecting coercive religion, formalism, and the caste-like divisions within both Hindu and Muslim societies of his time.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">⚔️</span>
+        <h3>A Distinct Revelation</h3>
+        <p>Sikh theology is insistent that Gurbani (the Guru's Word) is direct Divine revelation — not a synthesis of existing religions. Guru Nanak declared: "I am neither Hindu nor Muslim." Sikh Dharma has its own scripture, its own calendar, its own ethical code (Rehat Maryada), its own distinct identity.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>The Sikh–Hindu Relationship: A Scholarly View</h4>
+      <p>Many scholars of religion (including Harjot Oberoi, W.H. McLeod, and Gurinder Singh Mann) have analyzed the complex historical relationship between Sikh and Hindu traditions. Sikh Dharma undeniably shares civilizational roots with the broader Indic/Sanskritic tradition — concepts like <em>Dharam</em>, <em>Maya</em>, <em>Karma</em>, <em>Mukti</em>, and the Sant tradition are shared vocabulary. However, Sikh Dharma is theologically distinct: it rejects the authority of the Vedas as mandatory texts, the varna/jati system, image worship as mandated practice, and the intermediary role of the Brahmin priesthood. The Sikh Panth (community) has maintained a fiercely distinct identity since the Khalsa formation of 1699. Modern debates about Sikh–Hindu identity are shaped as much by politics as theology — a distinction scholars urge be maintained.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ TEN GURUS -->
+<section id="gurus">
+  <div class="container">
+    <div class="gurus-header">
+      <div class="section-label">The Divine Light Passed Through Ten</div>
+      <h2 class="section-title">The <span>Ten Sikh Gurus</span></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-subtitle" style="margin:0 auto;">The Sikh tradition holds that the same Divine Light (Jot) passed through ten human Gurus — from Guru Nanak (1469) to Guru Gobind Singh (1708) — and then was permanently enshrined in the Guru Granth Sahib Ji.</p>
+    </div>
+
+    <div class="guru-timeline">
+
+      <!-- GURU 1 -->
+      <div class="guru-card">
+        <div class="guru-content" style="grid-column:1">
+          <div class="guru-number">01</div>
+          <span class="badge">The Founder</span>
+          <div class="guru-name">Guru Nanak Dev Ji</div>
+          <div class="guru-dates">1469–1539 CE | Guruship: 1469–1539 | Birthplace: Nankana Sahib (now Pakistan)</div>
+          <h4>Core Teachings</h4>
+          <p>Guru Nanak proclaimed the Oneness of God (Ik Onkar), rejected caste and ritual, taught Naam Simran, Kirat Karni, and Vand Chhakna (sharing with others). He declared all human beings equal before God — revolutionary in a deeply stratified society.</p>
+          <h4>Major Contributions</h4>
+          <ul>
+            <li>Founded Sikh Dharma with the first revelation at the River Bein (c. 1499): "There is no Hindu, there is no Muslim."</li>
+            <li>Composed the Japji Sahib — the foundational Sikh prayer recited at dawn by millions daily.</li>
+            <li>Undertook four great Udasis (journeys): East (Haridwar, Varanasi), South (Sri Lanka), North (Tibet, Himalayas), and West (Mecca, Baghdad, Persia).</li>
+            <li>Established the institution of Langar (free community kitchen) — a radical act of social equality in feudal India.</li>
+            <li>Composed 974 hymns included in the Guru Granth Sahib.</li>
+            <li>Founded Kartarpur (City of God) on the banks of the Ravi — the first Sikh community, c. 1519.</li>
+          </ul>
+          <h4>Key Event</h4>
+          <p>At Sultanpur Lodhi, after disappearing in the Bein river for three days (1499 CE), Guru Nanak emerged with his revelatory declaration. This is considered the moment of his spiritual commissioning — parallel to prophetic initiations in many world traditions.</p>
+          <h4>Lesser-Known Fact</h4>
+          <p>Guru Nanak is honored in Muslim tradition at the Gurdwara Kartarpur Sahib — where Muslims also came to venerate him. His closest companion, Mardana, was a Muslim rabab player who accompanied him on all journeys. Guru Nanak composed hymns that were later enshrined alongside Hindu Bhakti saints in the Guru Granth Sahib — making it the only scripture in the world to include compositions from multiple religious backgrounds.</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Janamsakhis</span>
+            <span class="guru-tag">Japji Sahib</span>
+            <span class="guru-tag">Kartarpur</span>
+            <span class="guru-tag">Four Udasis</span>
+          </div>
+        </div>
+        <div class="guru-dot"></div>
+        <div class="guru-empty"></div>
+      </div>
+
+      <!-- GURU 2 -->
+      <div class="guru-card">
+        <div class="guru-empty"></div>
+        <div class="guru-dot"></div>
+        <div class="guru-content" style="grid-column:3">
+          <div class="guru-number">02</div>
+          <span class="badge">The Systematizer</span>
+          <div class="guru-name">Guru Angad Dev Ji</div>
+          <div class="guru-dates">1504–1552 CE | Guruship: 1539–1552 | Birthplace: Mukte, Firozpur</div>
+          <h4>Core Contributions</h4>
+          <ul>
+            <li>Standardized the Gurmukhi script — a phonetically precise writing system adapted from Landa script — making Gurbani accessible to all, especially those who did not know Sanskrit.</li>
+            <li>Compiled the hymns of Guru Nanak and added his own compositions (63 Saloks in Guru Granth Sahib).</li>
+            <li>Institutionalized the Langar system and made it mandatory for all visitors — including Emperor Humayun (c. 1540), who had to sit with commoners before meeting the Guru.</li>
+            <li>Promoted Mal Akhara (wrestling gymnasiums) — the first Sikh integration of physical fitness with spiritual life.</li>
+          </ul>
+          <h4>Historical Significance</h4>
+          <p>Guru Angad was originally Bhai Lehna — a devoted follower of the Hindu goddess Durga who became Guru Nanak's most devoted disciple. His transformation from devotee of folk religion to the second Guru is itself a profound story of spiritual surrender. By standardizing Gurmukhi, he ensured Sikh scripture would never be held hostage to elite Sanskrit-knowing Brahmin classes.</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Gurmukhi Script</span>
+            <span class="guru-tag">Langar</span>
+            <span class="guru-tag">Humayun Encounter</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GURU 3 -->
+      <div class="guru-card">
+        <div class="guru-content" style="grid-column:1">
+          <div class="guru-number">03</div>
+          <span class="badge">The Social Reformer</span>
+          <div class="guru-name">Guru Amar Das Ji</div>
+          <div class="guru-dates">1479–1574 CE | Guruship: 1552–1574 | Birthplace: Basarke, Amritsar</div>
+          <h4>Revolutionary Reforms</h4>
+          <ul>
+            <li>Abolished the purdah (veiling of women) and sati (widow immolation) — centuries before colonial-era reformers.</li>
+            <li>Fought actively against the caste system by insisting that all — including Brahmins and the nobility — eat in Langar before meeting the Guru.</li>
+            <li>Established 22 Manjis (preaching centers) across India — the first organized missionary network of Sikh Dharma.</li>
+            <li>Initiated the tradition of Anand Karaj — the Sikh marriage ceremony — replacing Brahmin-led Hindu rites.</li>
+            <li>Composed the Anand Sahib — a hymn of divine joy still sung at all Sikh ceremonies.</li>
+          </ul>
+          <h4>Key Event</h4>
+          <p>Emperor Akbar visited Guru Amar Das at Goindval (c. 1567) and was required to eat Langar alongside commoners before receiving an audience. Akbar, moved by this equality, reportedly waived the jizya (tax on non-Muslims) from villages near Goindval. This marks one of the first significant Sikh–Mughal diplomatic contacts.</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Women's Rights</span>
+            <span class="guru-tag">Anand Sahib</span>
+            <span class="guru-tag">Goindval</span>
+            <span class="guru-tag">Manji System</span>
+          </div>
+        </div>
+        <div class="guru-dot"></div>
+        <div class="guru-empty"></div>
+      </div>
+
+      <!-- GURU 4 -->
+      <div class="guru-card">
+        <div class="guru-empty"></div>
+        <div class="guru-dot"></div>
+        <div class="guru-content" style="grid-column:3">
+          <div class="guru-number">04</div>
+          <span class="badge">The City Builder</span>
+          <div class="guru-name">Guru Ram Das Ji</div>
+          <div class="guru-dates">1534–1581 CE | Guruship: 1574–1581 | Birthplace: Lahore</div>
+          <h4>Major Contributions</h4>
+          <ul>
+            <li>Founded the city of Ramdaaspur — which became Amritsar (Pool of Nectar), the sacred capital of Sikh civilization, c. 1577.</li>
+            <li>Composed the Lavan — the Sikh wedding hymn, used in the Anand Karaj ceremony to this day.</li>
+            <li>Wrote 679 hymns in the Guru Granth Sahib — the largest number by any Guru after Guru Nanak.</li>
+            <li>Institutionalized the hereditary Guruship within the Sodhi family — his son, Arjan Dev Ji, became the fifth Guru.</li>
+          </ul>
+          <h4>Historical Context</h4>
+          <p>During Akbar's reign, the Guru obtained a land grant (Mughal records confirm this) and established Amritsar as a center of commerce, spirituality, and community. The foundation of Amritsar was the first step in establishing what would become the sacred capital of Sikh civilization — comparable to Jerusalem or Mecca in symbolic importance.</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Amritsar Founded</span>
+            <span class="guru-tag">Lavan Hymn</span>
+            <span class="guru-tag">Sodhi Lineage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GURU 5 -->
+      <div class="guru-card">
+        <div class="guru-content" style="grid-column:1">
+          <div class="guru-number">05</div>
+          <span class="badge">The First Martyr</span>
+          <div class="guru-name">Guru Arjan Dev Ji</div>
+          <div class="guru-dates">1563–1606 CE | Guruship: 1581–1606 | Martyrdom: Lahore, 1606</div>
+          <h4>Monumental Achievements</h4>
+          <ul>
+            <li>Compiled the Adi Granth (1604) — the first complete Sikh scripture — at Amritsar, incorporating hymns of all four preceding Gurus plus 15 Bhakti saints (Kabir, Ravidas, Namdev, Sheikh Farid, etc.).</li>
+            <li>Completed the construction of the Harmandir Sahib (Golden Temple) at Amritsar — the most sacred Sikh shrine, intentionally built with four doors open to all four directions, symbolizing inclusion of all humanity.</li>
+            <li>Composed the Sukhmani Sahib — the "Pearl of Peace," one of the most beloved Sikh prayers.</li>
+            <li>Organized the Manji system into a more elaborate Masand system of local representatives.</li>
+          </ul>
+          <h4>Martyrdom — First of the Shaheeds</h4>
+          <p>Emperor Jahangir, upon ascending the Mughal throne, considered Guru Arjan's growing influence a political threat. After supporting Prince Khusrau's rebellion (disputed by some historians), the Guru was arrested, tortured for five days on a burning hot plate (<em>tatti tavi</em>), and immersed in the Ravi river in June 1606. His martyrdom transformed Sikh Dharma — the sixth Guru, Hargobind Ji, would respond by donning two swords: Miri (temporal power) and Piri (spiritual power).</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Adi Granth</span>
+            <span class="guru-tag">Golden Temple</span>
+            <span class="guru-tag">Sukhmani Sahib</span>
+            <span class="guru-tag">First Shaheed</span>
+          </div>
+        </div>
+        <div class="guru-dot"></div>
+        <div class="guru-empty"></div>
+      </div>
+
+      <!-- GURU 6 -->
+      <div class="guru-card">
+        <div class="guru-empty"></div>
+        <div class="guru-dot"></div>
+        <div class="guru-content" style="grid-column:3">
+          <div class="guru-number">06</div>
+          <span class="badge">The Warrior Guru</span>
+          <div class="guru-name">Guru Hargobind Ji</div>
+          <div class="guru-dates">1595–1644 CE | Guruship: 1606–1644 | Birthplace: Vadali, Amritsar</div>
+          <h4>The Saint-Soldier Paradigm</h4>
+          <p>In direct response to his father's martyrdom, Guru Hargobind transformed the Sikh Panth militarily. He wore two swords — <strong>Miri</strong> (worldly authority) and <strong>Piri</strong> (spiritual authority) — establishing that a Sikh must be equally capable of spiritual devotion and martial defense.</p>
+          <h4>Military & Political Contributions</h4>
+          <ul>
+            <li>Built the Akal Takht (Throne of the Timeless One, 1606) — the seat of temporal Sikh authority, directly facing the Harmandir Sahib.</li>
+            <li>Maintained a personal army (Fauj) and trained Sikh youth in martial arts and horseback riding.</li>
+            <li>Fought four battles against Mughal forces: Sangrama (1621), Lahira (1631), Amritsar (1634), and Kartarpur (1635) — winning three.</li>
+            <li>Was imprisoned in Gwalior Fort by Emperor Jahangir for two years. Upon release, he secured the simultaneous release of 52 Hindu rajas imprisoned there — earning the title <strong>Bandi Chhor Datta</strong> (Liberator of Prisoners). Sikhs celebrate this on Diwali as Bandi Chhor Divas.</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Akal Takht</span>
+            <span class="guru-tag">Miri-Piri</span>
+            <span class="guru-tag">Bandi Chhor</span>
+            <span class="guru-tag">Four Battles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GURU 7 -->
+      <div class="guru-card">
+        <div class="guru-content" style="grid-column:1">
+          <div class="guru-number">07</div>
+          <span class="badge">The Compassionate</span>
+          <div class="guru-name">Guru Har Rai Ji</div>
+          <div class="guru-dates">1630–1661 CE | Guruship: 1644–1661 | Birthplace: Kiratpur Sahib</div>
+          <h4>Teachings & Contributions</h4>
+          <ul>
+            <li>Maintained an army of 2,200 cavalry — upholding the Miri-Piri tradition — while being deeply committed to non-violence and compassion.</li>
+            <li>Established free herbal medicinal centers (Dawakhana) — among the earliest systematic public health initiatives in Punjab.</li>
+            <li>Aided the ailing Prince Dara Shikoh (Aurangzeb's brother) with rare Sikh medicines — demonstrating compassion irrespective of religious or political affiliation.</li>
+            <li>Sent his son Ram Rai to Aurangzeb's court, who slightly altered a verse from the Guru Granth Sahib to please the emperor — for which Ram Rai was censured and disinherited, protecting the inviolability of Gurbani.</li>
+          </ul>
+          <h4>Legacy</h4>
+          <p>Guru Har Rai's tenure is characterized by nurturing the Sikh community during the increasingly hostile Aurangzeb era. His care for animals, herbal gardens, and the sick speaks to Sikh Dharma's deep ethic of compassion for all living beings (<em>sarbat da bhala</em>).</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Dawakhana</span>
+            <span class="guru-tag">Compassion</span>
+            <span class="guru-tag">Aurangzeb Era</span>
+          </div>
+        </div>
+        <div class="guru-dot"></div>
+        <div class="guru-empty"></div>
+      </div>
+
+      <!-- GURU 8 -->
+      <div class="guru-card">
+        <div class="guru-empty"></div>
+        <div class="guru-dot"></div>
+        <div class="guru-content" style="grid-column:3">
+          <div class="guru-number">08</div>
+          <span class="badge">The Child Guru</span>
+          <div class="guru-name">Guru Har Krishan Ji</div>
+          <div class="guru-dates">1656–1664 CE | Guruship: 1661–1664 | Birthplace: Kiratpur Sahib</div>
+          <h4>The Youngest Guru</h4>
+          <p>Guru Har Krishan Ji became Guru at the age of just five years — making him the youngest Guru in Sikh history. His brief guruship of three years left a profound spiritual legacy. Emperor Aurangzeb summoned him to Delhi, ostensibly to test his claimed wisdom. The young Guru reputedly demonstrated profound spiritual insight, besting learned Brahmin scholars in theological discourse.</p>
+          <h4>Martyrdom of Selfless Service</h4>
+          <p>During a devastating smallpox and cholera epidemic in Delhi (1664), Guru Har Krishan personally served the afflicted poor of Delhi — particularly in the Mughal-area slums — irrespective of their religion. He himself contracted smallpox and passed away at age eight. His last words — <strong>"Baba Bakale"</strong> — pointed to where the next Guru would be found (Bakala, where Tegh Bahadur Ji was in meditation).</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Child Guru</span>
+            <span class="guru-tag">Delhi Epidemic</span>
+            <span class="guru-tag">Baba Bakale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GURU 9 -->
+      <div class="guru-card">
+        <div class="guru-content" style="grid-column:1">
+          <div class="guru-number">09</div>
+          <span class="badge">Hind di Chadar</span>
+          <div class="guru-name">Guru Tegh Bahadur Ji</div>
+          <div class="guru-dates">1621–1675 CE | Guruship: 1665–1675 | Birthplace: Amritsar</div>
+          <h4>The Defender of All Faiths</h4>
+          <p>Guru Tegh Bahadur Ji's martyrdom in 1675 CE is among the most dramatic acts of inter-religious solidarity in human history. Emperor Aurangzeb was engaged in systematic forced conversion of Kashmiri Pandits (Hindus) to Islam. A delegation of Kashmiri Brahmins came to the Guru in desperation. Despite being a Sikh himself, the Guru offered to stand as their protector — declaring that if Aurangzeb could convert him, perhaps the Pandits would be spared.</p>
+          <h4>The Ultimate Sacrifice</h4>
+          <ul>
+            <li>The Guru traveled to Delhi and was arrested by Aurangzeb's forces in 1675.</li>
+            <li>He was offered conversion to Islam or death. He chose martyrdom.</li>
+            <li>On November 24, 1675, he was publicly beheaded at Chandni Chowk, Delhi — the spot now marked by Gurdwara Sis Ganj Sahib.</li>
+            <li>He is revered as <strong>Hind di Chadar</strong> — the Shield of India — for his sacrifice to protect religious freedom, even for those of another faith.</li>
+          </ul>
+          <h4>Writings</h4>
+          <p>Guru Tegh Bahadur composed 116 shabads and 15 ragas included in the Guru Granth Sahib. His compositions reflect profound meditation on detachment, death, and fearlessness.</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Hind di Chadar</span>
+            <span class="guru-tag">Chandni Chowk</span>
+            <span class="guru-tag">Religious Freedom</span>
+            <span class="guru-tag">Shaheed</span>
+          </div>
+        </div>
+        <div class="guru-dot"></div>
+        <div class="guru-empty"></div>
+      </div>
+
+      <!-- GURU 10 -->
+      <div class="guru-card">
+        <div class="guru-empty"></div>
+        <div class="guru-dot"></div>
+        <div class="guru-content" style="grid-column:3">
+          <div class="guru-number">10</div>
+          <span class="badge">The Tenth Light — Eternal</span>
+          <div class="guru-name">Guru Gobind Singh Ji</div>
+          <div class="guru-dates">1666–1708 CE | Guruship: 1675–1708 | Birthplace: Patna Sahib</div>
+          <h4>The Khalsa Creator</h4>
+          <p>On Vaisakhi, 1699, Guru Gobind Singh Ji gathered 80,000 Sikhs at Anandpur Sahib and called for a volunteer willing to give his head. After five volunteers stepped forward (the Panj Pyare — Five Beloved Ones), the Guru initiated them into the Khalsa — baptized with Amrit (Khande da Pahul), and given the name Singh (lion) for men and Kaur (princess) for women. The Guru then asked to be initiated himself by the Panj Pyare — an extraordinary act of humility.</p>
+          <h4>The Five Ks (Panj Kakars)</h4>
+          <ul>
+            <li><strong>Kesh</strong> — Uncut hair (natural form as given by God)</li>
+            <li><strong>Kangha</strong> — Wooden comb (cleanliness, order)</li>
+            <li><strong>Kara</strong> — Steel bracelet (restraint, God's eternal cycle)</li>
+            <li><strong>Kachera</strong> — Cotton undergarment (modesty, readiness)</li>
+            <li><strong>Kirpan</strong> — Steel sword (defense of the defenseless)</li>
+          </ul>
+          <h4>Major Battles & Resistance</h4>
+          <ul>
+            <li>Battle of Anandpur (1700–1704): Sustained siege by Mughal-Hillstate alliance.</li>
+            <li>Battle of Chamkaur (1704): 40 Sikhs held off 10 lakh Mughal forces; his two elder sons died fighting.</li>
+            <li>Younger sons Zorawar Singh (9) and Fateh Singh (7) were bricked alive at Sirhind by the Wazir Khan — the Chota Sahibzaade — one of the most heart-wrenching acts of state terror in history.</li>
+          </ul>
+          <h4>Eternal Legacy</h4>
+          <p>Before his passing in 1708, Guru Gobind Singh declared the Guru Granth Sahib as the eternal, living Guru of the Sikhs — ending the line of human Gurus. He composed the Dasam Granth — a vast literary, philosophical, and martial work. His command: "Aad Sri Guru Granth Sahib Ji manyo Pragat Guran ki deh" — "Recognize the Guru Granth Sahib as the embodiment of all Gurus."</p>
+          <div style="margin-top:14px;">
+            <span class="guru-tag">Khalsa Creation</span>
+            <span class="guru-tag">Panj Pyare</span>
+            <span class="guru-tag">Dasam Granth</span>
+            <span class="guru-tag">Eternal Guru</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /guru-timeline -->
+  </div>
+</section>
+
+<!-- ================================================================ PHILOSOPHY & WORSHIP -->
+<section id="philosophy" class="section-dark">
+  <div class="container">
+    <div class="section-label">Theology & Spiritual Life</div>
+    <h2 class="section-title">Sikh <span>Philosophy & Worship</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Whom do Sikhs worship? What is the Sikh understanding of God, liberation, and existence?</p>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <span class="icon">☬</span>
+        <h3>Waheguru — The Divine</h3>
+        <p>Sikhs worship Waheguru — the Wondrous Enlightener. Waheguru is formless (<em>Nirankar</em>), beyond birth and death, omnipresent, self-illuminated (<em>Swayambhu</em>), and beyond human comprehension yet intimately present within every soul. No gender, no form, no image — yet the source of all being. This resonates with Vedantic concepts of Brahman, but Sikh theology emphasizes God's personal quality (<em>Sarguni</em> — with qualities of love, grace) alongside the formless (<em>Nirguni</em>).</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">🚫</span>
+        <h3>Why No Idol Worship?</h3>
+        <p>Sikhism teaches that God cannot be confined to any physical form, idol, or image. Idol worship (<em>moorti puja</em>) risks confusing the symbol with the Divine itself — a spiritual error that breeds superstition, priestcraft, and the illusion that God is located in temples rather than in every human heart. The Guru Granth Sahib declares: "He is not established by idols; He is not found in shrines." This echoes the Upanishadic teaching of Neti Neti — "not this, not that" — but Sikh Dharma goes further in its practical, accessible spirituality.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">📖</span>
+        <h3>Gurbani as Living Guru</h3>
+        <p>The Guru Granth Sahib is not treated as a book — it is the living, breathing presence of the Guru. Every Gurdwara centers on its presence. It is installed on a raised throne (<em>Palki Sahib</em>), covered with rumala cloths, and attended by a Granthi. The reading of Gurbani is considered a direct spiritual encounter with the Divine — not merely textual study. This makes Sikh worship fundamentally scripture-centric and anti-clerical.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">🎵</span>
+        <h3>Kirtan — Sacred Music</h3>
+        <p>Singing the praises of God (<em>Kirtan</em>) is the central act of Sikh worship. The Guru Granth Sahib is organized by musical ragas (melodic frameworks). Professional and amateur Ragis (musicians) sing Gurbani with the harmonium, tabla, and dilruba. Guru Nanak himself was a sublime poet-musician; his companion Mardana played the rabab. Sikh Kirtan traditions maintain one of the most sophisticated systems of devotional music in the world.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">⚖️</span>
+        <h3>Karma, Maya & Liberation</h3>
+        <p>Sikh theology accepts the Indic framework of karma (law of action and consequence) and Maya (cosmic illusion that distracts the soul from God). The human condition is characterized by Haumai (ego) — the fundamental spiritual disease. Liberation (<em>Mukti</em>) is achieved not through ritual, asceticism, or pilgrimage, but through Divine Grace (<em>Nadar</em>) — received through sincere Naam Simran, Sangat (holy company), and Seva. This distinguishes Sikh soteriology from both bhakti devotionalism and Vedantic jnana paths.</p>
+      </div>
+      <div class="philosophy-card">
+        <span class="icon">🌊</span>
+        <h3>Hukam — Divine Will</h3>
+        <p><em>Hukam</em> (Divine Command/Order) is a central Sikh theological concept. The universe operates by Hukam — the Will of the Creator. Surrendering to Hukam — accepting what comes with equanimity — is a mark of spiritual maturity. The Japji Sahib opens: "By the Hukam of His command, souls came into being..." This concept shares deep resonance with Taoist wu wei, Islamic tawakkul, and Vedantic concepts of Ishvara's cosmic governance.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:40px;">
+      <h4>Vedantic, Bhakti & Sikh Theology — Similarities and Distinctions</h4>
+      <p>Sikh Dharma shares with Vedanta: the concept of Brahman (God as formless, infinite); Karma and Maya; the goal of liberation (Mukti/Moksha); the value of inner spirituality over ritual. Sikh Dharma shares with Bhakti traditions: direct devotional relationship with God, the importance of sacred music, rejection of caste, the role of the Sant (holy person). However, Sikh Dharma is distinct in: rejecting the authority of the Vedas as mandatory, accepting Gurbani as the sole scripture; rejecting the hereditary Brahmin priesthood; providing a complete socio-political framework through the Khalsa; and instituting a democratic community governance structure through the Panj Pyare principle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ SCRIPTURES -->
+<section id="scriptures" class="section-navy">
+  <div class="container">
+    <div class="section-label">Sacred Texts</div>
+    <h2 class="section-title">Sikh <span>Scriptures & Literature</span></h2>
+    <div class="divider"></div>
+
+    <div class="scripture-layout">
+      <div>
+        <div class="scripture-card">
+          <div class="badge">The Eternal Living Guru</div>
+          <h3>Guru Granth Sahib Ji</h3>
+          <div class="subtitle">Compiled 1604 · Finalized 1706 · 1,430 Angs (pages)</div>
+          <p>The Guru Granth Sahib is the supreme scripture and living Guru of the Sikh faith — the first scripture in world history to be compiled and finalized by the founders of a religion during their own lifetime. Guru Arjan Dev Ji compiled the first version (the Adi Granth) in 1604, installing it in the Harmandir Sahib. Guru Gobind Singh Ji added the compositions of Guru Tegh Bahadur and declared it the eternal Guru in 1708.</p>
+          <div class="gurbani-verse">
+            <div class="verse">ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ</div>
+            <div class="translation">Ik Onkar — One God, the True Name, Creator of all, without fear, without enmity, timeless, beyond birth, self-illuminated, by the Guru's grace. — Mool Mantar, Guru Granth Sahib Ji (Ang 1)</div>
+          </div>
+          <p>The GGS contains 5,894 hymns in 31 ragas, composed by 6 Sikh Gurus, 15 Bhakti saints (including Kabir, Namdev, Ravidas, Sheikh Farid), and others. It is written in multiple languages: Punjabi (Gurmukhi), Sanskrit, Braj Bhasha, Persian, Sindhi, and Marathi — a testament to its universal, inclusive character.</p>
+        </div>
+
+        <div class="scripture-card">
+          <div class="badge">The Tenth Guru's Work</div>
+          <h3>Dasam Granth</h3>
+          <div class="subtitle">Compiled posthumously · Contains works of Guru Gobind Singh Ji</div>
+          <p>The Dasam Granth is a vast collection of compositions attributed to Guru Gobind Singh Ji — warrior poetry, philosophical treatises, mythology, and prayers. It includes Jaap Sahib (the Khalsa morning prayer), Tav-Prasad Savaiye, Chandi di Var (war poetry), Zafarnama (the Guru's Persian letter to Aurangzeb), and the Charitropakhyan (tales of women's wisdom). Scholarly debates continue about authorship of certain sections, though core prayers like Jaap Sahib are universally accepted.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="scripture-card">
+          <div class="badge">Biographical Sources</div>
+          <h3>Janamsakhis</h3>
+          <div class="subtitle">Oral & written hagiographies of Guru Nanak</div>
+          <p>Janamsakhis are biographical accounts of Guru Nanak's life — a mixture of historical fact, devotional narrative, and miraculous tales. The major collections include the Puratan Janamsakhi (oldest), Bala Janamsakhi, and Miharban Janamsakhi. Modern historians like W.H. McLeod have subjected these to rigorous historical analysis, identifying layers of historical fact beneath devotional embellishment.</p>
+        </div>
+
+        <div class="scripture-card">
+          <div class="badge">Code of Conduct</div>
+          <h3>Sikh Rehat Maryada</h3>
+          <div class="subtitle">Standardized 1945 by the Shiromani Gurdwara Parbandhak Committee</div>
+          <p>The Sikh Code of Conduct — standardized in 1945 after decades of scholarly deliberation — governs Sikh personal and community life: the Amrit ceremony, daily prayers (Nitnem), Gurdwara worship, festivals, and ethical standards. Earlier Rehatnamas (codes) from the 18th century provide historical insight into early Khalsa discipline.</p>
+        </div>
+
+        <div class="scripture-card">
+          <div class="badge">Persian & Colonial Records</div>
+          <h3>Historical Documents</h3>
+          <div class="subtitle">External historical corroboration</div>
+          <p>The Guru Granth Sahib's compilation is corroborated by Mughal records. Bhai Gurdas's Vars (40 compositions by a contemporary of Gurus 3–6) are the earliest Sikh historical literature. Persian chronicles of the Mughal era (including Jahangir's Tuzuk-i-Jahangiri) mention Guru Arjan and the Sikh community. Colonial-era records (British Punjab Census, Macauliffe's "The Sikh Religion," 1909) provide detailed historical snapshots.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ KINGDOMS -->
+<section id="kingdoms" class="section-dark">
+  <div class="container">
+    <div class="section-label">Political & Military History</div>
+    <h2 class="section-title">Sikh <span>Kingdoms & Empires</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">From guerrilla resistance to the last independent empire of the Indian subcontinent — the Sikh political and military trajectory is one of history's most remarkable stories.</p>
+
+    <div class="kingdoms-grid">
+      <div class="kingdom-card">
+        <div class="era">1699–1710</div>
+        <h3>Khalsa Foundation & Early Resistance</h3>
+        <p>Following the creation of the Khalsa in 1699, Guru Gobind Singh organized the Sikh Panth into a standing army. After his passing (1708), Banda Singh Bahadur — a former ascetic converted to the Khalsa — led the first Sikh kingdom in Punjab.</p>
+        <div class="kingdom-stat-row">
+          <div class="kingdom-stat"><span class="val">1710</span><span class="desc">Sikh capture of Sirhind</span></div>
+          <div class="kingdom-stat"><span class="val">1716</span><span class="desc">Banda Singh Bahadur's martyrdom</span></div>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="era">1716–1767</div>
+        <h3>The Sikh Misls (Confederacies)</h3>
+        <p>After Banda Singh Bahadur's execution, the Sikh Panth reorganized into 12 semi-independent <em>Misls</em> (confederacies). Each Misl controlled territory in Punjab while maintaining collective Sikh identity. The Misls included Ahluwalia, Sukerchakia, Bhangi, Kanhaiya, Ramgarhia, Nakai, Shahid, Dalewalia, Phulkian, Krorasinghia, Nishanwalia, and Faizullapuria.</p>
+        <div class="kingdom-stat-row">
+          <div class="kingdom-stat"><span class="val">12</span><span class="desc">Major Misls</span></div>
+          <div class="kingdom-stat"><span class="val">~1M km²</span><span class="desc">Punjab territory contested</span></div>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="era">1767–1799</div>
+        <h3>The Sikh Confederacy</h3>
+        <p>The Sarbat Khalsa — the supreme democratic assembly of the Khalsa — met at Amritsar twice yearly on Diwali and Vaisakhi to pass Gurmatas (resolutions). This proto-democratic institution governed through collective decision-making. The Misls collectively drove out Ahmad Shah Durrani's Afghan forces from Punjab during a series of campaigns (1748–1769), including the legendary defense and recovery of Amritsar.</p>
+        <div class="kingdom-stat-row">
+          <div class="kingdom-stat"><span class="val">1762</span><span class="desc">Wada Ghallughara (Great Holocaust)</span></div>
+          <div class="kingdom-stat"><span class="val">1764</span><span class="desc">Sikhs recapture Lahore</span></div>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="era">1799–1849</div>
+        <h3>The Sikh Empire (Sarkar-i-Khalsa)</h3>
+        <p>Maharaja Ranjit Singh, born in 1780, unified the Sikh Misls by the age of 19. By 1799, he captured Lahore and was proclaimed Maharaja of Punjab (1801). He built the last independent empire of the Indian subcontinent — a secular, multi-religious state at the height of British colonial expansion.</p>
+        <div class="kingdom-stat-row">
+          <div class="kingdom-stat"><span class="val">2M km²</span><span class="desc">Empire at peak extent</span></div>
+          <div class="kingdom-stat"><span class="val">100,000+</span><span class="desc">Army strength</span></div>
+          <div class="kingdom-stat"><span class="val">1849</span><span class="desc">Annexed by British East India Company</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:40px;">
+      <h4>The Wada Ghallughara (1762) — The Great Holocaust</h4>
+      <p>On February 5, 1762, Ahmad Shah Durrani's Afghan forces launched a surprise attack on a column of Sikh civilians, women, and children being escorted by Sikh warriors near Kup Rahira, Punjab. Approximately 20,000–30,000 Sikhs (including many women and children) were massacred in a single day — a catastrophe known as the Wada Ghallughara (Great Massacre). This event is relatively unknown in broader South Asian history but is central to Sikh historical memory. Within months, the Sikh Misls regrouped, recaptured Amritsar, and resumed their resistance — demonstrating extraordinary communal resilience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ WARRIORS -->
+<section id="warriors" class="section-navy">
+  <div class="container">
+    <div class="section-label">Military History</div>
+    <h2 class="section-title">Sikh <span>Warriors & Generals</span></h2>
+    <div class="divider"></div>
+
+    <div class="warriors-grid">
+
+      <div class="warrior-card">
+        <div class="warrior-era">1708–1716</div>
+        <div class="warrior-name">Banda Singh Bahadur</div>
+        <div class="warrior-title">First Sikh Ruler of Punjab</div>
+        <p>Born Lachhman Dev, a Rajput ascetic, Banda Singh Bahadur met Guru Gobind Singh in 1708 and was initiated into the Khalsa. He was sent to Punjab to avenge the Guru's sons and fight Mughal oppression. In just two years, he conquered a vast swath of Punjab, abolished zamindari (feudal landlordism), and issued coins in the name of Guru Nanak and Guru Gobind Singh — the first Sikh state currency.</p>
+        <h4>Major Victories</h4>
+        <ul>
+          <li>Battle of Sirhind (1710): Defeated Wazir Khan who had executed the Guru's sons; razed Sirhind.</li>
+          <li>Established the first Sikh state with its capital at Lohgarh Fort.</li>
+          <li>Declared abolition of the zamindari system — a revolutionary agrarian reform.</li>
+        </ul>
+        <h4>Martyrdom</h4>
+        <p>Captured in 1715 after a long siege of Gurdaspur, Banda was paraded to Delhi and executed with 700 companions (June 1716) in a gruesome public spectacle by Emperor Farrukhsiyar — but refused to apostatize. His infant son was killed before his eyes; he remained unbroken.</p>
+      </div>
+
+      <div class="warrior-card">
+        <div class="warrior-era">c. 1718–1783</div>
+        <div class="warrior-name">Jassa Singh Ahluwalia</div>
+        <div class="warrior-title">Supreme Commander of the Dal Khalsa</div>
+        <p>Jassa Singh Ahluwalia was the supreme military commander (Jathedar) of the Dal Khalsa (Khalsa army) for three decades. He unified the Misls against the Afghan invasions of Ahmad Shah Durrani and is credited with saving the Sikh Panth from annihilation during the darkest years (1748–1765).</p>
+        <h4>Major Victories</h4>
+        <ul>
+          <li>Captured Lahore three times (1759, 1761, 1764) from Afghan forces.</li>
+          <li>Established the Kapurthala state — the Ahluwalia Misl's principality.</li>
+          <li>Struck Sikh coins in Lahore (1765) — a major act of political assertion against Durrani suzerainty.</li>
+          <li>Recovered thousands of Hindu and Sikh women abducted by Afghan raiders.</li>
+        </ul>
+      </div>
+
+      <div class="warrior-card">
+        <div class="warrior-era">1780–1839</div>
+        <div class="warrior-name">Maharaja Ranjit Singh</div>
+        <div class="warrior-title">Lion of Punjab — Sher-e-Punjab</div>
+        <p>Ranjit Singh unified the Sikh Misls, expelled the Afghans permanently from Punjab, and built the most powerful empire in South Asia during the early 19th century. His secular, inclusive court included Hindus, Muslims, Sikhs, and Europeans in senior positions. He never discriminated by religion in matters of governance.</p>
+        <h4>Military Reforms</h4>
+        <ul>
+          <li>Built the Sikh Khalsa Army (Fauj-i-Ain) on European lines, employing French generals Napoleon's veterans (Allard, Ventura, Court, Avitabile).</li>
+          <li>Equipped the army with modern artillery — the Topkhana (cannon division).</li>
+          <li>Conquered Multan (1818), Kashmir (1819), Peshawar (1834).</li>
+        </ul>
+        <h4>Legacy</h4>
+        <p>Ranjit Singh recovered the Koh-i-Noor diamond from the Afghan Shah Shuja. His court was the last bastion of Indic political sovereignty in the northwest. The British, who signed the Treaty of Lahore (1809) with him, described him as the most formidable independent ruler they had encountered in Asia. He governed a population that was majority Muslim with complete religious tolerance.</p>
+      </div>
+
+      <div class="warrior-card">
+        <div class="warrior-era">1791–1837</div>
+        <div class="warrior-name">Hari Singh Nalwa</div>
+        <div class="warrior-title">Commander-in-Chief of the Northwest Frontier</div>
+        <p>Hari Singh Nalwa was the greatest general of the Sikh Empire — a name that struck fear into Afghan and Central Asian opponents. He secured the northwest frontier of the empire against repeated Afghan incursions and extended Sikh sovereignty to Khyber Pass — a feat no Indian ruler had achieved since the Mauryas.</p>
+        <h4>Campaigns</h4>
+        <ul>
+          <li>Battle of Attock (1813): Defeated Afghan forces at the Indus River crossing.</li>
+          <li>Conquest of Kashmir (1819): Led the Sikh conquest of the Kashmir Valley.</li>
+          <li>Battle of Nowshera (1823): Decisive victory against Afghan Yusufzai tribes.</li>
+          <li>Fortified Jamrud at the mouth of the Khyber Pass (1836) — his last great strategic achievement.</li>
+        </ul>
+        <h4>Death</h4>
+        <p>He died at the Battle of Jamrud (1837) from wounds received while defending the fort. His death was reportedly kept secret for days so that Afghan forces would not know the fort was commanded by someone else.</p>
+      </div>
+
+      <div class="warrior-card">
+        <div class="warrior-era">c. 1730–1800</div>
+        <div class="warrior-name">Sardar Baghel Singh</div>
+        <div class="warrior-title">The Conqueror of Delhi</div>
+        <p>One of the most underappreciated figures in Sikh history, Baghel Singh led a Sikh force of 30,000 cavalry into Delhi in 1783 — occupying the Mughal capital and the Red Fort for eight months. He demonstrated extraordinary restraint — rather than looting, he negotiated with Mughal Emperor Shah Alam II to build seven Sikh Gurdwaras in Delhi on historically significant sites. These seven Gurdwaras still stand today.</p>
+        <h4>Legacy</h4>
+        <ul>
+          <li>Built Gurdwara Sis Ganj Sahib (site of Guru Tegh Bahadur's martyrdom)</li>
+          <li>Built Gurdwara Rakab Ganj Sahib (site where Guru's body was cremated)</li>
+          <li>Negotiated 37.5% of the Mughal customs revenue for Sikh Gurdwara maintenance</li>
+        </ul>
+      </div>
+
+      <div class="warrior-card">
+        <div class="warrior-era">Women Warriors</div>
+        <div class="warrior-name">Mai Bhago & Mata Sahib Kaur</div>
+        <div class="warrior-title">Heroines of the Khalsa</div>
+        <p><strong>Mai Bhago</strong> (c. 1660–c. 1745) was a Sikh woman warrior who led 40 Sikh deserters back to battle at Muktsar (1705) after they had abandoned Guru Gobind Singh during the siege of Anandpur. She fought personally in the Battle of Khidrana (now Muktsar), defeating the pursuing Mughal force. She became the Guru's personal bodyguard after this battle.</p>
+        <p style="margin-top:10px;"><strong>Mata Sahib Kaur Ji</strong> — declared the "Mother of the Khalsa" by Guru Gobind Singh. She added patashas (sugar crystals) to the Amrit in the founding Khalsa ceremony — symbolizing the balance of sweetness and strength in the Khalsa character.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ GURUDWARAS -->
+<section id="gurudwaras" class="section-dark">
+  <div class="container">
+    <div class="section-label">Sacred Architecture</div>
+    <h2 class="section-title">Gurudwaras & <span>Sacred Sites</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">The Gurudwara — "Gateway of the Guru" — is the central institution of Sikh community life: house of worship, langar hall, community center, and sanctuary for all.</p>
+
+    <div class="gurudwara-grid">
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">🏛️</div>
+        <div class="gurudwara-info">
+          <h3>Harmandir Sahib</h3>
+          <div class="loc">Amritsar, Punjab — The Golden Temple</div>
+          <p>Built by Guru Arjan Dev Ji and completed c. 1604. The four doors symbolize openness to all four directions and all humanity. The gold coating was added by Maharaja Ranjit Singh in the early 19th century. The Adi Granth was first installed here on September 1, 1604. Its Langar serves 100,000+ people daily — the world's largest free kitchen.</p>
+        </div>
+      </div>
+
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">⚔️</div>
+        <div class="gurudwara-info">
+          <h3>Akal Takht</h3>
+          <div class="loc">Amritsar — Throne of the Timeless One</div>
+          <p>Built by Guru Hargobind in 1606 as the seat of temporal Sikh authority — directly facing the Harmandir Sahib (spiritual authority). The five Takhts (thrones of authority) of Sikhism issue Hukamnamas (edicts) binding on the entire Panth. The Akal Takht was desecrated during Operation Blue Star (1984) and rebuilt.</p>
+        </div>
+      </div>
+
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">🕊️</div>
+        <div class="gurudwara-info">
+          <h3>Gurdwara Darbar Sahib Kartarpur</h3>
+          <div class="loc">Kartarpur, Pakistan — Guru Nanak's Final Home</div>
+          <p>Established by Guru Nanak himself c. 1519 — the first Sikh community. He spent his final 18 years here farming, singing, and teaching. The Kartarpur Corridor (opened 2019) allows Sikhs to visit from India without a visa — one of the most emotionally significant diplomatic achievements of recent years.</p>
+        </div>
+      </div>
+
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">🏔️</div>
+        <div class="gurudwara-info">
+          <h3>Hemkund Sahib</h3>
+          <div class="loc">Chamoli, Uttarakhand — High Himalayan Shrine</div>
+          <p>At 4,632 meters (15,200 ft) in the Himalayas — one of the highest places of worship in the world. Guru Gobind Singh Ji describes meditating at this location in his Bachitar Natak. The site was rediscovered in the 20th century and is now a major Sikh pilgrimage site, accessible only for a few months each year.</p>
+        </div>
+      </div>
+
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">⭐</div>
+        <div class="gurudwara-info">
+          <h3>Takht Hazur Sahib</h3>
+          <div class="loc">Nanded, Maharashtra — Where Guru Gobind Singh Ji Passed</div>
+          <p>One of the five Takhts of Sikhism, Hazur Sahib marks the location where Guru Gobind Singh Ji was fatally wounded (by an assassin employed by Wazir Khan) and declared the Guru Granth Sahib as the eternal Guru in 1708. Nanded maintains a significant Sikh community today.</p>
+        </div>
+      </div>
+
+      <div class="gurudwara-card">
+        <div class="gurudwara-visual">🌙</div>
+        <div class="gurudwara-info">
+          <h3>Gurdwara Sis Ganj Sahib</h3>
+          <div class="loc">Chandni Chowk, Delhi</div>
+          <p>Built on the site where Guru Tegh Bahadur Ji was beheaded by Aurangzeb's orders in 1675. One of seven Gurdwaras built in Delhi by Sikh general Baghel Singh in 1783. A powerful reminder of Sikh sacrifice for religious freedom — for Hindus as much as for Sikhs themselves.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:40px;">
+      <h4>The Langar System — World's Largest Expression of Equality</h4>
+      <p>The Langar (Guru's free kitchen) is one of the most profound social institutions in human history. Instituted by Guru Nanak and systematized by Guru Amar Das, the Langar operates in every Gurdwara worldwide — serving free vegetarian food to all, regardless of religion, caste, gender, or economic status. All who eat do so sitting on the same level (pangat — rows), symbolizing absolute equality. The Golden Temple alone serves 100,000+ meals daily. During COVID-19 (2020–21), Sikh Gurdwaras worldwide served tens of millions of meals to the homeless and frontline workers — an expression of Seva in action.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ SIKH-HINDU RELATIONSHIP -->
+<section id="relationship" class="section-light">
+  <div class="container">
+    <div class="section-label">Civilizational Dialogue</div>
+    <h2 class="section-title">The Sikh–Hindu <span>Relationship</span></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">A nuanced, historically grounded understanding of one of South Asia's most important civilizational relationships.</p>
+
+    <div class="relation-grid">
+      <div class="relation-card" style="background:rgba(232,117,26,0.05);border-color:rgba(232,117,26,0.2);">
+        <h3>Shared Civilizational Roots</h3>
+        <ul>
+          <li>Sikh Dharma emerged from the Punjab — deep within the Indic/Vedic cultural zone.</li>
+          <li>Core vocabulary shared: Dharam, Karma, Maya, Mukti, Atma, Brahm, Naam.</li>
+          <li>The Guru Granth Sahib includes 15 Hindu Bhakti saints' compositions alongside the Sikh Gurus'.</li>
+          <li>Many early Sikh families maintained dual Hindu-Sikh identity.</li>
+          <li>Guru Tegh Bahadur sacrificed his life to defend Hindu religious freedom — revered as Hind di Chadar.</li>
+          <li>Shared festivals: Diwali (Bandi Chhor Divas), Hola Mohalla (spring festival).</li>
+          <li>Sikh Gurus quote from the Vedas, Bhagavad Gita, and Upanishads selectively in Gurbani.</li>
+        </ul>
+      </div>
+      <div class="relation-card" style="background:rgba(26,18,8,0.04);border-color:rgba(26,18,8,0.12);">
+        <h3>Distinct Sikh Identity</h3>
+        <ul>
+          <li>Sikh Dharma has its own revealed scripture (Guru Granth Sahib) — not the Vedas or Upanishads.</li>
+          <li>Rejects the varna (caste) system as spiritually invalid.</li>
+          <li>Rejects idol worship as mandated practice.</li>
+          <li>No hereditary priesthood — any initiated Sikh can read Gurbani.</li>
+          <li>Distinct initiation (Amrit Ceremony) and code of conduct (Rehat Maryada).</li>
+          <li>The Khalsa identity (5 Ks) creates a visually distinct community.</li>
+          <li>Sikh Gurus explicitly rejected Brahmin intermediaries and caste hierarchy.</li>
+        </ul>
+      </div>
+      <div class="relation-card" style="background:rgba(10,22,40,0.05);border-color:rgba(10,22,40,0.12);">
+        <h3>Political & Historical Complexity</h3>
+        <ul>
+          <li>Colonial-era British policies deliberately emphasized Sikh-Hindu distinctions for administrative purposes (Census 1881–1901).</li>
+          <li>Singh Sabha Movement (1870s–1900s) crystallized a distinct Sikh identity in response to Hindu reform movements (Arya Samaj) that claimed Sikhs as Hindus.</li>
+          <li>Modern debates are influenced by post-1947 Punjab politics, the 1984 Operation Blue Star, and the Khalistan movement.</li>
+          <li>Scholarly consensus: Sikh Dharma is simultaneously rooted in Indic civilization and distinctly its own tradition — not reducible to either "a branch of Hinduism" or a religion entirely separate from Indic civilization.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ SYMBOLS & TRADITIONS -->
+<section id="symbols" class="section-dark">
+  <div class="container">
+    <div class="section-label">Identity & Culture</div>
+    <h2 class="section-title">Symbols, Festivals <span>& Traditions</span></h2>
+    <div class="divider"></div>
+
+    <div class="symbols-grid">
+      <div class="symbol-card">
+        <span class="symbol-icon">☬</span>
+        <h3>Khanda</h3>
+        <p>The emblem of Sikh Dharma: a double-edged sword (Khanda) at the center, a circular ring (Chakkar) representing eternity, and two curved swords (Kirpans) of Miri-Piri on either side.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🏴</span>
+        <h3>Nishan Sahib</h3>
+        <p>The triangular saffron flag bearing the Khanda emblem, flown at every Gurdwara. A visual declaration of Sikh presence and a beacon for travelers seeking shelter, food, or spiritual refuge.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🔵</span>
+        <h3>Kara</h3>
+        <p>The steel bracelet worn by initiated Sikhs on the right wrist. Symbolizes restraint of action, the infinite circle of God, and commitment to the Guru's teachings. Steel represents strength and purity.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🌾</span>
+        <h3>Vaisakhi</h3>
+        <p>April 13/14 — the Punjabi harvest festival, now also commemorating the creation of the Khalsa in 1699. The most important Sikh festival, celebrated with Nagar Kirtans (processions) and mass Amrit ceremonies worldwide.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🪔</span>
+        <h3>Bandi Chhor Divas</h3>
+        <p>Sikh Diwali — commemorating Guru Hargobind Ji's release from Gwalior Fort (1619) along with 52 Hindu rajas. Celebrated with lights and fireworks across Punjab. An example of Sikh-Hindu shared celebration with distinct Sikh historical meaning.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">⚔️</span>
+        <h3>Hola Mohalla</h3>
+        <p>Founded by Guru Gobind Singh Ji as an alternative to Holi. A festival of martial arts, poetry, and mock battles — held at Anandpur Sahib. The Nihang Sikhs display extraordinary traditional weaponry and horsemanship.</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🥁</span>
+        <h3>Kirtan Tradition</h3>
+        <p>Singing of Gurbani in classical ragas — the central Sikh devotional practice. The Guru Granth Sahib is organized by raga (musical framework). Hazoori Ragis at the Golden Temple maintain an unbroken 24-hour kirtan tradition (Akhand Kirtan).</p>
+      </div>
+      <div class="symbol-card">
+        <span class="symbol-icon">🏇</span>
+        <h3>Nihang Sikhs</h3>
+        <p>The ancient order of Sikh warrior-ascetics — the "blue warriors" — who maintain pre-modern Sikh military traditions: traditional weapons, warfare, horsemanship, Gatka (Sikh martial art), and the wearing of distinctive blue turbans adorned with steel weapons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ LESSER KNOWN FACTS -->
+<section id="facts" class="section-navy">
+  <div class="container">
+    <div class="section-label">Hidden History</div>
+    <h2 class="section-title">Rare Facts <span>Most Don't Know</span></h2>
+    <div class="divider"></div>
+
+    <div class="facts-grid">
+      <div class="fact-card">
+        <div class="num">01</div>
+        <h4>Guru Granth Sahib Predates King James Bible</h4>
+        <p>The Guru Granth Sahib (compiled 1604) was completed 7 years before the King James Bible (1611) — making it one of the earliest scriptures compiled with scientific textual precision in its era, incorporating multiple languages and musical systems.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">02</div>
+        <h4>Guru Nanak in Mecca</h4>
+        <p>According to the Janamsakhis, Guru Nanak slept with his feet pointing toward the Kaaba in Mecca. When challenged by a Qazi (Muslim cleric), the Guru reportedly said: "Turn my feet in the direction where God is not." The story illustrates his revolutionary theology — that God is omnipresent, not directional.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">03</div>
+        <h4>Sikh Empire Had No State Religion</h4>
+        <p>The Sikh Empire under Maharaja Ranjit Singh (1799–1839) was genuinely secular — its cabinet included Muslims (Fakir Azizuddin as Foreign Minister), Hindus, and Europeans. Mosques, temples, and Gurdwaras were all maintained by state patronage. This was remarkable in an era when most states had official state religions.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">04</div>
+        <h4>The Koh-i-Noor's Sikh Chapter</h4>
+        <p>The Koh-i-Noor diamond passed through Sikh hands — it was part of Maharaja Ranjit Singh's treasury and was displayed on his throne. After the Anglo-Sikh Wars, it was surrendered to Queen Victoria under the Treaty of Lahore (1849) — taken, not given. It remains the most contested jewel in history.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">05</div>
+        <h4>40 Muktas — The Liberated Forty</h4>
+        <p>During the siege of Anandpur (1704), 40 Sikhs signed a bedava (disclaimer) abandoning Guru Gobind Singh. After Mai Bhago inspired them, they returned and fought to their deaths at the Battle of Khidrana — winning the Guru's forgiveness. He tore up the disclaimer, and the site was renamed Muktsar (Pool of Liberation).</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">06</div>
+        <h4>Sikhs in World War I & II</h4>
+        <p>Over 83,000 Sikhs died in World War I — fighting for the British Empire despite Punjab having been annexed just 65 years earlier. In WWII, over 36 Victoria Crosses (the highest British military honor) were awarded to Indian soldiers — with Sikhs disproportionately represented. The 1944 Battle of Kohima (called "the Stalingrad of the East") saw Sikh regiments play a decisive role.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">07</div>
+        <h4>The Guru Granth Sahib Includes Muslim & Hindu Saints</h4>
+        <p>The GGS includes 15 non-Sikh contributors: Sheikh Farid (a 12th-century Sufi Muslim saint), Kabir (low-caste Hindu weaver-mystic), Ravidas (an "untouchable" shoemaker-saint), Namdev, Trilochan, Pipa, Sain, Dhanna, Beni, Ramanand, Jaidev, Bhikhan, Parmanand, Sur Das, and Mardana. This radical editorial inclusion is unparalleled in world scripture.</p>
+      </div>
+      <div class="fact-card">
+        <div class="num">08</div>
+        <h4>Zafarnama — A Letter That Changed History</h4>
+        <p>After the Battle of Chamkaur (1704), Guru Gobind Singh Ji composed the Zafarnama ("Letter of Victory") in Persian — addressed to Emperor Aurangzeb, condemning his treachery while remaining philosophically transcendent. The letter reportedly affected Aurangzeb so deeply that he summoned the Guru for a meeting — which never took place as Aurangzeb died in 1707. The Zafarnama is studied in Persian literature departments worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ MASTER TIMELINE -->
+<section id="timeline" class="section-dark">
+  <div class="container">
+    <div class="section-label">Chronology</div>
+    <h2 class="section-title">Master <span>Timeline of Sikh History</span></h2>
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+      <div>
+        <h3 style="font-family:var(--font-title);color:var(--gold-lt);margin-bottom:24px;font-size:1.1rem;">Guru Period (1469–1708)</h3>
+        <div class="master-timeline">
+          <div class="tl-event"><div class="year">1469</div><h4>Birth of Guru Nanak Dev Ji</h4><p>Born at Nankana Sahib (now Pakistan), to Baba Kalu and Mata Tripta.</p></div>
+          <div class="tl-event"><div class="year">1499</div><h4>Guru Nanak's Revelation</h4><p>Disappears in River Bein at Sultanpur Lodhi; emerges three days later with the declaration: "There is no Hindu, there is no Muslim."</p></div>
+          <div class="tl-event"><div class="year">1519</div><h4>Kartarpur Founded</h4><p>Guru Nanak establishes the first Sikh community at Kartarpur on the Ravi river.</p></div>
+          <div class="tl-event"><div class="year">1539</div><h4>Guru Angad Dev Ji — 2nd Guru</h4><p>Standardizes Gurmukhi script; institutionalizes Langar.</p></div>
+          <div class="tl-event"><div class="year">1552</div><h4>Guru Amar Das Ji — 3rd Guru</h4><p>Abolishes purdah and sati; establishes Manji system; composes Anand Sahib.</p></div>
+          <div class="tl-event"><div class="year">1574</div><h4>Guru Ram Das Ji — 4th Guru</h4><p>Founds Amritsar (Ramdaaspur); composes the Lavan wedding hymns.</p></div>
+          <div class="tl-event"><div class="year">1581</div><h4>Guru Arjan Dev Ji — 5th Guru</h4><p>Compiles Adi Granth (1604); completes Golden Temple.</p></div>
+          <div class="tl-event"><div class="year">1604</div><h4>Adi Granth Installed</h4><p>First Sikh scripture installed at Harmandir Sahib — September 1, 1604.</p></div>
+          <div class="tl-event"><div class="year">1606</div><h4>Guru Arjan Dev Ji's Martyrdom</h4><p>First Sikh martyr, executed by Emperor Jahangir; Guru Hargobind dons Miri-Piri swords.</p></div>
+          <div class="tl-event"><div class="year">1644</div><h4>Guru Har Rai Ji — 7th Guru</h4><p>Maintains Khalsa army; establishes Dawakhanas; protects Dara Shikoh.</p></div>
+          <div class="tl-event"><div class="year">1661</div><h4>Guru Har Krishan Ji — 8th Guru</h4><p>Serves plague victims in Delhi; passes away at age 8; points to "Baba Bakale."</p></div>
+          <div class="tl-event"><div class="year">1675</div><h4>Guru Tegh Bahadur Ji Martyred</h4><p>Beheaded at Chandni Chowk for defending Kashmiri Hindu religious freedom.</p></div>
+          <div class="tl-event"><div class="year">1699</div><h4>Khalsa Creation — Vaisakhi</h4><p>Guru Gobind Singh creates the Khalsa at Anandpur Sahib; Panj Pyare initiated; Five Ks instituted.</p></div>
+          <div class="tl-event"><div class="year">1704</div><h4>Battles of Anandpur & Chamkaur</h4><p>Guru's sons fight and die; younger sons (Sahibzaade) bricked alive at Sirhind.</p></div>
+          <div class="tl-event"><div class="year">1708</div><h4>Guru Gobind Singh Ji's Passing</h4><p>Declares Guru Granth Sahib as eternal Guru at Nanded; line of human Gurus ends.</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-title);color:var(--gold-lt);margin-bottom:24px;font-size:1.1rem;">Political & Modern Period (1708–Present)</h3>
+        <div class="master-timeline">
+          <div class="tl-event"><div class="year">1710</div><h4>Banda Singh Bahadur Captures Sirhind</h4><p>First Sikh territorial state established; zamindari abolished; Mughal power broken in Punjab.</p></div>
+          <div class="tl-event"><div class="year">1716</div><h4>Banda Singh Bahadur's Martyrdom</h4><p>Executed in Delhi by Emperor Farrukhsiyar; 700+ Sikhs killed; Panth continues underground.</p></div>
+          <div class="tl-event"><div class="year">1748</div><h4>Dal Khalsa Organized</h4><p>Unified Sikh military force under Jassa Singh Ahluwalia; 12 Misls formalized.</p></div>
+          <div class="tl-event"><div class="year">1762</div><h4>Wada Ghallughara</h4><p>20,000–30,000 Sikhs massacred by Ahmad Shah Durrani; Sikh resilience demonstrated in aftermath.</p></div>
+          <div class="tl-event"><div class="year">1765</div><h4>Sikh Coins Struck in Lahore</h4><p>Jassa Singh Ahluwalia strikes coins in Lahore — political assertion of Sikh sovereignty.</p></div>
+          <div class="tl-event"><div class="year">1783</div><h4>Baghel Singh Occupies Delhi</h4><p>Sikh forces occupy Red Fort; seven Gurdwaras built on historical sites in Delhi.</p></div>
+          <div class="tl-event"><div class="year">1799</div><h4>Ranjit Singh Captures Lahore</h4><p>Aged 19, Ranjit Singh takes Lahore; unification of Punjab begins.</p></div>
+          <div class="tl-event"><div class="year">1801</div><h4>Sikh Empire Proclaimed</h4><p>Maharaja Ranjit Singh proclaimed at Amritsar; secular, inclusive multi-religious state established.</p></div>
+          <div class="tl-event"><div class="year">1818–1834</div><h4>Empire Expands</h4><p>Multan (1818), Kashmir (1819), Peshawar (1834) conquered; Khyber Pass secured by Hari Singh Nalwa.</p></div>
+          <div class="tl-event"><div class="year">1839</div><h4>Death of Maharaja Ranjit Singh</h4><p>Empire enters period of instability and succession crisis.</p></div>
+          <div class="tl-event"><div class="year">1845–1849</div><h4>Anglo-Sikh Wars</h4><p>Two Anglo-Sikh Wars; Battle of Ferozeshah, Sobraon; Sikh Empire annexed by British East India Company (1849).</p></div>
+          <div class="tl-event"><div class="year">1873</div><h4>Singh Sabha Movement</h4><p>Reform movement to revive and define distinct Sikh identity; leads to modern Sikh identity formation.</p></div>
+          <div class="tl-event"><div class="year">1919</div><h4>Jallianwala Bagh Massacre</h4><p>British forces massacre 379–1,000+ unarmed Punjabis (Sikhs, Hindus, Muslims) at Amritsar — galvanizes independence movement.</p></div>
+          <div class="tl-event"><div class="year">1947</div><h4>Partition of Punjab</h4><p>Largest mass migration in history; 1–2 million killed; Punjab divided between India and Pakistan; Sikh sacred sites split across borders.</p></div>
+          <div class="tl-event"><div class="year">1984</div><h4>Operation Blue Star & Assassination</h4><p>Indian Army storms Golden Temple complex (June 1984); Prime Minister Indira Gandhi assassinated (October 1984) by Sikh bodyguards; anti-Sikh pogroms kill thousands.</p></div>
+          <div class="tl-event"><div class="year">2019</div><h4>Kartarpur Corridor Opens</h4><p>India–Pakistan corridor allows Sikh pilgrims to visit Guru Nanak's Kartarpur Sahib without a visa — a moment of spiritual healing across a political border.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ GURU COMPARISON TABLE -->
+<section id="comparison" class="section-navy">
+  <div class="container">
+    <div class="section-label">Quick Reference</div>
+    <h2 class="section-title">Guru <span>Comparison Table</span></h2>
+    <div class="divider"></div>
+    <div style="overflow-x:auto;">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Guru</th>
+            <th>Birth–Death</th>
+            <th>Guruship</th>
+            <th>Key Achievement</th>
+            <th>Primary Location</th>
+            <th>Major Writing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Guru Nanak Dev Ji</td><td>1469–1539</td><td>1469–1539</td><td>Founded Sikh Dharma; Four Udasis; Kartarpur</td><td>Kartarpur</td><td>Japji Sahib (974 hymns)</td></tr>
+          <tr><td>2</td><td>Guru Angad Dev Ji</td><td>1504–1552</td><td>1539–1552</td><td>Standardized Gurmukhi script</td><td>Khadur Sahib</td><td>62 Saloks</td></tr>
+          <tr><td>3</td><td>Guru Amar Das Ji</td><td>1479–1574</td><td>1552–1574</td><td>Abolished sati/purdah; Manji system</td><td>Goindval</td><td>Anand Sahib</td></tr>
+          <tr><td>4</td><td>Guru Ram Das Ji</td><td>1534–1581</td><td>1574–1581</td><td>Founded Amritsar; Anand Karaj</td><td>Amritsar</td><td>Lavan, 679 hymns</td></tr>
+          <tr><td>5</td><td>Guru Arjan Dev Ji</td><td>1563–1606</td><td>1581–1606</td><td>Adi Granth compiled; Golden Temple; First Martyr</td><td>Amritsar</td><td>Sukhmani Sahib</td></tr>
+          <tr><td>6</td><td>Guru Hargobind Ji</td><td>1595–1644</td><td>1606–1644</td><td>Miri-Piri; Akal Takht; Four battles</td><td>Amritsar</td><td>Akal Takht proclamations</td></tr>
+          <tr><td>7</td><td>Guru Har Rai Ji</td><td>1630–1661</td><td>1644–1661</td><td>Dawakhana; maintained army; compassion</td><td>Kiratpur Sahib</td><td>Preserved Adi Granth</td></tr>
+          <tr><td>8</td><td>Guru Har Krishan Ji</td><td>1656–1664</td><td>1661–1664</td><td>Served Delhi plague victims; youngest Guru</td><td>Delhi</td><td>–</td></tr>
+          <tr><td>9</td><td>Guru Tegh Bahadur Ji</td><td>1621–1675</td><td>1665–1675</td><td>Martyrdom for religious freedom; Hind di Chadar</td><td>Delhi/Anandpur</td><td>116 shabads, 15 ragas</td></tr>
+          <tr><td>10</td><td>Guru Gobind Singh Ji</td><td>1666–1708</td><td>1675–1708</td><td>Khalsa creation; Dasam Granth; Eternal Guru</td><td>Anandpur/Nanded</td><td>Dasam Granth, Zafarnama</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ FAQ -->
+<section id="faq" class="section-dark">
+  <div class="container">
+    <div class="section-label">Frequently Asked</div>
+    <h2 class="section-title" style="text-align:center;">Common <span>Questions</span></h2>
+    <div class="divider" style="margin:1.5rem auto;"></div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is Sikhism a branch of Hinduism or a completely separate religion?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">This is one of the most frequently debated questions in South Asian religious studies. The short answer: Sikh Dharma is a distinct, independent religion with its own revealed scripture, theology, and community identity — but it emerged from the civilizational soil of the Indic/Vedic tradition and shares cultural and conceptual vocabulary with it. Calling it "a branch of Hinduism" is theologically inaccurate and historically contested. Calling it entirely unrelated to Indic civilization ignores its deep roots in the Bhakti movement, Punjabi culture, and shared philosophical concepts. The Sikh community itself — through the Singh Sabha Movement, the Sikh Rehat Maryada, and centuries of distinct practice — has consistently maintained a distinct identity separate from Hindu identity.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do Sikhs believe in God? What is Waheguru?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — Sikhism is a monotheistic tradition. Sikhs believe in one, formless, all-pervading God called Waheguru (literally "Wondrous Enlightener"). The Mool Mantar (the foundational creed at the opening of the Guru Granth Sahib) describes God as: True Name, Creator of all beings, without fear, without enmity, timeless, beyond the cycle of birth and death, self-illuminated, revealed by the Guru's grace. Waheguru is simultaneously transcendent (beyond all form and description) and immanent (present within every human heart). This is a sophisticated theological position that resonates with both Vedantic Brahman-Atman philosophy and Islamic tawhid (divine unity), while remaining distinctly Sikh.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the Khalsa, and why was it created?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Khalsa (meaning "pure" or "belonging to the sovereign") was created by Guru Gobind Singh Ji on Vaisakhi 1699 at Anandpur Sahib. It was created for multiple reasons: to forge a community of "Saint-Soldiers" (Sant-Sipahi) capable of defending themselves and the defenseless; to give the Sikh community a distinct, visible identity that could not be hidden or denied; to democratize Sikh leadership through the Panj Pyare (Five Beloved Ones) principle; and to break caste by initiating people from all backgrounds equally into one community. The Khalsa was not merely a military organization — it was a new social contract based on equality, righteousness, and service.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Why don't Sikhs cut their hair?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Uncut hair (Kesh) is one of the Five Ks of the Khalsa — a visible article of faith commanded by Guru Gobind Singh Ji. Theologically, Kesh represents: acceptance of God's creation as given, without alteration; respect for the natural form bestowed by the Creator; and a visible declaration of Sikh identity. Historically, maintaining Kesh under Mughal persecution required extraordinary courage — many Sikhs died rather than cut their hair under coercion. The turban (Dastar) worn over uncut hair is a crown of honor and spiritual sovereignty — the Guru's gift of dignity to every Sikh, regardless of caste or class.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Why did Guru Tegh Bahadur die for Hindu religious freedom if he was Sikh?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Guru Tegh Bahadur Ji's 1675 martyrdom is perhaps the most striking example of inter-religious solidarity in Indian history. When Kashmiri Pandits appealed to him for protection against forced Islamization by Aurangzeb, the Guru — without converting them to Sikhism — offered to stand as their protector. His reasoning was rooted in Sikh Dharma's principle of Sarbat da Bhala (welfare of all) and the fundamental belief that religious freedom is a universal human right. He chose death over conversion, knowing his sacrifice might stay the emperor's hand. He is revered as "Hind di Chadar" — the Shield of India — by both Sikhs and Hindus to this day.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happened to the Sikh Empire?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Sikh Empire (1799–1849) was the most powerful state in South Asia during Maharaja Ranjit Singh's reign. After his death in 1839, the empire suffered from rapid succession crises, palace intrigues, and the assassination of multiple successors. The British East India Company fought two Anglo-Sikh Wars (1845–46 and 1848–49). Despite fighting fiercely — particularly at the Battle of Ferozeshah and Battle of Sobraon — the Sikh Empire was defeated partly due to internal treachery by certain Sikh nobles (the Dogra family in particular). The Treaty of Lahore (1849) transferred the Sikh Empire to British rule. The Koh-i-Noor diamond was taken as part of the surrender terms. Punjab became the "Jewel in the Crown" of British India.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Who can enter a Gurdwara? Is it only for Sikhs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Every Gurdwara is open to all people, regardless of religion, caste, gender, or nationality. The Harmandir Sahib (Golden Temple) was intentionally built with four doors facing all four cardinal directions — symbolizing its openness to all of humanity. The only requirements for entry are: cover your head (a sign of respect before the Guru Granth Sahib), remove your shoes (symbolizing leaving ego at the door), and do not bring tobacco or alcohol. The Langar (free kitchen) serves all visitors equally. This universal hospitality is a defining feature of Sikh Dharma — the Gurdwara has historically served as sanctuary, hospital, and shelter for all who approach it.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the Guru Granth Sahib's significance?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Guru Granth Sahib Ji is the supreme, living, eternal Guru of the Sikh faith. It is not treated as a book — it is the living presence of all ten Gurus and the Divine Word. It is installed on a throne (Palki Sahib), fanned with a ceremonial whisk (Chauri Sahib), covered with sacred cloths (Rumala Sahib), and attended by a Granthi (reader). Its 1,430 pages contain 5,894 hymns in 31 classical ragas — by 6 Sikh Gurus, 15 Hindu and Muslim saints, and others. It is the only scripture in the world to include compositions from multiple religious traditions, compiled and authorized by the founders of a religion during their lifetime. When a copy of the Guru Granth Sahib is installed in a Gurdwara, the ceremony is equal to installing the living Guru.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ ENCYCLOPEDIA SUMMARY -->
+<section id="summary" class="section-light">
+  <div class="container">
+    <div class="section-label">Final Encyclopedia</div>
+    <h2 class="section-title">Encyclopedia <span>Summary</span></h2>
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px;">
+      <div>
+        <h3 style="font-family:var(--font-title);color:var(--text-primary);font-size:1.2rem;margin-bottom:16px;font-weight:700;">Core Identity of Sikh Dharma</h3>
+        <div style="font-size:0.95rem;line-height:1.9;color:var(--text-sec);">
+          <p style="margin-bottom:12px;"><strong>Founder:</strong> Guru Nanak Dev Ji (1469–1539 CE), Nankana Sahib, Punjab.</p>
+          <p style="margin-bottom:12px;"><strong>Scripture:</strong> Guru Granth Sahib Ji — 1,430 Angs, 5,894 hymns, 31 ragas, multiple languages.</p>
+          <p style="margin-bottom:12px;"><strong>Central Theology:</strong> Ik Onkar — One formless, eternal Creator God (Waheguru). Salvation through Naam Simran, Seva, and Kirat Karni.</p>
+          <p style="margin-bottom:12px;"><strong>Community:</strong> The Khalsa Panth — created 1699, bound by Amrit ceremony and Five Ks.</p>
+          <p style="margin-bottom:12px;"><strong>Governance:</strong> Akal Takht — seat of temporal authority; Gurmata — community resolutions passed by Sarbat Khalsa.</p>
+          <p style="margin-bottom:12px;"><strong>Key Institutions:</strong> Langar (free kitchen), Sangat (holy congregation), Pangat (equal sitting).</p>
+          <p style="margin-bottom:12px;"><strong>Global Population:</strong> Approximately 25–30 million Sikhs worldwide (majority in Punjab, India; significant diaspora in UK, Canada, USA, Australia).</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-title);color:var(--text-primary);font-size:1.2rem;margin-bottom:16px;font-weight:700;">Beginner's Revision Notes</h3>
+        <div style="font-size:0.88rem;line-height:1.85;color:var(--text-sec);">
+          <p>🔹 <strong>Sikh</strong> = Disciple/Learner (from Sanskrit Śiṣya)</p>
+          <p>🔹 <strong>Ik Onkar</strong> = One God (the opening of Guru Granth Sahib)</p>
+          <p>🔹 <strong>Ten Gurus</strong> over 239 years (1469–1708); same Divine Light through all</p>
+          <p>🔹 <strong>Guru Granth Sahib</strong> = Eternal 11th Guru declared in 1708</p>
+          <p>🔹 <strong>Khalsa</strong> = Pure initiated Sikhs, created Vaisakhi 1699</p>
+          <p>🔹 <strong>Five Ks</strong>: Kesh, Kangha, Kara, Kachera, Kirpan</p>
+          <p>🔹 <strong>Three pillars</strong>: Naam Japna, Kirat Karni, Vand Chhakna</p>
+          <p>🔹 <strong>Langar</strong> = Free kitchen for all, regardless of faith or status</p>
+          <p>🔹 <strong>Akal Takht</strong> = Temporal authority (vs. Harmandir Sahib = spiritual)</p>
+          <p>🔹 <strong>Sikh Empire</strong>: 1799–1849, Maharaja Ranjit Singh</p>
+          <p>🔹 <strong>No caste, no idol worship, no clergy</strong> (any initiated Sikh can lead worship)</p>
+          <p>🔹 <strong>Sarbat da Bhala</strong> = Prayer for welfare of all humanity</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Final Reflection — The Civilizational Legacy of Sikh Dharma</h4>
+      <p>Sikh Dharma stands as one of humanity's most remarkable spiritual and civilizational achievements. Born in the crucible of 15th-century Punjab — at the intersection of Mughal imperial power, Brahmanical social hierarchy, and the mystical currents of Bhakti and Sufi devotion — it articulated a vision of radical equality, direct divine communion, and fearless righteousness that remains revolutionary 550 years later. The Langar feeds hundreds of thousands daily without discrimination. The Khalsa warriors defended not only Sikhs but Hindus and others against oppression. The Guru Granth Sahib — spoken in the living voice of Kirtan across 200+ countries — carries the voices of a Punjabi rural woman, a low-caste cobbler-saint, a Muslim Sufi mystic, and a Guru-warrior king in the same breath. Sikh Dharma is neither a fossil of history nor merely a religious identity — it is a living civilization whose values — truth, equality, service, courage, and joy — speak to the deepest aspirations of the human spirit across all boundaries of faith, culture, and time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ FOOTER -->
+<footer>
+  <div class="container">
+    <div class="brand">☬ Sikh Dharma Encyclopedia</div>
+    <div class="footer-links">
+      <a href="#intro">Origin</a>
+      <a href="#gurus">Gurus</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#scriptures">Scriptures</a>
+      <a href="#kingdoms">Kingdoms</a>
+      <a href="#warriors">Warriors</a>
+      <a href="#gurudwaras">Gurudwaras</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <p>Created as an educational, historically accurate digital encyclopedia of Sikh Dharma.<br>
+    All content is intended for educational and research purposes. Respectfully compiled with reference to<br>
+    <a href="#">Guru Granth Sahib Ji</a> · <a href="#">Janamsakhis</a> · <a href="#">Dasam Granth</a> · <a href="#">W.H. McLeod</a> · <a href="#">Pashaura Singh</a> · <a href="#">Gurinder Singh Mann</a> · <a href="#">Harjot Oberoi</a> · <a href="#">Max Arthur Macauliffe</a>
+    </p>
+    <p style="margin-top:16px;font-size:0.75rem;opacity:0.35;">Waheguru Ji Ka Khalsa · Waheguru Ji Ki Fateh</p>
+  </div>
+</footer>
+
+<!-- ================================================================ JS -->
+<script>
+// FAQ Toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Sticky nav shadow on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Intersection Observer for fade-up on cards
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.philosophy-card, .kingdom-card, .warrior-card, .gurudwara-card, .fact-card, .symbol-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

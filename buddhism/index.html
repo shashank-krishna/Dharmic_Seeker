@@ -1,0 +1,3098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharma Atlas — The Complete Encyclopedia of Buddhism</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --saffron: #e07b39;
+    --maroon: #6b1f2a;
+    --maroon-dark: #3d0f15;
+    --ivory: #f5f0e8;
+    --ivory-dark: #e8dfc8;
+    --obsidian: #0d0a07;
+    --obsidian-mid: #1a1410;
+    --obsidian-light: #2a2018;
+    --stone: #4a3f30;
+    --stone-light: #6e5c45;
+    --lotus-pink: #c27ba0;
+    --dharma-blue: #3d6b8f;
+    --jade: #4a7c6f;
+    --text-primary: #f0e8d8;
+    --text-secondary: #c8b89a;
+    --text-muted: #8a7a65;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--obsidian);
+    color: var(--text-primary);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* Sacred geometry background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 80%, rgba(107,31,42,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(224,123,57,0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Mandala pattern overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 29deg, rgba(201,168,76,0.015) 30deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ====== NAVIGATION ====== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13,10,7,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .nav-symbol {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+    color: var(--saffron);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.9rem;
+    transition: color 0.3s;
+    white-space: nowrap;
+    font-family: 'Noto Serif', serif;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ====== HERO ====== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-mandala {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.06;
+    animation: slowRotate 120s linear infinite;
+  }
+
+  @keyframes slowRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .hero-dharma-wheel {
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    animation: pulse 4s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .hero-subtitle-pre {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 1rem;
+    font-family: 'Noto Serif', serif;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 60px rgba(201,168,76,0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ivory);
+    margin-top: 0.5rem;
+  }
+
+  .hero-desc {
+    max-width: 700px;
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin: 2rem auto;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    line-height: 2;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+  }
+
+  .hero-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 3rem auto 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+    z-index: 1;
+    font-family: 'Noto Serif', serif;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  section {
+    padding: 6rem 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    font-family: 'Noto Serif', serif;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(224,123,57,0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--gold);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Decorative divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+  }
+
+  .divider-symbol {
+    color: var(--gold);
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  /* ====== INTRODUCTION SECTION ====== */
+  #intro { background: linear-gradient(180deg, var(--obsidian) 0%, var(--obsidian-mid) 100%); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; } }
+
+  .intro-card {
+    background: rgba(42,32,24,0.6);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .intro-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-3px); }
+  .intro-card:hover::before { opacity: 1; }
+
+  .intro-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .intro-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .intro-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+
+  /* School comparison */
+  .school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .school-card {
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .school-theravada {
+    background: linear-gradient(135deg, rgba(74,124,111,0.15), rgba(74,124,111,0.05));
+    border: 1px solid rgba(74,124,111,0.3);
+  }
+
+  .school-mahayana {
+    background: linear-gradient(135deg, rgba(61,107,143,0.15), rgba(61,107,143,0.05));
+    border: 1px solid rgba(61,107,143,0.3);
+  }
+
+  .school-vajrayana {
+    background: linear-gradient(135deg, rgba(194,123,160,0.15), rgba(194,123,160,0.05));
+    border: 1px solid rgba(194,123,160,0.3);
+  }
+
+  .school-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .school-theravada h3 { color: var(--jade); }
+  .school-mahayana h3 { color: var(--dharma-blue); }
+  .school-vajrayana h3 { color: var(--lotus-pink); }
+
+  .school-card .school-lang {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: 'Noto Serif', serif;
+    color: var(--text-muted);
+  }
+
+  .school-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
+
+  .school-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .school-tag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+  }
+
+  .school-theravada .school-tag { background: rgba(74,124,111,0.2); color: var(--jade); border: 1px solid rgba(74,124,111,0.3); }
+  .school-mahayana .school-tag { background: rgba(61,107,143,0.2); color: var(--dharma-blue); border: 1px solid rgba(61,107,143,0.3); }
+  .school-vajrayana .school-tag { background: rgba(194,123,160,0.2); color: var(--lotus-pink); border: 1px solid rgba(194,123,160,0.3); }
+
+  /* ====== TIMELINE ====== */
+  #timeline { background: var(--obsidian-mid); }
+
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.4) 10%, rgba(201,168,76,0.4) 90%, transparent);
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before { left: 1.5rem; }
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    margin-bottom: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+      grid-template-columns: 60px 1fr;
+    }
+    .timeline-left { display: none; }
+  }
+
+  .timeline-left { text-align: right; padding-right: 2rem; }
+  .timeline-right { padding-left: 2rem; }
+
+  .timeline-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.3rem;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--obsidian);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.3);
+    flex-shrink: 0;
+  }
+
+  .timeline-year {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--ivory);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .timeline-era {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    border: 1px solid rgba(224,123,57,0.3);
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Serif', serif;
+  }
+
+  /* ====== LIFE OF BUDDHA ====== */
+  #buddha-life { background: var(--obsidian); }
+
+  .life-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .life-stage-card {
+    background: rgba(26,20,16,0.8);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .life-stage-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(42,32,24,0.8);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .life-stage-number {
+    position: absolute;
+    top: -1px;
+    right: 1.5rem;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: var(--saffron);
+    color: var(--obsidian);
+    padding: 0.2rem 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .life-stage-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+  .life-stage-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .life-stage-card .stage-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .life-stage-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
+
+  .life-stage-card .stage-place {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--saffron);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Key teachings inline block */
+  .pali-term {
+    display: inline-block;
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 0.85em;
+  }
+
+  /* ====== GURUS SECTION ====== */
+  #gurus { background: var(--obsidian-mid); }
+
+  .guru-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .guru-card {
+    background: rgba(13,10,7,0.7);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .guru-card:hover {
+    border-color: rgba(201,168,76,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .guru-header {
+    background: linear-gradient(135deg, rgba(107,31,42,0.6), rgba(42,32,24,0.8));
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .guru-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--saffron));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    border: 2px solid rgba(201,168,76,0.4);
+  }
+
+  .guru-header-info h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+  }
+
+  .guru-header-info .guru-dates {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+  }
+
+  .guru-body { padding: 1.5rem 2rem; }
+
+  .guru-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .guru-badge {
+    font-size: 0.62rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+  }
+
+  .badge-school { background: rgba(61,107,143,0.15); color: var(--dharma-blue); border-color: rgba(61,107,143,0.3); }
+  .badge-region { background: rgba(74,124,111,0.15); color: var(--jade); border-color: rgba(74,124,111,0.3); }
+  .badge-era { background: rgba(201,168,76,0.1); color: var(--gold); border-color: rgba(201,168,76,0.25); }
+
+  .guru-body p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.8rem; }
+
+  .guru-contribution {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(201,168,76,0.05);
+    border-left: 2px solid var(--gold);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .guru-texts {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+  }
+
+  .guru-texts strong { color: var(--gold); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ====== TEACHINGS ====== */
+  #teachings { background: var(--obsidian); }
+
+  .teachings-hero {
+    text-align: center;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(107,31,42,0.2), rgba(201,168,76,0.08), rgba(61,107,143,0.15));
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+  }
+
+  .noble-truths {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  @media (max-width: 900px) { .noble-truths { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .noble-truths { grid-template-columns: 1fr; } }
+
+  .truth-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(26,20,16,0.8);
+    transition: all 0.3s;
+  }
+
+  .truth-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-4px);
+  }
+
+  .truth-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.65rem;
+    color: var(--saffron);
+    letter-spacing: 0.3em;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Serif', serif;
+  }
+
+  .truth-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.04em;
+  }
+
+  .truth-pali {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .truth-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* Eightfold path wheel */
+  .eightfold-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+
+  @media (max-width: 768px) { .eightfold-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .path-item {
+    padding: 1.2rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    background: rgba(26,20,16,0.6);
+    transition: all 0.3s;
+  }
+
+  .path-item:hover {
+    background: rgba(42,32,24,0.8);
+    border-color: rgba(201,168,76,0.25);
+  }
+
+  .path-item .path-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  .path-item h4 {
+    font-size: 0.85rem;
+    color: var(--ivory);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .path-item .path-pali {
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .path-item p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+  .path-category {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Noto Serif', serif;
+    color: var(--saffron);
+    margin-bottom: 0.3rem;
+  }
+
+  /* Philosophy deep-dive */
+  .philosophy-accordion { margin: 3rem 0; }
+
+  .accordion-item {
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .accordion-item:hover { border-color: rgba(201,168,76,0.25); }
+
+  .accordion-header {
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(26,20,16,0.7);
+    transition: background 0.3s;
+    list-style: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ivory);
+  }
+
+  .accordion-header:hover { background: rgba(42,32,24,0.8); }
+
+  .accordion-header::marker { display: none; }
+
+  .accordion-header .acc-icon {
+    color: var(--gold);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+
+  details[open] .accordion-header .acc-icon { transform: rotate(45deg); }
+
+  .accordion-body {
+    padding: 1.5rem 2rem;
+    background: rgba(13,10,7,0.5);
+    border-top: 1px solid rgba(201,168,76,0.08);
+  }
+
+  .accordion-body p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 1rem 0 0.4rem;
+  }
+
+  /* ====== KINGDOMS SECTION ====== */
+  #kingdoms { background: var(--obsidian-mid); }
+
+  .kingdom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2rem;
+  }
+
+  .kingdom-card {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.12);
+    transition: all 0.3s;
+    background: rgba(13,10,7,0.7);
+  }
+
+  .kingdom-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .kingdom-banner {
+    height: 8px;
+  }
+
+  .kingdom-banner.maurya { background: linear-gradient(90deg, var(--maroon), var(--gold)); }
+  .kingdom-banner.kushan { background: linear-gradient(90deg, var(--dharma-blue), var(--jade)); }
+  .kingdom-banner.pala { background: linear-gradient(90deg, var(--jade), var(--lotus-pink)); }
+  .kingdom-banner.tibet { background: linear-gradient(90deg, var(--lotus-pink), var(--maroon)); }
+  .kingdom-banner.sri-lanka { background: linear-gradient(90deg, var(--jade), var(--dharma-blue)); }
+  .kingdom-banner.khmer { background: linear-gradient(90deg, var(--saffron), var(--maroon)); }
+  .kingdom-banner.tang { background: linear-gradient(90deg, var(--maroon-dark), var(--dharma-blue)); }
+  .kingdom-banner.yamato { background: linear-gradient(90deg, var(--lotus-pink), var(--maroon)); }
+
+  .kingdom-body { padding: 2rem; }
+
+  .kingdom-body h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .kingdom-period {
+    font-size: 0.7rem;
+    color: var(--saffron);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .kingdom-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(201,168,76,0.04);
+    border-radius: 2px;
+  }
+
+  .kingdom-stat { text-align: center; }
+
+  .kingdom-stat .ks-val {
+    display: block;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+  }
+
+  .kingdom-stat .ks-key {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .kingdom-body p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.8rem; }
+
+  .kingdom-contributions {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(201,168,76,0.2);
+  }
+
+  .kingdom-contributions li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    list-style: none;
+    padding-left: 0.5rem;
+    position: relative;
+  }
+
+  .kingdom-contributions li::before {
+    content: '☸';
+    position: absolute;
+    left: -1rem;
+    color: var(--gold);
+    font-size: 0.6rem;
+    top: 0.3rem;
+  }
+
+  /* ====== SPREAD SECTION ====== */
+  #spread { background: var(--obsidian); }
+
+  .spread-map-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .spread-region {
+    padding: 1.5rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    background: rgba(26,20,16,0.6);
+    transition: all 0.3s;
+  }
+
+  .spread-region:hover {
+    border-color: rgba(201,168,76,0.25);
+    background: rgba(42,32,24,0.7);
+    transform: translateY(-3px);
+  }
+
+  .spread-flag { font-size: 2rem; margin-bottom: 0.8rem; }
+
+  .spread-region h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.04em;
+  }
+
+  .spread-region .spread-century {
+    font-size: 0.7rem;
+    color: var(--saffron);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+
+  .spread-region p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* ====== SCRIPTURES ====== */
+  #scriptures { background: var(--obsidian-mid); }
+
+  .scripture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .scripture-card {
+    padding: 2rem;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    background: rgba(13,10,7,0.7);
+    transition: all 0.3s;
+  }
+
+  .scripture-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-3px);
+  }
+
+  .scripture-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+  .scripture-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.88rem;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .scripture-card .scripture-lang {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .scripture-card p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.8; }
+
+  /* ====== HINDUISM-BUDDHISM ====== */
+  #hb-relation { background: var(--obsidian); }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    font-size: 0.88rem;
+  }
+
+  .comparison-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .comparison-table th:first-child { color: var(--text-muted); }
+  .comparison-table th:nth-child(2) { color: var(--saffron); }
+  .comparison-table th:nth-child(3) { color: var(--dharma-blue); }
+
+  .comparison-table td {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.06);
+    color: var(--text-secondary);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .comparison-table tr:hover td { background: rgba(201,168,76,0.03); }
+
+  .comparison-table td:first-child {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* ====== LESSER KNOWN FACTS ====== */
+  #rare-facts { background: var(--obsidian-mid); }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .fact-card {
+    padding: 2rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    background: rgba(13,10,7,0.7);
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .fact-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-3px);
+  }
+
+  .fact-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: rgba(201,168,76,0.08);
+  }
+
+  .fact-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+
+  .fact-card h3 {
+    font-size: 1rem;
+    color: var(--ivory);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .fact-card p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.8; }
+
+  /* ====== ARCHITECTURE / UNIVERSITIES ====== */
+  #architecture { background: var(--obsidian); }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .arch-card {
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(13,10,7,0.7);
+    transition: all 0.3s;
+  }
+
+  .arch-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
+
+  .arch-visual {
+    height: 100px;
+    background: linear-gradient(135deg, rgba(107,31,42,0.4), rgba(201,168,76,0.1), rgba(61,107,143,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .arch-body { padding: 1.5rem 2rem; }
+
+  .arch-body h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .arch-body .arch-loc {
+    font-size: 0.7rem;
+    color: var(--saffron);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .arch-body p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.8; }
+
+  /* ====== FAQ ====== */
+  #faq { background: var(--obsidian); }
+
+  /* ====== SUMMARY ====== */
+  #summary { background: var(--obsidian-mid); }
+
+  .summary-quote {
+    text-align: center;
+    padding: 4rem 2rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(107,31,42,0.1), rgba(13,10,7,0.9), rgba(61,107,143,0.1));
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .summary-quote::before {
+    content: '❝';
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 4rem;
+    color: rgba(201,168,76,0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .summary-quote blockquote {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .summary-quote cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-style: normal;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Noto Serif', serif;
+  }
+
+  .global-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .global-stat-card {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    background: rgba(13,10,7,0.7);
+  }
+
+  .global-stat-card .gsc-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .global-stat-card .gsc-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background: var(--obsidian);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .footer-symbol { font-size: 3rem; color: var(--gold); opacity: 0.6; margin-bottom: 1rem; }
+
+  .footer-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-bottom: 3rem;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Noto Serif', serif;
+    transition: color 0.3s;
+  }
+
+  .footer-nav a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(201,168,76,0.08);
+    padding-top: 2rem;
+    font-family: 'Noto Serif', serif;
+  }
+
+  /* ====== UTILITY ====== */
+  .text-gold { color: var(--gold); }
+  .text-saffron { color: var(--saffron); }
+
+  .highlight-box {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .highlight-box p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.9; }
+
+  .warning-box {
+    background: rgba(224,123,57,0.06);
+    border: 1px solid rgba(224,123,57,0.2);
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .warning-box strong { color: var(--saffron); }
+
+  strong { color: var(--ivory); font-weight: 600; }
+  em { color: var(--gold-light); }
+
+  /* Prose body text for long sections */
+  .prose {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 2;
+  }
+
+  .prose p { margin-bottom: 1.2rem; }
+  .prose h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 2rem 0 0.8rem;
+  }
+
+  /* Section separator */
+  .section-sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+  }
+
+  .section-sep::before, .section-sep::after {
+    content: '';
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4));
+  }
+
+  .section-sep::after { background: linear-gradient(270deg, transparent, rgba(201,168,76,0.4)); }
+
+  /* Scroll animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile nav */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+  }
+
+  /* Responsive table */
+  @media (max-width: 700px) {
+    .comparison-table { font-size: 0.8rem; }
+    .comparison-table th, .comparison-table td { padding: 0.7rem 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a href="#" class="nav-logo"><span class="nav-symbol">☸</span> Dharma Atlas</a>
+  <ul class="nav-links">
+    <li><a href="#intro">Origins</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#buddha-life">Life of Buddha</a></li>
+    <li><a href="#gurus">Gurus</a></li>
+    <li><a href="#teachings">Teachings</a></li>
+    <li><a href="#kingdoms">Kingdoms</a></li>
+    <li><a href="#spread">Global Spread</a></li>
+    <li><a href="#scriptures">Scriptures</a></li>
+    <li><a href="#hb-relation">Buddhism & Hinduism</a></li>
+    <li><a href="#rare-facts">Rare Facts</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <svg class="hero-mandala" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="190" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="160" fill="none" stroke="#c9a84c" stroke-width="0.3"/>
+    <circle cx="200" cy="200" r="130" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="100" fill="none" stroke="#c9a84c" stroke-width="0.3"/>
+    <circle cx="200" cy="200" r="60" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+    <polygon points="200,10 390,310 10,310" fill="none" stroke="#c9a84c" stroke-width="0.4"/>
+    <polygon points="200,390 10,90 390,90" fill="none" stroke="#c9a84c" stroke-width="0.4"/>
+    <line x1="200" y1="10" x2="200" y2="390" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="10" y1="200" x2="390" y2="200" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="55" y1="55" x2="345" y2="345" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="345" y1="55" x2="55" y2="345" stroke="#c9a84c" stroke-width="0.2"/>
+    <circle cx="200" cy="200" r="8" fill="#c9a84c"/>
+  </svg>
+
+  <div class="hero-dharma-wheel">☸</div>
+  <p class="hero-subtitle-pre">A Complete Civilizational Atlas</p>
+  <h1 class="hero-title">
+    Dharma Atlas
+    <span>The Complete Encyclopedia of Buddhism</span>
+  </h1>
+  <p class="hero-desc">
+    From the forest of Lumbini to the temples of Kyoto — a deeply researched journey through 2,600 years of Buddhist history, philosophy, kingdoms, and wisdom traditions.
+  </p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">535 BCE</span>
+      <span class="hero-stat-label">Approx. Enlightenment</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">500M+</span>
+      <span class="hero-stat-label">Global Buddhists Today</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">3</span>
+      <span class="hero-stat-label">Major Vehicles</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">40+</span>
+      <span class="hero-stat-label">Nations Reached</span>
+    </div>
+  </div>
+
+  <div class="hero-divider"></div>
+  <p class="scroll-hint">↓ &nbsp; Scroll to explore &nbsp; ↓</p>
+</section>
+
+<!-- ===== INTRODUCTION ===== -->
+<section id="intro">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Origins & Identity</span>
+      <h2 class="section-title">What is Buddhism?</h2>
+      <p class="section-subtitle">A philosophy of liberation, a religion of compassion, and a civilizational force that shaped half the world.</p>
+    </div>
+
+    <div class="intro-grid fade-in">
+      <div class="intro-card">
+        <span class="intro-card-icon">🧘</span>
+        <h3>Buddhism as Philosophy</h3>
+        <p>At its core, the Buddha's teaching is a systematic inquiry into the nature of suffering (<span class="pali-term">dukkha</span>), its origin, its cessation, and the path thereto. This is radical empiricism — he explicitly rejected blind faith and encouraged practitioners to test his teachings through personal experience. The <span class="pali-term">Kālāma Sutta</span> is the ancient world's earliest known charter of free inquiry. In this sense, Buddhism is not merely a religion but a sophisticated phenomenological and ethical philosophy that rivals Greek, Stoic, or Vedantic thought in depth and precision.</p>
+      </div>
+      <div class="intro-card">
+        <span class="intro-card-icon">🕌</span>
+        <h3>Buddhism as Religion</h3>
+        <p>Across most of Asia, Buddhism functions as a full religious system with cosmology, rituals, temples, ordained clergy, lay devotional practices, prayer, sacred calendars, merit-making traditions, and eschatology (beliefs about rebirth, karma, and liberation). In Sri Lanka, Thailand, Myanmar, Tibet, Japan, and China, Buddhism pervades cultural identity. It includes rich traditions of worship of the Buddha's relics (<span class="pali-term">stūpa</span> veneration), bodhisattvas, dharma-protectors, and in some traditions, Hindu deities who have been incorporated into the Buddhist pantheon.</p>
+      </div>
+      <div class="intro-card">
+        <span class="intro-card-icon">🌏</span>
+        <h3>Buddhism as Civilization</h3>
+        <p>Few intellectual traditions have shaped more languages, architectural forms, art styles, governance philosophies, trade routes, and educational systems than Buddhism. The great monastic universities of Nalanda, Vikramashila, and Taxila were civilizational nodes. Buddhism powered the Silk Road's cultural exchange. It gave rise to unique writing systems (Tibetan script, Sinhala, Burmese), transformed Chinese governance philosophy, and seeded Japanese aesthetic sensibility (wabi-sabi, Noh theatre, Zen gardens). To study Buddhism is to study the deepest layer of Asian civilizational history.</p>
+      </div>
+      <div class="intro-card">
+        <span class="intro-card-icon">🪷</span>
+        <h3>Buddhism & the Dharmic Framework</h3>
+        <p>Buddhism was born within the intellectual world of ancient India, where the concept of <em>dharma</em> (cosmic order, righteous conduct, truth) was already being explored by Vedic, Upanishadic, and Jain thinkers. The Buddha used the word <em>Dhamma</em> (Pali) for his teaching, investing it with a new meaning: the middle path between extreme asceticism and sensual indulgence, the law of cause and effect, and the path to liberation. This shared vocabulary — and shared concerns around karma, rebirth, liberation, meditation, and ethics — creates deep resonances between Buddhism and Hinduism, as well as genuine philosophical tensions that scholars and practitioners have debated for two millennia.</p>
+      </div>
+    </div>
+
+    <!-- Schools -->
+    <div class="section-header" style="margin-top:4rem;">
+      <span class="section-tag">Three Vehicles</span>
+      <h2 class="section-title" style="font-size:2rem;">The Three Great Schools</h2>
+    </div>
+    <div class="school-grid fade-in">
+      <div class="school-card school-theravada">
+        <h3>Theravāda</h3>
+        <p class="school-lang">The Way of the Elders · Pali Canon · Southern Buddhism</p>
+        <p>The oldest surviving school, preserving the Pali Tipiṭaka — considered the closest to the Buddha's original discourses. Theravāda emphasizes individual liberation (arahantship), strict monastic discipline (<span class="pali-term">Vinaya</span>), and insight meditation (<span class="pali-term">vipassanā</span>). Dominant in Sri Lanka, Thailand, Myanmar, Cambodia, and Laos. Its ethical framework is rooted in personal discipline: the monk as exemplar of the path to nibbāna.</p>
+        <div class="school-tags">
+          <span class="school-tag">Sri Lanka</span>
+          <span class="school-tag">Thailand</span>
+          <span class="school-tag">Myanmar</span>
+          <span class="school-tag">Pali Canon</span>
+          <span class="school-tag">Vipassanā</span>
+        </div>
+      </div>
+      <div class="school-card school-mahayana">
+        <h3>Mahāyāna</h3>
+        <p class="school-lang">The Great Vehicle · Sanskrit Sutras · Northern Buddhism</p>
+        <p>Emerging around the 1st century BCE–1st century CE, Mahāyāna expanded the spiritual goal beyond personal liberation to <em>universal liberation of all sentient beings</em> — the bodhisattva ideal. It generated vast new scriptures (Prajñāpāramitā, Lotus Sutra, Pure Land texts), sophisticated philosophies (Madhyamaka, Yogācāra), and rich traditions in China, Korea, Japan, and Vietnam. The Buddha is reconceived as an eternal, cosmic principle (<span class="pali-term">Dharmakāya</span>), not merely a historical teacher.</p>
+        <div class="school-tags">
+          <span class="school-tag">China</span>
+          <span class="school-tag">Japan</span>
+          <span class="school-tag">Korea</span>
+          <span class="school-tag">Bodhisattva Ideal</span>
+          <span class="school-tag">Emptiness</span>
+        </div>
+      </div>
+      <div class="school-card school-vajrayana">
+        <h3>Vajrayāna</h3>
+        <p class="school-lang">The Diamond Vehicle · Tantric Buddhism · Tibetan/Himalayan</p>
+        <p>Developing from the 4th century CE onward in India and flourishing in Tibet, Nepal, and Bhutan, Vajrayāna incorporates Tantric methods — visualisation, mantra, mudrā, and mandala — as accelerated paths to liberation. It envisions a universe populated by Buddhas and bodhisattvas in multiple realms, and transmits its most advanced teachings in secret lineages from teacher to student. The Tibetan tradition is perhaps the world's most complete repository of Vajrayāna instruction, preserved even as it was nearly destroyed in 1959.</p>
+        <div class="school-tags">
+          <span class="school-tag">Tibet</span>
+          <span class="school-tag">Nepal</span>
+          <span class="school-tag">Mongolia</span>
+          <span class="school-tag">Tantra</span>
+          <span class="school-tag">Mantra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box fade-in" style="margin-top:3rem;">
+      <p><strong>Historical Note on Origins:</strong> Whether Buddhism originated "within" the Hindu civilizational framework is a debated question with genuine complexity. The historical Buddha was born a Shakya prince in what is now southern Nepal, into a society that observed Vedic ritual and caste structure. He was certainly educated in the existing Indian philosophical traditions. However, his core discoveries — the Four Noble Truths, the negation of a permanent self (<span class="pali-term">anattā</span>), and his rejection of Vedic sacrificial authority — represented genuine intellectual ruptures, not mere reform. Modern scholars like Johannes Bronkhorst argue Buddhism developed in the Śramaṇa tradition (a parallel intellectual stream to Vedic Brahmanism), while others see it as a reform movement within the broader Dharmic framework. Neither characterization is fully satisfactory; Buddhism is both profoundly Indian and genuinely original.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HISTORICAL TIMELINE ===== -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">2,600 Years of History</span>
+      <h2 class="section-title">Buddhist Timeline</h2>
+      <p class="section-subtitle">From the forests of the Ganges Plain to the temples of the world</p>
+    </div>
+
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~623 BCE</div>
+          <span class="timeline-era">Pre-Enlightenment</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Birth of Siddhartha Gautama</h4>
+            <p>Born in Lumbini (present-day Nepal) into the Shakya clan. His father Śuddhodana ruled as a local chieftain. The exact date is debated — Theravāda tradition places it in 623 BCE, while modern historians estimate 480–400 BCE as more probable for his death, suggesting a birth circa 560–480 BCE.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~594 BCE</div>
+          <span class="timeline-era">The Great Renunciation</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Mahābhiniṣkramaṇa — The Going Forth</h4>
+            <p>At approximately 29 years of age, Siddhartha abandoned his palace, wife (Yaśodharā), son (Rāhula), and life of privilege after encountering the "Four Sights": an old man, a sick man, a corpse, and a wandering ascetic. He joined the Śramaṇa tradition and studied under teachers Āḷāra Kālāma and Uddaka Rāmaputta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~535 BCE</div>
+          <span class="timeline-era">Enlightenment</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot" style="background:var(--gold-light); box-shadow: 0 0 0 5px rgba(201,168,76,0.3);"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Enlightenment at Bodh Gayā</h4>
+            <p>After six years of intense ascetic practice followed by abandonment of extreme austerity, Siddhartha sat beneath the Bodhi tree (a fig tree, <em>Ficus religiosa</em>) at Bodh Gayā (Bihar) and attained full awakening — <em>sambodhi</em>. He became the Buddha: "the Awakened One." This moment is considered the axial event of Buddhist history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~528 BCE</div>
+          <span class="timeline-era">First Turning</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>First Sermon at Sarnath — Dhammacakkappavattana</h4>
+            <p>The Buddha taught the Four Noble Truths and the Eightfold Path to five former companions at the Deer Park (Isipatana) near Sarnath, Varanasi. This event is called "Setting the Wheel of Dharma in Motion." It marks the founding of the Three Jewels: Buddha, Dharma, and Sangha.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~483 BCE</div>
+          <span class="timeline-era">Parinirvāṇa</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Mahāparinibbāna — Final Passing</h4>
+            <p>The Buddha passed away at Kuśīnagara (present-day Kushinagar, UP) at approximately age 80 after a 45-year teaching career spanning the kingdoms of Magadha, Kosala, Vajji, and surrounding regions. His final words: <em>"All conditioned things are impermanent. Work out your salvation with diligence."</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~483 BCE</div>
+          <span class="timeline-era">First Council</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>First Buddhist Council — Rājagriha</h4>
+            <p>Five hundred arahants convened at Rājagriha under the patronage of King Ajātaśatru to compile the Buddha's teachings. Ānanda recited the Sutta Piṭaka (discourses); Upāli recited the Vinaya Piṭaka (monastic rules). This oral compilation formed the kernel of the Tipiṭaka.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~383 BCE</div>
+          <span class="timeline-era">Second Council</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Second Buddhist Council — Vesāli</h4>
+            <p>A dispute over monastic rules caused the first major schism. The Mahāsāṃghikas ("those of the great assembly") separated from the Sthaviravādins ("elders"). This split eventually gave rise to the diverse schools: 18 early schools according to some accounts, and the eventual development of Mahāyāna thought.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~250 BCE</div>
+          <span class="timeline-era">Ashokan Era</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot" style="background:var(--saffron); box-shadow: 0 0 0 5px rgba(224,123,57,0.3);"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Emperor Ashoka Converts & Buddhism Goes Global</h4>
+            <p>After the traumatic Kalinga War (~261 BCE), Mauryan Emperor Ashoka embraced Buddhism and became history's greatest Buddhist patron. He sent missionaries to Sri Lanka (his son Mahinda, daughter Saṅghamittā), Hellenistic kingdoms (Egypt, Syria, Macedonia), and across India. His inscriptions — carved on rocks and pillars — are the earliest physical records of Buddhist teachings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~100 BCE – 100 CE</div>
+          <span class="timeline-era">Mahāyāna Emergence</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Rise of Mahāyāna Sūtras</h4>
+            <p>New scriptures began circulating claiming to represent a "higher" or "greater" vehicle (<em>mahāyāna</em>). The Prajñāpāramitā texts (Perfection of Wisdom), including the Heart Sūtra and Diamond Sūtra, were among the first. Mahāyāna reinterpreted the Buddha as a cosmic being and promoted the bodhisattva ideal as the highest spiritual aspiration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~150 CE</div>
+          <span class="timeline-era">Madhyamaka</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Nāgārjuna & the Madhyamaka Revolution</h4>
+            <p>The philosopher-monk Nāgārjuna composed the <em>Mūlamadhyamakakārikā</em>, establishing the Madhyamaka (Middle Way) school of philosophy, arguably the most important philosophical development in Buddhist history. His concept of <em>śūnyatā</em> (emptiness) — that all phenomena are empty of inherent existence — profoundly shaped Tibetan, Chinese, and Japanese Buddhism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~320–550 CE</div>
+          <span class="timeline-era">Golden Age</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot" style="background:var(--gold); box-shadow: 0 0 0 5px rgba(201,168,76,0.3);"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Gupta Empire — Buddhist Art's Golden Age</h4>
+            <p>Though the Gupta emperors were primarily Vaishnava Hindus, they patronized Buddhism extensively. Nalanda University flourished. The Ajanta cave paintings and Mathura/Sarnath Buddha sculptures were produced. Chinese pilgrim Faxian visited (~400 CE) and documented flourishing Buddhist centres across India.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">~750–1200 CE</div>
+          <span class="timeline-era">Pala Empire</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Pāla Empire — Last Great Buddhist Patrons of India</h4>
+            <p>The Pāla dynasty of Bengal and Bihar became the last great Buddhist imperial patrons in India. They built and endowed Vikramashila, Odantapuri, and Somapura (Paharpur) monasteries. Tibetan Buddhism received much of its philosophical and ritual tradition from Pāla-era scholars like Atīśa Dīpaṃkara Śrījñāna.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">1193 CE</div>
+          <span class="timeline-era">Decline in India</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot" style="background:var(--maroon);"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>Destruction of Nalanda — Buddhism's Darkest Hour in India</h4>
+            <p>The Ghurid general Bakhtiyar Khilji destroyed Nalanda, Vikramashila, and other monastic universities. Thousands of monks were killed; libraries containing centuries of manuscripts were burned. Buddhism, already weakened by Shaivite and Vaishnava reform movements, virtually disappeared from the Indian subcontinent — only to survive and thrive in Tibet, Southeast Asia, China, Japan, Korea, and Sri Lanka.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-year">1956 CE</div>
+          <span class="timeline-era">Modern Revival</span>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot" style="background:var(--jade);"></div></div>
+        <div class="timeline-right">
+          <div class="timeline-content">
+            <h4>B.R. Ambedkar's Mass Conversion — Buddhism Returns to India</h4>
+            <p>On Ashoka Vijaya Dashami (October 14, 1956), Dr. B.R. Ambedkar — jurist, social reformer, and chief architect of India's constitution — converted to Buddhism along with approximately 600,000 Dalit followers in Nagpur, in one of the largest mass religious conversions in history. This inaugurated the Navayana ("New Vehicle") movement and began a significant Buddhist revival in India.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIFE OF BUDDHA ===== -->
+<section id="buddha-life">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Awakened One</span>
+      <h2 class="section-title">Life of Gautama Buddha</h2>
+      <p class="section-subtitle">Prince, ascetic, teacher — the man whose insight changed civilization</p>
+    </div>
+
+    <div class="life-stages fade-in">
+      <div class="life-stage-card">
+        <div class="life-stage-number">01</div>
+        <div class="life-stage-icon">🌸</div>
+        <h3>Birth & Royal Life</h3>
+        <div class="stage-date">~563–534 BCE (traditional) · Lumbini, Nepal</div>
+        <p>Born Siddhārtha Gautama in the Sakya republic (then within the cultural sphere of northern India) to Queen Māyādevī and King Śuddhodana. According to tradition, he was born as his mother grasped a sal tree branch in the Lumbini grove. The sage Asita prophesied he would become either a Chakravartin (universal king) or a Buddha. His mother died seven days after his birth; he was raised by his aunt Mahāpajāpatī Gotamī. He was educated in statecraft, martial arts, and philosophy, and married Yaśodharā at 16.</p>
+        <p class="stage-place">📍 Lumbini (present-day Nepal) · Kapilavastu</p>
+      </div>
+
+      <div class="life-stage-card">
+        <div class="life-stage-number">02</div>
+        <div class="life-stage-icon">🚪</div>
+        <h3>The Four Sights & Renunciation</h3>
+        <div class="stage-date">~534 BCE · Kapilavastu</div>
+        <p>At around age 29, despite his father's efforts to shield him from suffering, Siddhartha encountered the <strong>Four Sights</strong>: an aged man, a sick person, a corpse, and a wandering monk (<em>śramaṇa</em>). Deeply moved by the reality of impermanence and suffering, he left the palace at night — the <em>Mahābhiniṣkramaṇa</em> (Great Renunciation). He first studied under Āḷāra Kālāma (mastering the formless absorptions) then Uddaka Rāmaputta, but found their systems insufficient for complete liberation.</p>
+        <p class="stage-place">📍 Kapilavastu · Rājagriha · Magadha</p>
+      </div>
+
+      <div class="life-stage-card">
+        <div class="life-stage-number">03</div>
+        <div class="life-stage-icon">⚡</div>
+        <h3>Enlightenment at Bodh Gayā</h3>
+        <div class="stage-date">~528 BCE · Bodh Gayā, Bihar</div>
+        <p>After six years of severe asceticism with five companions — almost dying of starvation — he abandoned extreme austerity, accepted milk rice from a young woman Sujātā, and sat in meditation under the Bodhi tree. Through the night he reportedly experienced three "knowledges": recollection of past lives, comprehension of karma and rebirth, and the destruction of the āsavas (mental fermentations/defilements). At dawn he attained <em>anuttara-samyak-saṃbodhi</em> — complete unsurpassed enlightenment. He was now the Tathāgata ("the Thus-Gone") and the Buddha.</p>
+        <p class="stage-place">📍 Bodh Gayā (Uruvela), Magadha</p>
+      </div>
+
+      <div class="life-stage-card">
+        <div class="life-stage-number">04</div>
+        <div class="life-stage-icon">☸️</div>
+        <h3>First Sermon — Dhamma Set in Motion</h3>
+        <div class="stage-date">~528 BCE · Sarnath (Isipatana), Varanasi</div>
+        <p>Seven weeks after enlightenment, he walked to Sarnath and taught the five former companions who had abandoned him. This <em>Dhammacakkappavattana Sutta</em> ("Discourse Setting the Wheel of Truth in Motion") laid out the Four Noble Truths and Eightfold Path. All five became arahants. The first Buddhist community — Buddha, Dhamma, and Sangha (the Three Jewels) — was established. Kondañña was the first to attain stream-entry: the Buddha declared "Kondañña knows! Kondañña knows!" (<em>aññāsi vata bho Kondañño</em>).</p>
+        <p class="stage-place">📍 Deer Park (Isipatana), Sarnath, Varanasi</p>
+      </div>
+
+      <div class="life-stage-card">
+        <div class="life-stage-number">05</div>
+        <div class="life-stage-icon">🏛️</div>
+        <h3>45 Years of Teaching</h3>
+        <div class="stage-date">~528–483 BCE · Gangetic Plain</div>
+        <p>For 45 years the Buddha traversed the kingdoms of Magadha, Kosala, Vajji, and Kāsī — roughly present-day Bihar and UP — teaching to all regardless of caste, gender, or social status. Key patrons included <strong>King Bimbisāra</strong> of Magadha (who donated the Veḷuvana bamboo grove), <strong>King Pasenadi</strong> of Kosala, and the merchant <strong>Anāthapiṇḍika</strong> (who built Jetavana monastery). He also taught his family — his son Rāhula became a monk; his aunt Mahāpajāpatī became the first Buddhist nun, founding the Order of Nuns (<em>Bhikkhunī Saṅgha</em>). Notable disciples included Sāriputta and Moggallāna (his two chief disciples), Ānanda (personal attendant), Mahākassapa, and Upāli.</p>
+        <p class="stage-place">📍 Rājagriha · Sāvatthi · Vesāli · Kusinārā</p>
+      </div>
+
+      <div class="life-stage-card">
+        <div class="life-stage-number">06</div>
+        <div class="life-stage-icon">🌿</div>
+        <h3>Mahāparinibbāna</h3>
+        <div class="stage-date">~483 BCE · Kushinagar, UP</div>
+        <p>At approximately 80 years old, the Buddha fell ill after eating a meal — possibly a type of pork or mushroom — offered by the blacksmith Cunda. He lay between two sal trees at Kushinagar and passed into final nirvāṇa. His last discourse urged his monks: <em>"Vayadhammā saṅkhārā, appamādena sampādethā"</em> — "All conditioned things are impermanent; work out your salvation with diligence." He was cremated; his relics were divided among eight kingdoms and enshrined in stūpas — the origin of the Buddhist pilgrimage tradition.</p>
+        <p class="stage-place">📍 Kushinagar (Kuśīnagara), Uttar Pradesh</p>
+      </div>
+    </div>
+
+    <div class="highlight-box fade-in" style="margin-top:2rem;">
+      <p><strong>Scholarly Note on Dates:</strong> There are two main chronological traditions for the Buddha's dates. The <em>Long Chronology</em> (traditional in Theravāda) places his death in 544/543 BCE. The <em>Short Chronology</em> favoured by modern scholars places his death around 400 BCE, giving a birth date around 480 BCE. This debate remains unresolved. The "corrected long chronology" (circa 486 BCE for death) is a compromise position. The Ashokan inscriptions (circa 250 BCE) refer to the Dharma without giving dates, and Chinese records provide some secondary evidence. The uncertainty does not affect the authenticity of the teachings, only their precise historical placement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GURUS SECTION ===== -->
+<section id="gurus">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Masters & Lineages</span>
+      <h2 class="section-title">Buddhist Gurus & Patriarchs</h2>
+      <p class="section-subtitle">The luminaries who transmitted, expanded, and protected the Dharma across millennia</p>
+    </div>
+
+    <div class="warning-box fade-in">
+      <strong>Note on Buddhist "Guru" Systems:</strong> Unlike Sikhism's definitive Ten Gurus, Buddhism has no universal succession system. Different schools maintain different lineages. The Chan/Zen tradition counts 28 Indian patriarchs and 6 Chinese patriarchs. The Tibetan tradition traces lineages through specific teacher-student relationships. Theravāda venerates the great arahants of the early Sangha. What follows represents the most historically significant teachers across traditions.
+    </div>
+
+    <div class="guru-grid fade-in">
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">☸️</div>
+          <div class="guru-header-info">
+            <h3>Gautama Buddha</h3>
+            <div class="guru-dates">~563–483 BCE (trad.) · The Awakened One</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-era">Foundational</span>
+            <span class="guru-badge badge-region">Gangetic India</span>
+            <span class="guru-badge badge-school">All Schools</span>
+          </div>
+          <p>The historical founder and primary teacher of Buddhism. His 45 years of teaching covered ethics (<em>sīla</em>), meditation (<em>samādhi</em>), and wisdom (<em>prajñā</em>). He spoke in Pali and regional Prakrits — never Sanskrit. His teachings were preserved orally for 400+ years before being committed to writing.</p>
+          <div class="guru-contribution">Core contribution: The Middle Path; Four Noble Truths; Eightfold Path; the doctrine of no-self (<em>anattā</em>); dependent origination (<em>paṭicca-samuppāda</em>); founding the Sangha including the Order of Nuns.</div>
+          <p class="guru-texts"><strong>Texts:</strong> Tipiṭaka (Pali Canon), Āgamas (Sanskrit), all major Buddhist scriptures trace to his teaching</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">🪷</div>
+          <div class="guru-header-info">
+            <h3>Nāgārjuna</h3>
+            <div class="guru-dates">~150–250 CE · Father of Madhyamaka</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Madhyamaka</span>
+            <span class="guru-badge badge-region">South India (Andhra)</span>
+            <span class="guru-badge badge-era">~2nd Century CE</span>
+          </div>
+          <p>Perhaps the most influential Buddhist philosopher after the Buddha himself. Born in South India, possibly near Nāgārjunakonda (Andhra Pradesh), Nāgārjuna systematised the concept of <em>śūnyatā</em> (emptiness) and the "two truths" doctrine (conventional and ultimate). His dialectical method (<em>prasaṅga</em>) used reductio ad absurdum to dismantle all fixed philosophical positions. He is venerated as a bodhisattva in both Mahāyāna and Vajrayāna traditions. Tibetan Buddhism regards him as one of the "Six Ornaments" of Indian Buddhism.</p>
+          <div class="guru-contribution">Founded Madhyamaka school; argued that all phenomena are empty of inherent self-existence (<em>svabhāva</em>), yet conventionally function; established the philosophical foundation for Tibetan Buddhist philosophy and Zen's "not-knowing" orientation.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Mūlamadhyamakakārikā, Vigrahavyāvartanī, Ratnāvalī, Seventy Verses on Emptiness</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">📿</div>
+          <div class="guru-header-info">
+            <h3>Asaṅga</h3>
+            <div class="guru-dates">~4th Century CE · Yogācāra Founder</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Yogācāra</span>
+            <span class="guru-badge badge-region">Gandhāra / Northwest India</span>
+            <span class="guru-badge badge-era">~310–390 CE</span>
+          </div>
+          <p>A converted Sarvāstivādin monk who — according to tradition — received direct instruction from the bodhisattva Maitreya in a celestial realm and returned with the five Yogācāra treatises (<em>Pañca Maitreya Dharma</em>). He founded the Yogācāra ("yoga practice") school, which argued that mind-only (<em>vijñaptimātratā</em>) is the fundamental reality — external objects are projections of consciousness. This is not idealism exactly, but a sophisticated epistemological position about how experience is structured.</p>
+          <div class="guru-contribution">Founded Yogācāra/Vijñānavāda; doctrine of store-consciousness (<em>ālayavijñāna</em>); systematised bodhisattva practice levels (<em>bhūmis</em>); wrote comprehensive encyclopaedias of Abhidharma and Mahāyāna doctrine.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Mahāyānasaṃgraha, Abhidharmasamuccaya, Yogācārabhūmiśāstra (attributed)</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">📖</div>
+          <div class="guru-header-info">
+            <h3>Vasubandhu</h3>
+            <div class="guru-dates">~4th–5th Century CE · Master of Abhidharma</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Abhidharma / Yogācāra</span>
+            <span class="guru-badge badge-region">Gandhāra / Puruṣapura</span>
+            <span class="guru-badge badge-era">~4th–5th Century</span>
+          </div>
+          <p>Brother of Asaṅga, initially a Sarvāstivādin Abhidharma master. His <em>Abhidharmakośa</em> ("Treasury of Higher Knowledge") remains the standard reference work for Buddhist psychology and metaphysics across Theravāda, Tibetan, and East Asian traditions. Converted to Mahāyāna by Asaṅga, he then wrote extensively in the Yogācāra tradition. He composed commentaries on key Mahāyāna sūtras and helped systematise the school's epistemology.</p>
+          <div class="guru-contribution">Comprehensive synthesis of Abhidharma; Yogācāra epistemology; his <em>Abhidharmakośa</em> was translated into Chinese (by Xuanzang) and Tibetan, and remains indispensable for Buddhist philosophical education today.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Abhidharmakośa, Karmasiddhiprakaraṇa, Vijñaptimātratāsiddhi (Thirty Verses)</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">🏔️</div>
+          <div class="guru-header-info">
+            <h3>Padmasambhava</h3>
+            <div class="guru-dates">~8th Century CE · Guru Rinpoche</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Vajrayāna / Nyingma</span>
+            <span class="guru-badge badge-region">Oddiyana (NW India/Pakistan) · Tibet</span>
+            <span class="guru-badge badge-era">~8th Century CE</span>
+          </div>
+          <p>Known as <em>Guru Rinpoche</em> ("Precious Teacher") in Tibet, Padmasambhava is credited with establishing Vajrayāna Buddhism in Tibet at the invitation of King Trisong Deutsen (~755 CE). He co-founded Samye — Tibet's first monastery — with Abbot Śāntarakṣita. A tantric master of legendary powers, he is said to have subdued local spirits and converted them into dharma-protectors. He also concealed "treasure texts" (<em>terma</em>) to be rediscovered by future teachers (<em>tertöns</em>). He is considered a "second Buddha" by the Nyingma school.</p>
+          <div class="guru-contribution">Establishment of Buddhism in Tibet; foundation of Nyingma lineage; concept of <em>terma</em> (hidden treasure texts); synthesis of Indian Vajrayāna with Tibetan cultural and spiritual landscape.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Bardo Tödröl (Tibetan Book of the Dead, attributed); Namchö cycle</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">🫧</div>
+          <div class="guru-header-info">
+            <h3>Bodhidharma</h3>
+            <div class="guru-dates">~5th–6th Century CE · First Chan Patriarch</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Chan / Zen</span>
+            <span class="guru-badge badge-region">South India · China</span>
+            <span class="guru-badge badge-era">~5th–6th Century CE</span>
+          </div>
+          <p>A South Indian monk who traveled to China and is venerated as the 28th Indian Buddhist patriarch and the 1st Chinese Chan (Zen) patriarch. Traditional accounts describe his famous nine-year wall-gazing meditation at Shaolin monastery and a famous exchange with Emperor Wu of Liang ("Vast emptiness — nothing holy"). Historical details are debated; some scholars question whether a single figure or a composite legend. But the tradition he represented — mind-to-mind transmission beyond words and texts — became the foundation of Zen Buddhism in Japan and Chan in China.</p>
+          <div class="guru-contribution">Transmission of direct mind-to-mind Zen tradition to China; Shaolin martial arts tradition (legendary); key Chan principle: "not relying on words and letters; pointing directly at the human mind."</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Two Entrances and Four Practices (attributed); Bloodstream Sermon</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">⭐</div>
+          <div class="guru-header-info">
+            <h3>Atīśa Dīpaṃkara</h3>
+            <div class="guru-dates">982–1054 CE · Lamp of the Dharma</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Kadam / Gelug lineage</span>
+            <span class="guru-badge badge-region">Bengal (Vikramashila) · Tibet</span>
+            <span class="guru-badge badge-era">~10th–11th Century CE</span>
+          </div>
+          <p>A great Bengali master born into a royal family who became chief abbot of Vikramashila University — one of the greatest monastic universities in history. At 60, he accepted an invitation from the king of Western Tibet and traveled there to revive Buddhism that had been suppressed. His work in Tibet initiated the "Second Diffusion" (<em>chidar</em>) of Buddhism. He emphasised the Lam Rim ("stages of the path") approach — systematic progression from basic ethics to bodhicitta to tantric practice.</p>
+          <div class="guru-contribution">Revival of Buddhism in Tibet; Lam Rim tradition foundational to the Gelug school (which produced the Dalai Lamas); emphasis on Bodhicitta (awakening mind); integration of Sūtrayāna and Vajrayāna.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Bodhipathapradīpa (Lamp for the Path to Enlightenment)</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">🌙</div>
+          <div class="guru-header-info">
+            <h3>Candrakīrti</h3>
+            <div class="guru-dates">~600–650 CE · Prāsaṅgika Mādhyamika</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Prāsaṅgika Madhyamaka</span>
+            <span class="guru-badge badge-region">South India / Nālandā</span>
+            <span class="guru-badge badge-era">7th Century CE</span>
+          </div>
+          <p>A scholar at Nālandā who defended and deepened Nāgārjuna's Madhyamaka philosophy against both Yogācāra critics and rival Madhyamaka interpretations. His <em>Prasannapadā</em> ("Clear Words") is the only complete surviving Sanskrit commentary on Nāgārjuna's <em>Mūlamadhyamakakārikā</em>. He established the Prāsaṅgika position — the most rigorous interpretation of emptiness — which became the definitive philosophical position of Tibetan Buddhism, especially the Gelug school.</p>
+          <div class="guru-contribution">Definitive interpretation of Madhyamaka as Prāsaṅgika; <em>Madhyamakāvatāra</em> (Guide to the Middle Way) is a standard curriculum text in Tibetan monasteries to this day.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Madhyamakāvatāra, Prasannapadā, Catuḥśatakāṭīkā</p>
+        </div>
+      </div>
+
+      <div class="guru-card">
+        <div class="guru-header">
+          <div class="guru-avatar">🎋</div>
+          <div class="guru-header-info">
+            <h3>Huineng (Hui-neng)</h3>
+            <div class="guru-dates">638–713 CE · Sixth Chan Patriarch</div>
+          </div>
+        </div>
+        <div class="guru-body">
+          <div class="guru-meta">
+            <span class="guru-badge badge-school">Chan / Southern School</span>
+            <span class="guru-badge badge-region">Guangdong, China</span>
+            <span class="guru-badge badge-era">7th–8th Century CE</span>
+          </div>
+          <p>An illiterate woodcutter who became the Sixth Chan Patriarch and is considered the effective founder of Chinese Chan as it came to dominate. He defeated the learned Shenxiu in composing a verse on the nature of mind, demonstrating that even the concept of "mind as mirror that must be kept clean" is dualistic clinging. His "sudden enlightenment" approach (vs. "gradual cultivation") became the dominant paradigm of Chan/Zen. The <em>Platform Sūtra</em> is the only Chinese text elevated to "sūtra" status.</p>
+          <div class="guru-contribution">Sudden enlightenment tradition; "Southern School" of Chan; all major Japanese Zen schools (Rinzai, Sōtō) descend from his lineage; the <em>Platform Sūtra</em> remains a foundational Zen text.</div>
+          <p class="guru-texts"><strong>Key Texts:</strong> Platform Sūtra of the Sixth Patriarch</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEACHINGS ===== -->
+<section id="teachings">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Dharma</span>
+      <h2 class="section-title">Core Teachings & Philosophy</h2>
+      <p class="section-subtitle">The intellectual architecture of one of humanity's deepest wisdom traditions</p>
+    </div>
+
+    <div class="teachings-hero fade-in">
+      <p style="font-family:'Cinzel Decorative',serif; font-size:1rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:1rem;">☸ &nbsp; THREE MARKS OF EXISTENCE &nbsp; ☸</p>
+      <div style="display:flex; justify-content:center; gap:4rem; flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">⏳</div>
+          <strong style="color:var(--ivory);">Anicca</strong>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Impermanence</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">😔</div>
+          <strong style="color:var(--ivory);">Dukkha</strong>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Suffering / Unsatisfactoriness</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🫧</div>
+          <strong style="color:var(--ivory);">Anattā</strong>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Non-self</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Four Noble Truths -->
+    <div class="section-sep fade-in">☸ Four Noble Truths ☸</div>
+    <div class="noble-truths fade-in">
+      <div class="truth-card">
+        <p class="truth-num">First Truth</p>
+        <h3>Dukkha</h3>
+        <p class="truth-pali">Suffering Exists</p>
+        <p>Life is permeated by unsatisfactoriness. Birth, aging, illness, death, separation from the pleasant, union with the unpleasant, not getting what one wants — all are forms of <em>dukkha</em>. This includes gross physical pain as well as the subtle dissatisfaction inherent in conditioned existence. The Buddha's diagnosis: existence structured around craving is structurally unsatisfactory.</p>
+      </div>
+      <div class="truth-card">
+        <p class="truth-num">Second Truth</p>
+        <h3>Samudāya</h3>
+        <p class="truth-pali">Origin of Suffering</p>
+        <p>The origin of suffering is <em>taṇhā</em> — craving/thirst. Specifically: craving for sensual pleasure (<em>kāma-taṇhā</em>), craving for continued existence (<em>bhava-taṇhā</em>), and craving for annihilation (<em>vibhava-taṇhā</em>). Craving is rooted in the three poisons: greed (<em>lobha</em>), hatred (<em>dosa</em>), and delusion (<em>moha</em>).</p>
+      </div>
+      <div class="truth-card">
+        <p class="truth-num">Third Truth</p>
+        <h3>Nirodha</h3>
+        <p class="truth-pali">Cessation is Possible</p>
+        <p>The complete cessation of craving — <em>nibbāna</em> (Skt. nirvāṇa). Not annihilation, not a heavenly realm, but a state beyond conditioned existence: the "quenching" of the fires of greed, hatred, and delusion. The Buddha's great proclamation: liberation is possible. This is not pessimism — it is the therapeutic assertion that the disease has a cure.</p>
+      </div>
+      <div class="truth-card">
+        <p class="truth-num">Fourth Truth</p>
+        <h3>Magga</h3>
+        <p class="truth-pali">The Path to Cessation</p>
+        <p>The Noble Eightfold Path — the practical prescription for liberation. Structured into three groups: Wisdom (<em>paññā</em>: right view, right intention), Ethics (<em>sīla</em>: right speech, action, livelihood), and Meditation (<em>samādhi</em>: right effort, mindfulness, concentration). Not a sequential program but an integrated way of living.</p>
+      </div>
+    </div>
+
+    <!-- Eightfold Path -->
+    <div class="section-sep fade-in">☸ The Noble Eightfold Path ☸</div>
+    <div class="eightfold-grid fade-in">
+      <div class="path-item">
+        <div class="path-category">Wisdom · Paññā</div>
+        <div class="path-icon">👁️</div>
+        <h4>Right View</h4>
+        <p class="path-pali">Sammā diṭṭhi</p>
+        <p>Understanding the Four Noble Truths, karma, and the nature of reality as impermanent and without a fixed self. The foundation upon which the entire path rests.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Wisdom · Paññā</div>
+        <div class="path-icon">💭</div>
+        <h4>Right Intention</h4>
+        <p class="path-pali">Sammā saṅkappa</p>
+        <p>Intentions of renunciation, non-ill-will, and harmlessness — distinguishing the path from worldly motivation governed by sense-craving, aversion, and cruelty.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Ethics · Sīla</div>
+        <div class="path-icon">🗣️</div>
+        <h4>Right Speech</h4>
+        <p class="path-pali">Sammā vācā</p>
+        <p>Refraining from false speech, divisive speech, harsh speech, and idle chatter. Speaking what is true, kind, helpful, and timely.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Ethics · Sīla</div>
+        <div class="path-icon">🤲</div>
+        <h4>Right Action</h4>
+        <p class="path-pali">Sammā kammanta</p>
+        <p>Refraining from killing, stealing, and sexual misconduct. The physical dimension of ethical conduct that supports mental clarity and social harmony.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Ethics · Sīla</div>
+        <div class="path-icon">🌾</div>
+        <h4>Right Livelihood</h4>
+        <p class="path-pali">Sammā ājīva</p>
+        <p>Earning a living in ways that do not harm other beings — avoiding trade in weapons, living beings, meat, intoxicants, and poisons. Work as spiritual practice.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Meditation · Samādhi</div>
+        <div class="path-icon">⚙️</div>
+        <h4>Right Effort</h4>
+        <p class="path-pali">Sammā vāyāma</p>
+        <p>The four efforts: prevent unwholesome states from arising; abandon those that have arisen; cultivate wholesome states; maintain those that have arisen.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Meditation · Samādhi</div>
+        <div class="path-icon">🧠</div>
+        <h4>Right Mindfulness</h4>
+        <p class="path-pali">Sammā sati</p>
+        <p>Sustained, non-reactive attention to the four foundations: body, feelings, mind-states, and dharmas. The basis of vipassanā meditation and modern mindfulness science.</p>
+      </div>
+      <div class="path-item">
+        <div class="path-category">Meditation · Samādhi</div>
+        <div class="path-icon">🧘</div>
+        <h4>Right Concentration</h4>
+        <p class="path-pali">Sammā samādhi</p>
+        <p>The four jhānas — progressively deeper states of meditative absorption characterised by increasing stillness, equanimity, and clarity. The "container" for liberating insight.</p>
+      </div>
+    </div>
+
+    <!-- Philosophy accordion -->
+    <div class="section-sep fade-in">☸ Advanced Philosophy ☸</div>
+    <div class="philosophy-accordion fade-in">
+
+      <details class="accordion-item">
+        <summary class="accordion-header">
+          Śūnyatā — Emptiness: The Most Misunderstood Concept in Buddhism
+          <span class="acc-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <p><em>Śūnyatā</em> (emptiness) does not mean "nothingness" or "void" in a nihilistic sense. It is a precise philosophical assertion: all phenomena are <strong>empty of inherent existence</strong> (<em>svabhāva</em>). Nothing exists independently, from its own side, with its own fixed essence. Everything exists in dependence upon other things, upon causes and conditions, and upon conceptual designation.</p>
+          <h4>Nāgārjuna's Key Argument</h4>
+          <p>If any phenomenon had inherent existence, it could never change — it would be forever fixed. But we observe that all things change. Therefore nothing has inherent existence. The flower that blooms and withers, the person who grows old, the nation that rises and falls — all are empty of any unchanging essence. This is not pessimism; it is liberation. When we stop clinging to things as having a fixed nature, we are freed from the suffering that arises from such clinging.</p>
+          <h4>Emptiness of Emptiness</h4>
+          <p>Crucially, Nāgārjuna also argues that emptiness itself is empty — i.e., emptiness is not an ultimate substance or ground. This prevents the Buddhist meditator from reifying emptiness into a new kind of absolute. The two truths doctrine balances this: conventionally, things appear and function; ultimately, they are empty. Both truths must be held simultaneously — neither pure appearance nor pure void.</p>
+          <h4>Tibetan Debates on Śūnyatā</h4>
+          <p>The Gelug school (following Candrakīrti's Prāsaṅgika interpretation) argues that emptiness means only the negation of inherent existence, not the negation of conventional existence. The Jonang school controversially argued for a "Great Emptiness" (<em>zhentong</em>) — things are empty of what they are not (conventional reality), but not empty of what they are (buddha-nature). This debate continues today in Tibetan philosophical circles.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="accordion-header">
+          Paṭicca-samuppāda — Dependent Origination: Reality as a Web
+          <span class="acc-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <p>The Buddha's most radical metaphysical teaching: nothing exists independently. The 12 links of dependent origination describe how suffering arises and can be dissolved:</p>
+          <p><strong>Ignorance → Mental formations → Consciousness → Name-and-form → Six sense bases → Contact → Feeling → Craving → Clinging → Becoming → Birth → Old age, death, sorrow</strong></p>
+          <p>This cycle (<em>bhavacakra</em>) runs perpetually in samsāra. By breaking ignorance with wisdom, the entire chain collapses. Dependent origination also describes the fabric of reality: the universe is not a collection of independent objects but an interdependent web of processes — anticipating modern systems theory, quantum entanglement discussions, and ecology by 2,500 years.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="accordion-header">
+          Bodhicitta & the Bodhisattva Ideal — Mahāyāna's Revolutionary Contribution
+          <span class="acc-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <p><em>Bodhicitta</em> means "awakening mind" — the altruistic aspiration to attain full Buddhahood for the benefit of all sentient beings. The Mahāyāna revolutionary claim: seeking personal liberation (the arahant ideal) is a lesser goal. The greatest aspiration is to become a Buddha — one who has developed all qualities of wisdom and compassion to the maximum degree — and to liberate all beings in all realms from suffering.</p>
+          <h4>The Bodhisattva Path</h4>
+          <p>A bodhisattva practices the six (or ten) pāramitās (perfections): generosity, ethics, patience, effort, meditation, and wisdom (+ skillful means, aspiration, power, knowledge). The path is measured in eons and multiple lifetimes. Major bodhisattvas venerated in Mahāyāna include: <strong>Avalokiteśvara</strong> (compassion — Guanyin in China, Kannon in Japan, Chenrezig in Tibet), <strong>Mañjuśrī</strong> (wisdom), <strong>Samantabhadra</strong> (action), <strong>Kṣitigarbha</strong> (vow to liberate hell beings), and <strong>Maitreya</strong> (the future Buddha).</p>
+          <h4>Śāntideva's Masterwork</h4>
+          <p>The 8th-century scholar Śāntideva's <em>Bodhicaryāvatāra</em> (Guide to the Bodhisattva's Way of Life) is perhaps the most beloved Mahāyāna text after the major sūtras. Its chapter on patience (<em>kṣānti</em>) is considered a masterpiece of ethical philosophy: the anger that arises toward a person who hurts you is illogical — the person is themselves driven by causes and conditions, just as a disease is not chosen. The Dalai Lama has called it his favourite text.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="accordion-header">
+          Buddhist Epistemology — How Do We Know What We Know?
+          <span class="acc-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <p>The Pramāṇa ("valid cognition") tradition, founded by Dignāga (5th century CE) and systematised by Dharmakīrti (7th century CE) at Nālandā, is one of ancient India's most sophisticated epistemological systems — rivalling Aristotelian logic in precision.</p>
+          <p>Dharmakīrti established two valid sources of knowledge: <strong>perception</strong> (<em>pratyakṣa</em>) — direct sensory and yogic experience; and <strong>inference</strong> (<em>anumāna</em>) — valid logical reasoning. He argued against the Brahmanical position that the Vedas are a third valid source (testimony), requiring instead that all scriptural claims be ultimately verifiable by perception or inference.</p>
+          <p>This tradition was transmitted to Tibet where it became the foundation of monastic debate training — the famous <em>Gelug</em> scholastic curriculum that monks practice through rapid-fire formal debate, still practiced today in Tibetan exile monasteries.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="accordion-header">
+          Karma & Rebirth — The Buddhist Understanding
+          <span class="acc-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <p>The Buddha accepted the basic Indian framework of karma (intentional action) and rebirth, but significantly modified it. In orthodox Hinduism, karma is often tied to a permanent soul (<em>ātman</em>) that transmigrates. The Buddha denied a permanent self (<em>anattā</em>): there is no unchanging soul to transmigrate. What continues between lives is a stream of consciousness (<em>vijñāna-santāna</em>) — a continuity of causally connected mental moments, like a flame passed from candle to candle. No substance is transferred; only the pattern of causes.</p>
+          <h4>What is Karma?</h4>
+          <p>Karma literally means "action" — specifically, <strong>intentional action</strong> (<em>cetanā</em>). The Buddha declared: "It is intention (<em>cetanā</em>) that I call karma." Physical actions matter, but the mental intention behind them is the karmically significant element. Good intentions create positive karma (merit, <em>puñña</em>); harmful intentions create negative karma. These shape future experiences — not as divine punishment, but as natural consequence, like seeds and their fruit.</p>
+          <h4>Buddhist vs. Hindu Karma</h4>
+          <p>Both systems see karma as the moral law of causation across lifetimes. But Buddhism removes the Brahmin's privileged role in karma-management (ritual, sacrifice). Anyone — regardless of caste, gender, or birth — can generate good karma through ethical conduct, meditation, and wisdom. This was politically radical in the caste-stratified society of ancient India.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KINGDOMS ===== -->
+<section id="kingdoms">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Imperial Dharma</span>
+      <h2 class="section-title">Buddhist Kingdoms & Empires</h2>
+      <p class="section-subtitle">The monarchies that gave the Dharma political power and architectural immortality</p>
+    </div>
+
+    <div class="kingdom-grid fade-in">
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner maurya"></div>
+        <div class="kingdom-body">
+          <h3>Mauryan Empire under Ashoka</h3>
+          <p class="kingdom-period">323–185 BCE · Capital: Pāṭaliputra (Patna)</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">~5M km²</span>
+              <span class="ks-key">Territory</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~261 BCE</span>
+              <span class="ks-key">Conversion</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">84,000</span>
+              <span class="ks-key">Stūpas (trad.)</span>
+            </div>
+          </div>
+          <p>After the Battle of Kalinga (261 BCE) — in which 100,000 were killed and 150,000 deported — Emperor Ashoka underwent a profound transformation, embracing Buddhism and the principle of <em>dhamma</em>. He became the most consequential Buddhist patron in history.</p>
+          <ul class="kingdom-contributions">
+            <li>Sent Buddhist missions to Hellenistic kingdoms (Syria, Egypt, Macedonia, Epirus), Sri Lanka, Myanmar</li>
+            <li>Built the Sanchi Stūpa, Sarnath capital (Lion Capital — now India's national emblem), Lumbini pillar</li>
+            <li>Erected 33 rock edicts and 7 pillar edicts promoting dharma, religious tolerance, and animal welfare</li>
+            <li>Sent his son Mahinda and daughter Sanghamittā to Sri Lanka — establishing Theravāda Buddhism there</li>
+            <li>Held the Third Buddhist Council at Pāṭaliputra (~250 BCE) under monk Moggaliputta Tissa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner kushan"></div>
+        <div class="kingdom-body">
+          <h3>Kushan Empire</h3>
+          <p class="kingdom-period">~30–375 CE · Capital: Puruṣapura (Peshawar)</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">~3M km²</span>
+              <span class="ks-key">Territory</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Kaniṣka I</span>
+              <span class="ks-key">Greatest King</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Gandhāra</span>
+              <span class="ks-key">Art Centre</span>
+            </div>
+          </div>
+          <p>A Central Asian empire straddling the Silk Road — from Bactria through Afghanistan, Pakistan, and northwest India. Emperor Kaniṣka I (~127 CE) was a great Buddhist patron who held the Fourth Buddhist Council (~100 CE) in Kashmir, producing the Mahāvibhāṣa — a massive encyclopaedic commentary on Abhidharma.</p>
+          <ul class="kingdom-contributions">
+            <li>Gandhāra art: the first realistic human portraits of the Buddha, blending Greek and Indian styles</li>
+            <li>Transmission of Buddhism along the Silk Road to Central Asia and China</li>
+            <li>Construction of the Kanishka Stupa at Peshawar — one of the world's tallest buildings at the time</li>
+            <li>Hosted Buddhist scholars including Aśvaghoṣa (author of the Buddha's biography, <em>Buddhacarita</em>)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner pala"></div>
+        <div class="kingdom-body">
+          <h3>Pāla Empire</h3>
+          <p class="kingdom-period">750–1174 CE · Capital: Gaur / Munger (Bengal/Bihar)</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Gopāla</span>
+              <span class="ks-key">Founder</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Nālandā</span>
+              <span class="ks-key">Great University</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~4 centuries</span>
+              <span class="ks-key">Duration</span>
+            </div>
+          </div>
+          <p>The last great Buddhist dynasty of India. The Pāla kings were fervent Mahāyāna/Vajrayāna Buddhists who endowed Nalanda, built Vikramashila (near Bhagalpur), Odantapuri, and Somapura (Paharpur — a UNESCO site). Their court was a center of Buddhist art, metalwork, and scholarship.</p>
+          <ul class="kingdom-contributions">
+            <li>Vikramashila University: rivalled Nalanda with 114 faculty and thousands of students</li>
+            <li>Somapura Mahāvihāra (Paharpur): largest monastery in South Asia, ~0.9 km²</li>
+            <li>Sent Atīśa to Tibet — transforming Tibetan Buddhist tradition</li>
+            <li>Pāla bronze sculpture: defining style of late Indian Buddhist art, influenced all of Southeast Asia</li>
+            <li>Connection with Srivijaya (Indonesia) — the Pāla king Devapāla built a vihāra at Nalanda at the request of Balaputradeva of Srivijaya</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner sri-lanka"></div>
+        <div class="kingdom-body">
+          <h3>Sri Lankan Buddhist Kingdoms</h3>
+          <p class="kingdom-period">250 BCE – 1815 CE · Capital: Anurādhapura → Polonnaruwa → Kandy</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Devānampiya Tissa</span>
+              <span class="ks-key">First Buddhist King</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Mahinda</span>
+              <span class="ks-key">Missionary</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Tooth Relic</span>
+              <span class="ks-key">Sacred Symbol</span>
+            </div>
+          </div>
+          <p>Sri Lanka became the world's first fully Buddhist state under Ashoka's missionary efforts. The island preserved the Pali Tipiṭaka in written form for the first time (~29 BCE, during King Vaṭṭagāmaṇi Abhaya's reign). The Mahāvamsa chronicle (6th century CE) is one of the world's oldest continuous historical records.</p>
+          <ul class="kingdom-contributions">
+            <li>Preservation and transmission of the Pali Tipiṭaka — the world's most complete early Buddhist canon</li>
+            <li>Anurādhapura: home to the Jaya Sri Maha Bodhi (a cutting from the original Bodhi tree, ~288 BCE — the oldest authenticated living tree in the world with a known planting date)</li>
+            <li>Buddha's Tooth Relic at the Temple of the Tooth (Kandy) — the island's most sacred object and political legitimising symbol</li>
+            <li>Transmission of Theravāda to Burma, Thailand, Cambodia, and Laos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner tibet"></div>
+        <div class="kingdom-body">
+          <h3>Tibetan Buddhist Kingdoms</h3>
+          <p class="kingdom-period">7th Century CE – 1959 CE · Capital: Lhasa</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Songtsen Gampo</span>
+              <span class="ks-key">First Buddhist King</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~750 CE</span>
+              <span class="ks-key">Samye Founded</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">Ganden Phodrang</span>
+              <span class="ks-key">Theocratic State</span>
+            </div>
+          </div>
+          <p>Tibet's Buddhist civilisation represents possibly the world's most complete preserved Vajrayāna tradition. King Songtsen Gampo (617–650 CE) introduced Buddhism; King Trisong Deutsen (~755 CE) invited Padmasambhava and Śāntarakṣita. The Tibetan script was invented specifically to translate Buddhist texts. Tibet became the world's last major Buddhist theocracy.</p>
+          <ul class="kingdom-contributions">
+            <li>Translation of virtually all surviving Indian Buddhist literature into Tibetan — the Kangyur (Buddha's words) and Tengyur (commentaries) comprise ~330 volumes</li>
+            <li>Unique preservation of Vajrayāna tantra destroyed elsewhere by Muslim invasions of India</li>
+            <li>Ganden, Drepung, Sera — the great monastic universities hosting tens of thousands of monks</li>
+            <li>Potala Palace (Lhasa): the Dalai Lama's winter palace, begun by the 5th Dalai Lama (~1645 CE)</li>
+            <li>The institution of Dalai Lama as both spiritual and temporal head of state — beginning with the 5th Dalai Lama in 1642</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner khmer"></div>
+        <div class="kingdom-body">
+          <h3>Khmer Empire (Angkor)</h3>
+          <p class="kingdom-period">802–1431 CE · Capital: Angkor (Yasodharapura)</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Jayavarman II</span>
+              <span class="ks-key">Founder</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~1M people</span>
+              <span class="ks-key">Angkor's Population</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~400 km²</span>
+              <span class="ks-key">Urban Area</span>
+            </div>
+          </div>
+          <p>The Khmer Empire began as Hindu-Buddhist (Sanskrit was the court language) and gradually shifted to Theravāda Buddhism under Jayavarman VII (~1181–1218 CE) — the empire's greatest builder. He constructed Angkor Thom, Ta Prohm, Preah Khan, and Bayon (with its famous Buddhist face-towers representing Avalokiteśvara).</p>
+          <ul class="kingdom-contributions">
+            <li>Angkor Wat: initially a Hindu temple, later converted to Buddhist use — the world's largest religious monument</li>
+            <li>Bayon temple's 216 faces represent Jayavarman VII as Bodhisattva Avalokiteśvara</li>
+            <li>Jayavarman VII built 102 hospitals and 121 rest houses across his empire</li>
+            <li>Transition from Hindu to Theravāda Buddhist culture — still definitive for Cambodia today</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner tang"></div>
+        <div class="kingdom-body">
+          <h3>Tang Dynasty China</h3>
+          <p class="kingdom-period">618–907 CE · Capital: Chang'an (Xi'an)</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Xuanzang</span>
+              <span class="ks-key">Greatest Pilgrim</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~1,600</span>
+              <span class="ks-key">Texts Translated</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">10 Schools</span>
+              <span class="ks-key">Buddhist Schools</span>
+            </div>
+          </div>
+          <p>The Tang Dynasty was the golden age of Chinese Buddhism. Xuanzang's pilgrimage to India (629–645 CE) and the translation of hundreds of Sanskrit texts he brought back transformed Chinese Buddhist philosophy. Emperor Taizong was a patron; his son Gaozong promoted Buddhism alongside Taoism and Confucianism.</p>
+          <ul class="kingdom-contributions">
+            <li>Xuanzang's <em>Great Tang Records on the Western Regions</em> — the primary historical source for 7th-century India and Central Asia</li>
+            <li>Pure Land Buddhism (Jìngtǔ) became the most popular school for lay practitioners</li>
+            <li>Chan (Zen) Buddhism crystallised its core identity during the Tang period</li>
+            <li>Dà Yàn Tǎ (Wild Goose Pagoda, Xi'an): built to store Xuanzang's texts — still standing today</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="kingdom-banner yamato"></div>
+        <div class="kingdom-body">
+          <h3>Japanese Buddhist Kingdoms</h3>
+          <p class="kingdom-period">552 CE onward · Capital: Nara → Kyoto → Tokyo</p>
+          <div class="kingdom-stats">
+            <div class="kingdom-stat">
+              <span class="ks-val">Prince Shōtoku</span>
+              <span class="ks-key">First Great Patron</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">~77,000</span>
+              <span class="ks-key">Temples Today</span>
+            </div>
+            <div class="kingdom-stat">
+              <span class="ks-val">13 Schools</span>
+              <span class="ks-key">Major Traditions</span>
+            </div>
+          </div>
+          <p>Buddhism arrived in Japan officially in 552 CE (or 538 CE) from Baekje (Korea). Prince Shōtoku Taishi made it state philosophy, built Hōryū-ji (the world's oldest surviving wooden structure), and wrote commentaries on Buddhist sūtras. The Nara period (710–794) saw massive state Buddhism: the Tōdai-ji's Great Buddha (Daibutsu) project unified the nation around Buddhist piety.</p>
+          <ul class="kingdom-contributions">
+            <li>Unique Japanese schools: Tendai, Shingon (Esoteric), Pure Land (Jōdo), Zen (Rinzai, Sōtō), Nichiren</li>
+            <li>Hōryū-ji (607 CE): world's oldest surviving wooden buildings, Nara</li>
+            <li>Tōdai-ji Daibutsu (752 CE): 15-metre bronze Buddha, Nara</li>
+            <li>Zen's profound influence on Japanese culture: tea ceremony (<em>chado</em>), rock gardens (<em>karesansui</em>), martial arts (<em>budō</em>), noh theatre, haiku poetry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GLOBAL SPREAD ===== -->
+<section id="spread">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Dharma Without Borders</span>
+      <h2 class="section-title">Buddhism Beyond India</h2>
+      <p class="section-subtitle">How a teaching from the Gangetic plain transformed the entire eastern hemisphere</p>
+    </div>
+
+    <div class="spread-map-grid fade-in">
+      <div class="spread-region">
+        <div class="spread-flag">🇱🇰</div>
+        <h3>Sri Lanka</h3>
+        <p class="spread-century">~250 BCE · Ashokan Mission</p>
+        <p>Mahinda, Ashoka's son, arrived during King Devānampiya Tissa's reign. Sri Lanka became Theravāda's citadel. The Pali Canon was written down here (~29 BCE). Sri Lanka remains one of the world's most Buddhist nations by percentage.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇨🇳</div>
+        <h3>China</h3>
+        <p class="spread-century">~1st Century CE · Silk Road</p>
+        <p>Arrived via Central Asian trade routes. Emperor Ming of Han (58–75 CE) is said to have dreamed of the Buddha. Buddhism profoundly transformed Chinese culture, language, art, philosophy, and social welfare. Today China has the world's largest Buddhist population (~250 million).</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇯🇵</div>
+        <h3>Japan</h3>
+        <p class="spread-century">552 CE · Via Korea</p>
+        <p>Korean monks transmitted Buddhism from China to Japan. Transformed Japanese civilisation: art, architecture, ethics, philosophy, and even martial culture. Today ~84 million Japanese identify as Buddhist.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇰🇷</div>
+        <h3>Korea</h3>
+        <p class="spread-century">~4th Century CE · Three Kingdoms Period</p>
+        <p>Received Buddhism via China. Korean Buddhism developed unique characteristics under Silla and Goryeo dynasties. The Tripitaka Koreana (13th century) — 80,000 wooden printing blocks — is the most accurate and comprehensive Buddhist canon in existence.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇹🇭</div>
+        <h3>Thailand</h3>
+        <p class="spread-century">~3rd Century BCE · Ashokan / Mon</p>
+        <p>Initially Mahāyāna, then firmly Theravāda from the 13th century via Sri Lanka. Buddhism is the state religion; the king is constitutionally required to be Buddhist. Over 40,000 active temples. The Thai Sangha is one of the most organised monastic communities in the world.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇲🇲</div>
+        <h3>Myanmar (Burma)</h3>
+        <p class="spread-century">~5th Century CE · Mon Kingdom</p>
+        <p>The Bagan kingdom (11th century) built 10,000+ temples/pagodas. Myanmar's Theravāda tradition is deeply embedded in national identity. The Shwedagon Pagoda (Yangon), containing hair relics of the Buddha, is one of Buddhism's most sacred sites.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇹🇮</div>
+        <h3>Tibet</h3>
+        <p class="spread-century">7th Century CE · Songtsen Gampo</p>
+        <p>Tibet preserved the Vajrayāna tradition in its completeness. The Tibetan Buddhist canon (Kangyur + Tengyur) is the world's largest Buddhist scriptural collection. In 1959, the Chinese occupation forced the Dalai Lama into exile — scattering Tibetan Buddhism globally.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇲🇳</div>
+        <h3>Mongolia</h3>
+        <p class="spread-century">16th Century CE · Altan Khan</p>
+        <p>Altan Khan invited the Tibetan lama Sonam Gyatso to Mongolia (~1578) and gave him the title "Dalai Lama" (retroactively applying to his two predecessors). Vajrayāna Buddhism became the dominant religion. The Mongolian Empire under Kublai Khan was also significantly Buddhist.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🇮🇩</div>
+        <h3>Southeast Asia (Maritime)</h3>
+        <p class="spread-century">~5th–14th Century CE</p>
+        <p>Srivijaya Empire (Sumatra, 7th–13th century) was a great Mahāyāna Buddhist maritime power, patronising Nalanda. Borobudur (Java, ~9th century CE) is the world's largest Buddhist monument — a 3D mandala in stone with 504 Buddha statues and 2,672 relief panels.</p>
+      </div>
+      <div class="spread-region">
+        <div class="spread-flag">🌍</div>
+        <h3>The West</h3>
+        <p class="spread-century">19th–21st Century CE</p>
+        <p>Buddhism reached Europe and America primarily through: scholarly Orientalism (19th century), Theosophical Society, Japanese Zen (D.T. Suzuki's writings), Tibetan exile diaspora post-1959, and the modern mindfulness movement. Today approximately 3–4 million Buddhists live in the United States.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCRIPTURES ===== -->
+<section id="scriptures">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Sacred Texts</span>
+      <h2 class="section-title">Buddhist Scriptures & Literary Tradition</h2>
+      <p class="section-subtitle">The most expansive scriptural tradition in human history</p>
+    </div>
+    <div class="scripture-grid fade-in">
+      <div class="scripture-card">
+        <div class="scripture-icon">📜</div>
+        <h3>Pali Tipiṭaka</h3>
+        <p class="scripture-lang">Pali · Theravāda · ~100 BCE (written)</p>
+        <p>The "Three Baskets": Vinaya Piṭaka (monastic rules), Sutta Piṭaka (discourses — including Dhammapada, Majjhima Nikāya, Dīgha Nikāya, Saṃyutta Nikāya, Aṅguttara Nikāya), and Abhidhamma Piṭaka (philosophical analysis). Approximately 40 volumes in print — the world's oldest complete canon of a major world religion.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">🌸</div>
+        <h3>Lotus Sūtra</h3>
+        <p class="scripture-lang">Sanskrit/Chinese · Mahāyāna · ~1st–2nd Century CE</p>
+        <p>Saddharmapuṇḍarīka-sūtra — perhaps the most influential Mahāyāna text in East Asia. It introduces the concept of the "One Vehicle" (Ekayāna): all vehicles lead to the same Buddhahood. The parable of the burning house is one of Buddhism's most celebrated teaching stories. Foundational for Tiantai, Tendai, and Nichiren schools.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">💎</div>
+        <h3>Heart Sūtra & Diamond Sūtra</h3>
+        <p class="scripture-lang">Sanskrit/Chinese/Tibetan · Prajñāpāramitā</p>
+        <p>The Heart Sūtra (260 characters in Chinese) is the most chanted Buddhist text in the world: "Form is emptiness; emptiness is form." The Diamond Sūtra (~4th century CE) is the world's oldest printed book with a date (868 CE Chinese edition). Both are quintessential expressions of Mahāyāna emptiness philosophy.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">📿</div>
+        <h3>Tibetan Canon (Kangyur & Tengyur)</h3>
+        <p class="scripture-lang">Tibetan · Vajrayāna · 14th Century compilation</p>
+        <p>Kangyur ("Translation of the Word") contains ~108 volumes of texts attributed to the Buddha. Tengyur ("Translation of Treatises") contains ~225 volumes of Indian commentaries. Together they constitute the most comprehensive repository of Indian Buddhist learning — much of which survives only in Tibetan translation, the Sanskrit originals having been destroyed.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">📰</div>
+        <h3>Ashokan Inscriptions</h3>
+        <p class="scripture-lang">Brāhmī, Kharoṣṭhī, Greek, Aramaic · ~268–232 BCE</p>
+        <p>The earliest physical evidence of Buddhist teachings. Emperor Ashoka's rock edicts and pillar edicts across the Indian subcontinent and Afghanistan represent history's first documented example of state-promoted religious tolerance, animal welfare, medical treatment for humans and animals, and interfaith dialogue. Written in the vernacular — not Sanskrit — for maximum accessibility.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">🏛️</div>
+        <h3>Mahāvamsa</h3>
+        <p class="scripture-lang">Pali · Sri Lanka · ~5th–6th Century CE</p>
+        <p>The "Great Chronicle" of Sri Lanka — one of the oldest historical chronicles in the world with continuous chronological records. Primary source for ancient Sri Lankan history, Ashokan missions, early Buddhist lineages, and Sri Lankan kings. Combined with the Dīpavaṃsa (4th century CE), it forms the backbone of Theravāda historical tradition.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">🌙</div>
+        <h3>Dhammapada</h3>
+        <p class="scripture-lang">Pali · Universal · ~3rd Century BCE</p>
+        <p>The "Path of Truth/Dhamma" — 423 verses attributed directly to the Buddha on the essential nature of mind, ethics, and liberation. Opening: "Mind is the forerunner of all actions. All deeds are led by mind, created by mind." The most widely read, translated, and cited Buddhist text across traditions. Available in virtually every language.</p>
+      </div>
+      <div class="scripture-card">
+        <div class="scripture-icon">📚</div>
+        <h3>Chinese Buddhist Canon (Taishō)</h3>
+        <p class="scripture-lang">Classical Chinese · East Asian · 20th Century compilation</p>
+        <p>The Taishō Tripiṭaka (1922–1934) is the standard modern East Asian Buddhist canon: 100 volumes, ~55 million Chinese characters. It preserves translations from dozens of Indian, Central Asian, and Chinese sources across 1,500 years of Buddhist scholarship — including texts whose Sanskrit originals are lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUDDHISM & HINDUISM ===== -->
+<section id="hb-relation">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Civilizational Dialogue</span>
+      <h2 class="section-title">Buddhism & Hinduism</h2>
+      <p class="section-subtitle">Siblings, rivals, or two expressions of one civilizational genius?</p>
+    </div>
+
+    <div class="prose fade-in">
+      <p>The relationship between Buddhism and Hinduism is among the most complex and consequential in the history of religion. They share a civilizational matrix — ancient India — and a vocabulary (<em>dharma, karma, nirvāṇa, yoga, samādhi, saṃsāra</em>), but diverge sharply on fundamental questions: the authority of the Vedas, the reality of the self, the role of caste, and the nature of liberation.</p>
+
+      <h3>What They Share</h3>
+      <p>Both traditions emerged in the same intellectual environment — the Gangetic Plain of the 6th–5th centuries BCE. Both accept karma (intentional action and its consequences), rebirth (<em>saṃsāra</em>), and liberation (<em>mokṣa</em> in Hinduism; <em>nirvāṇa</em> in Buddhism) as the ultimate goal. Both emphasise meditation, renunciation, ethical conduct, and the cultivation of wisdom. The technical vocabulary of Indian philosophy — including terms for consciousness, awareness, meditative absorption (<em>jhāna/dhyāna</em>), and the various types of suffering — is largely shared.</p>
+
+      <h3>Where They Diverge</h3>
+      <p>The Buddha explicitly rejected Vedic authority (<em>Veda-vādas</em>), caste as a spiritual reality (arguing that moral character, not birth, determines one's spiritual standing), the existence of a permanent self or soul (<em>ātman</em>) — which is the cornerstone of Vedantic Hinduism — and the efficacy of Brahminic ritual sacrifice. The Upanishadic equation <em>ātman = Brahman</em> (the individual self is identical to the cosmic absolute) is precisely what the Buddhist doctrine of anattā (no-self) denies.</p>
+    </div>
+
+    <div class="warning-box fade-in">
+      <strong>Scholarly Note:</strong> Whether the Buddha was responding to early Upanishadic thought or to a different layer of Brahminical belief is actively debated. Johannes Bronkhorst argues in "Greater Magadha" (2007) that Buddhism developed in the non-Vedic cultural zone of eastern India (Magadha), largely independent of Brahminism. Richard Gombrich (Oxford) argues for direct engagement with Upanishadic concepts. Both perspectives illuminate different aspects of Buddhist origins.
+    </div>
+
+    <table class="comparison-table fade-in">
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>Hinduism (Vedāntic)</th>
+          <th>Buddhism</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Self / Soul</td>
+          <td>Ātman — a permanent, eternal individual self, identical with Brahman (in Advaita)</td>
+          <td>Anattā — no permanent self; what we call "self" is a stream of impermanent processes</td>
+        </tr>
+        <tr>
+          <td>Ultimate Reality</td>
+          <td>Brahman — the infinite, unchanging Absolute (in Advaita: the only reality)</td>
+          <td>Śūnyatā (Mahāyāna) or Dependent Origination — no unchanging absolute; all is conditioned</td>
+        </tr>
+        <tr>
+          <td>Vedic Authority</td>
+          <td>Vedas are eternal, self-validating revelation (<em>śruti</em>)</td>
+          <td>Vedas explicitly rejected as authoritative; emphasis on personal experience and reason</td>
+        </tr>
+        <tr>
+          <td>Liberation</td>
+          <td>Mokṣa — union or recognition of identity with Brahman</td>
+          <td>Nirvāṇa — cessation of craving and suffering; not union with anything</td>
+        </tr>
+        <tr>
+          <td>Caste</td>
+          <td>Varṇa system has divine sanction in some interpretations</td>
+          <td>Caste explicitly rejected as spiritually meaningful — character not birth determines worth</td>
+        </tr>
+        <tr>
+          <td>Deity Worship</td>
+          <td>Central in most traditions; bhakti (devotion) a primary path</td>
+          <td>Theravāda: deities acknowledged but not soteriologically central; Mahāyāna/Vajrayāna: rich pantheons of Buddhas and bodhisattvas</td>
+        </tr>
+        <tr>
+          <td>Karma</td>
+          <td>Karma accumulates to the ātman; divine grace can override it in theistic traditions</td>
+          <td>Karma (intentional action) to a causally-linked stream of consciousness; no soul, no divine override — but nirvāṇa transcends karma</td>
+        </tr>
+        <tr>
+          <td>Buddha in Hinduism</td>
+          <td>Variously: Buddha as 9th avatar of Vishnu (Purāṇic tradition); or as a false teacher who misled people from Vedic truth (Śaṅkara's interpretation)</td>
+          <td>The Buddha as a historical teacher who discovered the path to liberation; not an avatar of any deity</td>
+        </tr>
+        <tr>
+          <td>Meditation</td>
+          <td>Dhyāna as path to union with Brahman; Yoga system of Patañjali</td>
+          <td>Meditation as investigation of impermanence, suffering, and non-self; and as development of samādhi for insight</td>
+        </tr>
+        <tr>
+          <td>Influence on Each Other</td>
+          <td>Hindu Tantra significantly influenced by Buddhist Vajrayāna; Śaṅkara's Advaita called "crypto-Buddhism" by critics</td>
+          <td>Buddhist art, philosophy, and practice absorbed Hindu deity traditions; many Hindu gods (Indra, Brahma, Sarasvatī) appear in Buddhist texts as devotees of the Buddha</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box fade-in">
+      <p><strong>The Avatar Question:</strong> Several Hindu Purāṇas — including the Bhāgavata Purāṇa and Viṣṇu Purāṇa — list the Buddha as the 9th or 24th avatar of Vishnu. However, these texts' identification of the Buddha with an avatar is theologically complex: in Bhāgavata Purāṇa (1.3.24), this avatar appeared to "delude the Daityas" — a somewhat unflattering reading suggesting the Buddha's heterodoxy was divinely engineered to confuse demons, not to deliver truth. Vaiṣṇava scholars debate this. Some interpret it as genuine recognition of the Buddha's greatness; others as a device to reabsorb Buddhism into the Hindu fold. Buddhist traditions generally do not accept this identification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARCHITECTURE & UNIVERSITIES ===== -->
+<section id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Sacred Spaces & Knowledge Centres</span>
+      <h2 class="section-title">Temples, Universities & Sacred Architecture</h2>
+      <p class="section-subtitle">Buddhism built in stone, timber, and gold what the scriptures built in words</p>
+    </div>
+    <div class="arch-grid fade-in">
+      <div class="arch-card">
+        <div class="arch-visual">🏛️</div>
+        <div class="arch-body">
+          <h3>Nalanda Mahāvihāra</h3>
+          <p class="arch-loc">📍 Bihar, India · ~5th–1193 CE</p>
+          <p>Perhaps the world's first residential university. At its height it housed ~10,000 students and 2,000 teachers from across Asia. Its library — "Dharma Gañja" (Treasury of Truth) — had three nine-storey buildings. Subjects taught: Buddhist philosophy, Vedic texts, logic, grammar, Sāṃkhya philosophy, medicine, and astronomy. Xuanzang studied here for 5 years (637–642 CE). Destroyed by Bakhtiyar Khilji in 1193 CE; its ruins are now a UNESCO World Heritage Site.</p>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-visual">🔔</div>
+        <div class="arch-body">
+          <h3>Vikramashila University</h3>
+          <p class="arch-loc">📍 Bhagalpur, Bihar · ~783–1203 CE</p>
+          <p>Founded by Pāla king Dharmapāla to rival Nalanda. A major centre of Vajrayāna and tantric studies. It had 114 teaching staff (scholars of international repute), six colleges, and a grand central temple. Atīśa — who transformed Tibetan Buddhism — was its most famous abbot. Destroyed by Bakhtiyar Khilji 1203 CE. Archaeological excavations are ongoing.</p>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-visual">🏯</div>
+        <div class="arch-body">
+          <h3>Borobudur</h3>
+          <p class="arch-loc">📍 Java, Indonesia · ~9th Century CE</p>
+          <p>The world's largest Buddhist monument — a 3D mandala built in stone on a natural hill. Nine stacked platforms (six square, three circular) with a central stūpa. Contains 504 Buddha statues and 2,672 relief panels depicting the Avataṃsaka Sūtra and life of the Buddha. Circumambulating it clockwise from base to summit is itself a meditative pilgrimage.</p>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-visual">🪨</div>
+        <div class="arch-body">
+          <h3>Ajanta & Ellora Caves</h3>
+          <p class="arch-loc">📍 Aurangabad, Maharashtra · 2nd Century BCE – 7th Century CE</p>
+          <p>Ajanta: 30 rock-cut caves containing the finest surviving examples of ancient Indian art — Buddhist murals depicting Jātaka tales, bodhisattvas, and court life with extraordinary naturalism and psychological depth. Ellora: 34 caves including 12 Buddhist (Mahāyāna), 17 Hindu, and 5 Jain — demonstrating the peaceful coexistence of traditions in medieval India.</p>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-visual">⛩️</div>
+        <div class="arch-body">
+          <h3>Hōryū-ji</h3>
+          <p class="arch-loc">📍 Nara, Japan · ~607 CE</p>
+          <p>Built by Prince Shōtoku — the world's oldest surviving wooden structure. A complex of 41 independent buildings, representing the fusion of Korean-Chinese-Indian Buddhist architectural traditions into uniquely Japanese form. Contains rare 7th-century Buddhist paintings, sculptures, and texts. UNESCO World Heritage Site and a foundational monument of Japanese civilisation.</p>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-visual">🏔️</div>
+        <div class="arch-body">
+          <h3>Potala Palace</h3>
+          <p class="arch-loc">📍 Lhasa, Tibet · ~1645 CE (main structure)</p>
+          <p>The Dalai Lama's winter palace and the spiritual-political centre of Tibet. At 3,700m altitude, 13 storeys, 1,000 rooms, 10,000 shrines, and 200,000 statues. Constructed by the Great Fifth Dalai Lama. Now a museum under Chinese administration. Recognised as a UNESCO World Heritage Site and one of the architectural wonders of the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RARE FACTS ===== -->
+<section id="rare-facts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Hidden History</span>
+      <h2 class="section-title">Rare Facts Most People Don't Know</h2>
+      <p class="section-subtitle">The surprising, hidden, and counterintuitive dimensions of Buddhist history</p>
+    </div>
+
+    <div class="facts-grid fade-in">
+      <div class="fact-card">
+        <div class="fact-number">01</div>
+        <div class="fact-icon">⚔️</div>
+        <h3>Buddhist Martial Traditions</h3>
+        <p>Shaolin Monastery (China) is the origin of Chinese martial arts — Chan Buddhist monks developed wushu/kung fu as a form of moving meditation and self-defence. The <em>Tripitaka Koreana</em> was carved partly as a prayer for military victory against Mongol invasion. Buddhist Samurai (bushi) in Japan frequently combined Zen practice with martial discipline — the connection between Zen and the "warrior's way" (<em>bushidō</em>) is well documented.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">02</div>
+        <div class="fact-icon">🔬</div>
+        <h3>Buddhist Astronomy & Medicine</h3>
+        <p>Nalanda hosted advanced studies in astronomy (<em>jyotiṣa</em>) and Āyurvedic medicine alongside Buddhist philosophy. Buddhist hospitals (founded by Ashoka across his empire) were among the world's first public healthcare institutions. The Chinese monk Yi Jing (7th century) documented sophisticated Āyurvedic medical practices at Nalanda. Buddhist texts in Tibet contain extensive medical systems — the <em>Gyushi</em> (Four Medical Tantras) remains a living tradition of Tibetan medicine.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">03</div>
+        <div class="fact-icon">🎨</div>
+        <h3>Buddhism Influenced Hindu Tantra</h3>
+        <p>Many practices identified as "Hindu Tantra" — including chakra systems, visualisation of deities, mantra repetition, the guru-disciple transmission model, and the use of skull cups and charnel ground imagery — either originated in or were significantly developed by Buddhist Vajrayāna traditions first. The interaction was bidirectional and complex, but scholars like David Snellgrove and Alex Wayman have documented Buddhism's priority in systematising much of what became shared Tantric vocabulary.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">04</div>
+        <div class="fact-icon">🌍</div>
+        <h3>Ashoka's Missions Reached the Mediterranean</h3>
+        <p>Ashoka's Rock Edict XIII mentions missionaries sent to "Antiyoka" (Antiochus II of Syria), "Turamaya" (Ptolemy III of Egypt), "Antikini" (Antigonus of Macedonia), "Maka" (Magas of Cyrene), and "Alikasundara" (Alexander of Epirus). Whether these missions had any lasting impact is uncertain, but Buddhist monks were present in Hellenistic courts in the 3rd century BCE. Some scholars have argued for Buddhist influence on early Christian monasticism — a hypothesis that remains speculative but not dismissed.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">05</div>
+        <div class="fact-icon">📚</div>
+        <h3>The World's Oldest Printed Book is Buddhist</h3>
+        <p>The Diamond Sūtra copy dated 868 CE, discovered in the Dunhuang caves of China by Aurel Stein in 1900, is the world's oldest complete printed book with a printed date. It contains the inscription: "Reverently made for universal free distribution by Wang Jie on behalf of his two parents on the 13th of the 4th moon of the 9th year of Xiantong" — also making it one of the oldest datable acts of printed charitable publishing.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">06</div>
+        <div class="fact-icon">💰</div>
+        <h3>Buddhism Powered the Silk Road Economy</h3>
+        <p>Buddhist monasteries along the Silk Road were not just religious institutions but economic powerhouses. They provided banking, warehousing, caravanserai functions, medical care, and diplomatic immunity to merchants. Buddhist merchant guilds funded monastery construction; monasteries provided return patronage and networking. The Silk Road's cultural exchange was substantially organised around Buddhist pilgrimage circuits and monastic networks — Buddhism was as much an economic infrastructure as a spiritual tradition in this period.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">07</div>
+        <div class="fact-icon">🔭</div>
+        <h3>A Buddhist Emperor Sent an Embassy to Rome</h3>
+        <p>The Kushan Emperor Kaniṣka I (~127 CE) is believed to have sent an embassy to Rome during Trajan's reign. Gold Kushan coins bearing the Buddha's image alongside Greek, Iranian, and Indian deities have been found across the Roman Empire. The Roman author Dio Chrysostom (~100 CE) mentioned Indian philosophers who studied in Alexandria. The cultural cosmopolitanism of Buddhist Central Asia in the 1st–3rd centuries CE remains one of history's most underappreciated episodes.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">08</div>
+        <div class="fact-icon">🗿</div>
+        <h3>Buddhist Afghanistan — The Lost Civilisation</h3>
+        <p>Modern Afghanistan was once a heartland of Buddhist civilisation. The Bamiyan Valley contained two enormous Buddha statues carved into the cliffs — the tallest standing Buddha statues in the world (53m and 35m), dating to the 6th century CE. The surrounding caves housed a thriving monastic community. Destroyed by the Taliban in 2001. Mes Aynak (Logar Province) has yielded an entire buried Buddhist city — archaeologists race against mining concessions to excavate it.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">09</div>
+        <div class="fact-icon">🌺</div>
+        <h3>The Buddha Founded the World's First Women's Monastic Order</h3>
+        <p>When his aunt Mahāpajāpatī Gotamī requested ordination, the Buddha initially refused — not, the texts suggest, from misogyny, but from concern about institutional sustainability. After her persistence and intervention by Ānanda, he relented and established the Order of Nuns (<em>Bhikkhunī Saṅgha</em>) — the world's first recorded female monastic institution, predating any comparable institution in other major world religions. The order later died out in Theravāda countries; debates about its revival are ongoing.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">10</div>
+        <div class="fact-icon">🧬</div>
+        <h3>Modern Neuroscience Confirms Buddhist Meditation Claims</h3>
+        <p>Since the 1990s, neuroscientific research (MRI, EEG studies of long-term meditators at University of Wisconsin-Madison and elsewhere, in collaboration with the Mind & Life Institute co-founded by the Dalai Lama) has confirmed that Buddhist meditation practices measurably alter brain structure and function — increasing grey matter in areas associated with attention, emotional regulation, and empathy; reducing amygdala reactivity; and altering default mode network activity in ways consistent with reduced self-referential rumination. This represents an extraordinary convergence of a 2,500-year-old contemplative tradition and cutting-edge neuroscience.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">11</div>
+        <div class="fact-icon">🏺</div>
+        <h3>Hidden Buddhist Manuscripts — The Gilgit & Dunhuang Finds</h3>
+        <p>In 1931, a massive cache of Buddhist Sanskrit manuscripts was discovered at Gilgit (present-day Pakistan) — dating to the 5th–6th centuries CE, they represent some of the earliest surviving Buddhist texts in their original language. The Dunhuang caves (discovered 1900 by a Taoist monk, opened by Aurel Stein 1907) yielded 40,000 manuscripts and artefacts sealed since ~1000 CE — including texts in Chinese, Tibetan, Sanskrit, Sogdian, Uyghur, and Syriac. Together these finds have revolutionised our understanding of early Buddhism along the Silk Road.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-number">12</div>
+        <div class="fact-icon">🔐</div>
+        <h3>The Pāṭaliputta Schism & 18 Early Schools</h3>
+        <p>After the Third Buddhist Council (~250 BCE), the Sthaviravādins split into numerous schools over doctrinal differences. Traditional accounts say 18 early schools (<em>nikāyas</em>) emerged, though the exact number and names vary between sources. These schools disagreed on: whether arahants could "fall" from their attainment; whether the Buddha had any human limitations; what happens in the interim between death and rebirth; and the nature of consciousness. Most of these schools are now extinct; their texts survive only in Chinese and Tibetan translations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Frequently Asked</span>
+      <h2 class="section-title">Essential Questions</h2>
+    </div>
+
+    <div class="philosophy-accordion fade-in">
+      <details class="accordion-item">
+        <summary class="accordion-header">Is Buddhism a religion or a philosophy?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>Both, and neither exclusively. Buddhism originated as a practical philosophy of liberation — a systematic method for understanding and ending suffering — and operates as a religion for hundreds of millions who observe rituals, venerate the Buddha, and structure their lives around Buddhist ethical and cosmological frameworks. Western scholars have long debated this classification; many Buddhist practitioners find the question itself reflects a Western conceptual framework that doesn't map cleanly onto Asian traditions. In its Theravāda form, Buddhism has minimal theistic elements. In Mahāyāna and Vajrayāna, it has rich cosmologies, deity practices, and ritual systems that function very much like religious systems in other traditions.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary class="accordion-header">Do Buddhists believe in God?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>Buddhism is generally non-theistic — not atheistic, but non-theistic. The Buddha did not deny the existence of gods (<em>devas</em>); he acknowledged them as powerful beings within the cosmology of rebirth. However, he denied that any god created the universe, that prayer to gods could bring liberation, or that any being could grant liberation to another. Liberation must be achieved through one's own practice and insight. In Mahāyāna and Vajrayāna, the distinction between the Buddha and a god becomes philosophically complex — the cosmic Dharmakāya (truth-body) of the Buddha has characteristics similar to what other traditions call God. In Pure Land Buddhism, devotion to Amitābha Buddha has functional similarities to theistic devotion.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary class="accordion-header">What is the Buddha's actual historical name and date?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>His given name was Siddhārtha (Sanskrit) / Siddhattha (Pali) Gautama (Sanskrit) / Gotama (Pali). He was of the Shakya (Śākya) clan — hence the epithet Śākyamuni ("Sage of the Shakyas"). His father's name was Śuddhodana; his mother was Māyā/Māyādevī. The dates of his life remain debated: traditional Theravāda places his death in 544/543 BCE; modern scholarly consensus is closer to 400 BCE for his death (giving a birth around 480 BCE). An intermediate "corrected long chronology" places his death around 486 BCE. All dates carry uncertainty of several decades.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary class="accordion-header">Why did Buddhism almost disappear from India?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>This is a complex historical question with multiple contributing factors: (1) <strong>Muslim invasions</strong> (~12th–13th century CE) destroyed major monastic institutions — Nalanda, Vikramashila — and killed or dispersed monks. (2) <strong>Brahminic reform movements</strong>: the Bhakti movement and Advaita Vedanta of Śaṅkara (~8th century CE) offered many of Buddhism's spiritual and philosophical goods within a Hindu framework, reducing Buddhism's distinctive appeal to laity. (3) <strong>Gradual reabsorption</strong>: Buddha was incorporated as a Hindu avatar; Buddhist rituals merged with Hindu practice; the distinction between "Buddhist" and "Hindu" became blurred for many communities. (4) <strong>Loss of royal patronage</strong>: Buddhist monasteries were heavily dependent on royal support; once dynasties like the Pālas fell, institutional Buddhism collapsed. Without monks, lay Buddhism tends to dissolve into local Hindu practice over generations.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary class="accordion-header">What is nirvāṇa, really?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>Nirvāṇa (Pali: nibbāna) literally means "extinguishing" or "quenching" — as a flame is quenched when fuel is removed. The Buddha refused to define it positively ("nirvāṇa is X") because any positive characterisation risks reifying it into a new object of attachment. What is quenched is the "fire" of greed, hatred, and delusion. What remains is not nothingness but unclinging awareness — a state the texts describe with paradoxical language: "unconditioned," "unborn," "unaging," "undying," "sorrow-free." In Theravāda, nibbāna is the cessation of conditioned arising — the end of the rebirth cycle. In Mahāyāna, it is more complex: "non-abiding nirvāṇa" (<em>apratiṣṭhita-nirvāṇa</em>) is the bodhisattva's state — neither clinging to saṃsāra nor retreating into a personal nirvāṇa, but remaining active for all beings. In Zen, awakening (<em>satori</em>) is described not as a state but a seeing — seeing one's original nature that was always present.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary class="accordion-header">Can non-monks practise Buddhism effectively?<span class="acc-icon">+</span></summary>
+        <div class="accordion-body">
+          <p>Yes — and the vast majority of Buddhists across history and today are laypeople, not monastics. The Buddha taught extensively for lay practitioners: the Dīghajāṇu Sutta advises householders on worldly success and happiness; the Sigālovāda Sutta addresses lay ethics; countless suttas describe laypeople attaining high stages of awakening. In Mahāyāna, the Vimalakīrti Sūtra features a layman who surpasses even great monks in wisdom. The Five Precepts (no killing, no stealing, no sexual misconduct, no false speech, no intoxicants) are the basic ethical framework for lay Buddhists. Meditation, charitable giving (<em>dāna</em>), service, and ethical conduct are all open to householders. The relationship between monastics and laypeople is mutually supportive: laypeople provide material support; monastics provide teaching and ritual services.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL SUMMARY ===== -->
+<section id="summary">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Encyclopedia Summary</span>
+      <h2 class="section-title">Buddhism — A Final Overview</h2>
+      <p class="section-subtitle">The essential facts, the global picture, the lasting significance</p>
+    </div>
+
+    <div class="summary-quote fade-in">
+      <blockquote>"All that we are is the result of what we have thought. The mind is everything. What we think, we become."</blockquote>
+      <cite>— The Dhammapada · Attributed to Gautama Buddha</cite>
+    </div>
+
+    <div class="global-stats fade-in">
+      <div class="global-stat-card">
+        <span class="gsc-num">~500M</span>
+        <span class="gsc-label">Global Buddhists</span>
+      </div>
+      <div class="global-stat-card">
+        <span class="gsc-num">18+</span>
+        <span class="gsc-label">Early Buddhist Schools</span>
+      </div>
+      <div class="global-stat-card">
+        <span class="gsc-num">3</span>
+        <span class="gsc-label">Major Vehicles (Yānas)</span>
+      </div>
+      <div class="global-stat-card">
+        <span class="gsc-num">2,600+</span>
+        <span class="gsc-label">Years of Tradition</span>
+      </div>
+      <div class="global-stat-card">
+        <span class="gsc-num">~500K</span>
+        <span class="gsc-label">Monks & Nuns Worldwide</span>
+      </div>
+      <div class="global-stat-card">
+        <span class="gsc-num">40+</span>
+        <span class="gsc-label">Nations with Buddhism</span>
+      </div>
+    </div>
+
+    <div class="prose fade-in" style="margin-top:3rem;">
+      <h3>Why Buddhism Still Matters</h3>
+      <p>Buddhism's 2,600-year trajectory represents humanity's most sustained and systematic inquiry into the nature of mind, the origins of suffering, and the practical methods for cultivating wisdom and compassion. It has survived royal persecution, the destruction of its greatest institutions, the near-total erasure from its homeland, and the 20th century's political upheavals — and emerged not diminished but globally distributed.</p>
+      <p>Its core insights — that suffering arises from craving and ignorance, that the mind is trainable, that ethical conduct and meditation are mutually reinforcing, that all beings share the capacity for awakening — have proven extraordinarily durable and cross-culturally portable. From Californian mindfulness studios to Tibetan monasteries in exile to ancient Sri Lankan viharas, the same essential teaching continues to be transmitted, practiced, and investigated.</p>
+      <p>What makes Buddhism unique in the history of world religions is its combination of rigorous philosophy, practical contemplative science, ethical depth, institutional sophistication, artistic richness, and — above all — its empirical orientation. The Buddha did not ask for belief; he asked for practice and investigation. This open, experimental spirit may be the deepest source of Buddhism's resilience across cultures and centuries.</p>
+
+      <h3>A Note on Diversity</h3>
+      <p>There is no single "Buddhism." The Zen monk who sits in wordless meditation, the Tibetan practitioner who visualises complex mandalas, the Thai village woman who offers rice to monks at dawn, the Korean nun chanting the Heart Sūtra, the Sri Lankan scholar who debates Abhidhamma metaphysics, the Japanese Pure Land devotee who recites Amitābha's name — all are authentically Buddhist, all draw on recognisable strands of the same tradition. This diversity is not confusion; it is the natural efflorescence of a teaching sophisticated enough to address the full spectrum of human spiritual aspiration.</p>
+    </div>
+
+    <div class="highlight-box fade-in" style="margin-top:3rem; text-align:center;">
+      <p style="font-family:'Cinzel Decorative',serif; font-size:1.2rem; color:var(--gold); letter-spacing:0.05em; margin-bottom:1rem;">☸ &nbsp; The Three Jewels &nbsp; ☸</p>
+      <p style="font-size:1rem; font-style:italic; line-height:2;">
+        <em>Buddhaṃ saraṇaṃ gacchāmi</em> — I take refuge in the Buddha<br>
+        <em>Dhammaṃ saraṇaṃ gacchāmi</em> — I take refuge in the Dharma<br>
+        <em>Saṃghaṃ saraṇaṃ gacchāmi</em> — I take refuge in the Sangha
+      </p>
+      <p style="margin-top:1rem; font-size:0.8rem; color:var(--text-muted); font-family:'Noto Serif',serif; letter-spacing:0.1em;">The universal vow of all Buddhist practitioners · In Pali</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-symbol">☸</div>
+    <p class="footer-title">Dharma Atlas</p>
+    <p class="footer-subtitle">The Complete Encyclopedia of Buddhist Civilisation</p>
+    <ul class="footer-nav">
+      <li><a href="#intro">Origins</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#buddha-life">Life of Buddha</a></li>
+      <li><a href="#gurus">Gurus</a></li>
+      <li><a href="#teachings">Teachings</a></li>
+      <li><a href="#kingdoms">Kingdoms</a></li>
+      <li><a href="#spread">Global Spread</a></li>
+      <li><a href="#scriptures">Scriptures</a></li>
+      <li><a href="#hb-relation">Buddhism & Hinduism</a></li>
+      <li><a href="#rare-facts">Rare Facts</a></li>
+    </ul>
+    <p class="footer-bottom">
+      Created as a scholarly educational resource. All historical claims are based on academic consensus where available; mythological and scriptural traditions are clearly distinguished from verified historical evidence. Scholarly debates are acknowledged honestly. All Buddhist traditions are treated with equal respect and neutrality.
+      <br><br>
+      ☸ &nbsp; <em>Sabbe sattā sukhitā hontu</em> — May all beings be happy &nbsp; ☸
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Scroll-based fade-in animations
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--gold)'
+        : '';
+    });
+  });
+</script>
+</body>
+</html>
